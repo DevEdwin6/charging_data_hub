@@ -4,7 +4,7 @@ utils.py — 通用工具模块
 与具体 App 解耦，供所有 scraper 复用。包含三类功能：
   1. 设备连接管理（uiautomator2 断线重连）
   2. UI 操作原语（dump / click / 坐标计算）
-  3. 地理编码（Nominatim / SSL 上下文）
+  3. HTTPS SSL 上下文
   4. 数据持久化（原子写入 JSON）
 """
 
@@ -103,7 +103,7 @@ def click_node(d, node):
     return False
 
 
-# ── 地理编码 ───────────────────────────────────────────────────
+# ── HTTPS ────────────────────────────────────────────────────
 
 @lru_cache(maxsize=1)
 def _ssl_context():
@@ -115,42 +115,6 @@ def _ssl_context():
     """
     import ssl, certifi
     return ssl.create_default_context(cafile=certifi.where())
-
-
-def geocode_nominatim(name, address=""):
-    """
-    通过 Nominatim（OpenStreetMap 免费 API）将站点名/地址转换为坐标。
-
-    无需操作设备，直接发 HTTP 请求，是三层坐标策略中速度最快的一层。
-    依次构造以下查询并取第一个命中结果：
-      1. "{name} Bangkok"
-      2. "{name}, {address}"（仅 address 非空时）
-
-    :param name:    站点名称
-    :param address: 可选的辅助地址信息
-    :return: (lat, lng) 浮点元组；未命中或请求失败返回 None
-    """
-    import urllib.request as _req, urllib.parse as _parse, json as _json
-
-    queries = [f"{name} Bangkok"]
-    if address:
-        queries.append(f"{name}, {address}")
-
-    for q in queries:
-        params = _parse.urlencode({
-            "q": q, "format": "json",
-            "limit": 1, "countrycodes": "th",
-        })
-        url = f"https://nominatim.openstreetmap.org/search?{params}"
-        try:
-            req = _req.Request(url, headers={"User-Agent": "EVStationCollector/1.0"})
-            resp = _req.urlopen(req, timeout=8, context=_ssl_context())
-            data = _json.loads(resp.read().decode())
-            if data:
-                return float(data[0]["lat"]), float(data[0]["lon"])
-        except Exception:
-            pass
-    return None
 
 
 # ── 数据持久化 ─────────────────────────────────────────────────

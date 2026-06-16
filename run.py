@@ -14,6 +14,7 @@ import io
 import time
 import uiautomator2 as u2
 
+import config
 import db
 from scrapers.ev_station_pluz import EVStationPluZScraper
 
@@ -22,16 +23,7 @@ assert isinstance(sys.stdout, io.TextIOWrapper)
 sys.stdout.reconfigure(encoding="utf-8")
 
 # ══════════════════════════════════════════════════════════════
-# 数据库配置
-# ══════════════════════════════════════════════════════════════
-DB_HOST = "127.0.0.1"
-DB_PORT = 3307
-DB_USER = "root"
-DB_PASSWORD = ""
-DB_NAME = "charging_data_hub"
-
-# ══════════════════════════════════════════════════════════════
-# 采集配置
+# 采集参数
 #
 # MAX_STATIONS = None  → 采集全部站点
 # MAX_STATIONS = 5     → 最终总量目标（含历史记录，非本次增量）
@@ -44,7 +36,13 @@ RUN_MODE = "full"
 
 # ── 初始化数据库连接 ──────────────────────────────────────────
 print("连接数据库...")
-db.init(DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME)
+db.init(
+    config.DB_HOST,
+    config.DB_PORT,
+    config.DB_USER,
+    config.DB_PASSWORD,
+    config.DB_NAME,
+)
 print("数据库连接成功\n")
 
 # ── 查找或创建采集批次 ────────────────────────────────────────

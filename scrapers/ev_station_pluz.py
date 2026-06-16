@@ -10,7 +10,7 @@ scrapers/ev_station_pluz.py — EV Station PluZ 采集器
   → _read_charger_units()     按充电桩分组读取枪口数据
   → read_detail_info()        状态 / 更新时间 / 备注
   → read_more_information()   完整地址 + 营业时间
-  → get_location_coords()     坐标（三层策略）
+  → get_location_coords()     Google Maps 坐标
   → db.save_station()         事务写入 MySQL
 """
 
@@ -24,7 +24,7 @@ from http.client import RemoteDisconnected
 import db
 from utils import (
     dump, click_node, center,
-    geocode_nominatim, _ssl_context,
+    _ssl_context,
     ensure_connected,
 )
 
@@ -338,24 +338,38 @@ class EVStationPluZScraper:
             else:
                 clean_parts.append(p)
 
-        # 若 content-desc 含位置名则用 clean_parts，否则用原始 parts
-        active_parts = clean_parts if (position and len(clean_parts) >= 4) else parts
+        active_parts = clean_parts if position else parts
 
-        if len(active_parts) < 4:
+        if len(active_parts) < 3:
             return None
 
         power = price = ""
-        pp = active_parts[3]
+        tariff_idx = next(
+            (i for i, p in enumerate(active_parts)
+             if re.search(r"\bkW\b|฿\s*/\s*kWh", p, re.IGNORECASE)),
+            None,
+        )
+        if tariff_idx is None:
+            return None
+
+        pp = active_parts[tariff_idx]
         if "|" in pp:
             pw, pr = pp.split("|", 1)
             power, price = pw.strip(), pr.strip()
         else:
             power = pp
 
+        connector_name = " ".join(
+            p for p in active_parts[2:tariff_idx]
+            if p and not re.fullmatch(r"Book", p, re.IGNORECASE)
+        ).strip()
+        if not connector_name:
+            connector_name = active_parts[2]
+
         return {
             "charger_type":   active_parts[0],              # DC / AC
             "status":         active_parts[1],              # Available / Occupied
-            "connector_type": f"{active_parts[0]} {active_parts[2]}",  # DC CCS COMBO 2
+            "connector_type": f"{active_parts[0]} {connector_name}",  # DC CCS COMBO 2
             "power":          power,
             "price":          price,
             "position":       position,                     # ซ้าย-A；可能为空，由调用方补全
@@ -551,20 +565,26 @@ class EVStationPluZScraper:
         time.sleep(2)
 
         root2 = dump(self.d)
-        items = []
+        items, seen = [], set()
         for n in self._app_nodes(root2):
-            t = n.attrib.get("text", "").strip()
-            if not t:
-                continue
             m = re.findall(r"\d+", n.attrib.get("bounds", ""))
-            if len(m) == 4:
-                items.append((int(m[1]), t))
+            if len(m) != 4:
+                continue
+            y = int(m[1])
+            for attr in ("text", "content-desc"):
+                t = re.sub(r"\s+", " ", n.attrib.get(attr, "")).strip()
+                if not t or (y, t) in seen:
+                    continue
+                seen.add((y, t))
+                items.append((y, t))
         items.sort()
         texts = [t for _, t in items]
 
         ADDR_KW = ("Road", "Rd", "Street", "St.", "Soi", "Bang", "Khlong",
                    "Bangkok", "Moo", "Thanon", "Phahon", "Sukhumvit",
-                   "Alley", "Lane", "Avenue", "Ave")
+                   "Alley", "Lane", "Avenue", "Ave", "Highway", "Hwy",
+                   "Tambon", "Amphoe", "District", "Province", "Mueang")
+        ADDR_LABELS = {"Address", "Location", "ที่อยู่", "ตำแหน่ง"}
         DAYS = {"Monday", "Tuesday", "Wednesday", "Thursday",
                 "Friday", "Saturday", "Sunday"}
 
@@ -572,10 +592,36 @@ class EVStationPluZScraper:
         hours_by_day = {}
         day_buf = ""
 
-        for t in texts:
-            if not full_address and len(t) > 15 and any(k in t for k in ADDR_KW):
+        def is_hours_text(text):
+            return bool(re.search(r"\d{1,2}:\d{2}|Open|Close|Closed|24\s*hours", text, re.I))
+
+        def is_address_candidate(text):
+            if not text or text in DAYS or text in ADDR_LABELS or is_hours_text(text):
+                return False
+            if len(text) < 15:
+                return False
+            has_addr_kw = any(k in text for k in ADDR_KW)
+            has_thai = bool(re.search(r"[\u0E00-\u0E7F]", text))
+            has_digit = bool(re.search(r"\d", text))
+            return has_addr_kw or (has_thai and has_digit)
+
+        for i, t in enumerate(texts):
+            if not full_address and ":" in t:
+                label, value = [p.strip() for p in t.split(":", 1)]
+                if label in ADDR_LABELS and is_address_candidate(value):
+                    full_address = value
+                    continue
+
+            if not full_address and t in ADDR_LABELS:
+                for candidate in texts[i + 1:]:
+                    if is_address_candidate(candidate):
+                        full_address = candidate
+                        break
+
+            if not full_address and is_address_candidate(t):
                 full_address = t
-            elif t in DAYS:
+
+            if t in DAYS:
                 day_buf = t
             elif day_buf and t:
                 hours_by_day[day_buf] = t
@@ -609,14 +655,17 @@ class EVStationPluZScraper:
         self._last_google_url = None
 
         root = dump(self.d)
-        NAV_DESCS = {"Home", "Map", "Scan", "History", "Profile",
-                     "Check in", "Update", "More information >",
-                     "Show all", "Available connectors"}
+        maps_package = "com.google.android.apps.maps"
+        nav_descs = {
+            "Home", "Map", "Scan", "History", "Profile",
+            "Check in", "Update", "More information >",
+            "Show all", "Available connectors",
+        }
         candidates = []
         for node in self._app_nodes(root):
             if node.attrib.get("clickable") != "true":
                 continue
-            if node.attrib.get("content-desc", "") in NAV_DESCS:
+            if node.attrib.get("content-desc", "") in nav_descs:
                 continue
             m = re.findall(r"\d+", node.attrib.get("bounds", ""))
             if len(m) != 4:
@@ -638,7 +687,7 @@ class EVStationPluZScraper:
                 capture_output=True, text=True,
                 encoding="utf-8", errors="replace", timeout=5,
             )
-            if "com.google.android.apps.maps" not in r.stdout:
+            if maps_package not in r.stdout:
                 print("  !! Google Maps 未打开")
                 self.d.press("back")
                 time.sleep(1.5)
@@ -646,14 +695,14 @@ class EVStationPluZScraper:
         except Exception:
             pass
 
-        SHARE_KW = ("分享", "Share", "share", "แชร์", "Partager", "Compartir")
+        share_kw = ("分享", "Share", "share", "แชร์", "Partager", "Compartir")
         maps_root = ET.fromstring(self.d.dump_hierarchy())
         share_btn = next(
             (n for n in maps_root.iter("node")
-             if n.attrib.get("package") == "com.google.android.apps.maps"
+             if n.attrib.get("package") == maps_package
              and n.attrib.get("clickable") == "true"
              and any(k in n.attrib.get("content-desc", "")
-                     or k in n.attrib.get("text", "") for k in SHARE_KW)),
+                     or k in n.attrib.get("text", "") for k in share_kw)),
             None,
         )
         if share_btn is None:
@@ -708,25 +757,10 @@ class EVStationPluZScraper:
 
     def get_location_coords(self, station_name, station_address="", full_address=""):
         """
-        三层策略获取站点坐标，速度从快到慢依次降级：
-          层 1：Nominatim（站点名 + 列表地址）
-          层 2：Nominatim（站点名 + 完整地址）
-          层 3：Google Maps 分享链接（最慢，仅兜底）
+        通过 Google Maps 分享链接获取站点坐标。
 
-        :return: (lat, lng) 浮点元组；三层均失败返回 None
+        :return: (lat, lng) 浮点元组；失败返回 None
         """
-        coords = geocode_nominatim(station_name, station_address)
-        if coords:
-            print(f"  → 坐标[Nominatim]: {coords[0]}, {coords[1]}")
-            return coords
-
-        if full_address and full_address != station_address:
-            coords = geocode_nominatim(station_name, full_address)
-            if coords:
-                print(f"  → 坐标[Nominatim+addr]: {coords[0]}, {coords[1]}")
-                return coords
-
-        print("  ~ Nominatim 未命中，启用 Google Maps 分享（慢）")
         coords = self._get_coords_via_google_maps()
         if coords:
             print(f"  → 坐标[GMaps]: {coords[0]}, {coords[1]}")
@@ -851,7 +885,7 @@ class EVStationPluZScraper:
             if target["full_address"]:
                 print(f"  → 地址: {target['full_address']}")
 
-            # 坐标（三层策略）
+            # 坐标（打开 Google Maps 获取）
             self._last_google_url = None
             coords = self.get_location_coords(
                 name,

@@ -4,8 +4,7 @@ db.py — MySQL 数据库模块
 负责连接管理和所有写入操作。
 核心方法 save_station() 在单个事务内完成：
   UPSERT station_sites
-  → UPSERT station_charger_units（每个充电桩）
-  → INSERT connector_status_snapshots（每个枪口）
+  → INSERT connector_status_snapshots（每个枪口，含充电桩信息）
   → UPDATE collection_runs.collected_count + 1
 """
 
@@ -208,9 +207,8 @@ def save_station(run_id, station_data, time_period, collected_at):
 
     写入顺序：
       1. UPSERT station_sites（以 platform_code+station_name 去重）
-      2. UPSERT station_charger_units（以 station_id+platform_unit_id 去重）
-      3. INSERT connector_status_snapshots（追加，不去重）
-      4. UPDATE collection_runs.collected_count + 1
+      2. INSERT connector_status_snapshots（追加，不去重；每行含充电桩信息）
+      3. UPDATE collection_runs.collected_count + 1
 
     任意步骤异常则整体回滚，站点不计入 processed，下次重试。
 
@@ -261,43 +259,31 @@ def save_station(run_id, station_data, time_period, collected_at):
                        ))
         station_id = cursor.lastrowid
 
-        # ── 2 & 3. 逐充电桩 UPSERT + 逐枪口 INSERT ───────────
+        # ── 2. 逐枪口 INSERT 快照（追加，保留历史）──────────────
         for unit in station_data.get("charger_units", []):
-            # UPSERT 充电桩
-            cursor.execute("""
-                           INSERT INTO station_charger_units
-                           (station_id, platform_unit_id, unit_name,
-                            raw_data, last_collected_at)
-                           VALUES (%s, %s, %s, %s, %s) ON DUPLICATE KEY
-                           UPDATE
-                               unit_name =
-                           VALUES (unit_name), raw_data =
-                           VALUES (raw_data), last_collected_at =
-                           VALUES (last_collected_at), id = LAST_INSERT_ID(id)
-                           """, (
-                               station_id,
-                               unit["id"],
-                               unit.get("name"),
-                               json.dumps(unit, ensure_ascii=False),
-                               collected_at,
-                           ))
-            unit_id = cursor.lastrowid
-
-            # INSERT 枪口快照（追加，保留历史）
             for connector in unit.get("connectors", []):
+                raw_data = {
+                    "unit": {
+                        "id": unit.get("id"),
+                        "name": unit.get("name"),
+                    },
+                    "connector": connector,
+                }
                 cursor.execute("""
                                INSERT INTO connector_status_snapshots
-                               (run_id, station_id, unit_id,
+                               (run_id, station_id,
+                                platform_unit_id, unit_name,
                                 connector_name, connector_type,
                                 power_text, power_kw,
                                 price_text, price_per_kwh,
                                 status, time_period,
                                 raw_data, collected_at)
-                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                                """, (
                                    run_id,
                                    station_id,
-                                   unit_id,
+                                   unit.get("id"),
+                                   unit.get("name"),
                                    connector.get("position", ""),
                                    connector.get("connector_type", ""),
                                    connector.get("power", ""),
@@ -306,11 +292,11 @@ def save_station(run_id, station_data, time_period, collected_at):
                                    _parse_price_per_kwh(connector.get("price")),
                                    connector.get("status", ""),
                                    time_period,
-                                   json.dumps(connector, ensure_ascii=False),
+                                   json.dumps(raw_data, ensure_ascii=False),
                                    collected_at,
                                ))
 
-        # ── 4. 批次进度 +1 ────────────────────────────────────
+        # ── 3. 批次进度 +1 ────────────────────────────────────
         cursor.execute("""
                        UPDATE collection_runs
                        SET collected_count = collected_count + 1

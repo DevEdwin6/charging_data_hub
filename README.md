@@ -30,9 +30,9 @@ pip install -r requirements.txt
 
 **1. 建库建表**
 
-执行项目 SQL 建表脚本（包含 `collection_runs`、`station_sites`、`station_charger_units`、`connector_status_snapshots` 四张表）。
+执行项目 SQL 建表脚本（包含 `collection_runs`、`station_sites`、`connector_status_snapshots` 三张表）。
 
-**2. 修改配置**（`run.py` 顶部）
+**2. 修改配置**（`config.py`）
 
 ```python
 # 数据库
@@ -41,9 +41,6 @@ DB_PORT     = 3306
 DB_USER     = "root"
 DB_PASSWORD = "your_password"
 DB_NAME     = "charging_data_hub"
-
-# 设备
-DEVICE_SERIAL = "7391e8d9"   # adb devices 确认
 ```
 
 **3. 确认设备并运行**
@@ -53,24 +50,29 @@ adb devices
 python run.py
 ```
 
-## 配置项（`run.py`）
+## 配置项（`config.py`）
 
 | 变量 | 默认值 | 说明 |
 |------|--------|------|
-| `DEVICE_SERIAL` | `"7391e8d9"` | ADB 设备序列号 |
-| `MAX_STATIONS` | `None` | 采集总量上限；`None` = 全部 |
-| `RUN_MODE` | `"full"` | `full` 初次全量；`refresh` 仅刷新枪口状态 |
+| `DB_HOST` / `DB_PORT` / `DB_USER` / `DB_PASSWORD` / `DB_NAME` | 见 `config.py` | MySQL 连接信息 |
+
+采集数量、运行模式和设备序列号仍在 `run.py` 顶部调整，不放入 `config.py`。
 
 ## 数据库结构
 
 ```
 collection_runs          采集批次（一次跨多天的任务 = 一条记录）
   └─ station_sites       站点（platform_code + station_name 唯一）
-       └─ station_charger_units   充电桩（物理设备，Charger ID 唯一）
-            └─ connector_status_snapshots   枪口状态快照（追加，保留历史）
+       └─ connector_status_snapshots   枪口状态快照（追加，保留历史；含充电桩信息）
 ```
 
-`connector_status_snapshots` 每次采集追加，含 `time_period`（day/night）和 `run_id`，支持跨时段价格分析。
+`connector_status_snapshots` 每次采集追加，含 `platform_unit_id`、`unit_name`、`time_period`（day/night）和 `run_id`，支持按充电桩、枪口、时段做价格和状态分析。
+
+旧库从 `station_charger_units + connector_status_snapshots` 合并到单表时，先执行：
+
+```sql
+source migrations/001_merge_charger_units_into_connector_status_snapshots.sql;
+```
 
 ## 断点续采
 
@@ -90,17 +92,13 @@ Map 页
                  ├→ _read_charger_units()     按充电桩分组读取枪口
                  ├→ read_detail_info()        状态 / 更新时间 / 备注
                  ├→ read_more_information()   完整地址 + 营业时间
-                 └→ get_location_coords()     坐标（三层策略）
+                 └→ get_location_coords()     Google Maps 坐标
                       └→ db.save_station()   事务写入 MySQL
 ```
 
-### 坐标获取（三层降级）
+### 坐标获取
 
-| 层级 | 方式 | 触发条件 |
-|------|------|---------|
-| 1 | Nominatim（站点名 + 简略地址） | 优先，无需操作设备 |
-| 2 | Nominatim（站点名 + 完整地址） | 层 1 未命中 |
-| 3 | Google Maps 分享链接展开 | 层 2 未命中，最慢 |
+直接打开 Google Maps，读取分享链接并从链接中解析坐标；不再调用 Nominatim 或 Google Geocoding API。
 
 ### 时段划分（EV Station PluZ）
 
@@ -137,7 +135,7 @@ station_data {
    - `PLATFORM_CODE`、`APP_PKG` 类常量
    - `get_time_period(dt)` 静态方法（定义该平台的时段规则）
    - `collect(results, processed, max_stations, run_id)` 采集主循环
-2. 复用 `utils.py` 中的 `dump()`、`click_node()`、`geocode_nominatim()` 等通用函数
+2. 复用 `utils.py` 中的 `dump()`、`click_node()` 等通用函数
 3. 在 `run.py` 中替换导入和实例化语句
 
 ## 注意事项
