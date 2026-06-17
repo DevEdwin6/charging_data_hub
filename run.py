@@ -12,6 +12,8 @@ run.py — 采集入口
 import sys
 import io
 import time
+from datetime import datetime
+from pathlib import Path
 import uiautomator2 as u2
 
 import config
@@ -22,6 +24,23 @@ from scrapers.ev_station_pluz import EVStationPluZScraper
 assert isinstance(sys.stdout, io.TextIOWrapper)
 sys.stdout.reconfigure(encoding="utf-8")
 
+# ── 日志同时输出到终端和文件 ──────────────────────────────────
+class _Tee:
+    def __init__(self, console, file):
+        self._console = console
+        self._file    = file
+    def write(self, data):
+        self._console.write(data)
+        self._file.write(data)
+    def flush(self):
+        self._console.flush()
+        self._file.flush()
+
+Path("logs").mkdir(exist_ok=True)
+_log_path = Path("logs") / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+_log_file = open(_log_path, "w", encoding="utf-8")
+sys.stdout = _Tee(sys.stdout, _log_file)
+
 # ══════════════════════════════════════════════════════════════
 # 采集参数
 #
@@ -31,7 +50,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 # RUN_MODE     = 'refresh' → 状态刷新（重新采集所有站点快照）
 # ══════════════════════════════════════════════════════════════
 DEVICE_SERIAL = "7391e8d9"
-MAX_STATIONS = None
+MAX_STATIONS = 1325
 RUN_MODE = "full"
 
 # ── 初始化数据库连接 ──────────────────────────────────────────
@@ -49,7 +68,9 @@ print("数据库连接成功\n")
 run_id = db.find_or_create_run(EVStationPluZScraper.PLATFORM_CODE, RUN_MODE)
 
 # ── 从 DB 加载当前批次已处理站点（断点续采）──────────────────
-processed = db.get_processed_stations(EVStationPluZScraper.PLATFORM_CODE, run_id)
+time_period = EVStationPluZScraper.get_time_period(datetime.now())
+print(f"当前时段：{time_period}（白天 09:00–22:00，夜间 22:00–09:00）")
+processed = db.get_processed_stations(EVStationPluZScraper.PLATFORM_CODE, run_id, time_period)
 
 target_desc = f"{MAX_STATIONS} 个站点" if MAX_STATIONS is not None else "全部站点"
 print(f"开始采集，目标：{target_desc}  批次：run_id={run_id}\n")
@@ -77,7 +98,9 @@ try:
     db.complete_run(run_id)
 except KeyboardInterrupt:
     print("\n[中断] Ctrl+C，已保存进度，下次运行自动续采")
-
-print(f"\n{'=' * 60}")
-print(f"本次会话共采集 {len(results)} 个站点，详情见上方实时输出")
-print(f"{'=' * 60}")
+finally:
+    print(f"\n{'=' * 60}")
+    print(f"本次会话共采集 {len(results)} 个站点，详情见上方实时输出")
+    print(f"日志已保存至：{_log_path}")
+    print(f"{'=' * 60}")
+    _log_file.close()

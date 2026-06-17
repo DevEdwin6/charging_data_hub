@@ -1,0 +1,845 @@
+﻿<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>EV Stations Thailand — Find EV Charging Stations on One Map</title>
+<meta name="description" content="Find 1,829 EV charging stations across Thailand from PTT EV, Spark/BCP, and iGreen+. Filter by DC fast charger, AC, number of heads, and more.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EV Stations Thailand">
+<meta property="og:title" content="EV Stations Thailand — Find EV Charging Stations on One Map">
+<meta property="og:description" content="Find 1,829 EV charging stations across Thailand from PTT EV, Spark/BCP, and iGreen+. Filter by DC fast charger, AC, number of heads, and more.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EV Stations Thailand — Find EV Charging Stations on One Map">
+<meta name="twitter:description" content="Find 1,829 EV charging stations across Thailand from PTT EV, Spark/BCP, and iGreen+.">
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com">
+<link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com">
+<link rel="preload" href="data/ptt.js" as="script">
+<script>(function(){var t=localStorage.getItem('evmap.theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.css">
+<link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* ─── Index-specific layout ─── */
+  .controls {
+    padding: 0 16px 12px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+  }
+  .search-wrap {
+    position: relative;
+  }
+  .search-wrap .icon {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    color: var(--muted-2); pointer-events: none; font-size: 14px;
+  }
+  .search-wrap .input { padding-left: 38px; padding-right: 38px; }
+  .search-wrap .clear {
+    position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    padding: 4px 8px; border-radius: var(--r-1); display: none;
+  }
+  .search-wrap .clear:hover { background: var(--panel-2); color: var(--text); }
+  .search-wrap.has-value .clear { display: block; }
+  .filter-bar {
+    display: flex; gap: 0; flex-wrap: nowrap; align-items: center;
+    padding: 8px 16px 12px;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto; scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-section { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+  .filter-sep {
+    width: 1px; height: 22px; background: var(--line);
+    margin: 0 12px; flex-shrink: 0;
+  }
+  .filter-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: .1em;
+    color: var(--muted-2); font-weight: 700; white-space: nowrap;
+    flex-shrink: 0; padding-right: 2px;
+  }
+  .filter-end {
+    margin-left: auto; padding-left: 12px; flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .filter-reset {
+    background: none; border: 1px solid var(--line); color: var(--muted);
+    font-size: 12px; padding: 4px 12px; border-radius: var(--r-full);
+    cursor: pointer; font-family: inherit; font-weight: 500; white-space: nowrap;
+    transition: border-color var(--t-fast), color var(--t-fast);
+  }
+  .filter-reset:hover { border-color: var(--danger); color: var(--danger); }
+  /* Segmented control for heads filter */
+  .seg-group {
+    display: flex; align-items: center; gap: 0;
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: var(--r-full); padding: 2px;
+  }
+  .seg-btn {
+    background: transparent; border: none; color: var(--muted);
+    font-size: 12.5px; font-weight: 500; font-family: inherit;
+    padding: 4px 12px; border-radius: var(--r-full); cursor: pointer;
+    transition: background var(--t-fast), color var(--t-fast);
+    white-space: nowrap;
+  }
+  .seg-btn:hover { color: var(--text); }
+  .seg-btn.active { background: var(--panel-2); color: var(--text); font-weight: 600; }
+
+  main {
+    display: flex;
+    height: calc(100vh - var(--header-h) - 122px);
+    overflow: hidden;
+  }
+  #list {
+    width: 420px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid var(--line);
+    background: var(--bg);
+    scroll-behavior: smooth;
+    transition: width var(--t-slow) var(--ease), border-color var(--t-slow);
+  }
+  main.sidebar-collapsed #list {
+    width: 0;
+    border-color: transparent;
+    overflow: hidden;
+  }
+
+  /* Sidebar collapse toggle tab */
+  main { position: relative; }
+  .sidebar-toggle-btn {
+    position: absolute;
+    left: 420px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1200;
+    width: 24px; height: 64px;
+    background: var(--panel);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-1);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: var(--muted);
+    box-shadow: var(--shadow-2);
+    transition: background var(--t-fast), color var(--t-fast), left var(--t-slow) var(--ease);
+  }
+  .sidebar-toggle-btn:hover { background: var(--panel-2); color: var(--text); }
+  main.sidebar-collapsed .sidebar-toggle-btn { left: 0; }
+  .list-head {
+    padding: 12px 18px;
+    font-size: 12px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    background: var(--list-head-bg);
+    backdrop-filter: blur(8px);
+    position: sticky; top: 0; z-index: 5;
+    text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 600;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .sort-btn {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em;
+    padding: 4px 8px; border-radius: 6px;
+  }
+  .sort-btn:hover { color: var(--text); background: var(--panel-2); }
+
+  .card {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    transition: background var(--t-fast);
+    position: relative;
+  }
+  .card:hover { background: var(--panel); }
+  .card.active {
+    background: var(--panel-2);
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+  .card-top {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 6px;
+  }
+  .card-name {
+    font-size: 14.5px; font-weight: 600; line-height: 1.35;
+    flex: 1; letter-spacing: -.01em;
+  }
+  .card-distance {
+    font-size: 11px; color: var(--accent); font-weight: 700;
+    background: rgba(92,200,255,.12); padding: 2px 7px; border-radius: var(--r-full);
+    flex-shrink: 0;
+  }
+  .card-meta {
+    font-size: 12.5px; color: var(--muted); margin-bottom: 8px;
+    line-height: 1.5;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .heads { display: flex; gap: 6px; flex-wrap: wrap; }
+  .head-pill {
+    font-size: 11px; padding: 3px 9px; border-radius: var(--r-1);
+    background: var(--bg-2); border: 1px solid var(--line);
+    font-weight: 600;
+  }
+  .head-pill.dc { color: #fda4af; border-color: rgba(244,63,94,.3); background: rgba(244,63,94,.08); }
+  .head-pill.ac { color: #93c5fd; border-color: rgba(59,130,246,.3); background: rgba(59,130,246,.08); }
+  .head-pill .star { color: #facc15; }
+  .card-actions {
+    display: flex; gap: 6px; margin-top: 10px;
+  }
+
+  #map { flex: 1; height: 100%; background: var(--bg-2); position: relative; }
+
+  .toggle-view {
+    display: none;
+    background: var(--accent); color: #00131f; border: none;
+    padding: 10px 18px; border-radius: var(--r-full);
+    cursor: pointer; font-size: 13px; font-weight: 700;
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    z-index: 1000; box-shadow: var(--shadow-2);
+    align-items: center; gap: 6px;
+  }
+  .toggle-view:active { transform: translateX(-50%) scale(.96); }
+
+  /* Leaflet popup theming */
+  .leaflet-popup-content-wrapper {
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-2);
+    box-shadow: var(--shadow-3);
+  }
+  .leaflet-popup-tip { background: var(--panel); border: 1px solid var(--line); }
+  .leaflet-popup-content { margin: 14px 16px; font-size: 13px; min-width: 220px; }
+  .leaflet-container a.leaflet-popup-close-button { color: var(--muted); }
+  .popup-name { font-weight: 700; margin-bottom: 6px; font-size: 14.5px; letter-spacing: -.01em; }
+  .popup-meta { color: var(--muted); font-size: 12.5px; margin-bottom: 8px; line-height: 1.5; }
+  .popup-actions { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+
+  /* Marker logo */
+  .marker-logo {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    border: 2.5px solid white;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.35), 0 4px 12px rgba(0,0,0,.35);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    transition: transform var(--t-fast);
+    cursor: pointer;
+  }
+  .marker-logo.spark  { background: var(--spark); }
+  .marker-logo.igreen { background: var(--igreen); }
+  .marker-logo.ptt    { background: var(--ptt); }
+  .marker-logo:hover  { transform: scale(1.25); }
+  .marker-logo img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 4px;
+    border-radius: 50%;
+  }
+  .marker-logo .logo-abbr {
+    font-size: 9px; font-weight: 800; color: #fff;
+    letter-spacing: -.03em; line-height: 1; text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+  }
+
+  /* Map controls overlay */
+  .map-fab {
+    position: absolute; right: 16px; bottom: 24px; z-index: 500;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .map-fab .btn {
+    width: 44px; height: 44px; padding: 0; border-radius: 50%;
+    background: var(--panel); border: 1px solid var(--line-strong);
+    box-shadow: var(--shadow-2); font-size: 18px;
+  }
+  .map-fab .btn:hover { background: var(--panel-2); }
+
+  /* Mobile */
+  @media (max-width: 880px) {
+    .controls, .filter-bar { padding-left: 12px; padding-right: 12px; }
+    .header-stat { display: none; }
+    main {
+      flex-direction: column;
+      height: calc(100vh - var(--header-h) - 174px);
+    }
+    #list { width: 100%; flex-shrink: 1; transition: none; }
+    main.show-map #list { display: none; }
+    main.show-map #map { display: flex; }
+    main.show-list #list { display: block; }
+    main.show-list #map { display: none; }
+    .toggle-view { display: inline-flex; }
+    .sidebar-toggle-btn { display: none; }
+    #list { border-right: none; }
+    .filter-bar { padding-bottom: 10px; }
+    .filter-sep { margin: 0 8px; }
+  }
+
+  /* Loading overlay */
+  .loading {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(10,16,32,.85); backdrop-filter: blur(4px); z-index: 800;
+    flex-direction: column; gap: 12px;
+  }
+  .spinner {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: 3px solid var(--line); border-top-color: var(--accent);
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="app-header-inner">
+    <a class="brand" href="index.html" id="brand"></a>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html" data-i18n="nav_home">หน้าหลัก</a>
+      <a class="nav-link" href="about.html" data-i18n="nav_about">เกี่ยวกับเรา</a>
+      <a class="nav-link" href="interested.html" data-i18n="nav_interested">สนใจทำสถานี</a>
+      <a class="nav-link" href="add-info.html" data-i18n="nav_addInfo">เพิ่มข้อมูล</a>
+      <a class="nav-link" href="blog.html" data-i18n="nav_blog">บล็อก</a>
+    </nav>
+    <div class="header-spacer"></div>
+    <div class="header-stat" id="stats"></div>
+    <div class="header-actions">
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">☰</button>
+      <button class="btn btn-ghost lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <button class="btn btn-ghost btn-icon" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle theme">☀️</button>
+      <a class="btn btn-ghost btn-icon" href="admin.html" title="Admin" aria-label="Admin">⚙️</a>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="search-wrap" id="searchWrap">
+      <span class="icon">🔍</span>
+      <input type="search" class="input" id="search" data-i18n-placeholder="search_placeholder" placeholder="ค้นหาสถานี จังหวัด อำเภอ…" autocomplete="off" aria-label="Search">
+      <button class="clear" id="searchClear" aria-label="Clear search">✕</button>
+    </div>
+    <button class="btn" id="locateBtn" data-i18n="btn_nearMe" data-i18n-title="btn_nearMe">📍 ใกล้ฉัน</button>
+  </div>
+  <div class="filter-bar">
+    <div class="filter-section">
+      <span class="filter-label" data-i18n="filter_provider">ผู้ให้บริการ</span>
+      <button class="chip spark active" data-provider="spark">Spark/BCP <span class="chip-count" data-count="spark">0</span></button>
+      <button class="chip igreen active" data-provider="igreen">iGreen+ <span class="chip-count" data-count="igreen">0</span></button>
+      <button class="chip ptt active" data-provider="ptt">PTT EV <span class="chip-count" data-count="ptt">0</span></button>
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-section">
+      <span class="filter-label" data-i18n="filter_type">ประเภท</span>
+      <button class="chip active" data-type="DC">⚡ DC Fast</button>
+      <button class="chip active" data-type="AC">🔌 AC</button>
+    </div>
+    <div class="filter-sep"></div>
+    <div class="filter-section">
+      <span class="filter-label" data-i18n="filter_minHeads">หัวชาร์จขั้นต่ำ</span>
+      <div class="seg-group">
+        <button class="seg-btn active" data-heads="0" data-i18n="filter_any">ทั้งหมด</button>
+        <button class="seg-btn" data-heads="2">2+</button>
+        <button class="seg-btn" data-heads="4">4+</button>
+        <button class="seg-btn" data-heads="8">8+</button>
+      </div>
+    </div>
+    <div class="filter-end">
+      <button class="filter-reset hidden" id="clearFilters" data-i18n="filter_reset" data-i18n-title="filter_reset">↺ รีเซ็ต</button>
+    </div>
+  </div>
+</header>
+<main id="main" class="show-map">
+  <button class="sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle sidebar">◀</button>
+  <aside id="list" aria-label="Stations list">
+    <div class="list-head">
+      <span id="listHead" data-i18n="list_head_stations">สถานี</span>
+      <button class="sort-btn" id="sortBtn"></button>
+    </div>
+    <div id="listBody"></div>
+  </aside>
+  <section id="map" aria-label="Map">
+    <div class="map-fab">
+      <button class="btn" id="zoomFit" data-i18n-title="btn_fitToFiltered" aria-label="Fit to view">🔭</button>
+      <button class="btn" id="locateMap" data-i18n-title="btn_myLocation" aria-label="My location">📍</button>
+    </div>
+  </section>
+</main>
+<button class="toggle-view" id="toggleView"></button>
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="data/spark.js"></script>
+<script src="data/igreen.js"></script>
+<script src="data/ptt.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(() => {
+  // ─── i18n boot ───
+  EVi18n.apply();
+  document.getElementById('sortBtn').textContent = EVi18n.t('sort_prefix') + EVi18n.t('sort_default');
+  document.getElementById('toggleView').textContent = EVi18n.t('toggle_list');
+
+  EVApp.recordPageView('index');
+  EVApp.renderBrand(document.getElementById('brand'));
+  const stations = EVApp.loadStations();
+
+  const state = {
+    search: '',
+    providers: new Set(['spark', 'igreen', 'ptt']),
+    types: new Set(['DC', 'AC']),
+    minHeads: 0,
+    activeId: null,
+    sort: 'default',
+    userLoc: null,
+  };
+
+  document.getElementById('stats').textContent =
+    EVi18n.t('stats_stations', { n: stations.length.toLocaleString() });
+
+  const counts = { spark: 0, igreen: 0, ptt: 0 };
+  stations.forEach(s => counts[s.provider]++);
+  document.querySelectorAll('[data-count]').forEach(el => {
+    el.textContent = counts[el.dataset.count].toLocaleString();
+  });
+
+  // ─── Language toggle ───
+  document.getElementById('langToggle').addEventListener('click', () => {
+    EVi18n.setLang(EVi18n.nextLang());
+    EVi18n.apply();
+    // Update dynamic strings that aren't covered by data-i18n
+    document.getElementById('stats').textContent =
+      EVi18n.t('stats_stations', { n: stations.length.toLocaleString() });
+    sortBtn.textContent = EVi18n.t('sort_prefix') + EVi18n.t('sort_' + state.sort);
+    const main = document.getElementById('main');
+    document.getElementById('toggleView').textContent =
+      main.classList.contains('show-map') ? EVi18n.t('toggle_list') : EVi18n.t('toggle_map');
+    const collapsed = main.classList.contains('sidebar-collapsed');
+    sidebarToggle.title = collapsed ? EVi18n.t('sidebar_expand') : EVi18n.t('sidebar_collapse');
+    rerender();
+  });
+
+  // ─── Sidebar collapse ───
+  const sidebarToggle = document.getElementById('sidebarToggle');
+  const mainEl = document.getElementById('main');
+  sidebarToggle.addEventListener('click', () => {
+    const collapsed = mainEl.classList.toggle('sidebar-collapsed');
+    sidebarToggle.textContent = collapsed ? '▶' : '◀';
+    sidebarToggle.title = collapsed ? EVi18n.t('sidebar_expand') : EVi18n.t('sidebar_collapse');
+    setTimeout(() => map.invalidateSize(), 380);
+  });
+
+  // ─── Theme toggle ───
+  const TILE_DARK  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  const TILE_LIGHT = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+
+  // ─── Hamburger nav toggle ───
+  const navHamburger = document.getElementById('navHamburger');
+  const mainNav = document.getElementById('mainNav');
+  navHamburger.addEventListener('click', () => {
+    const open = mainNav.classList.toggle('open');
+    navHamburger.setAttribute('aria-expanded', open);
+    navHamburger.textContent = open ? '✕' : '☰';
+  });
+  document.addEventListener('click', (e) => {
+    if (!mainNav.contains(e.target) && e.target !== navHamburger) {
+      mainNav.classList.remove('open');
+      navHamburger.setAttribute('aria-expanded', 'false');
+      navHamburger.textContent = '☰';
+    }
+  });
+
+  const themeBtn = document.getElementById('themeToggle');
+  function syncThemeBtn() {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    themeBtn.textContent = isDark ? '☀️' : '🌙';
+    themeBtn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  syncThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    EVApp.setTheme(next);
+    syncThemeBtn();
+    tileLayer.setUrl(next === 'light' ? TILE_LIGHT : TILE_DARK);
+  });
+
+  // ─── Map ───
+  const map = L.map('map', { preferCanvas: true, zoomControl: true }).setView([13.736, 100.523], 6);
+  const tileLayer = L.tileLayer(EVApp.getTheme() === 'light' ? TILE_LIGHT : TILE_DARK, {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd', maxZoom: 19,
+  }).addTo(map);
+
+  function debounce(fn, ms) {
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+  }
+
+  let _distCache = new Map();
+  let _distCacheLoc = null;
+  function cachedDist(s) {
+    if (!state.userLoc) return null;
+    const loc = state.userLoc[0] + ',' + state.userLoc[1];
+    if (loc !== _distCacheLoc) { _distCache.clear(); _distCacheLoc = loc; }
+    if (!_distCache.has(s.id)) {
+      _distCache.set(s.id, distanceKm(state.userLoc[0], state.userLoc[1], s.lat, s.lon));
+    }
+    return _distCache.get(s.id);
+  }
+
+  const markerById = new Map();
+  const markerLayer = L.markerClusterGroup({
+    chunkedLoading: true,
+    maxClusterRadius: (zoom) => zoom >= 10 ? 40 : 70,
+    disableClusteringAtZoom: 13,
+    showCoverageOnHover: false,
+    animate: true,
+  });
+
+  const PROVIDER_ABBR = { spark: 'SP', igreen: 'IG', ptt: 'PTT' };
+
+  function makeIcon(provider) {
+    const logo = EVApp.getBrandLogo(provider);
+    const inner = logo
+      ? `<img src="${EVApp.escapeHtml(logo)}" alt="${provider}">`
+      : `<span class="logo-abbr">${PROVIDER_ABBR[provider] || '?'}</span>`;
+    return L.divIcon({
+      className: '',
+      html: `<div class="marker-logo ${provider}">${inner}</div>`,
+      iconSize: [34, 34],
+      iconAnchor: [17, 17],
+    });
+  }
+
+  function brandBadge(s) {
+    const logo = EVApp.getBrandLogo(s.provider);
+    const img = logo ? `<img src="${EVApp.escapeHtml(logo)}" alt="" style="height:13px;width:auto;vertical-align:middle;border-radius:2px;">` : '';
+    return `<span class="badge ${s.provider}">${img}${s.providerLabel}</span>`;
+  }
+
+  function popupHtml(s) {
+    const heads = [];
+    if (s.dc) heads.push(`<span class="head-pill dc">⚡ DC × ${s.dc}</span>`);
+    if (s.ac) heads.push(`<span class="head-pill ac">🔌 AC × ${s.ac}</span>`);
+    const meta = [s.district, s.province].filter(Boolean).join(', ');
+    return `
+      <div class="popup-name">${EVApp.escapeHtml(EVApp.cleanName(s.name))}</div>
+      <div class="popup-meta">
+        ${brandBadge(s)}
+        ${meta ? ` · ${EVApp.escapeHtml(meta)}` : ''}
+      </div>
+      ${s.address ? `<div class="popup-meta">${EVApp.escapeHtml(s.address)}</div>` : ''}
+      <div class="heads">${heads.join('')}</div>
+      <div class="popup-actions">
+        <a class="btn btn-primary btn-sm" href="${EVApp.googleMapsUrl(s)}" target="_blank" rel="noopener">${EVi18n.t('btn_directions')}</a>
+        <a class="btn btn-sm" href="${EVApp.stationUrl(s)}">${EVi18n.t('btn_details')}</a>
+      </div>
+    `;
+  }
+
+  stations.forEach(s => {
+    const m = L.marker([s.lat, s.lon], { icon: makeIcon(s.provider) });
+    m.bindPopup(() => popupHtml(s), { maxWidth: 320, closeButton: true });
+    m.on('click', () => setActive(s.id, false));
+    markerById.set(s.id, m);
+  });
+
+  function refreshMarkers(filtered) {
+    markerLayer.clearLayers();
+    const set = new Set(filtered.map(s => s.id));
+    for (const [id, m] of markerById) {
+      if (set.has(id)) markerLayer.addLayer(m);
+    }
+    if (!map.hasLayer(markerLayer)) map.addLayer(markerLayer);
+  }
+
+  // ─── List ───
+  const listBody = document.getElementById('listBody');
+  const listHead = document.getElementById('listHead');
+
+  function fmtDistance(km) {
+    if (km == null) return '';
+    if (km < 1) return Math.round(km * 1000) + ' m';
+    if (km < 10) return km.toFixed(1) + ' km';
+    return Math.round(km) + ' km';
+  }
+  function distanceKm(a, b, c, d) {
+    const R = 6371;
+    const toRad = x => x * Math.PI / 180;
+    const dLat = toRad(c - a), dLon = toRad(d - b);
+    const s = Math.sin(dLat/2)**2 + Math.cos(toRad(a))*Math.cos(toRad(c))*Math.sin(dLon/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(s), Math.sqrt(1 - s));
+  }
+
+  function cardHtml(s) {
+    const heads = [];
+    if (s.dc) heads.push(`<span class="head-pill dc">⚡ DC × ${s.dc}</span>`);
+    if (s.ac) heads.push(`<span class="head-pill ac">🔌 AC × ${s.ac}</span>`);
+    const metaParts = [s.district, s.province].filter(Boolean).join(', ');
+    const dist = cachedDist(s);
+    return `
+      <div class="card ${state.activeId === s.id ? 'active' : ''}" data-id="${s.id}" tabindex="0">
+        <div class="card-top">
+          ${brandBadge(s)}
+          <div class="card-name">${EVApp.escapeHtml(EVApp.cleanName(s.name))}</div>
+          ${dist != null ? `<span class="card-distance">${fmtDistance(dist)}</span>` : ''}
+        </div>
+        ${metaParts ? `<div class="card-meta">📍 ${EVApp.escapeHtml(metaParts)}</div>` : ''}
+        ${s.address ? `<div class="card-meta">${EVApp.escapeHtml(s.address)}</div>` : ''}
+        <div class="heads">${heads.join('')}</div>
+        <div class="card-actions">
+          <a class="btn btn-primary btn-sm" href="${EVApp.googleMapsUrl(s)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${EVi18n.t('btn_directions')}</a>
+          <a class="btn btn-sm" href="${EVApp.stationUrl(s)}" onclick="event.stopPropagation()">${EVi18n.t('btn_details')}</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderList(visible) {
+    listHead.textContent = EVi18n.t('list_head_inView', { n: visible.length.toLocaleString() });
+    if (visible.length === 0) {
+      listBody.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">🔌</div>
+          <div class="empty-title">${EVi18n.t('list_empty_title')}</div>
+          <div>${EVi18n.t('list_empty_body')}</div>
+        </div>`;
+      return;
+    }
+    const cap = 200;
+    const slice = visible.slice(0, cap);
+    listBody.innerHTML = slice.map(cardHtml).join('') +
+      (visible.length > cap
+        ? `<div class="empty"><div>${EVi18n.t('list_showing_cap', { cap, total: visible.length.toLocaleString() })}</div></div>`
+        : '');
+  }
+
+  function sortStations(arr) {
+    if (state.sort === 'distance' && state.userLoc) {
+      return [...arr].sort((a,b) => cachedDist(a) - cachedDist(b));
+    }
+    if (state.sort === 'heads') {
+      return [...arr].sort((a,b) => (b.dc + b.ac) - (a.dc + a.ac));
+    }
+    return arr;
+  }
+
+  function filterStations() {
+    const q = state.search.trim().toLowerCase();
+    return stations.filter(s => {
+      if (!state.providers.has(s.provider)) return false;
+      const wantDc = state.types.has('DC'), wantAc = state.types.has('AC');
+      if (!wantDc && !wantAc) return false;
+      if (!((wantDc && s.dc > 0) || (wantAc && s.ac > 0))) return false;
+      if (state.minHeads > 0 && (s.dc + s.ac) < state.minHeads) return false;
+      if (!q) return true;
+      const hay = `${s.name} ${s.province} ${s.district} ${s.address}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }
+
+  function rerender() {
+    const filtered = sortStations(filterStations());
+    const size = map.getSize();
+    const visible = (size.x > 0 && size.y > 0)
+      ? filtered.filter(s => map.getBounds().contains([s.lat, s.lon]))
+      : filtered;
+    renderList(visible);
+    refreshMarkers(filtered);
+  }
+
+  function setActive(id, fly = true) {
+    state.activeId = id;
+    const s = stations.find(x => x.id === id);
+    if (!s) return;
+    if (fly) map.setView([s.lat, s.lon], Math.max(map.getZoom(), 15), { animate: true });
+    const m = markerById.get(id);
+    if (m) markerLayer.zoomToShowLayer(m, () => m.openPopup());
+    document.querySelectorAll('.card').forEach(c => c.classList.toggle('active', c.dataset.id === id));
+    if (window.matchMedia('(max-width: 880px)').matches) {
+      document.getElementById('main').classList.remove('show-list');
+      document.getElementById('main').classList.add('show-map');
+      document.getElementById('toggleView').textContent = EVi18n.t('toggle_list');
+      map.invalidateSize();
+    }
+  }
+
+  // ─── Toast ───
+  function toast(msg, kind = '') {
+    const el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    el.textContent = msg;
+    document.getElementById('toastWrap').appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+  }
+
+  // ─── Events ───
+  const searchInput = document.getElementById('search');
+  const searchWrap = document.getElementById('searchWrap');
+  const debouncedSearchRerender = debounce(() => { updateResetBtn(); rerender(); }, 150);
+  searchInput.addEventListener('input', e => {
+    state.search = e.target.value;
+    searchWrap.classList.toggle('has-value', !!state.search);
+    debouncedSearchRerender();
+  });
+  document.getElementById('searchClear').addEventListener('click', () => {
+    searchInput.value = ''; state.search = '';
+    searchWrap.classList.remove('has-value');
+    updateResetBtn(); rerender(); searchInput.focus();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault(); searchInput.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === searchInput) {
+      searchInput.value = ''; state.search = '';
+      searchWrap.classList.remove('has-value');
+      rerender();
+    }
+  });
+
+  document.querySelectorAll('[data-provider]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const p = chip.dataset.provider;
+      if (state.providers.has(p)) state.providers.delete(p); else state.providers.add(p);
+      chip.classList.toggle('active');
+      updateResetBtn(); rerender();
+    });
+  });
+  document.querySelectorAll('[data-type]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const t = chip.dataset.type;
+      if (state.types.has(t)) state.types.delete(t); else state.types.add(t);
+      chip.classList.toggle('active');
+      updateResetBtn(); rerender();
+    });
+  });
+  document.querySelectorAll('[data-heads]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.minHeads = parseInt(btn.dataset.heads, 10);
+      document.querySelectorAll('[data-heads]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      updateResetBtn(); rerender();
+    });
+  });
+  function updateResetBtn() {
+    const isDefault = state.providers.size === 3 && state.types.size === 2
+      && state.minHeads === 0 && !state.search;
+    document.getElementById('clearFilters').classList.toggle('hidden', isDefault);
+  }
+  document.getElementById('clearFilters').addEventListener('click', () => {
+    state.providers = new Set(['spark', 'igreen', 'ptt']);
+    document.querySelectorAll('[data-provider]').forEach(c => c.classList.add('active'));
+    state.types = new Set(['DC', 'AC']);
+    document.querySelectorAll('[data-type]').forEach(c => c.classList.add('active'));
+    state.minHeads = 0;
+    document.querySelectorAll('[data-heads]').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-heads="0"]').classList.add('active');
+    state.search = ''; searchInput.value = '';
+    searchWrap.classList.remove('has-value');
+    updateResetBtn(); rerender(); searchInput.focus();
+  });
+
+  listBody.addEventListener('click', e => {
+    const card = e.target.closest('.card');
+    if (!card) return;
+    setActive(card.dataset.id);
+  });
+  listBody.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const card = e.target.closest('.card');
+      if (card) setActive(card.dataset.id);
+    }
+  });
+
+  document.getElementById('toggleView').addEventListener('click', () => {
+    const main = document.getElementById('main');
+    const btn = document.getElementById('toggleView');
+    if (main.classList.contains('show-list')) {
+      main.classList.replace('show-list', 'show-map');
+      btn.textContent = EVi18n.t('toggle_list');
+    } else {
+      main.classList.replace('show-map', 'show-list');
+      btn.textContent = EVi18n.t('toggle_map');
+    }
+    map.invalidateSize();
+  });
+
+  // Sort cycle
+  const sortBtn = document.getElementById('sortBtn');
+  const SORTS = [
+    { v: 'default',  key: 'sort_default' },
+    { v: 'distance', key: 'sort_distance', needsLoc: true },
+    { v: 'heads',    key: 'sort_heads' },
+  ];
+  sortBtn.addEventListener('click', () => {
+    const idx = SORTS.findIndex(s => s.v === state.sort);
+    let next = SORTS[(idx + 1) % SORTS.length];
+    if (next.needsLoc && !state.userLoc) {
+      toast(EVi18n.t('toast_nearMeFirst'));
+      next = SORTS[(idx + 2) % SORTS.length];
+    }
+    state.sort = next.v;
+    sortBtn.textContent = EVi18n.t('sort_prefix') + EVi18n.t(next.key);
+    rerender();
+  });
+
+  // Geolocation
+  function locate(onMap = false) {
+    if (!navigator.geolocation) { toast(EVi18n.t('toast_geoNotSupported'), 'danger'); return; }
+    toast(EVi18n.t('toast_locating'));
+    navigator.geolocation.getCurrentPosition(pos => {
+      state.userLoc = [pos.coords.latitude, pos.coords.longitude];
+      L.circleMarker(state.userLoc, {
+        radius: 8, color: '#fff', weight: 2, fillColor: '#5cc8ff', fillOpacity: 1,
+      }).addTo(map).bindPopup(EVi18n.t('station_you_are_here'));
+      L.circle(state.userLoc, { radius: 500, color: '#5cc8ff', weight: 1, fillOpacity: .08 }).addTo(map);
+      map.setView(state.userLoc, onMap ? 14 : 12);
+      state.sort = 'distance';
+      sortBtn.textContent = EVi18n.t('sort_prefix') + EVi18n.t('sort_distance');
+      rerender();
+      toast(EVi18n.t('toast_nearYou'), 'success');
+    }, err => {
+      toast(EVi18n.t('toast_geoError', { error: err.message }), 'danger');
+    }, { enableHighAccuracy: true, timeout: 10000 });
+  }
+  document.getElementById('locateBtn').addEventListener('click', () => locate(false));
+  document.getElementById('locateMap').addEventListener('click', () => locate(true));
+
+  document.getElementById('zoomFit').addEventListener('click', () => {
+    const filtered = filterStations();
+    if (!filtered.length) return;
+    const bounds = L.latLngBounds(filtered.map(s => [s.lat, s.lon]));
+    map.fitBounds(bounds, { padding: [40, 40] });
+  });
+
+  // ─── Brand logos on filter chips ───
+  function renderChipLogos() {
+    document.querySelectorAll('[data-provider]').forEach(chip => {
+      const logo = EVApp.getBrandLogo(chip.dataset.provider);
+      let img = chip.querySelector('.chip-brand-logo');
+      if (logo && !img) {
+        img = document.createElement('img');
+        img.className = 'chip-brand-logo';
+        img.alt = '';
+        chip.prepend(img);
+      }
+      if (logo && img) img.src = logo;
+      if (!logo && img) img.remove();
+    });
+  }
+
+  // ─── Boot ───
+  renderChipLogos();
+  map.on('moveend', debounce(rerender, 120));
+  rerender();
+})();
+</script>
+</body>
+</html>
+

@@ -288,6 +288,16 @@ class EVStationPluZScraper:
             except RemoteDisconnected:
                 ensure_connected(self.d)
 
+    def _fast_scroll_down(self):
+        """快速滚动，用于跳过已知已处理区域，不等待列表稳定。"""
+        for _ in range(2):
+            try:
+                self.d.swipe(540, 1800, 540, 700, duration=0.3)
+                time.sleep(0.4)
+                return
+            except RemoteDisconnected:
+                ensure_connected(self.d)
+
     def click_station_in_list(self, name):
         """
         在全屏列表页中找到指定名称的站点行并点击。
@@ -479,9 +489,10 @@ class EVStationPluZScraper:
                             current_uid = uid
 
                 elif kind == "card" and current_uid:
-                    if content in seen_cards:
+                    card_key = f"{current_uid}::{content}"
+                    if card_key in seen_cards:
                         continue
-                    seen_cards.add(content)
+                    seen_cards.add(card_key)
 
                     connector = self._parse_connector_card(content)
                     if not connector:
@@ -785,7 +796,23 @@ class EVStationPluZScraper:
         def reached_max():
             return max_stations is not None and len(results) >= max_stations
 
+        # 记录上次找到目标时的滚动计数，下次从附近继续（避免 O(n²) 滚动）
+        resume_from = 0
+        # 跟踪当前时段，跨时段时重新加载 processed
+        active_period = self.get_time_period(datetime.now())
+
         while not reached_max():
+
+            # 检测时段切换（如采集跨越 09:00 或 22:00）
+            now_period = self.get_time_period(datetime.now())
+            if now_period != active_period:
+                print(f"\n[时段切换] {active_period} → {now_period}，重新加载已处理站点...")
+                fresh = db.get_processed_stations(self.PLATFORM_CODE, run_id, now_period)
+                processed.clear()
+                processed.update(fresh)
+                active_period = now_period
+                resume_from = 0  # 从头重新扫描
+                print(f"[时段切换] 当前时段已完成 {len(processed)} 站，其余将补采 {now_period} 价格\n")
 
             self.ensure_app_running()
 
@@ -799,10 +826,15 @@ class EVStationPluZScraper:
                 print("无法打开全屏列表页，停止")
                 break
 
-            # 滚动列表，找第一个未处理的站点
+            # 快速跳过已知已处理区域（回退 3 格防边界遗漏）
+            fast_to = max(0, resume_from - 3)
+            for _ in range(fast_to):
+                self._fast_scroll_down()
+
+            # 从 fast_to 继续向下扫描，找第一个未处理站点
             target = None
-            scrolls = 0
-            max_scroll = len(processed) + 50
+            scrolls = fast_to
+            max_scroll = max(len(processed) + 100, 1500)
 
             while scrolls <= max_scroll:
                 for s in self.read_list_page():
@@ -810,11 +842,17 @@ class EVStationPluZScraper:
                         target = s
                         break
                 if target:
+                    resume_from = scrolls
                     break
                 scrolls += 1
                 self.scroll_list_page_down()
 
             if target is None:
+                if fast_to > 0:
+                    # 部分扫描未找到，列表可能已重排；重置后从头全量扫描
+                    print("部分扫描未找到未处理站点，从头全量扫描...")
+                    resume_from = 0
+                    continue
                 print("没有更多未处理站点，采集完成")
                 break
 
@@ -885,15 +923,17 @@ class EVStationPluZScraper:
             if target["full_address"]:
                 print(f"  → 地址: {target['full_address']}")
 
-            # 坐标（打开 Google Maps 获取）
+            # 坐标（打开 Google Maps 获取）—— 模拟采集时暂时禁用
             self._last_google_url = None
-            coords = self.get_location_coords(
-                name,
-                target.get("address", ""),
-                target["full_address"],
-            )
-            target["lat"], target["lng"] = coords if coords else (None, None)
-            target["google_url"] = self._last_google_url
+            # coords = self.get_location_coords(
+            #     name,
+            #     target.get("address", ""),
+            #     target["full_address"],
+            # )
+            # target["lat"], target["lng"] = coords if coords else (None, None)
+            # target["google_url"] = self._last_google_url
+            target["lat"], target["lng"] = None, None
+            target["google_url"] = None
 
             elapsed = time.time() - station_start
             target["elapsed_sec"]    = round(elapsed, 1)

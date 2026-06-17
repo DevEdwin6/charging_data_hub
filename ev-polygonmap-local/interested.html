@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>สนใจทำสถานีชาร์จ EV — EV Stations Thailand</title>
+<meta name="description" content="สนใจร่วมเป็นส่วนหนึ่งของเครือข่ายสถานีชาร์จ EV ในประเทศไทย? ลงทะเบียนความสนใจของคุณที่นี่">
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<script>(function(){var t=localStorage.getItem('evmap.theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* ─── Hero ─── */
+  .interested-hero {
+    background: linear-gradient(135deg, rgba(92,200,255,.08) 0%, transparent 60%);
+    border-bottom: 1px solid var(--line);
+    padding: 56px 20px 48px;
+    text-align: center;
+  }
+  .interested-hero .hero-icon {
+    font-size: 48px; margin-bottom: 16px; display: block;
+  }
+  .interested-hero h1 {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 800; letter-spacing: -.02em;
+    margin: 0 0 12px; line-height: 1.2;
+  }
+  .interested-hero p {
+    color: var(--muted); font-size: 16px;
+    max-width: 540px; margin: 0 auto; line-height: 1.65;
+  }
+
+  /* ─── Benefits ─── */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin: 32px 0;
+  }
+  .benefit-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--r-2); padding: 18px 16px; text-align: center;
+  }
+  .benefit-card .icon { font-size: 28px; display: block; margin-bottom: 8px; }
+  .benefit-card .title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .benefit-card .desc { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  /* ─── Form ─── */
+  .form-shell {
+    max-width: 600px; margin: 0 auto; padding: 40px 20px 60px;
+  }
+  .form-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--r-3); padding: 28px 24px;
+    box-shadow: var(--shadow-2);
+  }
+  .form-card h2 {
+    font-size: 20px; font-weight: 700; margin: 0 0 6px;
+  }
+  .form-card .subtitle {
+    color: var(--muted); font-size: 14px; margin: 0 0 24px;
+  }
+  .form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  }
+  @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+  .radio-group {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;
+  }
+  @media (max-width: 420px) { .radio-group { grid-template-columns: 1fr; } }
+  .radio-option {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 12px; border: 1px solid var(--line);
+    border-radius: var(--r-1); cursor: pointer;
+    transition: all var(--t-fast); font-size: 13.5px;
+  }
+  .radio-option:hover { border-color: var(--line-strong); background: var(--bg-2); }
+  .radio-option input[type=radio] { accent-color: var(--accent); }
+  .radio-option input[type=radio]:checked + span { color: var(--text); }
+  .radio-option:has(input:checked) { border-color: var(--accent); background: rgba(92,200,255,.06); }
+
+  /* ─── Thank-you state ─── */
+  .thank-you {
+    display: none; text-align: center; padding: 32px 16px;
+  }
+  .thank-you .ty-icon { font-size: 52px; margin-bottom: 16px; display: block; }
+  .thank-you h2 { font-size: 22px; font-weight: 700; margin: 0 0 10px; }
+  .thank-you p { color: var(--muted); font-size: 14px; line-height: 1.65; max-width: 380px; margin: 0 auto 24px; }
+
+  .char-count { font-size: 11px; color: var(--muted); text-align: right; margin-top: 3px; }
+  .required-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+  .required-star { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="app-header-inner">
+    <a class="back" href="index.html">← กลับ</a>
+    <a class="brand" href="index.html" id="brand"></a>
+    <div class="header-spacer"></div>
+    <div class="header-actions">
+      <button class="btn btn-ghost lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <button class="btn btn-ghost btn-icon" id="themeToggle" title="Toggle theme">☀️</button>
+      <a class="btn btn-ghost btn-icon" href="admin.html" title="Admin">⚙️</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="interested-hero">
+  <span class="hero-icon">⚡</span>
+  <h1>สนใจร่วมทำสถานีชาร์จ EV?</h1>
+  <p>เราเปิดรับผู้ประกอบการ เจ้าของพื้นที่ และนักลงทุนที่สนใจร่วมขยายเครือข่ายสถานีชาร์จรถยนต์ไฟฟ้าในประเทศไทย</p>
+</div>
+
+<div class="form-shell">
+  <!-- Benefits -->
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <span class="icon">📍</span>
+      <div class="title">ทำเลดี</div>
+      <div class="desc">เพิ่มมูลค่าพื้นที่ด้วยบริการชาร์จ EV ที่ทันสมัย</div>
+    </div>
+    <div class="benefit-card">
+      <span class="icon">💰</span>
+      <div class="title">รายได้เสริม</div>
+      <div class="desc">สร้างรายได้จากค่าบริการชาร์จไฟฟ้า 24 ชั่วโมง</div>
+    </div>
+    <div class="benefit-card">
+      <span class="icon">🌱</span>
+      <div class="title">เป็นมิตรกับโลก</div>
+      <div class="desc">สนับสนุนการเดินทางสะอาด ลดมลพิษในอากาศ</div>
+    </div>
+    <div class="benefit-card">
+      <span class="icon">📈</span>
+      <div class="title">ตลาดเติบโต</div>
+      <div class="desc">รถ EV ในไทยเพิ่มขึ้นต่อเนื่อง ความต้องการชาร์จสูงขึ้นทุกปี</div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="form-card" id="formCard">
+    <h2>ลงทะเบียนความสนใจ</h2>
+    <p class="subtitle">กรอกข้อมูลเพื่อให้เราติดต่อกลับ ไม่มีค่าใช้จ่ายในการลงทะเบียน</p>
+    <p class="required-note"><span class="required-star">*</span> จำเป็นต้องกรอก</p>
+
+    <form id="interestedForm" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <span class="label">ชื่อ-นามสกุล <span class="required-star">*</span></span>
+          <input type="text" class="input" id="fname" maxlength="80" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <span class="label">เบอร์โทรศัพท์ <span class="required-star">*</span></span>
+          <input type="tel" class="input" id="fphone" maxlength="20" autocomplete="tel" required>
+        </div>
+      </div>
+
+      <div class="field mt-2">
+        <span class="label">อีเมล</span>
+        <input type="email" class="input" id="femail" maxlength="100" autocomplete="email">
+      </div>
+
+      <div class="field mt-2">
+        <span class="label">จังหวัดที่สนใจติดตั้ง</span>
+        <input type="text" class="input" id="fprovince" maxlength="60" list="province-list" placeholder="เช่น กรุงเทพมหานคร, ชลบุรี">
+        <datalist id="province-list">
+          <option>กรุงเทพมหานคร</option><option>กระบี่</option><option>กาญจนบุรี</option>
+          <option>กาฬสินธุ์</option><option>กำแพงเพชร</option><option>ขอนแก่น</option>
+          <option>จันทบุรี</option><option>ฉะเชิงเทรา</option><option>ชลบุรี</option>
+          <option>ชัยนาท</option><option>ชัยภูมิ</option><option>ชุมพร</option>
+          <option>เชียงราย</option><option>เชียงใหม่</option><option>ตรัง</option>
+          <option>ตราด</option><option>ตาก</option><option>นครนายก</option>
+          <option>นครปฐม</option><option>นครพนม</option><option>นครราชสีมา</option>
+          <option>นครศรีธรรมราช</option><option>นครสวรรค์</option><option>นนทบุรี</option>
+          <option>นราธิวาส</option><option>น่าน</option><option>บึงกาฬ</option>
+          <option>บุรีรัมย์</option><option>ปทุมธานี</option><option>ประจวบคีรีขันธ์</option>
+          <option>ปราจีนบุรี</option><option>ปัตตานี</option><option>พระนครศรีอยุธยา</option>
+          <option>พะเยา</option><option>พังงา</option><option>พัทลุง</option>
+          <option>พิจิตร</option><option>พิษณุโลก</option><option>เพชรบุรี</option>
+          <option>เพชรบูรณ์</option><option>แพร่</option><option>ภูเก็ต</option>
+          <option>มหาสารคาม</option><option>มุกดาหาร</option><option>แม่ฮ่องสอน</option>
+          <option>ยโสธร</option><option>ยะลา</option><option>ร้อยเอ็ด</option>
+          <option>ระนอง</option><option>ระยอง</option><option>ราชบุรี</option>
+          <option>ลพบุรี</option><option>ลำปาง</option><option>ลำพูน</option>
+          <option>เลย</option><option>ศรีสะเกษ</option><option>สกลนคร</option>
+          <option>สงขลา</option><option>สตูล</option><option>สมุทรปราการ</option>
+          <option>สมุทรสงคราม</option><option>สมุทรสาคร</option><option>สระแก้ว</option>
+          <option>สระบุรี</option><option>สิงห์บุรี</option><option>สุโขทัย</option>
+          <option>สุพรรณบุรี</option><option>สุราษฎร์ธานี</option><option>สุรินทร์</option>
+          <option>หนองคาย</option><option>หนองบัวลำภู</option><option>อ่างทอง</option>
+          <option>อำนาจเจริญ</option><option>อุดรธานี</option><option>อุตรดิตถ์</option>
+          <option>อุทัยธานี</option><option>อุบลราชธานี</option>
+        </datalist>
+      </div>
+
+      <div class="field mt-2">
+        <span class="label">ประเภทความสนใจ</span>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="interestType" value="เจ้าของที่ดิน / พื้นที่" checked>
+            <span>🏢 เจ้าของที่ดิน / พื้นที่</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="interestType" value="นักลงทุน">
+            <span>💼 นักลงทุน</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="interestType" value="ผู้ประกอบการธุรกิจ">
+            <span>🏪 ผู้ประกอบการธุรกิจ</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="interestType" value="อื่นๆ">
+            <span>✨ อื่นๆ</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field mt-2">
+        <span class="label">รายละเอียดเพิ่มเติม</span>
+        <textarea class="textarea" id="fdetails" rows="4" maxlength="1000"
+          placeholder="เช่น ลักษณะพื้นที่ ขนาดที่จอดรถ จำนวนหัวชาร์จที่ต้องการ หรือข้อมูลอื่นๆ"></textarea>
+        <div class="char-count"><span id="detailsCount">0</span> / 1000</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:20px;">
+        ส่งข้อมูล ✓
+      </button>
+    </form>
+
+    <!-- Thank you -->
+    <div class="thank-you" id="thankYou">
+      <span class="ty-icon">🎉</span>
+      <h2>ขอบคุณที่แจ้งความสนใจ!</h2>
+      <p>เราได้รับข้อมูลของคุณแล้ว ทีมงานจะติดต่อกลับภายใน 3-5 วันทำการ</p>
+      <a href="index.html" class="btn btn-primary">กลับหน้าแผนที่</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <a href="privacy.html">นโยบายความเป็นส่วนตัว</a>
+  <a href="terms.html">ข้อกำหนดการใช้งาน</a>
+  <span style="opacity:.4;margin:0 8px;">·</span>
+  <span>© 2568 EV Stations Thailand</span>
+</footer>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/page-i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(() => {
+  EVi18n.apply();
+  EVApp.renderBrand(document.getElementById('brand'));
+
+  // Theme toggle
+  const themeBtn = document.getElementById('themeToggle');
+  function syncTheme() {
+    const dark = document.documentElement.getAttribute('data-theme') !== 'light';
+    themeBtn.textContent = dark ? '☀️' : '🌙';
+  }
+  syncTheme();
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    EVApp.setTheme(next); syncTheme();
+  });
+
+  // Lang toggle
+  document.getElementById('langToggle').addEventListener('click', () => {
+    EVi18n.setLang(EVi18n.nextLang());
+    EVi18n.apply();
+    EVPageI18n.apply('interested');
+  });
+  EVPageI18n.apply('interested');
+
+  // Char count
+  const detailsTA = document.getElementById('fdetails');
+  const detailsCount = document.getElementById('detailsCount');
+  detailsTA.addEventListener('input', () => { detailsCount.textContent = detailsTA.value.length; });
+
+  function toast(msg, kind = '') {
+    const el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    el.textContent = msg;
+    document.getElementById('toastWrap').appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+  }
+
+  // Form submit
+  document.getElementById('interestedForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name)  { toast(EVPageI18n.t('interested', 'errors.name'), 'danger'); return; }
+    if (!phone) { toast(EVPageI18n.t('interested', 'errors.phone'), 'danger'); return; }
+
+    const data = {
+      name,
+      phone,
+      email:        document.getElementById('femail').value.trim(),
+      province:     document.getElementById('fprovince').value.trim(),
+      interestType: document.querySelector('input[name=interestType]:checked')?.value || '',
+      details:      detailsTA.value.trim(),
+    };
+
+    const result = EVApp.addSubmission('interested', data);
+    if (!result) { toast(EVPageI18n.t('interested', 'errors.generic'), 'danger'); return; }
+
+    document.getElementById('interestedForm').style.display = 'none';
+    document.getElementById('thankYou').style.display = 'block';
+  });
+})();
+</script>
+</body>
+</html>

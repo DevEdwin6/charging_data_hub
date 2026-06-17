@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — EV Stations Thailand</title>
+<script>(function(){var t=localStorage.getItem('evmap.theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .app-header-inner { gap: 14px; }
+  .back {
+    text-decoration: none; color: var(--text-2); font-size: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: var(--r-1);
+    transition: background var(--t-fast);
+  }
+  .back:hover { background: var(--panel); color: var(--text); }
+
+  /* ─── Login ─── */
+  .login-shell {
+    min-height: calc(100vh - var(--header-h));
+    display: grid; place-items: center;
+    padding: 20px;
+  }
+  .login-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    padding: 32px 28px;
+    width: 100%; max-width: 380px;
+    box-shadow: var(--shadow-2);
+  }
+  .login-card h1 {
+    font-size: 22px; font-weight: 700; margin: 0 0 6px; letter-spacing: -.01em;
+  }
+  .login-card p { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .login-card form { display: flex; flex-direction: column; gap: 14px; }
+  .default-hint {
+    background: rgba(92,200,255,.08); border: 1px solid rgba(92,200,255,.2);
+    color: var(--accent); padding: 10px 12px; border-radius: var(--r-1);
+    font-size: 12px; line-height: 1.5; margin-top: 16px;
+  }
+
+  /* ─── Admin shell ─── */
+  .admin-nav {
+    display: flex; gap: 4px; padding: 12px 16px 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    position: sticky; top: var(--header-h); z-index: 100;
+    overflow-x: auto;
+  }
+  .admin-nav::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    background: none; border: none;
+    color: var(--muted); font-size: 14px; font-weight: 500;
+    padding: 12px 18px;
+    cursor: pointer; position: relative;
+    transition: color var(--t-fast);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+  .nav-tab .count-badge {
+    background: var(--accent); color: #00131f;
+    padding: 1px 7px; border-radius: var(--r-full);
+    font-size: 11px; font-weight: 700;
+  }
+
+  .admin-section { display: none; padding-top: 24px; }
+  .admin-section.active { display: block; }
+
+  /* ─── Brand section ─── */
+  .brand-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  @media (max-width: 760px) { .brand-grid { grid-template-columns: 1fr; } }
+
+  .logo-preview {
+    background: var(--bg-2); border: 1px dashed var(--line-strong);
+    border-radius: var(--r-2); padding: 28px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 160px;
+    flex-direction: column; gap: 10px;
+  }
+  .logo-preview img { max-height: 90px; max-width: 280px; object-fit: contain; }
+  .logo-preview .placeholder { color: var(--muted); font-size: 13px; }
+  .file-input-wrap {
+    display: flex; gap: 8px; align-items: center;
+  }
+  .file-input-wrap input[type=file] { display: none; }
+
+  .brand-preview-header {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-1);
+    padding: 10px 14px;
+    margin-top: 10px;
+  }
+
+  /* ─── Reviews queue ─── */
+  .station-block {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .station-block-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    background: var(--bg-2);
+  }
+  .station-block-head .name {
+    font-weight: 600; font-size: 14.5px; flex: 1;
+  }
+  .station-block-head a { color: var(--accent); text-decoration: none; font-size: 13px; }
+
+  .review-row {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .review-row:last-child { border-bottom: none; }
+  .review-row .review-head {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .review-row .name { font-weight: 600; font-size: 13.5px; }
+  .review-row .meta {
+    color: var(--muted); font-size: 12px;
+  }
+  .review-row .body {
+    color: var(--text-2); font-size: 13.5px; line-height: 1.55;
+    white-space: pre-wrap; margin-bottom: 12px;
+  }
+  .review-row .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .summary-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px;
+    margin-bottom: 24px;
+  }
+  .summary-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    padding: 16px 18px;
+  }
+  .summary-card .num {
+    font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -.02em;
+  }
+  .summary-card .label {
+    color: var(--muted); font-size: 12px; margin-top: 6px;
+    text-transform: uppercase; letter-spacing: .06em; font-weight: 600;
+  }
+  .summary-card.warn .num { color: var(--warn); }
+  .summary-card.success .num { color: var(--success); }
+
+  /* ─── Language editor ─── */
+  .lang-editor-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  .lang-editor-table thead th {
+    text-align: left; padding: 10px 12px;
+    background: var(--bg-2); border-bottom: 2px solid var(--line);
+    font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+    font-weight: 700; color: var(--muted);
+  }
+  .lang-editor-table .group-row td {
+    padding: 14px 12px 6px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: .1em;
+    font-weight: 700; color: var(--accent);
+    border-top: 1px solid var(--line);
+  }
+  .lang-editor-table .group-row:first-child td { border-top: none; }
+  .lang-editor-table .key-row td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .lang-editor-table .key-row:last-child td { border-bottom: none; }
+  .lang-editor-table .key-name {
+    font-family: monospace; font-size: 11px; color: var(--muted);
+    white-space: nowrap; padding: 5px 12px; vertical-align: middle;
+    width: 200px;
+  }
+  .lang-editor-table textarea {
+    width: 100%; box-sizing: border-box;
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: var(--r-1); color: var(--text);
+    font-size: 12.5px; font-family: inherit;
+    padding: 6px 8px; resize: vertical; min-height: 36px;
+    transition: border-color var(--t-fast);
+  }
+  .lang-editor-table textarea:focus {
+    outline: none; border-color: var(--accent);
+  }
+  .lang-editor-table .changed {
+    border-color: var(--warn);
+    background: rgba(251,191,36,.06);
+  }
+
+  /* ─── Station Editor ─── */
+  .station-search-results {
+    margin-top: 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    overflow: hidden;
+    max-height: 380px;
+    overflow-y: auto;
+  }
+  .station-result-row {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    transition: background var(--t-fast);
+  }
+  .station-result-row:last-child { border-bottom: none; }
+  .station-result-row:hover, .station-result-row.active { background: var(--bg-2); }
+  .station-result-name { font-size: 13.5px; font-weight: 500; margin-bottom: 4px; }
+  .station-result-meta { display: flex; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); flex-wrap: wrap; }
+  .station-edit-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--line);
+  }
+  .station-edit-form { display: flex; flex-direction: column; gap: 14px; }
+
+  /* ─── About Editor ─── */
+  .about-editor-fields { display: flex; flex-direction: column; gap: 14px; }
+  .about-preview-box {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: var(--r-2); padding: 22px 24px; min-height: 80px;
+  }
+
+  /* ─── Submissions ─── */
+  .sub-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  .sub-tab-btn {
+    padding: 8px 18px; border: 1px solid var(--line);
+    background: var(--panel); border-radius: var(--r-1);
+    cursor: pointer; font-size: 14px; color: var(--muted);
+    transition: all var(--t-fast); font-family: inherit;
+  }
+  .sub-tab-btn:hover { color: var(--text); border-color: var(--line-strong); }
+  .sub-tab-btn.active { background: var(--accent); color: #00131f; border-color: var(--accent); font-weight: 600; }
+  .sub-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: var(--r-2); padding: 16px 18px; margin-bottom: 12px;
+  }
+  .sub-card-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 12px; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  }
+  .sub-field-grid { display: grid; gap: 6px; }
+  .sub-field-row { display: grid; grid-template-columns: 150px 1fr; gap: 8px; font-size: 13px; }
+  .sub-field-label { color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="app-header-inner">
+    <a class="back" href="index.html" id="backLink" data-i18n="nav_back">← กลับ</a>
+    <a class="brand" href="index.html" id="brand"></a>
+    <div class="header-spacer"></div>
+    <div class="header-actions" id="headerActions">
+      <button class="btn btn-ghost lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <button class="btn btn-ghost btn-icon" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle theme">☀️</button>
+    </div>
+  </div>
+</header>
+
+<!-- Login view -->
+<div id="loginView" class="login-shell hidden">
+  <div class="login-card">
+    <h1 id="loginTitle" data-i18n="admin_login_title">🔒 เข้าสู่ระบบผู้ดูแล</h1>
+    <p id="loginSubtitle" data-i18n="admin_login_subtitle">กรอกรหัสผ่านเพื่อจัดการระบบ</p>
+    <form id="loginForm">
+      <div class="field">
+        <span class="label" id="labelPassword" data-i18n="admin_password">รหัสผ่าน</span>
+        <input type="password" class="input" id="passInput" autocomplete="current-password" autofocus required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" id="signInBtn" data-i18n="admin_sign_in">เข้าสู่ระบบ</button>
+    </form>
+    <div class="default-hint" id="defaultHint" data-i18n-html="admin_default_hint">
+      💡 ครั้งแรก? รหัสผ่านเริ่มต้นคือ <code>admin</code> เปลี่ยนรหัสผ่านหลังจากเข้าสู่ระบบ
+    </div>
+  </div>
+</div>
+
+<!-- Admin view -->
+<div id="adminView" class="hidden">
+  <nav class="admin-nav" role="tablist">
+    <button class="nav-tab active" data-tab="dashboard" role="tab" data-i18n="admin_tab_dashboard">📊 แดชบอร์ด</button>
+    <button class="nav-tab" data-tab="pending" role="tab">
+      <span data-i18n="admin_tab_pending">⏳ รีวิวรอดำเนินการ</span>
+      <span class="count-badge" id="pendingBadge">0</span>
+    </button>
+    <button class="nav-tab" data-tab="approved" role="tab" data-i18n="admin_tab_approved">✅ รีวิวที่อนุมัติแล้ว</button>
+    <button class="nav-tab" data-tab="brand" role="tab" data-i18n="admin_tab_brand">🎨 แบรนด์ & โลโก้</button>
+    <button class="nav-tab" data-tab="settings" role="tab" data-i18n="admin_tab_settings">⚙️ การตั้งค่า</button>
+    <button class="nav-tab" data-tab="language" role="tab" data-i18n="admin_tab_language">🌐 ภาษา</button>
+    <button class="nav-tab" data-tab="stations-editor" role="tab">✏️ แก้ไขสถานี</button>
+    <button class="nav-tab" data-tab="about-editor" role="tab">📄 เกี่ยวกับเรา</button>
+    <button class="nav-tab" data-tab="submissions" role="tab">
+      <span>📋 แบบฟอร์ม</span>
+      <span class="count-badge" id="submissionsBadge" style="display:none;">0</span>
+    </button>
+  </nav>
+
+  <div class="wrap-max">
+    <!-- DASHBOARD -->
+    <section class="admin-section active" data-section="dashboard">
+      <div class="summary-cards">
+        <div class="summary-card">
+          <div class="num" id="statStations">0</div>
+          <div class="label" data-i18n="admin_total_stations">สถานีทั้งหมด</div>
+        </div>
+        <div class="summary-card warn">
+          <div class="num" id="statPending">0</div>
+          <div class="label" data-i18n="admin_pending_label">รีวิวรอดำเนินการ</div>
+        </div>
+        <div class="summary-card success">
+          <div class="num" id="statApproved">0</div>
+          <div class="label" data-i18n="admin_approved_label">รีวิวที่อนุมัติแล้ว</div>
+        </div>
+        <div class="summary-card">
+          <div class="num" id="statAvgRating">—</div>
+          <div class="label" data-i18n="admin_avg_rating">คะแนนเฉลี่ย</div>
+        </div>
+        <div class="summary-card" style="border-color: rgba(92,200,255,.3);">
+          <div class="num" id="statPageViews" style="color:var(--accent);">0</div>
+          <div class="label">การเข้าชมทั้งหมด</div>
+        </div>
+        <div class="summary-card" style="border-color: rgba(92,200,255,.3);">
+          <div class="num" id="statSessions" style="color:var(--accent);">0</div>
+          <div class="label">เซสชันทั้งหมด</div>
+        </div>
+      </div>
+      <div class="panel" id="trafficWeeklyPanel" style="margin-bottom:20px;">
+        <h2 class="panel-title">📈 ทราฟฟิก 7 วันล่าสุด</h2>
+        <div id="trafficWeeklyChart" style="display:flex; align-items:flex-end; gap:6px; height:80px; padding-top:10px;"></div>
+      </div>
+      <div class="panel" style="margin-bottom:20px;">
+        <h2 class="panel-title">🏆 สถานียอดนิยม (most viewed)</h2>
+        <div id="topStationsList"></div>
+      </div>
+      <div class="panel">
+        <h2 class="panel-title" data-i18n="admin_recent_activity">กิจกรรมล่าสุด</h2>
+        <div id="recentActivity"></div>
+      </div>
+    </section>
+
+    <!-- PENDING -->
+    <section class="admin-section" data-section="pending">
+      <div id="pendingList"></div>
+    </section>
+
+    <!-- APPROVED -->
+    <section class="admin-section" data-section="approved">
+      <div id="approvedList"></div>
+    </section>
+
+    <!-- BRAND -->
+    <section class="admin-section" data-section="brand">
+      <div class="panel">
+        <h2 class="panel-title" data-i18n="admin_logo_section">โลโก้</h2>
+        <div class="brand-grid">
+          <div>
+            <div class="logo-preview" id="logoPreview">
+              <span class="placeholder" data-i18n="admin_no_logo">ยังไม่ได้อัปโหลดโลโก้</span>
+            </div>
+            <div class="file-input-wrap mt-1">
+              <input type="file" id="logoFile" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+              <button class="btn btn-primary" id="logoUploadBtn" data-i18n="admin_upload_logo">⬆️ อัปโหลดโลโก้</button>
+              <button class="btn btn-danger" id="logoRemoveBtn" data-i18n="admin_remove">ลบออก</button>
+            </div>
+            <p class="text-xs muted mt-1" id="logoHelpText"></p>
+          </div>
+          <div>
+            <h3 class="panel-title" data-i18n="admin_header_preview">ตัวอย่างหัวเว็บ</h3>
+            <div class="brand-preview-header" id="brandPreviewHeader"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mt-3">
+        <h2 class="panel-title" data-i18n="admin_provider_logos">โลโก้ผู้ให้บริการ</h2>
+        <p class="text-sm muted mb-2" data-i18n="admin_provider_logos_help">แต่ละแบรนด์สามารถมีโลโก้แสดงในชิปตัวกรองและป้ายสถานี</p>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:16px;">
+          <div>
+            <div class="label mb-1">Spark / BCP</div>
+            <div class="logo-preview" id="logoPreviewSpark" style="min-height:100px;">
+              <span class="placeholder" data-i18n="admin_no_logo_short">ยังไม่มีโลโก้</span>
+            </div>
+            <div class="file-input-wrap mt-1">
+              <input type="file" id="logoFileSpark" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+              <button class="btn btn-sm btn-primary" data-brand-upload="spark" data-i18n="admin_upload">⬆️ อัปโหลด</button>
+              <button class="btn btn-sm btn-danger" data-brand-remove="spark" data-i18n="admin_remove">ลบออก</button>
+            </div>
+          </div>
+          <div>
+            <div class="label mb-1">iGreen+</div>
+            <div class="logo-preview" id="logoPreviewIgreen" style="min-height:100px;">
+              <span class="placeholder" data-i18n="admin_no_logo_short">ยังไม่มีโลโก้</span>
+            </div>
+            <div class="file-input-wrap mt-1">
+              <input type="file" id="logoFileIgreen" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+              <button class="btn btn-sm btn-primary" data-brand-upload="igreen" data-i18n="admin_upload">⬆️ อัปโหลด</button>
+              <button class="btn btn-sm btn-danger" data-brand-remove="igreen" data-i18n="admin_remove">ลบออก</button>
+            </div>
+          </div>
+          <div>
+            <div class="label mb-1">PTT EV</div>
+            <div class="logo-preview" id="logoPreviewPtt" style="min-height:100px;">
+              <span class="placeholder" data-i18n="admin_no_logo_short">ยังไม่มีโลโก้</span>
+            </div>
+            <div class="file-input-wrap mt-1">
+              <input type="file" id="logoFilePtt" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+              <button class="btn btn-sm btn-primary" data-brand-upload="ptt" data-i18n="admin_upload">⬆️ อัปโหลด</button>
+              <button class="btn btn-sm btn-danger" data-brand-remove="ptt" data-i18n="admin_remove">ลบออก</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel mt-3">
+        <h2 class="panel-title" data-i18n="admin_brand_name">ชื่อแบรนด์</h2>
+        <div class="field" style="max-width:420px;">
+          <input type="text" class="input" id="brandInput" maxlength="60" placeholder="EV Stations Thailand">
+          <button class="btn btn-primary mt-1" id="brandSaveBtn" data-i18n="admin_save_brand" style="align-self:flex-start;">บันทึกชื่อแบรนด์</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="admin-section" data-section="settings">
+      <div class="panel">
+        <h2 class="panel-title" data-i18n="admin_change_password">เปลี่ยนรหัสผ่าน</h2>
+        <form id="passForm" style="max-width:420px; display:flex; flex-direction:column; gap:14px;">
+          <div class="field">
+            <span class="label" data-i18n="admin_current_password">รหัสผ่านปัจจุบัน</span>
+            <input type="password" class="input" id="passCurrent" autocomplete="current-password" required>
+          </div>
+          <div class="field">
+            <span class="label" data-i18n="admin_new_password">รหัสผ่านใหม่</span>
+            <input type="password" class="input" id="passNew" autocomplete="new-password" minlength="4" required>
+          </div>
+          <button type="submit" class="btn btn-primary" data-i18n="admin_update_password">อัปเดตรหัสผ่าน</button>
+        </form>
+      </div>
+      <div class="panel mt-3">
+        <h2 class="panel-title" data-i18n="admin_data_management">การจัดการข้อมูล</h2>
+        <p class="text-sm muted mb-2" data-i18n="admin_data_help">รีวิวและแบรนด์จะถูกเก็บใน localStorage ของเบราว์เซอร์</p>
+        <div class="row gap-sm" style="flex-wrap:wrap;">
+          <button class="btn" id="exportBtn" data-i18n="admin_export_data">📥 ส่งออกข้อมูลทั้งหมด</button>
+          <button class="btn btn-danger" id="clearAllReviewsBtn" data-i18n="admin_clear_reviews">🗑 ลบรีวิวทั้งหมด</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATION EDITOR -->
+    <section class="admin-section" data-section="stations-editor">
+      <div class="panel">
+        <h2 class="panel-title">ค้นหาและแก้ไขข้อมูลสถานี</h2>
+        <p class="text-sm muted mb-2">ค้นหาสถานีที่ต้องการแก้ไข การเปลี่ยนแปลงจะบันทึกไว้ในเบราว์เซอร์นี้และมีผลทันที</p>
+        <div class="field">
+          <input type="text" class="input" id="stationSearch" placeholder="พิมพ์ชื่อสถานี, จังหวัด หรืออำเภอ...">
+        </div>
+        <div id="stationSearchResults"></div>
+      </div>
+      <div class="panel mt-3" id="stationEditPanel" style="display:none;">
+        <div class="station-edit-header">
+          <div>
+            <h2 class="panel-title" id="stationEditTitle" style="margin:0 0 4px;">แก้ไขสถานี</h2>
+            <div class="text-sm muted" id="stationEditMeta"></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" id="stationEditClose">✕ ปิด</button>
+        </div>
+        <div class="station-edit-form">
+          <div class="field">
+            <span class="label">ชื่อสถานี</span>
+            <input type="text" class="input" id="editName" maxlength="200">
+          </div>
+          <div class="brand-grid">
+            <div class="field">
+              <span class="label">จังหวัด</span>
+              <input type="text" class="input" id="editProvince" maxlength="60">
+            </div>
+            <div class="field">
+              <span class="label">อำเภอ / เขต</span>
+              <input type="text" class="input" id="editDistrict" maxlength="60">
+            </div>
+          </div>
+          <div class="field">
+            <span class="label">ที่อยู่</span>
+            <textarea class="textarea" id="editAddress" rows="3" maxlength="400" style="min-height:72px;"></textarea>
+          </div>
+          <div class="row gap-sm">
+            <button class="btn btn-primary" id="stationSaveBtn">💾 บันทึกการแก้ไข</button>
+            <button class="btn btn-ghost" id="stationResetBtn">↩️ รีเซ็ตเป็นต้นฉบับ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT EDITOR -->
+    <section class="admin-section" data-section="about-editor">
+      <div class="panel">
+        <h2 class="panel-title">แก้ไขหน้าเกี่ยวกับเรา</h2>
+        <p class="text-sm muted mb-3">ข้อมูลที่บันทึกจะแสดงในหน้า <a href="about.html" target="_blank" style="color:var(--accent);">เกี่ยวกับเรา</a></p>
+        <div class="about-editor-fields">
+          <div class="field">
+            <span class="label">หัวข้อหน้า</span>
+            <input type="text" class="input" id="aboutHeroTitle" maxlength="100" placeholder="เกี่ยวกับ EV Stations Thailand">
+          </div>
+          <div class="field">
+            <span class="label">คำอธิบาย (แสดงใต้หัวข้อ)</span>
+            <input type="text" class="input" id="aboutTagline" maxlength="200" placeholder="แพลตฟอร์มข้อมูลสถานีชาร์จ EV ที่ครบถ้วนที่สุดในไทย">
+          </div>
+          <div class="field">
+            <span class="label">เกี่ยวกับเรา / พันธกิจ</span>
+            <textarea class="textarea" id="aboutMission" rows="6" maxlength="3000" placeholder="เล่าเรื่องราวขององค์กร จุดมุ่งหมาย หรือพันธกิจ..."></textarea>
+          </div>
+          <div class="brand-grid">
+            <div class="field">
+              <span class="label">อีเมลติดต่อ</span>
+              <input type="email" class="input" id="aboutEmail" maxlength="100" placeholder="contact@example.com">
+            </div>
+            <div class="field">
+              <span class="label">เบอร์โทรศัพท์</span>
+              <input type="tel" class="input" id="aboutPhone" maxlength="30" placeholder="0X-XXXX-XXXX">
+            </div>
+            <div class="field">
+              <span class="label">LINE ID</span>
+              <input type="text" class="input" id="aboutLine" maxlength="60" placeholder="@evstationsth">
+            </div>
+            <div class="field">
+              <span class="label">Facebook URL</span>
+              <input type="url" class="input" id="aboutFacebook" maxlength="200" placeholder="https://facebook.com/...">
+            </div>
+          </div>
+        </div>
+        <div class="row gap-sm mt-3">
+          <button class="btn btn-primary" id="aboutSaveBtn">💾 บันทึกข้อมูล</button>
+        </div>
+      </div>
+      <div class="panel mt-3">
+        <h2 class="panel-title">ตัวอย่าง</h2>
+        <div id="aboutPreview" class="about-preview-box">
+          <span class="muted text-sm">กรอกข้อมูลแล้วกด บันทึก เพื่อดูตัวอย่าง</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBMISSIONS -->
+    <section class="admin-section" data-section="submissions">
+      <div class="sub-tabs">
+        <button class="sub-tab-btn active" data-subtab="interested">สนใจทำสถานี <span id="interestedBadge"></span></button>
+        <button class="sub-tab-btn" data-subtab="station">เพิ่มข้อมูลสถานี <span id="stationSubBadge"></span></button>
+      </div>
+      <div id="submissionsList"></div>
+    </section>
+
+    <!-- LANGUAGE EDITOR -->
+    <section class="admin-section" data-section="language">
+      <div class="panel">
+        <h2 class="panel-title" data-i18n="admin_lang_title">ตัวแก้ไขภาษา</h2>
+        <p class="text-sm muted mb-3" data-i18n="admin_lang_subtitle">แก้ไขคำแปลสำหรับภาษาไทยและภาษาอังกฤษ การเปลี่ยนแปลงจะถูกบันทึกในเบราว์เซอร์นี้</p>
+        <div class="row gap-sm mb-3" style="flex-wrap:wrap;">
+          <button class="btn btn-primary" id="saveLangBtn" data-i18n="admin_lang_save">บันทึกคำแปล</button>
+          <button class="btn" id="resetLangBtn" data-i18n="admin_lang_reset">รีเซ็ตเป็นค่าเริ่มต้น</button>
+          <button class="btn" id="exportLangBtn" data-i18n="admin_lang_export">📥 ส่งออก JSON</button>
+          <label class="btn" style="cursor:pointer;">
+            <span data-i18n="admin_lang_import">📤 นำเข้า JSON</span>
+            <input type="file" id="importLangFile" accept=".json" style="display:none">
+          </label>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="lang-editor-table" id="langEditorTable">
+            <thead>
+              <tr>
+                <th data-i18n="admin_lang_col_key">หัวข้อ</th>
+                <th data-i18n="admin_lang_col_th">ภาษาไทย</th>
+                <th data-i18n="admin_lang_col_en">ภาษาอังกฤษ</th>
+                <th data-i18n="admin_lang_col_zh">ภาษาจีน</th>
+              </tr>
+            </thead>
+            <tbody id="langEditorBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="data/spark.js"></script>
+<script src="data/igreen.js"></script>
+<script src="data/ptt.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(() => {
+  EVi18n.apply();
+  EVApp.renderBrand(document.getElementById('brand'));
+  const stations = EVApp.loadStations();
+  const stationById = new Map(stations.map(s => [s.id, s]));
+
+  // ─── Theme toggle ───
+  const themeBtn = document.getElementById('themeToggle');
+  function syncThemeBtn() {
+    const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+    themeBtn.textContent = isDark ? '☀️' : '🌙';
+    themeBtn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+  }
+  syncThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    EVApp.setTheme(next);
+    syncThemeBtn();
+  });
+
+  // ─── Language toggle ───
+  document.getElementById('langToggle').addEventListener('click', () => {
+    EVi18n.setLang(EVi18n.nextLang());
+    EVi18n.apply();
+    updateLogoHelp();
+    if (!document.getElementById('loginView').classList.contains('hidden')) {
+      // re-render login hint (innerHTML)
+    }
+    if (!document.getElementById('adminView').classList.contains('hidden')) {
+      renderAll();
+      renderLangEditor();
+    }
+  });
+
+  function toast(msg, kind = '') {
+    const el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    el.textContent = msg;
+    document.getElementById('toastWrap').appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+  }
+
+  // ─── Auth gate ───
+  const loginView  = document.getElementById('loginView');
+  const adminView  = document.getElementById('adminView');
+  const headerActions = document.getElementById('headerActions');
+
+  function showLogin() {
+    loginView.classList.remove('hidden');
+    adminView.classList.add('hidden');
+    // Remove logout button if present (keep lang + theme buttons)
+    const logoutBtn = headerActions.querySelector('#logoutBtn');
+    if (logoutBtn) logoutBtn.remove();
+    if (EVApp.getPass() !== EVApp.DEFAULT_PASS) {
+      document.getElementById('defaultHint').classList.add('hidden');
+    }
+  }
+  function showAdmin() {
+    loginView.classList.add('hidden');
+    adminView.classList.remove('hidden');
+    if (!headerActions.querySelector('#logoutBtn')) {
+      const logoutBtn = document.createElement('button');
+      logoutBtn.className = 'btn btn-ghost';
+      logoutBtn.id = 'logoutBtn';
+      logoutBtn.textContent = EVi18n.t('admin_toast_sign_out');
+      logoutBtn.onclick = () => { EVApp.logout(); showLogin(); toast(EVi18n.t('admin_toast_sign_out')); };
+      headerActions.prepend(logoutBtn);
+    }
+    renderAll();
+  }
+  if (EVApp.isAdmin()) showAdmin(); else showLogin();
+
+  document.getElementById('loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const p = document.getElementById('passInput').value;
+    if (EVApp.login(p)) { showAdmin(); toast(EVi18n.t('admin_toast_welcome'), 'success'); }
+    else {
+      toast(EVi18n.t('admin_toast_wrong_pw'), 'danger');
+      document.getElementById('passInput').focus();
+      document.getElementById('passInput').select();
+    }
+  });
+
+  // ─── Tabs ───
+  document.querySelectorAll('.nav-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.toggle('active', t === tab));
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.toggle('active', s.dataset.section === target));
+      if (target === 'language') renderLangEditor();
+    if (target === 'about-editor') renderAboutEditor();
+    if (target === 'submissions') renderSubmissions(currentSubTab);
+    });
+  });
+
+  // ─── Render all ───
+  function renderAll() {
+    renderDashboard();
+    renderPending();
+    renderApproved();
+    renderBrandSection();
+    renderSubmissionsCount();
+  }
+
+  function renderDashboard() {
+    const pending  = EVApp.allPendingByStation();
+    const approved = EVApp.allApprovedByStation();
+    const totalPending  = pending.reduce((n,b)  => n + b.reviews.length, 0);
+    const totalApproved = approved.reduce((n,b) => n + b.reviews.length, 0);
+    document.getElementById('statStations').textContent = stations.length.toLocaleString();
+    document.getElementById('statPending').textContent  = totalPending;
+    document.getElementById('statApproved').textContent = totalApproved;
+    document.getElementById('pendingBadge').textContent  = totalPending;
+    document.getElementById('pendingBadge').style.display = totalPending ? '' : 'none';
+
+    let sum = 0, n = 0;
+    approved.forEach(b => b.reviews.forEach(r => { sum += r.rating; n++; }));
+    document.getElementById('statAvgRating').textContent = n ? (sum/n).toFixed(2) : '—';
+
+    // ─── Traffic ───
+    const traffic = EVApp.getTrafficStats();
+    document.getElementById('statPageViews').textContent = (traffic.total || 0).toLocaleString();
+    document.getElementById('statSessions').textContent  = (traffic.sessions || 0).toLocaleString();
+
+    // Weekly bar chart
+    const weekly = traffic.weekly || [];
+    const chartEl = document.getElementById('trafficWeeklyChart');
+    if (!weekly.length) {
+      chartEl.innerHTML = '<span style="font-size:13px;color:var(--muted);">ยังไม่มีข้อมูล</span>';
+    } else {
+      const max = Math.max(...weekly.map(e => e.c), 1);
+      const days = [];
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(); d.setDate(d.getDate() - i);
+        const key = d.toISOString().slice(0,10);
+        const label = d.toLocaleDateString('th-TH', { weekday: 'short' });
+        const entry = weekly.find(e => e.d === key);
+        days.push({ key, label, c: entry ? entry.c : 0 });
+      }
+      chartEl.innerHTML = days.map(day => {
+        const pct = Math.round((day.c / max) * 100);
+        const isToday = day.key === new Date().toISOString().slice(0,10);
+        return `
+          <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:4px;">
+            <div style="font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums;">${day.c || ''}</div>
+            <div style="width:100%; background:${isToday ? 'var(--accent)' : 'rgba(92,200,255,.25)'}; border-radius:3px 3px 0 0; height:${Math.max(pct, day.c ? 4 : 0)}%; min-height:${day.c ? 4 : 0}px; transition:height .3s;"></div>
+            <div style="font-size:11px; color:var(--muted); white-space:nowrap;">${day.label}</div>
+          </div>`;
+      }).join('');
+    }
+
+    // Top stations
+    const top = EVApp.getTopStations(stations, 10);
+    const topEl = document.getElementById('topStationsList');
+    if (!top.length) {
+      topEl.innerHTML = '<div class="empty"><div class="empty-icon">👀</div><div style="font-size:13px;">ยังไม่มีข้อมูลการเข้าชมสถานี — ผู้ใช้ต้องเปิดหน้าสถานีก่อน</div></div>';
+    } else {
+      topEl.innerHTML = `<div style="display:flex; flex-direction:column; gap:0;">` +
+        top.map((s, i) => `
+          <div style="display:flex; align-items:center; gap:12px; padding:10px 0; ${i < top.length-1 ? 'border-bottom:1px solid var(--line);' : ''}">
+            <div style="font-size:18px; font-weight:700; color:var(--muted-2); width:28px; text-align:center; flex-shrink:0;">${i+1}</div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:13.5px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                <a href="station.html?id=${encodeURIComponent(s.id)}" target="_blank" style="color:var(--text); text-decoration:none;">${EVApp.escapeHtml(s.name)}</a>
+              </div>
+              <div style="font-size:12px; color:var(--muted); margin-top:2px;">
+                <span class="badge ${s.provider}" style="font-size:10px;">${EVApp.escapeHtml(s.providerLabel)}</span>
+                ${s.province ? ` · ${EVApp.escapeHtml(s.province)}` : ''}
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+              <div style="font-size:18px; font-weight:700; color:var(--accent);">${s.views.toLocaleString()}</div>
+              <div style="font-size:11px; color:var(--muted); line-height:1.2;">ครั้ง<br>เข้าชม</div>
+            </div>
+          </div>`).join('') +
+        `</div>`;
+    }
+
+    const recent = [];
+    pending.forEach(b  => b.reviews.forEach(r => recent.push({ ...r, stationId: b.stationId, status: 'pending' })));
+    approved.forEach(b => b.reviews.forEach(r => recent.push({ ...r, stationId: b.stationId, status: 'approved', sortT: r.approvedAt || r.t })));
+    recent.sort((a,b) => (b.sortT || b.t) - (a.sortT || a.t));
+    const recentTop = recent.slice(0, 8);
+    const el = document.getElementById('recentActivity');
+    if (!recentTop.length) {
+      el.innerHTML = `<div class="empty"><div class="empty-icon">✨</div><div>${EVi18n.t('admin_no_activity')}</div></div>`;
+      return;
+    }
+    el.innerHTML = recentTop.map(r => {
+      const st = stationById.get(r.stationId);
+      const sName = st ? st.name : r.stationId;
+      const status = r.status === 'pending'
+        ? `<span class="badge" style="background:rgba(251,191,36,.16); color:#fbbf24; border:1px solid rgba(251,191,36,.4);">${EVi18n.t('badge_pending')}</span>`
+        : `<span class="badge" style="background:rgba(52,211,153,.16); color:#34d399; border:1px solid rgba(52,211,153,.4);">${EVi18n.t('badge_approved')}</span>`;
+      return `
+        <div class="review-row" style="border-radius:var(--r-1); border:1px solid var(--line); margin-bottom:8px; background:var(--bg-2);">
+          <div class="review-head">
+            ${status}
+            <span class="name">${EVApp.escapeHtml(r.name)}</span>
+            <span class="meta">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)} · ${EVApp.timeAgo(r.t)}</span>
+          </div>
+          <div class="body">"${EVApp.escapeHtml(r.text.slice(0,140))}${r.text.length>140?'…':''}"</div>
+          <div class="text-xs muted">on <a href="station.html?id=${encodeURIComponent(r.stationId)}" target="_blank" style="color:var(--accent);">${EVApp.escapeHtml(sName)}</a></div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderPending() {
+    const blocks = EVApp.allPendingByStation();
+    const el = document.getElementById('pendingList');
+    if (!blocks.length) {
+      el.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">✨</div>
+          <div class="empty-title">${EVi18n.t('admin_all_clear')}</div>
+          <div>${EVi18n.t('admin_no_pending')}</div>
+        </div>`;
+      return;
+    }
+    el.innerHTML = blocks.map(b => {
+      const st = stationById.get(b.stationId);
+      const sName = st ? st.name : b.stationId;
+      return `
+        <div class="station-block">
+          <div class="station-block-head">
+            <div class="name">${EVApp.escapeHtml(sName)}</div>
+            <a href="station.html?id=${encodeURIComponent(b.stationId)}" target="_blank">${EVi18n.t('admin_view_page')}</a>
+            <span class="badge ${st ? st.provider : ''}">${EVi18n.t('admin_n_pending', { n: b.reviews.length })}</span>
+          </div>
+          ${b.reviews.map(r => `
+            <div class="review-row">
+              <div class="review-head">
+                <span class="name">${EVApp.escapeHtml(r.name)}</span>
+                <span class="meta">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)} · ${EVApp.timeAgo(r.t)}</span>
+              </div>
+              <div class="body">${EVApp.escapeHtml(r.text)}</div>
+              <div class="actions">
+                <button class="btn btn-success btn-sm" data-act="approve" data-sid="${b.stationId}" data-rid="${r.id}">${EVi18n.t('admin_approve')}</button>
+                <button class="btn btn-danger btn-sm" data-act="reject" data-sid="${b.stationId}" data-rid="${r.id}">${EVi18n.t('admin_reject')}</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderApproved() {
+    const blocks = EVApp.allApprovedByStation();
+    const el = document.getElementById('approvedList');
+    if (!blocks.length) {
+      el.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">💬</div>
+          <div>${EVi18n.t('admin_no_approved')}</div>
+        </div>`;
+      return;
+    }
+    el.innerHTML = blocks.map(b => {
+      const st = stationById.get(b.stationId);
+      const sName = st ? st.name : b.stationId;
+      return `
+        <div class="station-block">
+          <div class="station-block-head">
+            <div class="name">${EVApp.escapeHtml(sName)}</div>
+            <a href="station.html?id=${encodeURIComponent(b.stationId)}" target="_blank">${EVi18n.t('admin_view_page')}</a>
+            <span class="badge" style="background:rgba(52,211,153,.16); color:#34d399; border:1px solid rgba(52,211,153,.4);">${EVi18n.t('admin_n_approved', { n: b.reviews.length })}</span>
+          </div>
+          ${b.reviews.map(r => `
+            <div class="review-row">
+              <div class="review-head">
+                <span class="name">${EVApp.escapeHtml(r.name)}</span>
+                <span class="meta">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)} · ${EVApp.timeAgo(r.t)}</span>
+              </div>
+              <div class="body">${EVApp.escapeHtml(r.text)}</div>
+              <div class="actions">
+                <button class="btn btn-danger btn-sm" data-act="delete" data-sid="${b.stationId}" data-rid="${r.id}">${EVi18n.t('admin_delete')}</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }).join('');
+  }
+
+  function updateLogoHelp() {
+    const el = document.getElementById('logoHelpText');
+    if (!el) return;
+    el.innerHTML = EVi18n.t('admin_logo_help') + ' <span id="storageUsed">—</span> KB.';
+    const su = document.getElementById('storageUsed');
+    if (su) su.textContent = EVApp.storageUsedKB();
+  }
+
+  function renderBrandSection() {
+    updateLogoHelp();
+    const logo = EVApp.getLogo();
+    const preview = document.getElementById('logoPreview');
+    if (logo) {
+      preview.innerHTML = `<img src="${logo}" alt="Current logo">`;
+    } else {
+      preview.innerHTML = `<span class="placeholder">${EVi18n.t('admin_no_logo')}</span><span class="text-xs muted">A gradient dot will appear instead.</span>`;
+    }
+    document.getElementById('brandInput').value = EVApp.getBrand();
+    EVApp.renderBrand(document.getElementById('brandPreviewHeader'));
+
+    [['spark','logoPreviewSpark'],['igreen','logoPreviewIgreen'],['ptt','logoPreviewPtt']].forEach(([p, id]) => {
+      const el = document.getElementById(id);
+      const src = EVApp.getBrandLogo(p);
+      el.innerHTML = src
+        ? `<img src="${src}" alt="${p}" style="max-height:70px;max-width:180px;object-fit:contain;">`
+        : `<span class="placeholder">${EVi18n.t('admin_no_logo_short')}</span>`;
+    });
+  }
+
+  // ─── Pending/Approved actions (delegated) ───
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-act]');
+    if (!btn) return;
+    const { act, sid, rid } = btn.dataset;
+    if (act === 'approve') { EVApp.approveReview(sid, rid); toast(EVi18n.t('admin_toast_approved'), 'success'); }
+    else if (act === 'reject') { EVApp.rejectReview(sid, rid); toast(EVi18n.t('admin_toast_rejected')); }
+    else if (act === 'delete') {
+      if (!confirm(EVi18n.t('confirm_delete_review'))) return;
+      EVApp.deleteApproved(sid, rid); toast(EVi18n.t('admin_toast_deleted'));
+    }
+    renderAll();
+  });
+
+  // ─── Brand actions ───
+  document.getElementById('logoUploadBtn').addEventListener('click', () => {
+    document.getElementById('logoFile').click();
+  });
+  document.getElementById('logoFile').addEventListener('change', e => {
+    const file = e.target.files[0]; if (!file) return;
+    if (file.size > 1024*1024) {
+      if (!confirm(EVi18n.t('confirm_large_image', { kb: (file.size/1024).toFixed(0) }))) return;
+    }
+    const r = new FileReader();
+    r.onload = () => {
+      const ok = EVApp.setLogo(r.result);
+      if (ok) {
+        renderBrandSection();
+        EVApp.renderBrand(document.getElementById('brand'));
+        toast(EVi18n.t('admin_toast_logo_saved', { kb: (r.result.length/1024).toFixed(0) }), 'success');
+      } else {
+        toast(EVi18n.t('admin_toast_save_failed'), 'danger');
+      }
+    };
+    r.readAsDataURL(file);
+  });
+  document.getElementById('logoRemoveBtn').addEventListener('click', () => {
+    if (!confirm(EVi18n.t('confirm_remove_logo'))) return;
+    EVApp.setLogo('');
+    renderBrandSection();
+    EVApp.renderBrand(document.getElementById('brand'));
+    toast(EVi18n.t('admin_toast_logo_removed'));
+  });
+  document.getElementById('brandSaveBtn').addEventListener('click', () => {
+    EVApp.setBrand(document.getElementById('brandInput').value.trim());
+    EVApp.renderBrand(document.getElementById('brand'));
+    EVApp.renderBrand(document.getElementById('brandPreviewHeader'));
+    toast(EVi18n.t('admin_toast_brand_saved'), 'success');
+  });
+
+  // ─── Provider logo actions ───
+  const PROVIDER_FILE_IDS = { spark: 'logoFileSpark', igreen: 'logoFileIgreen', ptt: 'logoFilePtt' };
+  document.addEventListener('click', e => {
+    const uploadBtn = e.target.closest('[data-brand-upload]');
+    const removeBtn = e.target.closest('[data-brand-remove]');
+    if (uploadBtn) {
+      const p = uploadBtn.dataset.brandUpload;
+      document.getElementById(PROVIDER_FILE_IDS[p]).click();
+    }
+    if (removeBtn) {
+      const p = removeBtn.dataset.brandRemove;
+      if (!confirm(EVi18n.t('confirm_remove_prov_logo', { p }))) return;
+      EVApp.setBrandLogo(p, '');
+      renderBrandSection();
+      toast(EVi18n.t('admin_toast_logo_removed'));
+    }
+  });
+  ['spark','igreen','ptt'].forEach(p => {
+    document.getElementById(PROVIDER_FILE_IDS[p]).addEventListener('change', e => {
+      const file = e.target.files[0]; if (!file) return;
+      if (file.size > 1024*1024) {
+        if (!confirm(EVi18n.t('confirm_large_image', { kb: (file.size/1024).toFixed(0) }))) return;
+      }
+      const r = new FileReader();
+      r.onload = () => {
+        const ok = EVApp.setBrandLogo(p, r.result);
+        if (ok) {
+          renderBrandSection();
+          toast(EVi18n.t('admin_toast_prov_saved', { p, kb: (r.result.length/1024).toFixed(0) }), 'success');
+        } else {
+          toast(EVi18n.t('admin_toast_save_failed'), 'danger');
+        }
+      };
+      r.readAsDataURL(file);
+      e.target.value = '';
+    });
+  });
+
+  // ─── Password ───
+  document.getElementById('passForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const cur = document.getElementById('passCurrent').value;
+    const nu  = document.getElementById('passNew').value;
+    if (cur !== EVApp.getPass()) { toast(EVi18n.t('admin_toast_cur_pw_wrong'), 'danger'); return; }
+    if (nu.length < 4) { toast(EVi18n.t('admin_toast_longer_pw'), 'danger'); return; }
+    EVApp.setPass(nu);
+    document.getElementById('passCurrent').value = '';
+    document.getElementById('passNew').value = '';
+    toast(EVi18n.t('admin_toast_pw_updated'), 'success');
+  });
+
+  // ─── Data management ───
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const data = {
+      brand: EVApp.getBrand(),
+      logo: EVApp.getLogo() ? '[base64 image — exported]' : null,
+      approved: EVApp.allApprovedByStation(),
+      pending: EVApp.allPendingByStation(),
+      exportedAt: new Date().toISOString(),
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'evmap-data-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click(); URL.revokeObjectURL(url);
+    toast(EVi18n.t('admin_toast_exported'), 'success');
+  });
+  document.getElementById('clearAllReviewsBtn').addEventListener('click', () => {
+    if (!confirm(EVi18n.t('confirm_clear_all'))) return;
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (k && (k.startsWith('evmap.reviews.') || k.startsWith('evmap.pending.'))) {
+        localStorage.removeItem(k);
+      }
+    }
+    renderAll();
+    toast(EVi18n.t('admin_toast_all_deleted'), 'danger');
+  });
+
+  // ─── Language editor ───
+  function renderLangEditor() {
+    const defaults = EVi18n.getDefaults();
+    const languages = EVi18n.getLanguages();
+    const customByLang = Object.fromEntries(languages.map(l => [l.code, EVi18n.getCustom(l.code)]));
+    const groups   = EVi18n.getGroups();
+    const allKeys  = EVi18n.getAllKeys();
+
+    // Build key set by group
+    const usedKeys = new Set();
+    const tbody = document.getElementById('langEditorBody');
+    tbody.innerHTML = '';
+
+    groups.forEach(group => {
+      // Gather keys for this group
+      let keys = [];
+      if (group.keys) {
+        keys = group.keys;
+      } else if (group.prefix) {
+        keys = allKeys.filter(k => k.startsWith(group.prefix));
+      }
+      keys = keys.filter(k => allKeys.includes(k));
+      if (!keys.length) return;
+      keys.forEach(k => usedKeys.add(k));
+
+      // Group header row
+      const gRow = document.createElement('tr');
+      gRow.className = 'group-row';
+      gRow.innerHTML = `<td colspan="${languages.length + 1}">${group.label}</td>`;
+      tbody.appendChild(gRow);
+
+      keys.forEach(key => {
+        const langCells = languages.map(lang => {
+          const defaultValue = (defaults[lang.code] || {})[key] || '';
+          const custom = customByLang[lang.code] || {};
+          const value = Object.prototype.hasOwnProperty.call(custom, key) ? custom[key] : defaultValue;
+          const changed = value !== defaultValue;
+          return `<td><textarea data-lang="${lang.code}" data-key="${key}" class="${changed ? 'changed' : ''}" rows="2">${escHtml(value)}</textarea></td>`;
+        }).join('');
+
+        const row = document.createElement('tr');
+        row.className = 'key-row';
+        row.innerHTML = `
+          <td class="key-name">${key}</td>
+          ${langCells}
+        `;
+        tbody.appendChild(row);
+      });
+    });
+
+    // Any remaining keys not in groups
+    const remaining = allKeys.filter(k => !usedKeys.has(k));
+    if (remaining.length) {
+      const gRow = document.createElement('tr');
+      gRow.className = 'group-row';
+      gRow.innerHTML = `<td colspan="${languages.length + 1}">Other</td>`;
+      tbody.appendChild(gRow);
+      remaining.forEach(key => {
+        const langCells = languages.map(lang => {
+          const defaultValue = (defaults[lang.code] || {})[key] || '';
+          const custom = customByLang[lang.code] || {};
+          const value = Object.prototype.hasOwnProperty.call(custom, key) ? custom[key] : defaultValue;
+          const changed = value !== defaultValue;
+          return `<td><textarea data-lang="${lang.code}" data-key="${key}" class="${changed ? 'changed' : ''}" rows="2">${escHtml(value)}</textarea></td>`;
+        }).join('');
+        const row = document.createElement('tr');
+        row.className = 'key-row';
+        row.innerHTML = `
+          <td class="key-name">${key}</td>
+          ${langCells}
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Highlight changes on input
+    tbody.querySelectorAll('textarea').forEach(ta => {
+      ta.addEventListener('input', () => {
+        const defaults2 = EVi18n.getDefaults();
+        const lang = ta.dataset.lang;
+        const key  = ta.dataset.key;
+        const def  = (defaults2[lang] || {})[key] || '';
+        ta.classList.toggle('changed', ta.value !== def);
+      });
+    });
+  }
+
+  function escHtml(v) {
+    return (v || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  document.getElementById('saveLangBtn').addEventListener('click', () => {
+    const customObjects = Object.fromEntries(EVi18n.getLanguages().map(lang => [lang.code, {}]));
+    const defaults = EVi18n.getDefaults();
+    document.querySelectorAll('#langEditorBody textarea').forEach(ta => {
+      const lang = ta.dataset.lang;
+      const key  = ta.dataset.key;
+      const val  = ta.value;
+      const def  = (defaults[lang] || {})[key] || '';
+      if (val !== def) customObjects[lang][key] = val;
+    });
+    EVi18n.getLanguages().forEach(lang => EVi18n.setCustom(lang.code, customObjects[lang.code]));
+    EVi18n.apply();
+    toast(EVi18n.t('admin_toast_trans_saved'), 'success');
+    renderLangEditor();
+  });
+
+  document.getElementById('resetLangBtn').addEventListener('click', () => {
+    if (!confirm('Reset all translations to defaults?')) return;
+    EVi18n.resetCustom();
+    EVi18n.apply();
+    toast(EVi18n.t('admin_toast_trans_reset'), 'success');
+    renderLangEditor();
+    renderAll();
+  });
+
+  document.getElementById('exportLangBtn').addEventListener('click', () => {
+    const data = Object.fromEntries(EVi18n.getLanguages().map(lang => [
+      lang.code,
+      { ...(EVi18n.getDefaults()[lang.code] || {}), ...EVi18n.getCustom(lang.code) },
+    ]));
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'evmap-translations.json';
+    a.click(); URL.revokeObjectURL(url);
+    toast(EVi18n.t('admin_toast_exported'), 'success');
+  });
+
+  document.getElementById('importLangFile').addEventListener('change', e => {
+    const file = e.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        EVi18n.getLanguages().forEach(lang => {
+          if (data[lang.code]) EVi18n.setCustom(lang.code, data[lang.code]);
+        });
+        EVi18n.apply();
+        toast(EVi18n.t('admin_toast_trans_imported'), 'success');
+        renderLangEditor();
+        renderAll();
+      } catch {
+        toast('Invalid JSON file', 'danger');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+  // ─── Station Editor ───
+  let currentEditStation = null;
+
+  (function initStationEditor() {
+    const searchInput = document.getElementById('stationSearch');
+    const resultsEl   = document.getElementById('stationSearchResults');
+    const editPanel   = document.getElementById('stationEditPanel');
+    let searchTimer;
+
+    searchInput.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => renderStationResults(searchInput.value), 200);
+    });
+
+    function renderStationResults(query) {
+      const q = (query || '').trim().toLowerCase();
+      if (q.length < 2) { resultsEl.innerHTML = ''; return; }
+      const results = stations.filter(s =>
+        s.name.toLowerCase().includes(q) ||
+        (s.province && s.province.toLowerCase().includes(q)) ||
+        (s.district && s.district.toLowerCase().includes(q))
+      ).slice(0, 20);
+
+      if (!results.length) {
+        resultsEl.innerHTML = '<div class="station-search-results"><div class="empty" style="padding:20px;"><div>ไม่พบสถานี</div></div></div>';
+        return;
+      }
+      resultsEl.innerHTML = `<div class="station-search-results">${results.map(s => {
+        const hasOv = !!EVApp.getStationOverride(s.id);
+        return `<div class="station-result-row" data-station-id="${EVApp.escapeHtml(s.id)}">
+          <div class="station-result-name">${EVApp.escapeHtml(s.name)}</div>
+          <div class="station-result-meta">
+            <span class="badge ${s.provider}">${EVApp.escapeHtml(s.providerLabel)}</span>
+            ${s.province ? `<span>${EVApp.escapeHtml(s.province)}</span>` : ''}
+            ${s.district ? `<span>${EVApp.escapeHtml(s.district)}</span>` : ''}
+            ${hasOv ? `<span class="badge" style="background:rgba(92,200,255,.15);color:var(--accent);border:1px solid rgba(92,200,255,.3);">✏️ แก้ไขแล้ว</span>` : ''}
+          </div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+
+    // expose so save/reset can re-render
+    window._renderStationResults = renderStationResults;
+    window._stationSearchInput = searchInput;
+
+    resultsEl.addEventListener('click', e => {
+      const row = e.target.closest('[data-station-id]');
+      if (!row) return;
+      const s = stations.find(x => x.id === row.dataset.stationId);
+      if (!s) return;
+      openStationEditor(s);
+      resultsEl.querySelectorAll('.station-result-row').forEach(r => r.classList.toggle('active', r === row));
+    });
+
+    function openStationEditor(s) {
+      currentEditStation = s;
+      const ov = EVApp.getStationOverride(s.id) || {};
+      document.getElementById('stationEditTitle').textContent = s.name;
+      document.getElementById('stationEditMeta').textContent  = `${s.providerLabel} · ${s.province || '—'} · ${s.district || '—'}`;
+      document.getElementById('editName').value     = ov.name     !== undefined ? ov.name     : s.name;
+      document.getElementById('editProvince').value = ov.province !== undefined ? ov.province : (s.province || '');
+      document.getElementById('editDistrict').value = ov.district !== undefined ? ov.district : (s.district || '');
+      document.getElementById('editAddress').value  = ov.address  !== undefined ? ov.address  : (s.address  || '');
+      editPanel.style.display = '';
+      editPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    window._openStationEditor = openStationEditor;
+
+    document.getElementById('stationSaveBtn').addEventListener('click', () => {
+      if (!currentEditStation) return;
+      const s = currentEditStation;
+      const ov = {};
+      const name     = document.getElementById('editName').value.trim();
+      const province = document.getElementById('editProvince').value.trim();
+      const district = document.getElementById('editDistrict').value.trim();
+      const address  = document.getElementById('editAddress').value.trim();
+      if (name     !== s.name)              ov.name     = name;
+      if (province !== (s.province || ''))  ov.province = province;
+      if (district !== (s.district || ''))  ov.district = district;
+      if (address  !== (s.address  || ''))  ov.address  = address;
+      EVApp.setStationOverride(s.id, Object.keys(ov).length ? ov : null);
+      const idx = stations.findIndex(x => x.id === s.id);
+      if (idx >= 0) Object.assign(stations[idx], ov);
+      toast('บันทึกการแก้ไขสถานีแล้ว', 'success');
+      renderStationResults(searchInput.value);
+    });
+
+    document.getElementById('stationResetBtn').addEventListener('click', () => {
+      if (!currentEditStation) return;
+      if (!confirm(`รีเซ็ตสถานี "${currentEditStation.name}" เป็นค่าต้นฉบับ?`)) return;
+      EVApp.setStationOverride(currentEditStation.id, null);
+      openStationEditor(currentEditStation);
+      toast('รีเซ็ตเป็นต้นฉบับแล้ว');
+      renderStationResults(searchInput.value);
+    });
+
+    document.getElementById('stationEditClose').addEventListener('click', () => {
+      editPanel.style.display = 'none';
+      resultsEl.querySelectorAll('.station-result-row').forEach(r => r.classList.remove('active'));
+      currentEditStation = null;
+    });
+  })();
+
+  // ─── About Editor ───
+  const ABOUT_DEFAULTS = {
+    heroTitle: 'เกี่ยวกับ EV Stations Thailand',
+    tagline:   'แพลตฟอร์มข้อมูลสถานีชาร์จรถยนต์ไฟฟ้าที่ครบถ้วนที่สุดในประเทศไทย',
+    mission:   'เราเชื่อว่าการเข้าถึงข้อมูลสถานีชาร์จที่ถูกต้องและครบถ้วนเป็นกุญแจสำคัญในการขับเคลื่อนการใช้รถยนต์ไฟฟ้าในประเทศไทย\n\nEV Stations Thailand รวบรวมข้อมูลจากผู้ให้บริการชั้นนำ ได้แก่ PTT EV Station, Spark / BCP และ iGreen+ ครอบคลุมกว่า 1,800 สถานีทั่วประเทศ',
+    email:    '',
+    phone:    '',
+    line:     '',
+    facebook: '',
+  };
+
+  function renderAboutEditor() {
+    const data = { ...ABOUT_DEFAULTS, ...(EVApp.getAbout() || {}) };
+    document.getElementById('aboutHeroTitle').value = data.heroTitle;
+    document.getElementById('aboutTagline').value   = data.tagline;
+    document.getElementById('aboutMission').value   = data.mission;
+    document.getElementById('aboutEmail').value     = data.email;
+    document.getElementById('aboutPhone').value     = data.phone;
+    document.getElementById('aboutLine').value      = data.line;
+    document.getElementById('aboutFacebook').value  = data.facebook;
+    updateAboutPreview(data);
+  }
+
+  function updateAboutPreview(data) {
+    const fbUrl = (data.facebook || '').startsWith('http') ? EVApp.escapeHtml(data.facebook) : '';
+    const contact = [
+      data.email && `📧 ${EVApp.escapeHtml(data.email)}`,
+      data.phone && `📞 ${EVApp.escapeHtml(data.phone)}`,
+      data.line  && `💬 LINE: ${EVApp.escapeHtml(data.line)}`,
+      fbUrl      && `🔵 <a href="${fbUrl}" target="_blank" rel="noopener" style="color:var(--accent);">Facebook</a>`,
+    ].filter(Boolean).join('  ·  ');
+
+    document.getElementById('aboutPreview').innerHTML = `
+      <h2 style="font-size:20px;font-weight:700;margin:0 0 6px;letter-spacing:-.01em;">${EVApp.escapeHtml(data.heroTitle)}</h2>
+      <p style="color:var(--muted);margin:0 0 14px;font-size:14px;">${EVApp.escapeHtml(data.tagline)}</p>
+      ${data.mission ? `<p style="font-size:14px;line-height:1.75;white-space:pre-wrap;margin:0 0 14px;">${EVApp.escapeHtml(data.mission)}</p>` : ''}
+      ${contact ? `<div style="font-size:13px;color:var(--text-2);padding-top:12px;border-top:1px solid var(--line);">${contact}</div>` : ''}
+    `;
+  }
+
+  document.getElementById('aboutSaveBtn').addEventListener('click', () => {
+    const data = {
+      heroTitle: document.getElementById('aboutHeroTitle').value.trim() || ABOUT_DEFAULTS.heroTitle,
+      tagline:   document.getElementById('aboutTagline').value.trim()   || ABOUT_DEFAULTS.tagline,
+      mission:   document.getElementById('aboutMission').value.trim(),
+      email:     document.getElementById('aboutEmail').value.trim(),
+      phone:     document.getElementById('aboutPhone').value.trim(),
+      line:      document.getElementById('aboutLine').value.trim(),
+      facebook:  document.getElementById('aboutFacebook').value.trim(),
+    };
+    EVApp.setAbout(data);
+    updateAboutPreview(data);
+    toast('บันทึกข้อมูลเกี่ยวกับเราแล้ว', 'success');
+  });
+
+  // ─── Submissions ───
+  let currentSubTab = 'interested';
+
+  function renderSubmissionsCount() {
+    const n1 = EVApp.getSubmissions('interested').length;
+    const n2 = EVApp.getSubmissions('station').length;
+    const total = n1 + n2;
+    const badge = document.getElementById('submissionsBadge');
+    if (badge) { badge.textContent = total; badge.style.display = total ? '' : 'none'; }
+    const b1 = document.getElementById('interestedBadge');
+    const b2 = document.getElementById('stationSubBadge');
+    if (b1) b1.textContent = n1 ? `(${n1})` : '';
+    if (b2) b2.textContent = n2 ? `(${n2})` : '';
+  }
+
+  function renderSubmissions(type) {
+    currentSubTab = type;
+    document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.toggle('active', b.dataset.subtab === type));
+    const list = EVApp.getSubmissions(type);
+    const el   = document.getElementById('submissionsList');
+
+    if (!list.length) {
+      el.innerHTML = `<div class="empty"><div class="empty-icon">📭</div><div>ยังไม่มีข้อมูลที่ส่งมา</div></div>`;
+      return;
+    }
+
+    const LABELS_INT = [
+      ['ชื่อ-นามสกุล','name'],['เบอร์โทร','phone'],['อีเมล','email'],
+      ['จังหวัดที่สนใจ','province'],['ประเภทความสนใจ','interestType'],['รายละเอียด','details'],
+    ];
+    const LABELS_STA = [
+      ['ประเภท','submitType'],['ชื่อสถานี','stationName'],
+      ['จังหวัด','province'],['อำเภอ/เขต','district'],['ที่อยู่','address'],
+      ['หัวชาร์จ DC','dcHeads'],['หัวชาร์จ AC','acHeads'],
+      ['ผู้แจ้ง','reporterName'],['ติดต่อ','reporterContact'],['หมายเหตุ','notes'],
+    ];
+    const labels = type === 'interested' ? LABELS_INT : LABELS_STA;
+
+    el.innerHTML = list.map(sub => `
+      <div class="sub-card">
+        <div class="sub-card-head">
+          <div>
+            <div style="font-size:12px;color:var(--muted);margin-bottom:2px;">${EVApp.timeAgo(sub.t)}</div>
+            <div style="font-size:11px;font-family:monospace;color:var(--muted-2);">#${EVApp.escapeHtml(sub.id.slice(-8))}</div>
+          </div>
+          <button class="btn btn-danger btn-sm" data-sub-delete data-sub-type="${type}" data-sub-id="${EVApp.escapeHtml(sub.id)}">ลบ</button>
+        </div>
+        <div class="sub-field-grid">
+          ${labels.filter(([,k]) => sub[k]).map(([label,k]) => `
+            <div class="sub-field-row">
+              <span class="sub-field-label">${label}</span>
+              <span>${EVApp.escapeHtml(String(sub[k]))}</span>
+            </div>`).join('')}
+        </div>
+      </div>`).join('');
+  }
+
+  document.querySelectorAll('.sub-tab-btn').forEach(btn =>
+    btn.addEventListener('click', () => renderSubmissions(btn.dataset.subtab))
+  );
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-sub-delete]');
+    if (!btn) return;
+    if (!confirm('ลบข้อมูลนี้?')) return;
+    EVApp.deleteSubmission(btn.dataset.subType, btn.dataset.subId);
+    renderSubmissions(currentSubTab);
+    renderSubmissionsCount();
+    toast('ลบข้อมูลแล้ว');
+  });
+
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /.claude/
+
+Sitemap: http://localhost:8095/sitemap.xml
+

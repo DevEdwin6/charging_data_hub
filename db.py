@@ -119,33 +119,37 @@ def update_total_stations(run_id, total):
     cursor.close()
 
 
-def get_processed_stations(platform_code, run_id):
+def get_processed_stations(platform_code, run_id, time_period):
     """
-    查询当前批次中已采集完成的站点，返回 key 集合。
+    查询当前批次中、当前时段价格已全部填充的站点，返回 key 集合。
     key 格式与 scraper 内保持一致：station_name + brief_address。
 
-    通过 connector_status_snapshots 关联判断"是否已采集"，
-    确保只有事务完整提交的站点才计入 processed。
+    判断逻辑：该站在本批次内所有枪口快照的当前时段价格列均不为 NULL，
+    才算"已完成"；任意枪口价格仍为空则需要重新采集以补全。
 
     :param platform_code: 平台编码
     :param run_id:        当前批次 ID
+    :param time_period:   'day' 或 'night'
     :return: set of str，每个元素为 name+brief_address
     """
+    price_col = "day_price_per_kwh" if time_period == "day" else "night_price_per_kwh"
     conn = _get_conn()
     cursor = conn.cursor()
-    cursor.execute("""
-                   SELECT DISTINCT ss.station_name, ss.brief_address
+    cursor.execute(f"""
+                   SELECT ss.station_name, ss.brief_address
                    FROM station_sites ss
-                            JOIN connector_status_snapshots css ON css.station_id = ss.id
+                            INNER JOIN connector_status_snapshots css
+                                       ON css.station_id = ss.id AND css.run_id = %s
                    WHERE ss.platform_code = %s
-                     AND css.run_id = %s
-                   """, (platform_code, run_id))
+                   GROUP BY ss.id, ss.station_name, ss.brief_address
+                   HAVING SUM(css.{price_col} IS NULL) = 0
+                   """, (run_id, platform_code))
     rows = cursor.fetchall()
     cursor.close()
 
     processed = {name + (addr or "") for name, addr in rows}
     if processed:
-        print(f"[断点续采] 当前批次已完成 {len(processed)} 个站点，自动跳过\n")
+        print(f"[断点续采] 当前批次已完成 {len(processed)} 个站点（{time_period} 时段价格已全），自动跳过\n")
     return processed
 
 
@@ -207,7 +211,8 @@ def save_station(run_id, station_data, time_period, collected_at):
 
     写入顺序：
       1. UPSERT station_sites（以 platform_code+station_name 去重）
-      2. INSERT connector_status_snapshots（追加，不去重；每行含充电桩信息）
+      2. 逐枪口：若本批次已有快照且当前时段价格为空 → UPDATE 补价格；
+                 否则 INSERT 新行，仅填充当前时段的价格列
       3. UPDATE collection_runs.collected_count + 1
 
     任意步骤异常则整体回滚，站点不计入 processed，下次重试。
@@ -259,7 +264,7 @@ def save_station(run_id, station_data, time_period, collected_at):
                        ))
         station_id = cursor.lastrowid
 
-        # ── 2. 逐枪口 INSERT 快照（追加，保留历史）──────────────
+        # ── 2. 逐枪口：UPDATE 补价格 或 INSERT 新快照 ────────────
         for unit in station_data.get("charger_units", []):
             for connector in unit.get("connectors", []):
                 raw_data = {
@@ -269,32 +274,71 @@ def save_station(run_id, station_data, time_period, collected_at):
                     },
                     "connector": connector,
                 }
+                raw_json   = json.dumps(raw_data, ensure_ascii=False)
+                price_text = connector.get("price", "")
+                price_kwh  = _parse_price_per_kwh(connector.get("price"))
+
+                # 查找本批次内同一枪口的已有快照
                 cursor.execute("""
-                               INSERT INTO connector_status_snapshots
-                               (run_id, station_id,
-                                platform_unit_id, unit_name,
-                                connector_name, connector_type,
-                                power_text, power_kw,
-                                price_text, price_per_kwh,
-                                status, time_period,
-                                raw_data, collected_at)
-                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                               SELECT id, day_price_per_kwh, night_price_per_kwh
+                               FROM connector_status_snapshots
+                               WHERE run_id = %s
+                                 AND station_id = %s
+                                 AND COALESCE(platform_unit_id, '') = COALESCE(%s, '')
+                                 AND connector_name = %s
+                               ORDER BY id DESC LIMIT 1
                                """, (
-                                   run_id,
-                                   station_id,
+                                   run_id, station_id,
                                    unit.get("id"),
-                                   unit.get("name"),
                                    connector.get("position", ""),
-                                   connector.get("connector_type", ""),
-                                   connector.get("power", ""),
-                                   _parse_power_kw(connector.get("power")),
-                                   connector.get("price", ""),
-                                   _parse_price_per_kwh(connector.get("price")),
-                                   connector.get("status", ""),
-                                   time_period,
-                                   json.dumps(raw_data, ensure_ascii=False),
-                                   collected_at,
                                ))
+                existing = cursor.fetchone()
+
+                if existing:
+                    snap_id, day_kwh, night_kwh = existing
+                    if time_period == "day" and day_kwh is None:
+                        cursor.execute("""
+                                       UPDATE connector_status_snapshots
+                                       SET day_price_text = %s, day_price_per_kwh = %s
+                                       WHERE id = %s
+                                       """, (price_text, price_kwh, snap_id))
+                    elif time_period == "night" and night_kwh is None:
+                        cursor.execute("""
+                                       UPDATE connector_status_snapshots
+                                       SET night_price_text = %s, night_price_per_kwh = %s
+                                       WHERE id = %s
+                                       """, (price_text, price_kwh, snap_id))
+                    # 当前时段价格已存在，无需操作
+                else:
+                    day_pt   = price_text if time_period == "day"   else None
+                    day_pkwh = price_kwh  if time_period == "day"   else None
+                    ngt_pt   = price_text if time_period == "night" else None
+                    ngt_pkwh = price_kwh  if time_period == "night" else None
+
+                    cursor.execute("""
+                                   INSERT INTO connector_status_snapshots
+                                   (run_id, station_id,
+                                    platform_unit_id, unit_name,
+                                    connector_name, connector_type,
+                                    power_text, power_kw,
+                                    day_price_text, day_price_per_kwh,
+                                    night_price_text, night_price_per_kwh,
+                                    status, time_period,
+                                    raw_data, collected_at)
+                                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                   """, (
+                                       run_id, station_id,
+                                       unit.get("id"), unit.get("name"),
+                                       connector.get("position", ""),
+                                       connector.get("connector_type", ""),
+                                       connector.get("power", ""),
+                                       _parse_power_kw(connector.get("power")),
+                                       day_pt, day_pkwh,
+                                       ngt_pt, ngt_pkwh,
+                                       connector.get("status", ""),
+                                       time_period,
+                                       raw_json, collected_at,
+                                   ))
 
         # ── 3. 批次进度 +1 ────────────────────────────────────
         cursor.execute("""

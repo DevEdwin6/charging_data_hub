@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>นโยบายความเป็นส่วนตัว (PDPA) — EV Stations Thailand</title>
+<meta name="description" content="นโยบายความเป็นส่วนตัวของ EV Stations Thailand ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (PDPA) พ.ศ. 2562">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<script>(function(){var t=localStorage.getItem('evmap.theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="app-header-inner">
+    <a class="back" href="index.html">← กลับ</a>
+    <a class="brand" href="index.html" id="brand"></a>
+    <div class="header-spacer"></div>
+    <div class="header-actions">
+      <button class="btn btn-ghost lang-toggle" id="langToggle" title="Switch language">EN</button>
+      <button class="btn btn-ghost btn-icon" id="themeToggle" title="Toggle theme">☀️</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="legal-hero">
+  <div class="eyebrow">PDPA</div>
+  <h1>นโยบายความเป็นส่วนตัว</h1>
+  <p class="updated">มีผลบังคับใช้: 16 มิถุนายน 2568 &nbsp;·&nbsp; ปรับปรุงล่าสุด: 16 มิถุนายน 2568</p>
+  <nav class="legal-toc" aria-label="สารบัญ">
+    <a href="#s1">1. บทนำ</a>
+    <a href="#s2">2. ผู้ควบคุมข้อมูล</a>
+    <a href="#s3">3. ข้อมูลที่เก็บรวบรวม</a>
+    <a href="#s4">4. วัตถุประสงค์</a>
+    <a href="#s5">5. การเปิดเผยข้อมูล</a>
+    <a href="#s6">6. Local Storage</a>
+    <a href="#s7">7. ระยะเวลาเก็บข้อมูล</a>
+    <a href="#s8">8. สิทธิ์ของคุณ</a>
+    <a href="#s9">9. ความปลอดภัย</a>
+    <a href="#s10">10. การเปลี่ยนแปลง</a>
+    <a href="#s11">11. ติดต่อเรา</a>
+  </nav>
+</div>
+
+<!-- Content -->
+<div class="legal-body">
+
+  <!-- 1 -->
+  <div class="legal-section" id="s1">
+    <div class="legal-section-head">
+      <span class="legal-section-num">01</span>
+      <h2>บทนำ</h2>
+    </div>
+    <p>EV Stations Thailand ("เรา" หรือ "เว็บไซต์") ให้ความสำคัญกับความเป็นส่วนตัวของผู้ใช้ทุกท่านอย่างยิ่ง นโยบายนี้จัดทำขึ้นตาม <strong>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</strong> เพื่ออธิบายว่าเราเก็บรวบรวม ใช้ และปกป้องข้อมูลส่วนบุคคลของคุณอย่างไร</p>
+    <p>เว็บไซต์นี้เป็นแพลตฟอร์มข้อมูลสถานีชาร์จรถยนต์ไฟฟ้าในประเทศไทย โดย<strong>ไม่มีระบบเซิร์ฟเวอร์กลาง</strong>สำหรับเก็บข้อมูลผู้ใช้ ข้อมูลส่วนใหญ่ถูกเก็บไว้ใน Local Storage ของเบราว์เซอร์บนอุปกรณ์ของคุณเอง</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="legal-section" id="s2">
+    <div class="legal-section-head">
+      <span class="legal-section-num">02</span>
+      <h2>ผู้ควบคุมข้อมูลส่วนบุคคล</h2>
+    </div>
+    <p>ผู้ควบคุมข้อมูลส่วนบุคคลตาม PDPA คือ:</p>
+    <ul>
+      <li><strong>ชื่อ:</strong> EV Stations Thailand</li>
+      <li><strong>ประเภท:</strong> เว็บไซต์ข้อมูลสถานีชาร์จรถยนต์ไฟฟ้า (แบบ static ไม่มีเซิร์ฟเวอร์)</li>
+      <li><strong>อีเมลติดต่อ:</strong> <span id="controllerEmail"></span></li>
+    </ul>
+  </div>
+
+  <!-- 3 -->
+  <div class="legal-section" id="s3">
+    <div class="legal-section-head">
+      <span class="legal-section-num">03</span>
+      <h2>ข้อมูลที่เราเก็บรวบรวม</h2>
+    </div>
+    <p><strong>3.1 ข้อมูลในแบบฟอร์มรีวิวสถานี</strong></p>
+    <p>เมื่อคุณส่งรีวิวสถานีชาร์จ เราเก็บข้อมูลต่อไปนี้ใน Local Storage ของเบราว์เซอร์:</p>
+    <ul>
+      <li>ชื่อของคุณ (ตามที่คุณระบุ ไม่บังคับใส่นามสกุล)</li>
+      <li>คะแนน 1–5 ดาว</li>
+      <li>ข้อความรีวิวประสบการณ์</li>
+      <li>วันที่และเวลาส่ง</li>
+    </ul>
+
+    <p style="margin-top:16px;"><strong>3.2 ข้อมูลในแบบฟอร์มแจ้งข้อมูลสถานีใหม่</strong></p>
+    <ul>
+      <li>ชื่อสถานี ที่อยู่ และรายละเอียดเครื่องชาร์จ</li>
+      <li>ชื่อผู้แจ้ง เบอร์โทรศัพท์ และอีเมล (ถ้ากรอก)</li>
+    </ul>
+
+    <p style="margin-top:16px;"><strong>3.3 ข้อมูลในแบบฟอร์มสนใจทำสถานี</strong></p>
+    <ul>
+      <li>ชื่อ-นามสกุล เบอร์โทรศัพท์ และอีเมล</li>
+      <li>ที่ตั้งที่สนใจและประเภทสถานที่</li>
+    </ul>
+
+    <p style="margin-top:16px;"><strong>3.4 การตั้งค่าเบราว์เซอร์</strong></p>
+    <p>เราเก็บการตั้งค่าธีม (สว่าง/มืด) และภาษา (ไทย/อังกฤษ) ใน Local Storage เพื่อปรับประสบการณ์การใช้งาน ข้อมูลนี้ไม่ถือเป็นข้อมูลส่วนบุคคล</p>
+
+    <p style="margin-top:16px;"><strong>เราไม่เก็บ:</strong> cookies ของเซิร์ฟเวอร์, ที่อยู่ IP, ข้อมูลการท่องเว็บ, ข้อมูล analytics หรือข้อมูลเกี่ยวกับอุปกรณ์ของคุณ</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="legal-section" id="s4">
+    <div class="legal-section-head">
+      <span class="legal-section-num">04</span>
+      <h2>วัตถุประสงค์และฐานทางกฎหมายในการประมวลผลข้อมูล</h2>
+    </div>
+    <div class="ls-table-wrap">
+      <table class="ls-table">
+        <thead>
+          <tr>
+            <th>ข้อมูลที่เก็บ</th>
+            <th>วัตถุประสงค์</th>
+            <th>ฐานทางกฎหมาย (PDPA)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>รีวิวสถานีชาร์จ</td>
+            <td>แสดงผลรีวิวและปรับปรุงข้อมูลสถานี</td>
+            <td><strong>ความยินยอม</strong> — มาตรา 19</td>
+          </tr>
+          <tr>
+            <td>ข้อมูลสถานีใหม่</td>
+            <td>เพิ่มและอัปเดตข้อมูลในฐานข้อมูล</td>
+            <td><strong>ความยินยอม</strong> — มาตรา 19</td>
+          </tr>
+          <tr>
+            <td>ข้อมูลสนใจทำสถานี</td>
+            <td>ติดต่อกลับเพื่อประสานงาน</td>
+            <td><strong>ความยินยอม</strong> — มาตรา 19</td>
+          </tr>
+          <tr>
+            <td>การตั้งค่าธีม / ภาษา</td>
+            <td>จดจำการตั้งค่าผู้ใช้</td>
+            <td><strong>ประโยชน์อันชอบธรรม</strong> — มาตรา 24(5)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="legal-section" id="s5">
+    <div class="legal-section-head">
+      <span class="legal-section-num">05</span>
+      <h2>การเปิดเผยและโอนข้อมูล</h2>
+    </div>
+    <p>เราไม่ขาย แบ่งปัน หรือโอนข้อมูลส่วนบุคคลของคุณให้กับบุคคลที่สามโดยเด็ดขาด</p>
+    <p>ข้อมูลรีวิวและการตั้งค่าทั้งหมดถูกเก็บไว้เฉพาะใน <strong>Local Storage ของเบราว์เซอร์</strong> บนอุปกรณ์ของคุณและของผู้ดูแลระบบ ไม่มีการส่งข้อมูลไปยังเซิร์ฟเวอร์ภายนอกใดๆ เนื่องจากเว็บไซต์นี้เป็น static site ที่ไม่มีระบบ backend</p>
+  </div>
+
+  <!-- 6 -->
+  <div class="legal-section" id="s6">
+    <div class="legal-section-head">
+      <span class="legal-section-num">06</span>
+      <h2>การจัดเก็บข้อมูลใน Local Storage</h2>
+    </div>
+    <p>เว็บไซต์นี้ใช้ <strong>Local Storage</strong> แทนคุกกี้ ข้อมูลทั้งหมดเก็บบนอุปกรณ์ของคุณและ<strong>ไม่ถูกส่งไปยังเซิร์ฟเวอร์ใดๆ</strong> รายการที่เก็บมีดังนี้:</p>
+    <div class="ls-table-wrap" style="margin-top:16px;">
+      <table class="ls-table">
+        <thead>
+          <tr><th>คีย์</th><th>รายละเอียด</th><th>ข้อมูลส่วนบุคคล?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>evmap.theme</code></td><td>การตั้งค่าธีม (dark / light)</td><td>ไม่ใช่</td></tr>
+          <tr><td><code>evmap.lang</code></td><td>การตั้งค่าภาษา (th / en)</td><td>ไม่ใช่</td></tr>
+          <tr><td><code>evmap.consent</code></td><td>สถานะความยินยอมของคุณ</td><td>ไม่ใช่</td></tr>
+          <tr><td><code>evmap.reviews.*</code></td><td>รีวิวที่อนุมัติแล้ว — ชื่อ, คะแนน, ข้อความ</td><td>✓ ชื่อผู้รีวิว</td></tr>
+          <tr><td><code>evmap.pending.*</code></td><td>รีวิวรอการอนุมัติ</td><td>✓ ชื่อผู้รีวิว</td></tr>
+          <tr><td><code>evmap.sub.*</code></td><td>ข้อมูลแบบฟอร์มที่ส่งมา (ชื่อ เบอร์ อีเมล)</td><td>✓ ข้อมูลติดต่อ</td></tr>
+          <tr><td><code>evmap.admin.pass</code></td><td>รหัสผ่านผู้ดูแลระบบ (เข้ารหัสแล้ว)</td><td>ไม่ใช่</td></tr>
+          <tr><td><code>evmap.logo</code></td><td>โลโก้แบรนด์ (Base64)</td><td>ไม่ใช่</td></tr>
+          <tr><td><code>evmap.about</code></td><td>ข้อมูลเกี่ยวกับเรา</td><td>ไม่ใช่</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:16px;">คุณสามารถล้างข้อมูล Local Storage ได้ทุกเมื่อผ่าน Settings ของเบราว์เซอร์ (Clear site data) หรือผ่านปุ่ม "ลบข้อมูลทั้งหมด" ในหน้าผู้ดูแลระบบ</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="legal-section" id="s7">
+    <div class="legal-section-head">
+      <span class="legal-section-num">07</span>
+      <h2>ระยะเวลาการเก็บรักษาข้อมูล</h2>
+    </div>
+    <p>ข้อมูลใน Local Storage จะถูกเก็บไว้จนกว่า:</p>
+    <ul>
+      <li>คุณล้างข้อมูลเบราว์เซอร์ด้วยตนเอง (Clear site data / Clear browsing data)</li>
+      <li>คุณยื่นคำขอให้ลบข้อมูลตามสิทธิ์เจ้าของข้อมูล (ดูข้อ 8)</li>
+      <li>ผู้ดูแลระบบลบข้อมูลผ่านหน้า Admin ของเว็บไซต์</li>
+    </ul>
+    <p>เนื่องจากไม่มีเซิร์ฟเวอร์กลาง ข้อมูลจึงไม่มีวันหมดอายุโดยอัตโนมัติ</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="legal-section" id="s8">
+    <div class="legal-section-head">
+      <span class="legal-section-num">08</span>
+      <h2>สิทธิ์ของเจ้าของข้อมูลส่วนบุคคล</h2>
+    </div>
+    <p>ภายใต้ PDPA คุณมีสิทธิ์ดังต่อไปนี้เกี่ยวกับข้อมูลส่วนบุคคลของคุณ:</p>
+    <div class="legal-rights-grid">
+      <div class="right-card">
+        <span class="right-icon">ℹ️</span>
+        <div class="right-title">สิทธิ์รับทราบ</div>
+        <div class="right-en">Right to be Informed</div>
+        <div class="right-desc">รับทราบว่าข้อมูลอะไรถูกเก็บและใช้งานอย่างไร</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">🔍</span>
+        <div class="right-title">สิทธิ์เข้าถึง</div>
+        <div class="right-en">Right of Access</div>
+        <div class="right-desc">ขอสำเนาข้อมูลส่วนบุคคลที่เราเก็บไว้เกี่ยวกับคุณ</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">✏️</span>
+        <div class="right-title">สิทธิ์แก้ไข</div>
+        <div class="right-en">Right to Rectification</div>
+        <div class="right-desc">ขอแก้ไขข้อมูลที่ไม่ถูกต้องหรือไม่ครบถ้วน</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">🗑️</span>
+        <div class="right-title">สิทธิ์ลบข้อมูล</div>
+        <div class="right-en">Right to Erasure</div>
+        <div class="right-desc">ขอให้ลบข้อมูลส่วนบุคคลของคุณออกจากระบบ</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">⏸️</span>
+        <div class="right-title">สิทธิ์ระงับการใช้</div>
+        <div class="right-en">Right to Restriction</div>
+        <div class="right-desc">ขอระงับการประมวลผลข้อมูลชั่วคราว</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">📦</span>
+        <div class="right-title">สิทธิ์โอนย้าย</div>
+        <div class="right-en">Right to Portability</div>
+        <div class="right-desc">รับข้อมูลในรูปแบบที่ใช้งานได้ทั่วไป (เช่น JSON)</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">🚫</span>
+        <div class="right-title">สิทธิ์คัดค้าน</div>
+        <div class="right-en">Right to Object</div>
+        <div class="right-desc">คัดค้านการประมวลผลข้อมูลในกรณีที่มีเหตุผลส่วนตัว</div>
+      </div>
+      <div class="right-card">
+        <span class="right-icon">↩️</span>
+        <div class="right-title">ถอนความยินยอม</div>
+        <div class="right-en">Withdraw Consent</div>
+        <div class="right-desc">ถอนความยินยอมได้ทุกเมื่อโดยไม่กระทบสิทธิ์ก่อนหน้า</div>
+      </div>
+    </div>
+    <p style="margin-top:20px;">หากต้องการใช้สิทธิ์ใดๆ กรุณาติดต่อตามช่องทางในข้อ 11 เราจะดำเนินการภายใน <strong>30 วัน</strong> นับจากวันที่ได้รับคำขอ หากปฏิเสธหรือไม่ดำเนินการ คุณมีสิทธิ์ร้องเรียนต่อ <strong>สำนักงานคณะกรรมการคุ้มครองข้อมูลส่วนบุคคล (PDPC)</strong></p>
+  </div>
+
+  <!-- 9 -->
+  <div class="legal-section" id="s9">
+    <div class="legal-section-head">
+      <span class="legal-section-num">09</span>
+      <h2>ความปลอดภัยของข้อมูล</h2>
+    </div>
+    <p>เนื่องจากข้อมูลทั้งหมดเก็บใน Local Storage บนอุปกรณ์ของคุณ ความปลอดภัยจึงขึ้นอยู่กับการรักษาความปลอดภัยของอุปกรณ์นั้นเป็นหลัก เราแนะนำให้:</p>
+    <ul>
+      <li>ใช้รหัสผ่านหรือ PIN ล็อคหน้าจออุปกรณ์</li>
+      <li>ไม่ใช้เบราว์เซอร์ร่วมกับผู้อื่นในงานที่มีข้อมูลส่วนตัว</li>
+      <li>ล้างข้อมูลเบราว์เซอร์หลังใช้งานบนอุปกรณ์สาธารณะ</li>
+    </ul>
+    <p>รหัสผ่านผู้ดูแลระบบถูกเก็บในรูปแบบที่ผ่านการ hash ใน Local Storage และไม่สามารถอ่านได้โดยตรง</p>
+  </div>
+
+  <!-- 10 -->
+  <div class="legal-section" id="s10">
+    <div class="legal-section-head">
+      <span class="legal-section-num">10</span>
+      <h2>การเปลี่ยนแปลงนโยบาย</h2>
+    </div>
+    <p>เราอาจปรับปรุงนโยบายนี้เป็นครั้งคราว การเปลี่ยนแปลงจะมีผลทันทีเมื่อเผยแพร่บนเว็บไซต์ โดยจะระบุวันที่ "ปรับปรุงล่าสุด" ไว้ที่ด้านบนของหน้า</p>
+    <p>หากมีการเปลี่ยนแปลงที่กระทบสิทธิ์ของคุณอย่างมีนัยสำคัญ เราจะแสดงแบนเนอร์แจ้งเตือนบนเว็บไซต์ การใช้งานต่อเนื่องหลังเผยแพร่ถือว่าคุณยอมรับนโยบายที่อัปเดต</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="legal-section" id="s11">
+    <div class="legal-section-head">
+      <span class="legal-section-num">11</span>
+      <h2>ช่องทางการติดต่อ</h2>
+    </div>
+    <p>หากคุณมีคำถามเกี่ยวกับนโยบายนี้ หรือต้องการใช้สิทธิ์ในฐานะเจ้าของข้อมูลส่วนบุคคล กรุณาติดต่อเราที่:</p>
+    <ul>
+      <li><strong>อีเมล:</strong> <span id="contactEmail"></span></li>
+    </ul>
+    <p>เราจะพยายามตอบกลับภายใน 3–5 วันทำการ และดำเนินการตามคำขอสิทธิ์ภายใน 30 วัน</p>
+  </div>
+
+</div>
+
+<footer class="legal-page-footer">
+  <a href="index.html">🗺️ แผนที่</a>
+  <span class="sep">·</span>
+  <a href="about.html">เกี่ยวกับเรา</a>
+  <span class="sep">·</span>
+  <a href="terms.html">ข้อกำหนดการใช้งาน</a>
+  <span class="sep">·</span>
+  <span>© 2568 EV Stations Thailand</span>
+</footer>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/page-i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(() => {
+  EVi18n.apply();
+  EVApp.renderBrand(document.getElementById('brand'));
+
+  const themeBtn = document.getElementById('themeToggle');
+  function syncTheme() {
+    themeBtn.textContent = document.documentElement.getAttribute('data-theme') !== 'light' ? '☀️' : '🌙';
+  }
+  syncTheme();
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    EVApp.setTheme(next); syncTheme();
+  });
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    EVi18n.setLang(EVi18n.nextLang());
+    EVi18n.apply();
+    EVPageI18n.apply('privacy');
+  });
+
+  // Load admin-configured contact email if set
+  const aboutData = EVApp.getAbout() || {};
+  const email = aboutData.email || 'phuketthongsom@gmail.com';
+  const emailLink = `<a href="mailto:${EVApp.escapeHtml(email)}">${EVApp.escapeHtml(email)}</a>`;
+  document.getElementById('controllerEmail').innerHTML = emailLink;
+  document.getElementById('contactEmail').innerHTML = emailLink;
+  EVPageI18n.apply('privacy');
+})();
+</script>
+</body>
+</html>

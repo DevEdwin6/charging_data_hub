@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 122">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2de89b"/>
+      <stop offset="100%" stop-color="#00c0d8"/>
+    </linearGradient>
+  </defs>
+  <!-- Map pin shape -->
+  <path d="M50 4C26.8 4 8 22.8 8 46c0 23.2 42 72 42 72s42-48.8 42-72C92 22.8 73.2 4 50 4z" fill="url(#g)"/>
+  <!-- Left prong -->
+  <rect x="35" y="23" width="11" height="20" rx="5.5" fill="white"/>
+  <!-- Right prong -->
+  <rect x="54" y="23" width="11" height="20" rx="5.5" fill="white"/>
+  <!-- Plug body -->
+  <rect x="28" y="37" width="44" height="30" rx="5" fill="white"/>
+  <!-- Lightning bolt -->
+  <path d="M53 43 L44 57 L51 57 L47 71 L56 55 L49 55Z" fill="#00bcd4"/>
+</svg>

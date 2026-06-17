@@ -1,0 +1,650 @@
+﻿<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Charging Station — Thailand</title>
+<meta name="description" content="EV charging station details, directions, charger info and reviews.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" id="canonical" href="">
+<meta property="og:type" content="place">
+<meta property="og:site_name" content="EV Stations Thailand">
+<meta property="og:title" id="og-title" content="EV Charging Station — Thailand">
+<meta property="og:description" id="og-desc" content="EV charging station details, directions, charger info and reviews.">
+<meta property="og:url" id="og-url" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" id="tw-title" content="EV Charging Station — Thailand">
+<meta name="twitter:description" id="tw-desc" content="EV charging station details, directions, charger info and reviews.">
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+<link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com">
+<script>(function(){var t=localStorage.getItem('evmap.theme')||'light';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  .app-header-inner { gap: 14px; }
+  .back {
+    text-decoration: none; color: var(--text-2); font-size: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: var(--r-1);
+    transition: background var(--t-fast), color var(--t-fast);
+  }
+  .back:hover { background: var(--panel); color: var(--text); }
+
+  .hero { padding: 28px 0 18px; }
+  .hero h1 {
+    font-size: 32px; line-height: 1.2; margin: 14px 0 12px;
+    font-weight: 700; letter-spacing: -.02em;
+  }
+  @media (max-width: 640px) { .hero h1 { font-size: 24px; } }
+  .meta-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    color: var(--muted); font-size: 14px; line-height: 1.6;
+  }
+  .meta-row .dot-sep { color: var(--muted-2); }
+  .address {
+    color: var(--text-2); font-size: 14.5px; margin-top: 8px; line-height: 1.5;
+  }
+  .coords {
+    color: var(--muted); font-size: 13px; margin-top: 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hero-actions {
+    display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px;
+  }
+
+  #map {
+    height: 380px;
+    border-radius: var(--r-3);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    margin: 24px 0;
+    box-shadow: var(--shadow-2);
+  }
+  @media (max-width: 640px) { #map { height: 280px; margin: 18px 0; } }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .stat {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    padding: 14px 16px;
+  }
+  .stat .num { font-size: 30px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+  .stat .num.dc { color: #fda4af; }
+  .stat .num.ac { color: #93c5fd; }
+  .stat .label { font-size: 11px; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; }
+
+  .chargers-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 8px;
+    max-height: 320px; overflow-y: auto;
+  }
+  .charger-item {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-1);
+    padding: 10px 14px;
+    display: block;
+    font-size: 13px;
+  }
+  .charger-main {
+    display: flex; align-items: center; gap: 10px; justify-content: space-between;
+  }
+  .charger-type {
+    font-size: 11px; padding: 3px 9px; border-radius: var(--r-1); font-weight: 700;
+    flex-shrink: 0; letter-spacing: .05em;
+  }
+  .charger-type.DC { background: rgba(244,63,94,.15); color: #fda4af; border: 1px solid rgba(244,63,94,.3); }
+  .charger-type.AC { background: rgba(59,130,246,.15); color: #93c5fd; border: 1px solid rgba(59,130,246,.3); }
+  .charger-name { flex: 1; color: var(--text-2); word-break: break-all; font-size: 12.5px; }
+  .charger-kw { color: var(--muted); font-size: 11px; white-space: nowrap; }
+  .charger-heads { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .gun-list { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+  .gun-row {
+    display: grid; grid-template-columns: minmax(72px, 1fr) auto auto;
+    align-items: center; gap: 8px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--r-1);
+    padding: 8px 10px;
+  }
+  .gun-label { color: var(--text-2); font-size: 12px; font-weight: 600; }
+  .price-pill {
+    display: inline-flex; align-items: center; gap: 6px; justify-content: space-between;
+    min-width: 104px; border-radius: var(--r-1); padding: 5px 8px;
+    color: var(--muted); background: rgba(148,163,184,.08); border: 1px solid var(--line);
+    font-size: 11px; white-space: nowrap;
+  }
+  .price-pill strong { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .price-pill.day strong { color: #fbbf24; }
+  .price-pill.night strong { color: #93c5fd; }
+  @media (max-width: 560px) {
+    .charger-main { flex-wrap: wrap; }
+    .gun-row { grid-template-columns: 1fr 1fr; }
+    .gun-label { grid-column: 1 / -1; }
+    .price-pill { min-width: 0; }
+  }
+
+  /* ─── Reviews ─── */
+  .reviews-summary {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding-bottom: 18px; border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .rating-big {
+    font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -.02em;
+  }
+  .rating-stars { font-size: 18px; }
+  .rating-count { color: var(--muted); font-size: 13px; }
+
+  .review-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r-2);
+    padding: 16px 18px;
+    margin-bottom: 10px;
+  }
+  .review-head {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .reviewer-avatar {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #7c3aed);
+    color: #00131f; font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; font-size: 14px; }
+  .review-time { color: var(--muted); font-size: 12px; }
+  .review-body { font-size: 14px; line-height: 1.6; color: var(--text-2); white-space: pre-wrap; }
+
+  /* Star picker */
+  .star-pick {
+    display: inline-flex; gap: 2px; font-size: 32px; user-select: none; cursor: pointer;
+  }
+  .star-pick span {
+    color: #2b3759; transition: color var(--t-fast), transform var(--t-fast);
+    line-height: 1; padding: 0 2px;
+  }
+  .star-pick span.on, .star-pick span.hover { color: #facc15; }
+  .star-pick span:hover { transform: scale(1.15); }
+  .review-form { display: flex; flex-direction: column; gap: 14px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: end; }
+  @media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
+
+  .pending-notice {
+    background: rgba(251,191,36,.1); border: 1px solid rgba(251,191,36,.3);
+    color: #fde68a; padding: 12px 14px; border-radius: var(--r-1); font-size: 13px;
+    margin-top: 12px; display: flex; align-items: center; gap: 8px;
+  }
+
+  .not-found { text-align: center; padding: 80px 20px; color: var(--muted); }
+  .not-found h1 { color: var(--text); margin-bottom: 12px; font-size: 24px; }
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="app-header-inner">
+    <a class="back" href="index.html" id="backLink" aria-label="Back to map">← กลับ</a>
+    <a class="brand" href="index.html" id="brand"></a>
+    <div class="header-spacer"></div>
+    <button class="btn btn-ghost lang-toggle" id="langToggle" title="Switch language">EN</button>
+    <button class="btn btn-ghost btn-icon" id="themeToggle" title="Toggle dark/light mode" aria-label="Toggle theme">☀️</button>
+    <a class="btn btn-ghost btn-icon" href="admin.html" title="Admin" aria-label="Admin">⚙️</a>
+  </div>
+</header>
+
+<div class="wrap-max" id="root">
+  <div class="not-found"><h1>Loading…</h1></div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="data/spark.js"></script>
+<script src="data/igreen.js"></script>
+<script src="data/ptt.js"></script>
+<script src="vendor/leaflet/leaflet.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+(() => {
+  // ─── i18n boot ───
+  EVi18n.apply();
+  document.getElementById('backLink').textContent = EVi18n.t('nav_back');
+
+  EVApp.renderBrand(document.getElementById('brand'));
+  const stations = EVApp.loadStations();
+
+  // ─── Theme toggle ───
+  (function() {
+    const btn = document.getElementById('themeToggle');
+    function sync() {
+      const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+      btn.textContent = isDark ? '☀️' : '🌙';
+      btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+    sync();
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      EVApp.setTheme(next);
+      sync();
+    });
+  })();
+
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id') || location.hash.slice(1);
+  const s = stations.find(x => x.id === id);
+  const root = document.getElementById('root');
+
+  function toast(msg, kind = '') {
+    const el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    el.textContent = msg;
+    document.getElementById('toastWrap').appendChild(el);
+    setTimeout(() => el.remove(), 3200);
+  }
+
+  if (!s) {
+    root.innerHTML = `
+      <div class="not-found">
+        <h1>${EVi18n.t('station_not_found')}</h1>
+        <p>No station with id <code>${EVApp.escapeHtml(id || '')}</code>.</p>
+        <p style="margin-top:24px;"><a class="btn btn-primary btn-lg" href="index.html">${EVi18n.t('station_back')}</a></p>
+      </div>`;
+    return;
+  }
+
+  EVApp.recordStationView(s.id);
+
+  const displayName = EVApp.cleanName(s.name);
+  const pageTitle = `${displayName} EV Station — Thailand`;
+  const pageDesc = `${displayName} EV charging station in Thailand. ${s.dc} DC fast charger${s.dc !== 1 ? 's' : ''}, ${s.ac} AC charger${s.ac !== 1 ? 's' : ''}. Get directions, charger info, and reviews.`;
+  const pageUrl = `${location.origin}${location.pathname}?id=${encodeURIComponent(s.id)}`;
+  document.title = pageTitle;
+  document.getElementById('canonical').href = pageUrl;
+  document.getElementById('og-title').content = pageTitle;
+  document.getElementById('og-desc').content = pageDesc;
+  document.getElementById('og-url').content = pageUrl;
+  document.getElementById('tw-title').content = pageTitle;
+  document.getElementById('tw-desc').content = pageDesc;
+  document.querySelector('meta[name="description"]').content = pageDesc;
+
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    name: displayName,
+    description: pageDesc,
+    url: pageUrl,
+    geo: { '@type': 'GeoCoordinates', latitude: s.lat, longitude: s.lon },
+    amenityFeature: [
+      s.dc > 0 && { '@type': 'LocationFeatureSpecification', name: 'DC Fast Charging', value: true },
+      s.ac > 0 && { '@type': 'LocationFeatureSpecification', name: 'AC Charging', value: true },
+    ].filter(Boolean),
+  };
+  if (s.address) ld.address = { '@type': 'PostalAddress', streetAddress: s.address, addressCountry: 'TH' };
+  if (s.province) { ld.address = ld.address || { '@type': 'PostalAddress', addressCountry: 'TH' }; ld.address.addressRegion = s.province; }
+  const ldScript = document.createElement('script');
+  ldScript.type = 'application/ld+json';
+  ldScript.textContent = JSON.stringify(ld);
+  document.head.appendChild(ldScript);
+
+  const gmaps = EVApp.googleMapsUrl(s);
+  const shareUrl = `${location.origin}${location.pathname}?id=${encodeURIComponent(s.id)}`;
+  const metaParts = [s.district, s.province].filter(Boolean).join(', ');
+
+  function numberOrNull(value) {
+    if (value === null || value === undefined || value === '') return null;
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function priceValue(source, nested, names) {
+    for (const name of names) {
+      if (nested && nested[name] !== undefined) return nested[name];
+      if (source && source[name] !== undefined) return source[name];
+    }
+    return undefined;
+  }
+
+  function normalizePrice(source, fallback) {
+    const src = source || {};
+    const srcPrice = src.price || src.pricing || {};
+    const fb = fallback || {};
+    const fbPrice = fb.price || fb.pricing || {};
+    const dayRaw = priceValue(src, srcPrice, ['day', 'daytime', 'priceDay', 'price_day', 'dayPrice', 'day_price']);
+    const nightRaw = priceValue(src, srcPrice, ['night', 'priceNight', 'price_night', 'nightPrice', 'night_price']);
+    const fbDayRaw = priceValue(fb, fbPrice, ['day', 'daytime', 'priceDay', 'price_day', 'dayPrice', 'day_price']);
+    const fbNightRaw = priceValue(fb, fbPrice, ['night', 'priceNight', 'price_night', 'nightPrice', 'night_price']);
+    return {
+      day: numberOrNull(dayRaw ?? fbDayRaw),
+      night: numberOrNull(nightRaw ?? fbNightRaw),
+      currency: srcPrice.currency || src.currency || fbPrice.currency || fb.currency || 'THB',
+      unit: srcPrice.unit || src.unit || fbPrice.unit || fb.unit || EVi18n.t('station_price_unit_kwh'),
+    };
+  }
+
+  function formatPrice(value, price) {
+    if (value === null) return EVi18n.t('station_price_missing');
+    const unit = price.unit || EVi18n.t('station_price_unit_kwh');
+    const amount = Number.isInteger(value) ? String(value) : value.toFixed(2);
+    const currency = (price.currency || 'THB').toUpperCase();
+    const prefix = currency === 'THB' ? '฿' : `${currency} `;
+    return `${prefix}${amount}/${unit}`;
+  }
+
+  function chargerGuns(charger) {
+    const explicit = Array.isArray(charger.guns) ? charger.guns : [];
+    const headCount = Math.max(parseInt(charger.heads || 0, 10), explicit.length, 1);
+    return Array.from({ length: headCount }, (_, i) => {
+      const gun = explicit[i] || {};
+      return {
+        label: gun.label || gun.name || String(i + 1),
+        price: normalizePrice(gun, charger),
+      };
+    });
+  }
+
+  function chargerHtml(charger) {
+    const guns = chargerGuns(charger);
+    const type = charger.type || '';
+    const kw = charger.kw
+      ? `<span class="charger-kw">${EVApp.escapeHtml(EVi18n.t('station_kw_label', { kw: charger.kw }))}</span>`
+      : '';
+    return `
+      <li class="charger-item">
+        <div class="charger-main">
+          <span class="charger-type ${EVApp.escapeHtml(type)}">${EVApp.escapeHtml(type)}</span>
+          <span class="charger-name">${EVApp.escapeHtml(charger.name || charger.model || EVi18n.t('station_unnamed_charger'))}</span>
+          ${kw}
+          <span class="charger-heads">× ${charger.heads || guns.length}</span>
+        </div>
+        <div class="gun-list">
+          ${guns.map((gun, i) => `
+            <div class="gun-row">
+              <span class="gun-label">${EVApp.escapeHtml(EVi18n.t('station_gun_label', { n: gun.label || i + 1 }))}</span>
+              <span class="price-pill day"><span>${EVApp.escapeHtml(EVi18n.t('station_day_price'))}</span><strong>${EVApp.escapeHtml(formatPrice(gun.price.day, gun.price))}</strong></span>
+              <span class="price-pill night"><span>${EVApp.escapeHtml(EVi18n.t('station_night_price'))}</span><strong>${EVApp.escapeHtml(formatPrice(gun.price.night, gun.price))}</strong></span>
+            </div>
+          `).join('')}
+        </div>
+      </li>
+    `;
+  }
+
+  function renderChargersList() {
+    return s.chargers.map(chargerHtml).join('');
+  }
+
+  function buildStationHtml() {
+    return `
+    <div class="hero">
+      <span class="badge ${s.provider}">${s.providerLabel}</span>
+      <h1>${EVApp.escapeHtml(displayName)}</h1>
+      <div class="meta-row">
+        ${metaParts ? `<span>📍 ${EVApp.escapeHtml(metaParts)}</span>` : ''}
+        <span class="dot-sep">•</span>
+        <span id="metaChargers">${s.chargers.length} ${EVi18n.t('station_charger_label')}</span>
+        <span class="dot-sep">•</span>
+        <span id="metaHeads">${s.dc + s.ac} ${EVi18n.t('station_head_label')}</span>
+      </div>
+      ${s.address ? `<div class="address">${EVApp.escapeHtml(s.address)}</div>` : ''}
+      <div class="coords">🌐 ${s.lat.toFixed(5)}, ${s.lon.toFixed(5)}</div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="${gmaps}" target="_blank" rel="noopener" id="btnDirections">${EVi18n.t('station_get_directions')}</a>
+        <button class="btn btn-lg" id="copyLink">${EVi18n.t('station_copy_link')}</button>
+        <button class="btn btn-lg" id="shareBtn">${EVi18n.t('station_share')}</button>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div class="grid">
+      <div class="panel">
+        <h2 class="panel-title" id="capacityTitle">${EVi18n.t('station_charging_capacity')}</h2>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="num dc">${s.dc}</div>
+            <div class="label" id="statDcLabel">${EVi18n.t('station_dc_fast')}</div>
+          </div>
+          <div class="stat">
+            <div class="num ac">${s.ac}</div>
+            <div class="label" id="statAcLabel">${EVi18n.t('station_ac')}</div>
+          </div>
+          <div class="stat">
+            <div class="num">${s.dc + s.ac}</div>
+            <div class="label" id="statTotalLabel">${EVi18n.t('station_total_heads')}</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <h2 class="panel-title" id="chargersTitle">${EVi18n.t('station_chargers', { n: s.chargers.length })}</h2>
+        <ul class="chargers-list" id="chargersList">${renderChargersList()}</ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2 class="panel-title" id="reviewsTitle">${EVi18n.t('station_reviews')}</h2>
+      <div id="reviewsTop"></div>
+      <div id="reviewList"></div>
+
+      <h2 class="panel-title" id="writeReviewTitle" style="margin-top:28px;">${EVi18n.t('station_write_review')}</h2>
+      <form class="review-form" id="reviewForm">
+        <div class="form-row">
+          <div class="field">
+            <span class="label" id="labelName">${EVi18n.t('station_your_name')}</span>
+            <input type="text" class="input" id="rvName" placeholder="${EVApp.escapeHtml(EVi18n.t('station_name_placeholder'))}" maxlength="40" required>
+          </div>
+          <div class="field">
+            <span class="label" id="labelRating">${EVi18n.t('station_rating')}</span>
+            <div class="star-pick" id="starPick" aria-label="Rating">
+              <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <span class="label" id="labelExp">${EVi18n.t('station_experience')}</span>
+          <textarea class="textarea" id="rvText" placeholder="${EVApp.escapeHtml(EVi18n.t('station_exp_placeholder'))}" maxlength="1000" required></textarea>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+          <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">${EVi18n.t('station_submit')}</button>
+          <span class="text-xs muted" id="approvalNotice">${EVi18n.t('station_approval_notice')}</span>
+        </div>
+      </form>
+    </div>
+  `;
+  }
+
+  root.innerHTML = buildStationHtml();
+
+  // ─── Language toggle ───
+  function applyStationLang() {
+    EVi18n.apply();
+    document.getElementById('backLink').textContent = EVi18n.t('nav_back');
+    const mc = document.getElementById('metaChargers');
+    if (mc) mc.textContent = s.chargers.length + ' ' + EVi18n.t('station_charger_label');
+    const mh = document.getElementById('metaHeads');
+    if (mh) mh.textContent = (s.dc + s.ac) + ' ' + EVi18n.t('station_head_label');
+    const ct = document.getElementById('chargersTitle');
+    if (ct) ct.textContent = EVi18n.t('station_chargers', { n: s.chargers.length });
+    const chargersList = document.getElementById('chargersList');
+    if (chargersList) chargersList.innerHTML = renderChargersList();
+    const cap = document.getElementById('capacityTitle');
+    if (cap) cap.textContent = EVi18n.t('station_charging_capacity');
+    const dl = document.getElementById('statDcLabel');
+    if (dl) dl.textContent = EVi18n.t('station_dc_fast');
+    const al = document.getElementById('statAcLabel');
+    if (al) al.textContent = EVi18n.t('station_ac');
+    const tl = document.getElementById('statTotalLabel');
+    if (tl) tl.textContent = EVi18n.t('station_total_heads');
+    const rt = document.getElementById('reviewsTitle');
+    if (rt) rt.textContent = EVi18n.t('station_reviews');
+    const wt = document.getElementById('writeReviewTitle');
+    if (wt) wt.textContent = EVi18n.t('station_write_review');
+    const ln = document.getElementById('labelName');
+    if (ln) ln.textContent = EVi18n.t('station_your_name');
+    const rvn = document.getElementById('rvName');
+    if (rvn) rvn.placeholder = EVi18n.t('station_name_placeholder');
+    const lr = document.getElementById('labelRating');
+    if (lr) lr.textContent = EVi18n.t('station_rating');
+    const le = document.getElementById('labelExp');
+    if (le) le.textContent = EVi18n.t('station_experience');
+    const rvt = document.getElementById('rvText');
+    if (rvt) rvt.placeholder = EVi18n.t('station_exp_placeholder');
+    const sb = document.getElementById('submitBtn');
+    if (sb) sb.textContent = EVi18n.t('station_submit');
+    const an = document.getElementById('approvalNotice');
+    if (an) an.textContent = EVi18n.t('station_approval_notice');
+    const bd = document.getElementById('btnDirections');
+    if (bd) bd.textContent = EVi18n.t('station_get_directions');
+    const cl = document.getElementById('copyLink');
+    if (cl) cl.textContent = EVi18n.t('station_copy_link');
+    const sh = document.getElementById('shareBtn');
+    if (sh) sh.textContent = EVi18n.t('station_share');
+    renderReviews();
+  }
+
+  document.getElementById('langToggle').addEventListener('click', () => {
+    EVi18n.setLang(EVi18n.nextLang());
+    applyStationLang();
+  });
+
+  // ─── Map ───
+  const tileUrl = EVApp.getTheme() === 'light'
+    ? 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
+    : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+  const map = L.map('map', { scrollWheelZoom: false, zoomControl: true });
+  L.tileLayer(tileUrl, {
+    attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19,
+  }).addTo(map);
+  const colors = { spark: '#f59e0b', igreen: '#22c55e', ptt: '#3b82f6' };
+  L.circleMarker([s.lat, s.lon], {
+    radius: 12, color: '#fff', weight: 3,
+    fillColor: colors[s.provider], fillOpacity: 1,
+  }).addTo(map);
+  map.invalidateSize();
+  map.setView([s.lat, s.lon], 16);
+
+  // ─── Share buttons ───
+  document.getElementById('copyLink').addEventListener('click', () => {
+    navigator.clipboard.writeText(shareUrl);
+    toast(EVi18n.t('station_link_copied'), 'success');
+  });
+  document.getElementById('shareBtn').addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title: s.name, text: s.name + ' — ' + s.providerLabel, url: shareUrl }); } catch {}
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      toast(EVi18n.t('station_link_copied'), 'success');
+    }
+  });
+
+  // ─── Reviews ───
+  let rating = 0;
+
+  function avgRating(reviews) {
+    if (!reviews.length) return 0;
+    return reviews.reduce((n,r) => n + r.rating, 0) / reviews.length;
+  }
+  function initial(name) { return (name || '?').trim().charAt(0).toUpperCase(); }
+
+  function renderReviewsTop(approved) {
+    const top = document.getElementById('reviewsTop');
+    if (!top) return;
+    if (!approved.length) { top.innerHTML = ''; return; }
+    const avg = avgRating(approved);
+    const full = Math.round(avg);
+    const n = approved.length;
+    const basedOn = EVi18n.getLang() === 'en'
+      ? EVi18n.t('station_based_on', { n, s: n === 1 ? '' : 's' })
+      : EVi18n.t('station_based_on', { n });
+    top.innerHTML = `
+      <div class="reviews-summary">
+        <div>
+          <div class="rating-big">${avg.toFixed(1)}</div>
+          <div class="rating-stars stars">${'★'.repeat(full)}<span class="stars muted">${'★'.repeat(5-full)}</span></div>
+        </div>
+        <div>
+          <div class="rating-count">${basedOn}</div>
+        </div>
+      </div>`;
+  }
+
+  function renderReviews() {
+    const approved = EVApp.getApproved(s.id);
+    renderReviewsTop(approved);
+    const el = document.getElementById('reviewList');
+    if (!el) return;
+    if (approved.length === 0) {
+      el.innerHTML = `
+        <div class="empty">
+          <div class="empty-icon">💬</div>
+          <div class="empty-title">${EVi18n.t('station_no_reviews_title')}</div>
+          <div>${EVi18n.t('station_no_reviews_body')}</div>
+        </div>`;
+      return;
+    }
+    el.innerHTML = approved.map(r => `
+      <div class="review-card">
+        <div class="review-head">
+          <div class="reviewer-avatar">${EVApp.escapeHtml(initial(r.name))}</div>
+          <div>
+            <div class="review-name">${EVApp.escapeHtml(r.name)}</div>
+            <div class="review-time">
+              <span class="stars">${'★'.repeat(r.rating)}<span class="stars muted">${'★'.repeat(5-r.rating)}</span></span>
+              · ${EVApp.timeAgo(r.t)}
+            </div>
+          </div>
+        </div>
+        <div class="review-body">${EVApp.escapeHtml(r.text)}</div>
+      </div>
+    `).join('');
+  }
+
+  const starPick = document.getElementById('starPick');
+  starPick.addEventListener('click', e => {
+    const sp = e.target.closest('span'); if (!sp) return;
+    rating = parseInt(sp.dataset.v, 10);
+    [...starPick.children].forEach(c => c.classList.toggle('on', parseInt(c.dataset.v,10) <= rating));
+  });
+  starPick.addEventListener('mouseover', e => {
+    const sp = e.target.closest('span'); if (!sp) return;
+    const v = parseInt(sp.dataset.v, 10);
+    [...starPick.children].forEach(c => c.classList.toggle('hover', parseInt(c.dataset.v,10) <= v));
+  });
+  starPick.addEventListener('mouseleave', () => {
+    [...starPick.children].forEach(c => c.classList.remove('hover'));
+  });
+
+  document.getElementById('reviewForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('rvName').value.trim();
+    const text = document.getElementById('rvText').value.trim();
+    if (!name || !text) return;
+    if (rating === 0) { toast(EVi18n.t('station_please_rate'), 'danger'); return; }
+    EVApp.submitReview(s.id, { name, text, rating });
+    document.getElementById('rvName').value = '';
+    document.getElementById('rvText').value = '';
+    rating = 0;
+    [...starPick.children].forEach(c => c.classList.remove('on'));
+    toast(EVi18n.t('station_review_submitted'), 'success');
+  });
+
+  renderReviews();
+})();
+</script>
+</body>
+</html>
+
