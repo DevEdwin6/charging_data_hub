@@ -21,7 +21,7 @@
 
     /* ── Sidebar ── */
     .sidebar {
-      width: 480px;
+      width: 390px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
@@ -35,33 +35,33 @@
     .sidebar-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 14px; }
 
     .brand-tabs {
-      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px;
+      display: flex; gap: 6px; overflow-x: auto; padding-bottom: 12px;
       scrollbar-width: none;
     }
     .brand-tabs::-webkit-scrollbar { display: none; }
 
     .tab {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      padding: 8px 12px;
-      border: 1.5px solid #e5e7eb; border-radius: 10px;
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 11px;
+      border: 1.5px solid #e5e7eb; border-radius: 8px;
       background: #fff; cursor: pointer; transition: all .15s;
-      white-space: nowrap; flex-shrink: 0; min-width: 56px;
+      white-space: nowrap; flex-shrink: 0;
     }
     .tab:hover { border-color: #93c5fd; background: #eff6ff; }
     .tab.active { border-color: #3b82f6; background: #3b82f6; }
     .tab.active .tab-name { color: #fff; }
 
-    .tab-logo { width: 32px; height: 32px; object-fit: contain; border-radius: 6px; }
+    .tab-logo { width: 20px; height: 20px; object-fit: contain; border-radius: 4px; }
     .tab-all-icon {
-      width: 32px; height: 32px; border-radius: 8px;
+      width: 20px; height: 20px; border-radius: 4px;
       background: #3b82f6; color: #fff;
-      font-size: 13px; font-weight: 700;
+      font-size: 11px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
     }
     .tab.active .tab-all-icon { background: rgba(255,255,255,.25); }
-    .tab-name { font-size: 11px; font-weight: 500; color: #374151; }
-    .tab-count { font-size: 10px; font-weight: 600; color: #9ca3af; line-height: 1; }
-    .tab.active .tab-count { color: rgba(255,255,255,.75); }
+    .tab-name { font-size: 12px; font-weight: 600; color: #374151; }
+    .tab-count { font-size: 10px; color: #d1d5db; font-weight: 400; }
+    .tab.active .tab-count { color: rgba(255,255,255,.4); }
 
     .sort-bar { padding: 10px 0 12px; border-bottom: 1px solid #f3f4f6; }
     .sort-btn {
@@ -82,51 +82,66 @@
 
     /* ── Card ── */
     .station-card {
-      display: flex; gap: 12px; padding: 14px 12px;
-      border: 1px solid #e5e7eb; border-radius: 12px;
-      background: #fff; margin-top: 10px;
-      cursor: pointer; transition: all .15s; position: relative;
+      display: flex; gap: 10px; padding: 10px;
+      border: 1px solid #f0f0f0; border-radius: 10px;
+      background: #fff; margin-top: 8px;
+      cursor: pointer; transition: background .12s, border-color .12s;
+      position: relative;
     }
-    .station-card:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(59,130,246,.1); }
+    .station-card:hover { background: #f9fafb; border-color: #e5e7eb; }
     .station-card.active {
-      border-color: #3b82f6; background: #eff6ff;
-      box-shadow: 0 2px 12px rgba(59,130,246,.15);
-    }
-    .station-card.active::before {
-      content: ''; position: absolute;
-      left: 0; top: 8px; bottom: 8px; width: 3px;
-      background: #3b82f6; border-radius: 0 2px 2px 0;
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      border-left: 3px solid #3b82f6;
+      padding-left: 9px;
     }
 
     .card-logo {
-      width: 44px; height: 44px; border-radius: 10px;
+      width: 36px; height: 36px; border-radius: 8px;
       object-fit: contain; flex-shrink: 0;
-      border: 1px solid #f3f4f6; padding: 3px; background: #fff;
+      border: 1px solid #f3f4f6; padding: 2px; background: #fff;
+      align-self: flex-start; margin-top: 2px;
     }
     .card-body { flex: 1; min-width: 0; }
-    .card-top {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 8px; margin-bottom: 5px;
+
+    .card-header {
+      display: flex; align-items: center; justify-content: space-between; gap: 6px;
+      margin-bottom: 1px;
     }
-    .card-title-row {
-      display: flex; align-items: center; gap: 6px;
-      flex: 1; min-width: 0; flex-wrap: wrap;
+    .card-brand { font-size: 11px; color: #9ca3af; font-weight: 500; }
+    .card-dist  { font-size: 11.5px; font-weight: 600; color: #374151; flex-shrink: 0; }
+
+    .card-name {
+      font-size: 13px; font-weight: 600; color: #111827; line-height: 1.35;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+      overflow: hidden; margin-bottom: 2px;
     }
-    .brand-tag {
+    .card-addr {
+      font-size: 11.5px; color: #9ca3af;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    .card-tags { display: flex; gap: 4px; margin-bottom: 5px; }
+    .ctag {
       display: inline-flex; align-items: center;
-      padding: 2px 7px; border-radius: 20px;
-      font-size: 10px; font-weight: 600; white-space: nowrap; flex-shrink: 0;
+      padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 600;
     }
-    .card-name { font-size: 13.5px; font-weight: 600; color: #111827; line-height: 1.3; }
-    .card-distance { font-size: 12px; font-weight: 600; color: #6b7280; white-space: nowrap; flex-shrink: 0; }
+    .ctag.dc { background: #fff7ed; color: #ea580c; }
+    .ctag.ac { background: #f0fdf4; color: #16a34a; }
 
-    .card-address {
-      display: flex; align-items: flex-start; gap: 4px;
-      font-size: 12px; color: #6b7280; margin-bottom: 8px; line-height: 1.4;
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between; gap: 6px;
     }
-    .card-address svg { flex-shrink: 0; margin-top: 1px; }
-
-    .card-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .card-summary { font-size: 11px; color: #6b7280; }
+    .card-nav {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 7px;
+      background: #eff6ff; color: #3b82f6;
+      border: none; cursor: pointer; text-decoration: none;
+      transition: background .12s; flex-shrink: 0;
+    }
+    .card-nav:hover { background: #dbeafe; }
 
     .connector-tags { display: flex; gap: 5px; flex-wrap: wrap; }
     .connector-tag {
@@ -135,22 +150,6 @@
     }
     .connector-tag.dc { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
     .connector-tag.ac { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
-
-    .nav-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 4px 10px; border-radius: 20px;
-      background: #eff6ff; color: #3b82f6;
-      font-size: 12px; font-weight: 600;
-      border: none; cursor: pointer; text-decoration: none;
-      transition: background .15s; white-space: nowrap;
-    }
-    .nav-btn:hover { background: #dbeafe; }
-
-    .card-meta {
-      display: flex; align-items: center; gap: 10px; margin-top: 6px; flex-wrap: wrap;
-    }
-    .meta-item { display: flex; align-items: center; gap: 3px; font-size: 11.5px; color: #6b7280; }
-    .meta-item.avail { color: #374151; font-weight: 500; }
 
     /* ── Map panel ── */
     .map-panel { flex: 1; position: relative; }
@@ -196,6 +195,22 @@
     }
     .map-search input::placeholder { color: #9ca3af; }
 
+    /* Active marker pulse ring */
+    @keyframes markerPulse {
+      0%   { transform: scale(.45); opacity: .95; }
+      80%  { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .pin-pulse {
+      position: absolute; top: 50%; left: 50%;
+      width: 52px; height: 52px;
+      margin: -26px 0 0 -26px;
+      border-radius: 50%;
+      border: 2.5px solid #3b82f6;
+      animation: markerPulse 2.2s ease-out infinite;
+      pointer-events: none;
+    }
+
     /* Google Maps InfoWindow reset */
     .gm-style .gm-style-iw-c { border-radius: 10px !important; padding: 0 !important; }
     .gm-style .gm-style-iw-d { overflow: hidden !important; }
@@ -216,7 +231,7 @@
     /* ── Detail panel (right side, over map) ── */
     .detail-panel {
       position: absolute; top: 0; right: 0; bottom: 0;
-      width: 430px;
+      width: clamp(320px, 430px, calc(100% - 650px));
       background: #fff; z-index: 20;
       isolation: isolate;
       display: flex; flex-direction: column;
@@ -243,79 +258,68 @@
     }
     .detail-close:hover { background: #e5e7eb; color: #111827; }
 
-    /* top brand+name section */
+    /* ── Detail panel inner ── */
     .d-top {
-      position: relative;
       display: flex; align-items: flex-start; gap: 14px;
       padding: 20px 52px 16px 16px;
     }
     .d-logo {
-      width: 60px; height: 60px; border-radius: 14px;
+      width: 56px; height: 56px; border-radius: 14px;
       object-fit: contain; border: 1px solid #f3f4f6;
-      padding: 5px; background: #fff; flex-shrink: 0;
+      padding: 4px; background: #fff; flex-shrink: 0;
     }
-    .d-title { flex: 1; min-width: 0; }
-    .d-name {
-      font-size: 16px; font-weight: 700; color: #111827;
-      line-height: 1.35; margin: 6px 0 0;
-    }
+    .d-title { flex: 1; min-width: 0; padding-top: 2px; }
+    .d-brand-label { font-size: 11px; font-weight: 600; margin-bottom: 5px; }
+    .d-name { font-size: 17px; font-weight: 700; color: #111827; line-height: 1.3; margin: 0; }
 
-    /* address + nav row */
+    /* address + nav */
     .d-addr-section {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 12px 16px 14px;
-      border-top: 1px solid #f3f4f6;
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 12px 16px 16px; border-top: 1px solid #f3f4f6;
     }
-    .d-addr-left { flex: 1; display: flex; flex-direction: column; gap: 7px; }
+    .d-addr-left { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
     .d-loc-row { display: flex; align-items: flex-start; gap: 7px; }
     .d-loc-text { font-size: 13px; color: #374151; line-height: 1.5; }
     .d-loc-coords { font-size: 12px; color: #9ca3af; font-family: monospace; }
+    .d-hours-text { font-size: 12px; color: #374151; }
     .d-nav-btn {
-      flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px;
-      padding: 8px 14px; border-radius: 8px;
-      background: #eff6ff; color: #3b82f6;
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 16px; border-radius: 10px;
+      background: #3b82f6; color: #fff;
       font-size: 13px; font-weight: 600; text-decoration: none;
-      border: 1.5px solid #bfdbfe; white-space: nowrap;
-      transition: background .15s;
+      white-space: nowrap; transition: background .15s;
     }
-    .d-nav-btn:hover { background: #dbeafe; }
+    .d-nav-btn:hover { background: #2563eb; }
 
-    /* charger list header */
+    /* charger list */
     .d-charger-title {
       display: flex; align-items: center; gap: 7px;
-      padding: 12px 16px 8px;
-      border-top: 1px solid #f3f4f6;
+      padding: 14px 16px 10px; border-top: 1px solid #f3f4f6;
       font-size: 14px; font-weight: 700; color: #111827;
     }
-
-    /* accordion card */
-    .cu-card {
-      margin: 0 12px 10px;
-      border: 1px solid #e5e7eb; border-radius: 10px;
-      overflow: hidden;
-    }
+    .cu-card { margin: 0 12px 8px; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
     .cu-header {
       display: flex; align-items: center; gap: 10px;
       padding: 11px 14px; cursor: pointer;
-      background: #fff; user-select: none;
-      transition: background .15s;
+      background: #fff; user-select: none; transition: background .15s;
     }
     .cu-header:hover { background: #f9fafb; }
-    .cu-num {
-      width: 26px; height: 26px; border-radius: 50%;
-      background: #3b82f6; color: #fff;
-      font-size: 11px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    .cu-bolt {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
     }
-    .cu-name { flex: 1; font-size: 13px; font-weight: 600; color: #111827; }
-    .cu-id { font-size: 11px; color: #9ca3af; }
-    .cu-chevron {
-      color: #9ca3af; flex-shrink: 0;
-      transition: transform .2s;
-    }
+    .cu-bolt.dc { background: #fff7ed; }
+    .cu-bolt.ac { background: #f0fdf4; }
+    .cu-main { flex: 1; display: flex; align-items: center; gap: 6px; min-width: 0; }
+    .cu-label { font-size: 13px; font-weight: 700; color: #111827; }
+    .cu-sep   { color: #d1d5db; }
+    .cu-kw    { font-size: 12px; color: #6b7280; }
+    .cu-id    { font-size: 11px; color: #9ca3af; white-space: nowrap; }
+    .cu-chevron { color: #9ca3af; flex-shrink: 0; transition: transform .2s; }
     .cu-card.open .cu-chevron { transform: rotate(180deg); }
     .cu-body { display: none; border-top: 1px solid #f3f4f6; }
     .cu-card.open .cu-body { display: block; }
+    .cu-guns-label { padding: 10px 14px 4px; font-size: 13px; font-weight: 600; color: #374151; }
 
     /* connector table */
     .conn-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -325,48 +329,26 @@
       border-bottom: 1px solid #f3f4f6;
     }
     .conn-table th.th-left { text-align: left; }
-    .conn-table .th-price { text-align: center; }
     .conn-table .th-time { font-size: 10px; font-weight: 400; color: #9ca3af; display: block; }
-    .conn-table td {
-      padding: 10px 8px; vertical-align: middle;
-      border-bottom: 1px solid #f9fafb;
-    }
+    .conn-table td { padding: 10px 8px; vertical-align: middle; border-bottom: 1px solid #f9fafb; }
     .conn-table tr:last-child td { border-bottom: none; }
-    .conn-icon {
-      width: 32px; height: 32px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .conn-icon.dc { background: #fff7ed; border: 1.5px solid #fed7aa; }
-    .conn-icon.ac { background: #eff6ff; border: 1.5px solid #bfdbfe; }
-    .conn-pos { font-size: 13px; font-weight: 600; color: #111827; }
-    .conn-pos-sub { font-size: 10px; color: #9ca3af; margin-top: 1px; }
+    .td-pos  { font-size: 13px; font-weight: 600; color: #111827; }
     .td-type { font-size: 12px; color: #374151; text-align: center; }
-    .td-kw { font-size: 12px; color: #374151; text-align: center; }
-    .td-day { font-size: 14px; font-weight: 700; color: #dc2626; text-align: center; }
-    .td-night { font-size: 14px; font-weight: 700; color: #3b82f6; text-align: center; }
+    .td-kw   { font-size: 12px; color: #374151; text-align: center; }
+    .td-day  { font-size: 14px; font-weight: 700; color: #dc2626; text-align: center; }
+    .td-night{ font-size: 14px; font-weight: 700; color: #3b82f6; text-align: center; }
     .td-dash { color: #d1d5db; text-align: center; }
 
     /* footnote */
-    .d-footnote {
-      padding: 10px 16px 16px;
-      font-size: 11px; color: #9ca3af;
-      border-top: 1px solid #f9fafb;
-    }
+    .d-footnote { padding: 10px 16px 16px; font-size: 11px; color: #9ca3af; border-top: 1px solid #f9fafb; }
 
-    /* ── Nearby section ── */
+    /* nearby */
     .d-nearby-section { border-top: 1px solid #f3f4f6; padding-bottom: 12px; }
-    .d-nearby-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 16px 10px;
-    }
-    .d-nearby-title {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 700; color: #111827;
-    }
-    .d-radius-tabs { display: flex; gap: 4px; }
+    .d-nearby-header { padding: 14px 16px 10px; }
+    .d-nearby-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+    .d-radius-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
     .r-tab {
-      padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
+      padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 600;
       border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280;
       cursor: pointer; transition: all .15s;
     }
@@ -375,26 +357,21 @@
 
     .nearby-card {
       display: flex; align-items: center; gap: 10px;
-      padding: 10px 16px; cursor: pointer;
-      transition: background .15s;
+      padding: 10px 16px; cursor: pointer; transition: background .15s;
     }
     .nearby-card:hover { background: #f9fafb; }
     .nearby-logo {
-      width: 36px; height: 36px; border-radius: 8px;
+      width: 38px; height: 38px; border-radius: 50%;
       object-fit: contain; border: 1px solid #f3f4f6;
-      padding: 3px; background: #fff; flex-shrink: 0;
+      padding: 4px; background: #fff; flex-shrink: 0;
     }
     .nearby-body { flex: 1; min-width: 0; }
     .nearby-name {
       font-size: 13px; font-weight: 600; color: #111827;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      margin-bottom: 4px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px;
     }
-    .nearby-meta { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
-    .nearby-dist {
-      font-size: 12px; font-weight: 700; color: #3b82f6;
-      white-space: nowrap; flex-shrink: 0;
-    }
+    .nearby-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b7280; flex-wrap: wrap; }
+    .nearby-dist { font-size: 13px; font-weight: 700; color: #3b82f6; white-space: nowrap; flex-shrink: 0; }
     .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; }
 
     /* ── Map pin markers ── */
@@ -409,6 +386,17 @@
       transform: scale(1.25) translateY(-6px);
       filter: drop-shadow(0 6px 14px rgba(0,0,0,.55)) brightness(1.08) !important;
     }
+    @keyframes markerBounce {
+      0%, 100% { transform: translateY(0)    scale(1);    }
+      30%       { transform: translateY(-14px) scale(1.12); }
+      60%       { transform: translateY(-6px)  scale(1.06); }
+      80%       { transform: translateY(-10px) scale(1.09); }
+    }
+    .map-pin-bounce {
+      animation: markerBounce .75s ease infinite !important;
+      transition: none !important;
+      transform-origin: bottom center;
+    }
   </style>
 </head>
 <body>
@@ -416,7 +404,7 @@
 <div class="app">
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h2 class="sidebar-title">充电桩列表</h2>
+      <h2 class="sidebar-title">充电桩站点地图</h2>
       <div class="brand-tabs" id="brandTabs">
         <button class="tab active" data-brand="all">
           <div class="tab-all-icon">全</div>
@@ -567,7 +555,7 @@ const areaSelect = document.getElementById('areaSelect');
 provinces.forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; areaSelect.appendChild(o); });
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let activeBrand = 'all';
+const activeBrands = new Set(); // empty = show all
 let activeSearch = '';
 let activeProvince = '';
 let activeOrigIdx = -1;   // highlighted station index in allStations
@@ -653,17 +641,23 @@ const clusterRenderer = {
 
 // ── Marker element (img directly — no wrapper div, avoids white bg from AdvancedMarkerElement) ──
 function createMarkerEl(brandKey, active) {
+  if (active) {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:relative;display:inline-block;';
+    const pulse = document.createElement('div');
+    pulse.className = 'pin-pulse';
+    const img = document.createElement('img');
+    img.src = `img/${brandKey}-address.png`;
+    img.style.cssText = 'width:72px;height:auto;display:block;' +
+      'filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));';
+    wrap.appendChild(pulse);
+    wrap.appendChild(img);
+    return wrap;
+  }
   const img = document.createElement('img');
   img.src = `img/${brandKey}-address.png`;
   img.className = 'map-pin-img';
-  img.style.cssText = [
-    `width:${active ? 72 : 52}px`,
-    'height:auto',
-    `filter:${active
-      ? 'drop-shadow(0 6px 12px rgba(0,0,0,.6)) brightness(1.05)'
-      : 'drop-shadow(0 3px 5px rgba(0,0,0,.35))'}`,
-    `transform:${active ? 'scale(1) translateY(-4px)' : 'none'}`,
-  ].join(';');
+  img.style.cssText = 'width:52px;height:auto;filter:drop-shadow(0 3px 5px rgba(0,0,0,.35))';
   return img;
 }
 
@@ -673,7 +667,7 @@ function applyFilter() {
   currentStations = allStations
     .map((s, i) => ({ ...s, _origIdx: i, distance: dist(mapCenter[0], mapCenter[1], s.lat, s.lon) }))
     .filter(s =>
-      (activeBrand === 'all' || s.brand === activeBrand) &&
+      (activeBrands.size === 0 || activeBrands.has(s.brand)) &&
       (!activeProvince || s.province === activeProvince) &&
       (!q || s.name.toLowerCase().includes(q) || (s.address||'').toLowerCase().includes(q))
     )
@@ -728,41 +722,28 @@ function renderList() {
 function buildCard(s, rank) {
   const b = BRANDS[s.brand];
   const isActive = s._origIdx === activeOrigIdx;
-  const dcTag = s.dc ? `<span class="connector-tag dc">⚡ DC × ${s.dc}</span>` : '';
-  const acTag = s.ac ? `<span class="connector-tag ac">🔌 AC × ${s.ac}</span>` : '';
-  const kwMeta = s.maxKw
-    ? `<span class="meta-item"><svg width="11" height="11" viewBox="0 0 16 16" fill="${b.color}"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>${s.maxKw} kW</span>` : '';
-  const connMeta = s.connTypes.length
-    ? `<span class="meta-item"><svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>${s.connTypes.join(' / ')}</span>` : '';
-  const addrHtml = s.address
-    ? `<div class="card-address">
-        <svg width="11" height="11" viewBox="0 0 16 16" fill="#9ca3af">
-          <path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
-        </svg>${escHtml(s.address)}</div>` : '';
+  const dcTag = s.dc ? `<span class="ctag dc">DC × ${s.dc}</span>` : '';
+  const acTag = s.ac ? `<span class="ctag ac">AC × ${s.ac}</span>` : '';
+  const chargerCount = (s._raw.chargers || []).length || s.total;
+  const kwPart = s.maxKw ? ` · 最大 ${s.maxKw} kW` : '';
+  const addrHtml = s.address ? `<div class="card-addr">${escHtml(s.address)}</div>` : '';
   const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`;
 
   return `<div class="station-card${isActive ? ' active' : ''}" data-rank="${rank}">
     <img class="card-logo" src="${b.logo}" alt="${b.short}">
     <div class="card-body">
-      <div class="card-top">
-        <div class="card-title-row">
-          <span class="brand-tag" style="background:${b.bg};color:${b.text}">${b.short}</span>
-          <span class="card-name">${escHtml(s.name)}</span>
-        </div>
-        <span class="card-distance">${fmtDist(s.distance)}</span>
+      <div class="card-header">
+        <span class="card-brand">${b.short}</span>
+        <span class="card-dist">${fmtDist(s.distance)}</span>
       </div>
+      <div class="card-name">${escHtml(s.name)}</div>
       ${addrHtml}
-      <div class="card-row">
-        <div class="connector-tags">${dcTag}${acTag}</div>
-        <a class="nav-btn" href="${navUrl}" target="_blank" onclick="event.stopPropagation()">
-          <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 1l7 6-7 6V9H1V7h7V1z"/>
-          </svg>路线
+      <div class="card-tags">${dcTag}${acTag}</div>
+      <div class="card-footer">
+        <span class="card-summary">${chargerCount} 个充电桩${kwPart}</span>
+        <a class="card-nav" href="${navUrl}" target="_blank" onclick="event.stopPropagation()" title="导航">
+          <img src="img/navigation.png" style="width:14px;height:14px;object-fit:contain;">
         </a>
-      </div>
-      <div class="card-meta">
-        <span class="meta-item avail">共 ${s.total} 个枪口</span>
-        ${connMeta}${kwMeta}
       </div>
     </div>
   </div>`;
@@ -774,8 +755,8 @@ function escHtml(s) {
 
 // ── Detail panel helpers ──────────────────────────────────────────────────────
 function chargerIconSvg(type) {
-  if (type === 'DC') return `<svg width="16" height="16" viewBox="0 0 16 16" fill="#ea580c"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>`;
-  return `<svg width="16" height="16" viewBox="0 0 16 16" fill="#3b82f6"><circle cx="5.5" cy="5" r="1.3"/><circle cx="10.5" cy="5" r="1.3"/><rect x="4.5" y="7" width="7" height="5" rx="2"/><rect x="7" y="12" width="2" height="2"/></svg>`;
+  const c = (type === 'DC') ? '#ea580c' : '#3b82f6';
+  return `<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M512 917.312a128 128 0 1 1 0-256 128 128 0 0 1 0 256z m0-170.624a32 32 0 1 0 0-64 32 32 0 0 0 0 64z m32 117.312a31.936 31.936 0 1 0-63.872-0.064 31.936 31.936 0 0 0 63.872 0.064z m-85.312-42.688a31.744 31.744 0 0 0 32-32 32 32 0 1 0-32 32z m138.624-32a32 32 0 1 0-64 0 32 32 0 0 0 64 0zM725.312 597.312a85.312 85.312 0 1 0 0-170.624 85.312 85.312 0 0 0 0 170.624z" fill="${c}"/><path d="M896 512a170.688 170.688 0 1 1-341.376 0A170.688 170.688 0 0 1 896 512z m-64 0a106.688 106.688 0 1 0-213.312 0A106.688 106.688 0 0 0 832 512z" fill="${c}"/><path d="M512 1024A512 512 0 1 0 512 0a512 512 0 0 0 0 1024z m0-64A448 448 0 1 1 512 64a448 448 0 0 1 0 896z" fill="${c}"/><path d="M320.192 599.488a85.312 85.312 0 1 0 0-170.688 85.312 85.312 0 0 0 0 170.688z" fill="${c}"/><path d="M490.88 514.176a170.688 170.688 0 1 1-341.376 0 170.688 170.688 0 0 1 341.312 0z m-64 0a106.688 106.688 0 1 0-213.376 0 106.688 106.688 0 0 0 213.312 0zM512 362.432a128 128 0 1 1 0-256 128 128 0 0 1 0 256z m0-170.688a32 32 0 1 0 0-64 32 32 0 0 0 0 64z m32 117.312a31.936 31.936 0 1 0-64 0 32 32 0 1 0 64 0z m-85.312-42.624a31.808 31.808 0 0 0 32-32 32 32 0 1 0-32 32z m138.624-32a32 32 0 1 0-64 0 32 32 0 0 0 64 0z" fill="${c}"/></svg>`;
 }
 
 function copyText(text, btn) {
@@ -797,22 +778,27 @@ function openDetail(s) {
     `<div class="d-top">
       <img class="d-logo" src="${b.logo}" alt="${b.short}">
       <div class="d-title">
-        <span class="brand-tag" style="background:${b.bg};color:${b.text}">${b.short}</span>
+        <div class="d-brand-label" style="color:${b.color}">${b.label}</div>
         <h3 class="d-name">${escHtml(s.name)}</h3>
       </div>
     </div>`;
 
   // ── Address + navigate ──
-  const PIN_SVG = `<svg width="13" height="13" viewBox="0 0 16 16" fill="#9ca3af" style="flex-shrink:0;margin-top:2px"><path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>`;
-  const COORD_SVG = `<svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v1M8 12.5v1M2.5 8h1M12.5 8h1"/><circle cx="8" cy="8" r="1.5" fill="#9ca3af" stroke="none"/></svg>`;
+  const PIN_SVG   = `<svg width="14" height="14" viewBox="0 0 16 16" fill="#9ca3af" style="flex-shrink:0;margin-top:1px"><path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>`;
+  const COORD_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v1M8 12.5v1M2.5 8h1M12.5 8h1"/><circle cx="8" cy="8" r="1.5" fill="#9ca3af" stroke="none"/></svg>`;
+  const HOURS_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="6"/><path d="M8 4.5v3.5l2.5 2"/></svg>`;
+  const hoursRow  = raw.hours
+    ? `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">${escHtml(raw.hours)}</span></div>`
+    : `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">营业时间</span></div>`;
   const addrHtml =
     `<div class="d-addr-section">
       <div class="d-addr-left">
         <div class="d-loc-row">${PIN_SVG}<span class="d-loc-text">${escHtml(addr)}</span></div>
         <div class="d-loc-row">${COORD_SVG}<span class="d-loc-coords">${coords}</span></div>
+        ${hoursRow}
       </div>
       <a class="d-nav-btn" href="${navUrl}" target="_blank">
-        <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1l7 6-7 6V9H1V7h7V1z"/></svg>导航
+        <img src="img/navigation.png" style="width:15px;height:15px;object-fit:contain;filter:brightness(0) invert(1);">导航
       </a>
     </div>`;
 
@@ -821,88 +807,58 @@ function openDetail(s) {
     ? `<div style="padding:16px;font-size:13px;color:#9ca3af;text-align:center;">暂无充电桩数据</div>`
     : (() => {
         const cards = chargers.map((c, idx) => {
-          const unitNum = String(idx + 1).padStart(2, '0');
-          const unitId = c.name || (raw.id ? `${raw.id}-${unitNum}` : '—');
+          const unitId   = c.name || '—';
           const typeLabel = chargerTypeLabel(c);
-          const kw = c.kw ? `${c.kw} kW` : '—';
-          const connCls = c.type === 'DC' ? 'dc' : 'ac';
+          const kw        = c.kw ? `${c.kw} kW` : '—';
+          const connCls   = c.type === 'DC' ? 'dc' : 'ac';
+          const boltColor = connCls === 'dc' ? '#ea580c' : '#16a34a';
+          const boltSvg   = `<svg width="14" height="14" viewBox="0 0 16 16" fill="${boltColor}"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>`;
+          const headCount = (c.connectors && c.connectors.length) || c.heads || 1;
+          const cuLabel   = `${c.type || 'AC'}-${headCount}`;
 
-          // one table row per connector (use connectors[] if present, else fall back to heads count)
           const rows = (c.connectors && c.connectors.length)
-            ? c.connectors.map(conn => {
+            ? c.connectors.map((conn, hi) => {
                 const cType  = conn.type || typeLabel;
-                const cKw    = conn.kw   ? `${conn.kw} kW` : kw;
-                const cCls   = cType.startsWith('DC') ? 'dc' : 'ac';
-                const cIcon  = cType.startsWith('DC') ? 'DC' : 'AC';
-                const dayCell   = conn.price_day  != null ? `<td class="td-day">฿ ${conn.price_day.toFixed(2)}</td>`   : `<td class="td-dash">—</td>`;
+                const cKw    = conn.kw ? `${conn.kw} kW` : kw;
+                const posLabel = conn.position || `枪口 ${String.fromCharCode(65 + hi)}`;
+                const dayCell   = conn.price_day   != null ? `<td class="td-day">฿ ${conn.price_day.toFixed(2)}</td>`   : `<td class="td-dash">—</td>`;
                 const nightCell = conn.price_night != null ? `<td class="td-night">฿ ${conn.price_night.toFixed(2)}</td>` : `<td class="td-dash">—</td>`;
-                const posSub = conn.position_cn ? `<div class="conn-pos-sub">位置：${escHtml(conn.position_cn)}</div>` : '';
-                return `<tr>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:8px;">
-                      <div class="conn-icon ${cCls}">${chargerIconSvg(cIcon)}</div>
-                      <div>
-                        <div class="conn-pos">${escHtml(conn.position || '枪口')}</div>
-                        ${posSub}
-                      </div>
-                    </div>
-                  </td>
-                  <td class="td-type">${escHtml(cType)}</td>
-                  <td class="td-kw">${cKw}</td>
-                  ${dayCell}${nightCell}
-                </tr>`;
+                return `<tr><td class="td-pos">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
               }).join('')
             : Array.from({ length: c.heads || 1 }, (_, hi) => {
-                const pos = c.heads > 1 ? `枪口 ${hi + 1}` : '枪口';
-                return `<tr>
-                  <td>
-                    <div style="display:flex;align-items:center;gap:8px;">
-                      <div class="conn-icon ${connCls}">${chargerIconSvg(c.type)}</div>
-                      <div><div class="conn-pos">${pos}</div></div>
-                    </div>
-                  </td>
-                  <td class="td-type">${typeLabel}</td>
-                  <td class="td-kw">${kw}</td>
-                  <td class="td-dash">—</td>
-                  <td class="td-dash">—</td>
-                </tr>`;
+                const pos = `枪口 ${String.fromCharCode(65 + hi)}`;
+                return `<tr><td class="td-pos">${pos}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td><td class="td-dash">—</td><td class="td-dash">—</td></tr>`;
               }).join('');
 
-          const isFirst = idx === 0;
-          return `<div class="cu-card${isFirst ? ' open' : ''}" id="cu-${idx}">
+          return `<div class="cu-card${idx === 0 ? ' open' : ''}" id="cu-${idx}">
             <div class="cu-header" onclick="toggleCU(${idx})">
-              <div class="cu-num">${unitNum}</div>
-              <div class="cu-name">充电桩 ${unitNum}</div>
-              <div class="cu-id">编号：${escHtml(unitId)}</div>
+              <div class="cu-bolt ${connCls}">${boltSvg}</div>
+              <div class="cu-main">
+                <span class="cu-label">${cuLabel}</span>
+                <span class="cu-sep">·</span>
+                <span class="cu-kw">${kw}</span>
+              </div>
+              <div class="cu-id">桩号：${escHtml(unitId)}</div>
               <svg class="cu-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div class="cu-body">
+              <div class="cu-guns-label">充电枪（${headCount}）</div>
               <table class="conn-table">
                 <thead><tr>
-                  <th class="th-left">枪名称 / 位置</th>
-                  <th>枪类型</th>
-                  <th>最大功率</th>
-                  <th class="th-price">
-                    ☀ 白天<span class="th-time">(06:00 – 22:00)</span>
-                  </th>
-                  <th class="th-price">
-                    🌙 夜间<span class="th-time">(22:00 – 06:00)</span>
-                  </th>
+                  <th class="th-left">枪口名称</th>
+                  <th style="white-space:nowrap">接口类型</th>
+                  <th style="white-space:nowrap">最大功率</th>
+                  <th style="white-space:nowrap">白天价格<span class="th-time">(06:00–22:00)</span></th>
+                  <th style="white-space:nowrap">夜间价格<span class="th-time">(22:00–06:00)</span></th>
                 </tr></thead>
                 <tbody>${rows}</tbody>
               </table>
             </div>
           </div>`;
         });
-        return `<div class="d-charger-title">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#374151" stroke-width="1.5">
-            <rect x="3" y="2" width="10" height="12" rx="2"/>
-            <path d="M6 2V1M10 2V1M8 6v4M6 8h4"/>
-          </svg>
-          充电桩列表（${chargers.length}）
-        </div>
+        return `<div class="d-charger-title">充电桩列表（${chargers.length}）</div>
         <div style="padding:0 0 4px;">${cards.join('')}</div>`;
       })();
 
@@ -913,34 +869,37 @@ function openDetail(s) {
   const nearbySkeleton =
     `<div class="d-nearby-section">
       <div class="d-nearby-header">
-        <div class="d-nearby-title">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#374151" stroke-width="1.5">
-            <circle cx="8" cy="8" r="6"/><path d="M8 4v4l2.5 2.5"/>
-          </svg>
-          附近充电站
-        </div>
+        <div class="d-nearby-title" id="nearbyTitle">附近 ${_nearbyRadius} 公里充电桩</div>
         <div class="d-radius-tabs">
-          ${[1,3,5,10].map(km =>
+          ${[1,3,5].map(km =>
             `<button class="r-tab${km === _nearbyRadius ? ' active' : ''}" data-km="${km}" onclick="changeRadius(${km})">${km}km</button>`
           ).join('')}
+          <button class="r-tab" onclick="promptCustomRadius()">自定义</button>
         </div>
       </div>
       <div id="nearbyList"></div>
     </div>`;
 
+  const _panel = document.getElementById('detailPanel');
+  const _wasOpen = _panel.classList.contains('open');
   document.getElementById('detailBody').innerHTML = topHtml + addrHtml + chargerListHtml + footnote + nearbySkeleton;
-  document.getElementById('detailPanel').classList.add('open');
+  _panel.classList.add('open');
+  if (gmap && !_wasOpen) gmap.panBy(_panel.offsetWidth / 2, 0);
 
   _detailStation = s;
+  const _sIdx = s._origIdx ?? allStations.findIndex(n => n === s);
   _nearbyCache = allStations
     .map((n, i) => ({ n, i, d: dist(s.lat, s.lon, n.lat, n.lon) }))
-    .filter(x => x.n !== s)
+    .filter(x => x.i !== _sIdx)
     .sort((a, b) => a.d - b.d);
+  setRadiusCircle(s, _nearbyRadius);
+  if (!_wasOpen) fitToRadius(s, _nearbyRadius);
   renderNearby(_nearbyRadius);
 }
 
 function closeDetail() {
   document.getElementById('detailPanel').classList.remove('open');
+  setRadiusCircle(null, 0);
   _detailStation = null;
   _nearbyCache = [];
 }
@@ -949,20 +908,51 @@ function toggleCU(idx) {
   document.getElementById(`cu-${idx}`)?.classList.toggle('open');
 }
 
-// ── Nearby stations ───────────────────────────────────────────────────────────
+// ── Nearby stations + radius circle ──────────────────────────────────────────
 let _detailStation = null;
 let _nearbyRadius  = 3;
 let _nearbyCache   = []; // pre-sorted distances from current detail station
+let _radiusCircle  = null;
+
+function setRadiusCircle(station, radiusKm) {
+  if (_radiusCircle) { _radiusCircle.setMap(null); _radiusCircle = null; }
+  if (!station || !gmap || !radiusKm) return;
+  _radiusCircle = new google.maps.Circle({
+    map: gmap,
+    center: { lat: station.lat, lng: station.lon },
+    radius: radiusKm * 1000,
+    fillColor: '#3b82f6',
+    fillOpacity: 0.06,
+    strokeColor: '#3b82f6',
+    strokeOpacity: 0.35,
+    strokeWeight: 1.5,
+    clickable: false,
+  });
+}
+
+function fitToRadius(station, radiusKm) {
+  if (!gmap || !station || !radiusKm) return;
+  const bounds = new google.maps.Circle({
+    center: { lat: station.lat, lng: station.lon },
+    radius: radiusKm * 1000,
+  }).getBounds();
+  const panelEl = document.getElementById('detailPanel');
+  const rightPad = (panelEl && panelEl.classList.contains('open'))
+    ? panelEl.offsetWidth + 20 : 20;
+  gmap.fitBounds(bounds, { top: 60, right: rightPad, bottom: 30, left: 20 });
+}
 
 function renderNearby(radiusKm) {
   _nearbyRadius = radiusKm;
-  // update tab active state
   document.querySelectorAll('.r-tab').forEach(t =>
     t.classList.toggle('active', +t.dataset.km === radiusKm)
   );
+  const titleEl = document.getElementById('nearbyTitle');
+  if (titleEl) titleEl.textContent = `附近 ${radiusKm} 公里充电桩`;
 
-  const nearby = _nearbyCache.filter(x => x.d <= radiusKm);
-
+  const nearby = _nearbyCache.filter(x =>
+    x.d <= radiusKm && (activeBrands.size === 0 || activeBrands.has(x.n.brand))
+  );
   const el = document.getElementById('nearbyList');
   if (!el) return;
 
@@ -973,22 +963,50 @@ function renderNearby(radiusKm) {
 
   el.innerHTML = nearby.map(({ n, i, d }) => {
     const b = BRANDS[n.brand];
-    const dcTag = n.dc ? `<span class="connector-tag dc" style="font-size:10px;padding:2px 6px;">⚡ DC×${n.dc}</span>` : '';
-    const acTag = n.ac ? `<span class="connector-tag ac" style="font-size:10px;padding:2px 6px;">AC×${n.ac}</span>` : '';
-    const kwTag = n.maxKw ? `<span style="font-size:11px;color:#9ca3af;">Max ${n.maxKw} kW</span>` : '';
-    const totalTag = `<span style="font-size:11px;color:#6b7280;">共${n.total}枪</span>`;
-    return `<div class="nearby-card" onclick="openDetailByIdx(${i})">
+    const dcTag = n.dc ? `<span class="ctag dc" style="font-size:10px;padding:1px 6px;">DC</span>` : '';
+    const acTag = n.ac ? `<span class="ctag ac" style="font-size:10px;padding:1px 6px;">AC</span>` : '';
+    const totalStr = n.total ? `${n.total} 枪` : '';
+    const kwStr    = n.maxKw ? `${n.maxKw} kW` : '';
+    return `<div class="nearby-card" onclick="openDetailByIdx(${i})" onmouseenter="hoverNearby(${i})" onmouseleave="unhoverNearby(${i})">
       <img class="nearby-logo" src="${b.logo}" alt="${b.short}">
       <div class="nearby-body">
         <div class="nearby-name">${escHtml(n.name)}</div>
-        <div class="nearby-meta">${dcTag}${acTag}${kwTag}${totalTag}</div>
+        <div class="nearby-meta">${dcTag}${acTag}<span>${totalStr}</span><span>${kwStr}</span></div>
       </div>
       <div class="nearby-dist">${fmtDist(d)}</div>
     </div>`;
   }).join('');
 }
 
-function changeRadius(km) { if (_detailStation) renderNearby(km); }
+function changeRadius(km) {
+  if (!_detailStation) return;
+  renderNearby(km);
+  setRadiusCircle(_detailStation, km);
+  fitToRadius(_detailStation, km);
+}
+
+function hoverNearby(origIdx) {
+  const m = allMarkers[origIdx];
+  if (!m || !m.content) return;
+  const img = m.content.tagName === 'IMG' ? m.content : m.content.querySelector('img');
+  if (img) img.classList.add('map-pin-bounce');
+  if (m.content.parentElement) m.content.parentElement.style.zIndex = '9000';
+}
+
+function unhoverNearby(origIdx) {
+  const m = allMarkers[origIdx];
+  if (!m || !m.content) return;
+  const img = m.content.tagName === 'IMG' ? m.content : m.content.querySelector('img');
+  if (img) img.classList.remove('map-pin-bounce');
+  if (m.content.parentElement) m.content.parentElement.style.zIndex = '';
+}
+
+function promptCustomRadius() {
+  const val = prompt(`输入自定义距离（公里，1–50）`, _nearbyRadius);
+  if (val === null) return;
+  const km = parseFloat(val);
+  if (!isNaN(km) && km >= 0.5 && km <= 50) changeRadius(Math.round(km * 10) / 10);
+}
 
 function openDetailByIdx(origIdx) {
   const s = allStations[origIdx];
@@ -1071,6 +1089,12 @@ window.initMap = function () {
     markers: [],
     algorithm: new markerClusterer.SuperClusterAlgorithm({ radius: 80, maxZoom: 14, minPoints: 2 }),
     renderer: clusterRenderer,
+    onClusterClick(_, cluster, map) {
+      const panelEl = document.getElementById('detailPanel');
+      const rightPad = (panelEl && panelEl.classList.contains('open'))
+        ? panelEl.offsetWidth + 20 : 60;
+      map.fitBounds(cluster.bounds, { top: 60, right: rightPad, bottom: 60, left: 60 });
+    },
   });
 
   // Create all markers once
@@ -1169,15 +1193,23 @@ window.initMap = function () {
   // Province filter
   areaSelect.onchange = e => { activeProvince = e.target.value; activeOrigIdx = -1; fullRender(); };
 
-  // Brand tabs
+  // Brand tabs — multi-select; "全部" clears selection
   document.getElementById('brandTabs').addEventListener('click', e => {
     const btn = e.target.closest('.tab');
     if (!btn) return;
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    activeBrand = btn.dataset.brand;
+    const brand = btn.dataset.brand;
+    if (brand === 'all') {
+      activeBrands.clear();
+    } else {
+      activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
+    }
+    document.querySelectorAll('#brandTabs .tab').forEach(t => {
+      const b = t.dataset.brand;
+      t.classList.toggle('active', b === 'all' ? activeBrands.size === 0 : activeBrands.has(b));
+    });
     activeOrigIdx = -1;
     fullRender();
+    if (_detailStation) renderNearby(_nearbyRadius);
   });
 
   // Initial render + fit all stations
