@@ -4,312 +4,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>充电桩列表</title>
-
-  <!-- MarkerClusterer (must load before initMap fires) -->
   <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
-      height: 100vh;
-      overflow: hidden;
+    :root {
+      --clr-dc: #ea580c;
+      --clr-dc-bg: #fff7ed;
+      --clr-dc-border: #fed7aa;
+      --clr-ac: #16a34a;
+      --clr-ac-bg: #f0fdf4;
+      --clr-ac-border: #bbf7d0;
+      --clr-primary: #3b82f6;
+      --clr-primary-bg: #eff6ff;
+      --clr-primary-border: #bfdbfe;
     }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif; height: 100vh; overflow: hidden; }
     .app { display: flex; height: 100vh; }
 
     /* ── Sidebar ── */
-    .sidebar {
-      width: 390px;
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      border-right: 1px solid #e5e7eb;
-      z-index: 10;
-    }
-
+    .sidebar { width: 390px; flex-shrink: 0; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #e5e7eb; z-index: 10; }
     .sidebar-header { padding: 20px 20px 0; flex-shrink: 0; }
-
     .sidebar-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 14px; }
 
-    .brand-tabs {
-      display: flex; gap: 6px; overflow-x: auto; padding-bottom: 12px;
-      scrollbar-width: none;
-    }
+    .brand-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
     .brand-tabs::-webkit-scrollbar { display: none; }
-
-    .tab {
-      display: flex; align-items: center; gap: 6px;
-      padding: 7px 11px;
-      border: 1.5px solid #e5e7eb; border-radius: 8px;
-      background: #fff; cursor: pointer; transition: all .15s;
-      white-space: nowrap; flex-shrink: 0;
-    }
-    .tab:hover { border-color: #93c5fd; background: #eff6ff; }
-    .tab.active { border-color: #3b82f6; background: #3b82f6; }
+    .tab { display: flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1.5px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer; transition: all .15s; white-space: nowrap; flex-shrink: 0; }
+    .tab:hover { border-color: #93c5fd; background: var(--clr-primary-bg); }
+    .tab.active { border-color: var(--clr-primary); background: var(--clr-primary); }
     .tab.active .tab-name { color: #fff; }
-
     .tab-logo { width: 20px; height: 20px; object-fit: contain; border-radius: 4px; }
-    .tab-all-icon {
-      width: 20px; height: 20px; border-radius: 4px;
-      background: #3b82f6; color: #fff;
-      font-size: 11px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .tab-all-icon { width: 20px; height: 20px; border-radius: 4px; background: var(--clr-primary); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
     .tab.active .tab-all-icon { background: rgba(255,255,255,.25); }
     .tab-name { font-size: 12px; font-weight: 600; color: #374151; }
     .tab-count { font-size: 10px; color: #d1d5db; font-weight: 400; }
     .tab.active .tab-count { color: rgba(255,255,255,.4); }
 
-    .sort-bar { padding: 10px 0 12px; border-bottom: 1px solid #f3f4f6; }
-    .sort-btn {
-      display: inline-flex; align-items: center; gap: 4px;
-      padding: 6px 12px;
-      border: 1px solid #e5e7eb; border-radius: 20px;
-      background: #fff; font-size: 13px; color: #374151; cursor: pointer;
-    }
+    /* brand filter pill bar */
+    .brand-filter-bar { display: none; align-items: center; gap: 6px; padding: 4px 0 8px; font-size: 12px; color: #374151; flex-wrap: wrap; }
+    .brand-filter-bar.visible { display: flex; }
+    .brand-filter-tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 14px; background: var(--clr-primary-bg); color: var(--clr-primary); border: 1px solid var(--clr-primary-border); font-size: 11px; font-weight: 600; }
+    .brand-filter-clear { padding: 3px 9px; border-radius: 14px; background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; font-size: 11px; font-weight: 600; cursor: pointer; transition: background .12s; }
+    .brand-filter-clear:hover { background: #e5e7eb; color: #374151; }
 
-    .station-count { padding: 8px 20px 4px; font-size: 12px; color: #9ca3af; flex-shrink: 0; }
+    .sort-bar { padding: 8px 0 12px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: center; gap: 8px; }
+    .sort-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #e5e7eb; border-radius: 20px; background: #fff; font-size: 13px; color: #374151; cursor: pointer; }
+    #listUpdatedHint { font-size: 11px; color: #9ca3af; opacity: 0; transition: opacity .5s; }
 
-    .station-list {
-      flex: 1; overflow-y: auto; padding: 0 12px 12px;
-      scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
-    }
+    .station-count { padding: 6px 20px 2px; font-size: 12px; color: #9ca3af; flex-shrink: 0; }
+    .station-sort-hint { padding: 0 20px 6px; font-size: 11px; color: #c5cad3; flex-shrink: 0; }
+
+    .station-list { flex: 1; overflow-y: auto; padding: 0 12px 12px; scrollbar-width: thin; scrollbar-color: #d1d5db transparent; }
     .station-list::-webkit-scrollbar { width: 4px; }
     .station-list::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
 
     /* ── Card ── */
-    .station-card {
-      display: flex; gap: 10px; padding: 10px;
-      border: 1px solid #f0f0f0; border-radius: 10px;
-      background: #fff; margin-top: 8px;
-      cursor: pointer; transition: background .12s, border-color .12s;
-      position: relative;
-    }
+    .station-card { display: flex; gap: 10px; padding: 10px; border: 1px solid #f0f0f0; border-radius: 10px; background: #fff; margin-top: 8px; cursor: pointer; transition: background .12s, border-color .12s; position: relative; }
     .station-card:hover { background: #f9fafb; border-color: #e5e7eb; }
-    .station-card.active {
-      background: #eff6ff;
-      border-color: #bfdbfe;
-      border-left: 3px solid #3b82f6;
-      padding-left: 9px;
-    }
-
-    .card-logo {
-      width: 36px; height: 36px; border-radius: 8px;
-      object-fit: contain; flex-shrink: 0;
-      border: 1px solid #f3f4f6; padding: 2px; background: #fff;
-      align-self: flex-start; margin-top: 2px;
-    }
+    .station-card.active { background: var(--clr-primary-bg); border-color: var(--clr-primary-border); border-left: 3px solid var(--clr-primary); padding-left: 9px; }
+    .card-logo { width: 36px; height: 36px; border-radius: 8px; object-fit: contain; flex-shrink: 0; border: 1px solid #f3f4f6; padding: 2px; background: #fff; align-self: flex-start; margin-top: 2px; }
     .card-body { flex: 1; min-width: 0; }
-
-    .card-header {
-      display: flex; align-items: center; justify-content: space-between; gap: 6px;
-      margin-bottom: 1px;
-    }
+    .card-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 1px; }
     .card-brand { font-size: 11px; color: #9ca3af; font-weight: 500; }
     .card-dist  { font-size: 11.5px; font-weight: 600; color: #374151; flex-shrink: 0; }
-
-    .card-name {
-      font-size: 13px; font-weight: 600; color: #111827; line-height: 1.35;
-      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-      overflow: hidden; margin-bottom: 2px;
-    }
-    .card-addr {
-      font-size: 11.5px; color: #9ca3af;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      margin-bottom: 6px;
-    }
-
+    .card-name { font-size: 13px; font-weight: 600; color: #111827; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 2px; }
+    .card-addr { font-size: 11.5px; color: #9ca3af; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px; }
     .card-tags { display: flex; gap: 4px; margin-bottom: 5px; }
-    .ctag {
-      display: inline-flex; align-items: center;
-      padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 600;
-    }
-    .ctag.dc { background: #fff7ed; color: #ea580c; }
-    .ctag.ac { background: #f0fdf4; color: #16a34a; }
-
-    .card-footer {
-      display: flex; align-items: center; justify-content: space-between; gap: 6px;
-    }
+    .ctag { display: inline-flex; align-items: center; padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 600; }
+    .ctag.dc { background: var(--clr-dc-bg); color: var(--clr-dc); }
+    .ctag.ac { background: var(--clr-ac-bg); color: var(--clr-ac); }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
     .card-summary { font-size: 11px; color: #6b7280; }
-    .card-nav {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 26px; height: 26px; border-radius: 7px;
-      background: #eff6ff; color: #3b82f6;
-      border: none; cursor: pointer; text-decoration: none;
-      transition: background .12s; flex-shrink: 0;
-    }
+    .card-nav { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 7px; background: var(--clr-primary-bg); color: var(--clr-primary); border: none; cursor: pointer; text-decoration: none; transition: background .12s; flex-shrink: 0; }
     .card-nav:hover { background: #dbeafe; }
-
     .connector-tags { display: flex; gap: 5px; flex-wrap: wrap; }
-    .connector-tag {
-      display: inline-flex; align-items: center; gap: 3px;
-      padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
-    }
-    .connector-tag.dc { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
-    .connector-tag.ac { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .connector-tag { display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+    .connector-tag.dc { background: var(--clr-dc-bg); color: var(--clr-dc); border: 1px solid var(--clr-dc-border); }
+    .connector-tag.ac { background: var(--clr-ac-bg); color: var(--clr-ac); border: 1px solid var(--clr-ac-border); }
+
+    /* load more */
+    .load-more-wrap { text-align: center; padding: 12px 0 4px; }
+    .load-more-btn { padding: 7px 20px; border-radius: 20px; border: 1.5px solid #e5e7eb; background: #fff; font-size: 13px; color: #374151; cursor: pointer; transition: all .12s; }
+    .load-more-btn:hover { border-color: var(--clr-primary); color: var(--clr-primary); background: var(--clr-primary-bg); }
 
     /* ── Map panel ── */
     .map-panel { flex: 1; position: relative; }
-
     #map { width: 100%; height: 100%; }
-
-    .map-controls {
-      position: absolute; top: 14px; left: 14px; right: 14px;
-      display: flex; align-items: center; gap: 8px;
-      z-index: 5; pointer-events: none;
-    }
+    .map-controls { position: absolute; top: 14px; left: 14px; right: 14px; display: flex; align-items: center; gap: 8px; z-index: 5; pointer-events: none; }
     .map-controls > * { pointer-events: auto; }
-
-    .map-type-toggle {
-      display: flex; background: #fff;
-      border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); overflow: hidden; flex-shrink: 0;
-    }
-    .map-toggle {
-      padding: 7px 14px; font-size: 13px; font-weight: 500;
-      color: #374151; border: none; background: transparent; cursor: pointer;
-    }
-    .map-toggle.active { color: #3b82f6; font-weight: 700; box-shadow: inset 0 -2px 0 #3b82f6; }
-
-    .area-select {
-      padding: 7px 28px 7px 12px;
-      border-radius: 8px; border: none;
-      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
-      font-size: 13px; color: #374151; cursor: pointer;
-      appearance: none; min-width: 110px;
-    }
-
-    .map-search {
-      display: flex; align-items: center;
-      background: #fff; border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
-      padding: 7px 12px; gap: 8px;
-      max-width: 280px; margin-left: auto;
-    }
-    .map-search input {
-      border: none; outline: none; font-size: 13px; color: #374151;
-      width: 100%; background: transparent;
-    }
+    .map-type-toggle { display: flex; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); overflow: hidden; flex-shrink: 0; }
+    .map-toggle { padding: 7px 14px; font-size: 13px; font-weight: 500; color: #374151; border: none; background: transparent; cursor: pointer; }
+    .map-toggle.active { color: var(--clr-primary); font-weight: 700; box-shadow: inset 0 -2px 0 var(--clr-primary); }
+    .area-select { padding: 7px 28px 7px 12px; border-radius: 8px; border: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center; box-shadow: 0 2px 8px rgba(0,0,0,.15); font-size: 13px; color: #374151; cursor: pointer; appearance: none; min-width: 110px; }
+    .map-search { display: flex; align-items: center; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); padding: 7px 12px; gap: 8px; max-width: 280px; margin-left: auto; }
+    .map-search input { border: none; outline: none; font-size: 13px; color: #374151; width: 100%; background: transparent; }
     .map-search input::placeholder { color: #9ca3af; }
 
-    /* Active marker pulse ring */
-    @keyframes markerPulse {
-      0%   { transform: scale(.45); opacity: .95; }
-      80%  { transform: scale(2.2); opacity: 0; }
-      100% { transform: scale(2.2); opacity: 0; }
-    }
-    .pin-pulse {
-      position: absolute; top: 50%; left: 50%;
-      width: 52px; height: 52px;
-      margin: -26px 0 0 -26px;
-      border-radius: 50%;
-      border: 2.5px solid #3b82f6;
-      animation: markerPulse 2.2s ease-out infinite;
-      pointer-events: none;
-    }
+    /* locate button */
+    .locate-btn { position: absolute; bottom: 116px; right: 10px; width: 40px; height: 40px; border-radius: 8px; background: #fff; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.15); display: flex; align-items: center; justify-content: center; z-index: 5; transition: background .15s; }
+    .locate-btn:hover { background: var(--clr-primary-bg); }
+    .locate-btn:hover svg { stroke: var(--clr-primary); }
+    .locate-btn.locating { animation: locatePulse 1s ease infinite; }
+    @keyframes locatePulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
-    /* Google Maps InfoWindow reset */
+    @keyframes markerPulse { 0%{transform:scale(.45);opacity:.95} 80%{transform:scale(2.2);opacity:0} 100%{transform:scale(2.2);opacity:0} }
+    .pin-pulse { position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px; border-radius: 50%; border: 2.5px solid var(--clr-primary); animation: markerPulse 2.2s ease-out infinite; pointer-events: none; }
+
     .gm-style .gm-style-iw-c { border-radius: 10px !important; padding: 0 !important; }
     .gm-style .gm-style-iw-d { overflow: hidden !important; }
     .gm-style .gm-style-iw-tc::after { display: none; }
-
     .popup-content { padding: 12px 14px; min-width: 180px; }
     .popup-brand { font-size: 10px; font-weight: 600; margin-bottom: 3px; }
     .popup-name { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 6px; line-height: 1.3; }
     .popup-addr { font-size: 11px; color: #6b7280; margin-bottom: 6px; }
     .popup-row { display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
-
     .empty-state { text-align: center; padding: 40px 20px; color: #9ca3af; }
     .empty-state p { font-size: 14px; margin-top: 12px; }
-
-    /* Google Places autocomplete dropdown z-index */
     .pac-container { z-index: 9999 !important; }
 
-    /* ── Detail panel (right side, over map) ── */
-    .detail-panel {
-      position: absolute; top: 0; right: 0; bottom: 0;
-      width: clamp(320px, 430px, calc(100% - 650px));
-      background: #fff; z-index: 20;
-      isolation: isolate;
-      display: flex; flex-direction: column;
-      box-shadow: -4px 0 24px rgba(0,0,0,.12);
-      transform: translateX(100%);
-      transition: transform .25s cubic-bezier(.4,0,.2,1);
-    }
+    /* ── Detail panel ── */
+    .detail-panel { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(320px, 430px, calc(100% - 650px)); background: #fff; z-index: 20; isolation: isolate; display: flex; flex-direction: column; box-shadow: -4px 0 24px rgba(0,0,0,.12); transform: translateX(100%); transition: transform .25s cubic-bezier(.4,0,.2,1); }
     .detail-panel.open { transform: translateX(0); }
-
-    .detail-body {
-      flex: 1; overflow-y: auto;
-      scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
-    }
+    .detail-body { flex: 1; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #d1d5db transparent; }
     .detail-body::-webkit-scrollbar { width: 4px; }
     .detail-body::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
-
-    /* close × */
-    .detail-close {
-      position: absolute; top: 14px; right: 14px;
-      width: 28px; height: 28px; border-radius: 50%;
-      background: #f3f4f6; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; color: #6b7280; transition: background .15s;
-    }
+    @keyframes detailFadeIn { from{opacity:0;transform:translateY(5px)} to{opacity:1;transform:translateY(0)} }
+    .detail-body-fade { animation: detailFadeIn .2s ease; }
+    .detail-close { position: absolute; top: 14px; right: 14px; width: 28px; height: 28px; border-radius: 50%; background: #f3f4f6; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #6b7280; transition: background .15s; }
     .detail-close:hover { background: #e5e7eb; color: #111827; }
 
-    /* ── Detail panel inner ── */
-    .d-top {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 20px 52px 16px 16px;
-    }
-    .d-logo {
-      width: 56px; height: 56px; border-radius: 14px;
-      object-fit: contain; border: 1px solid #f3f4f6;
-      padding: 4px; background: #fff; flex-shrink: 0;
-    }
+    /* breadcrumb */
+    .d-breadcrumb { display: flex; align-items: center; gap: 6px; padding: 9px 16px; background: var(--clr-primary-bg); font-size: 12px; color: var(--clr-primary); font-weight: 500; cursor: pointer; border-bottom: 1px solid var(--clr-primary-border); transition: background .12s; }
+    .d-breadcrumb:hover { background: #dbeafe; }
+
+    .d-top { display: flex; align-items: flex-start; gap: 14px; padding: 20px 52px 16px 16px; }
+    .d-logo { width: 56px; height: 56px; border-radius: 14px; object-fit: contain; border: 1px solid #f3f4f6; padding: 4px; background: #fff; flex-shrink: 0; }
     .d-title { flex: 1; min-width: 0; padding-top: 2px; }
     .d-brand-label { font-size: 11px; font-weight: 600; margin-bottom: 5px; }
     .d-name { font-size: 17px; font-weight: 700; color: #111827; line-height: 1.3; margin: 0; }
-
-    /* address + nav */
-    .d-addr-section {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 12px 16px 16px; border-top: 1px solid #f3f4f6;
-    }
+    .d-addr-section { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px 16px; border-top: 1px solid #f3f4f6; }
     .d-addr-left { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
     .d-loc-row { display: flex; align-items: flex-start; gap: 7px; }
     .d-loc-text { font-size: 13px; color: #374151; line-height: 1.5; }
-    .d-loc-coords { font-size: 12px; color: #9ca3af; font-family: monospace; }
     .d-hours-text { font-size: 12px; color: #374151; }
-    .d-nav-btn {
-      flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px;
-      padding: 10px 16px; border-radius: 10px;
-      background: #3b82f6; color: #fff;
-      font-size: 13px; font-weight: 600; text-decoration: none;
-      white-space: nowrap; transition: background .15s;
-    }
+    .d-nav-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px; background: var(--clr-primary); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background .15s; }
     .d-nav-btn:hover { background: #2563eb; }
+    .copy-coord-btn { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 10px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 11px; color: #6b7280; cursor: pointer; transition: all .12s; }
+    .copy-coord-btn:hover { border-color: var(--clr-primary); color: var(--clr-primary); background: var(--clr-primary-bg); }
+    .copy-coord-btn.copied { border-color: var(--clr-ac); color: var(--clr-ac); background: var(--clr-ac-bg); }
 
-    /* charger list */
-    .d-charger-title {
-      display: flex; align-items: center; gap: 7px;
-      padding: 14px 16px 10px; border-top: 1px solid #f3f4f6;
-      font-size: 14px; font-weight: 700; color: #111827;
-    }
+    /* charger accordion */
+    .d-charger-title { display: flex; align-items: center; gap: 7px; padding: 14px 16px 10px; border-top: 1px solid #f3f4f6; font-size: 14px; font-weight: 700; color: #111827; }
     .cu-card { margin: 0 12px 8px; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
-    .cu-header {
-      display: flex; align-items: center; gap: 10px;
-      padding: 11px 14px; cursor: pointer;
-      background: #fff; user-select: none; transition: background .15s;
-    }
+    .cu-header { display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer; background: #fff; user-select: none; transition: background .15s; }
     .cu-header:hover { background: #f9fafb; }
-    .cu-bolt {
-      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .cu-bolt.dc { background: #fff7ed; }
-    .cu-bolt.ac { background: #f0fdf4; }
+    .cu-bolt { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .cu-bolt.dc { background: var(--clr-dc-bg); }
+    .cu-bolt.ac { background: var(--clr-ac-bg); }
     .cu-main { flex: 1; display: flex; align-items: center; gap: 6px; min-width: 0; }
     .cu-label { font-size: 13px; font-weight: 700; color: #111827; }
     .cu-sep   { color: #d1d5db; }
@@ -320,83 +170,56 @@
     .cu-body { display: none; border-top: 1px solid #f3f4f6; }
     .cu-card.open .cu-body { display: block; }
     .cu-guns-label { padding: 10px 14px 4px; font-size: 13px; font-weight: 600; color: #374151; }
+    /* single-charger flat view */
+    .cu-flat { margin: 0 12px 12px; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
+    .cu-flat-header { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: #f9fafb; border-bottom: 1px solid #f3f4f6; }
 
     /* connector table */
     .conn-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .conn-table th {
-      padding: 7px 8px; background: #f9fafb;
-      font-weight: 600; color: #6b7280; text-align: center;
-      border-bottom: 1px solid #f3f4f6;
-    }
+    .conn-table th { padding: 7px 8px; background: #f9fafb; font-weight: 600; color: #6b7280; text-align: center; border-bottom: 1px solid #f3f4f6; }
     .conn-table th.th-left { text-align: left; }
     .conn-table .th-time { font-size: 10px; font-weight: 400; color: #9ca3af; display: block; }
     .conn-table td { padding: 10px 8px; vertical-align: middle; border-bottom: 1px solid #f9fafb; }
     .conn-table tr:last-child td { border-bottom: none; }
     .td-pos  { font-size: 13px; font-weight: 600; color: #111827; }
-    .td-type { font-size: 12px; color: #374151; text-align: center; }
-    .td-kw   { font-size: 12px; color: #374151; text-align: center; }
-    .td-day  { font-size: 14px; font-weight: 700; color: #dc2626; text-align: center; }
-    .td-night{ font-size: 14px; font-weight: 700; color: #3b82f6; text-align: center; }
+    .td-type { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
+    .td-kw   { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
+    .td-day  { font-size: 14px; font-weight: 700; color: #dc2626; text-align: center; white-space: nowrap; }
+    .td-night{ font-size: 14px; font-weight: 700; color: var(--clr-primary); text-align: center; white-space: nowrap; }
     .td-dash { color: #d1d5db; text-align: center; }
-
-    /* footnote */
     .d-footnote { padding: 10px 16px 16px; font-size: 11px; color: #9ca3af; border-top: 1px solid #f9fafb; }
 
     /* nearby */
     .d-nearby-section { border-top: 1px solid #f3f4f6; padding-bottom: 12px; }
     .d-nearby-header { padding: 14px 16px 10px; }
     .d-nearby-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px; }
-    .d-radius-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
-    .r-tab {
-      padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 600;
-      border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280;
-      cursor: pointer; transition: all .15s;
-    }
-    .r-tab:hover { border-color: #93c5fd; color: #3b82f6; }
-    .r-tab.active { border-color: #3b82f6; background: #3b82f6; color: #fff; }
+    .d-radius-tabs { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .r-tab { padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280; cursor: pointer; transition: all .15s; }
+    .r-tab:hover { border-color: #93c5fd; color: var(--clr-primary); }
+    .r-tab.active { border-color: var(--clr-primary); background: var(--clr-primary); color: #fff; }
+    /* inline custom radius input */
+    .custom-radius-wrap { display: none; align-items: center; gap: 4px; }
+    .custom-radius-wrap.open { display: flex; }
+    .custom-radius-input { width: 62px; padding: 5px 8px; border-radius: 8px; border: 1.5px solid var(--clr-primary); outline: none; font-size: 12px; font-weight: 600; color: #374151; text-align: center; }
+    .custom-radius-confirm { padding: 5px 10px; border-radius: 8px; background: var(--clr-primary); color: #fff; border: none; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .custom-radius-confirm:hover { background: #2563eb; }
 
-    .nearby-card {
-      display: flex; align-items: center; gap: 10px;
-      padding: 10px 16px; cursor: pointer; transition: background .15s;
-    }
+    .nearby-card { display: flex; align-items: center; gap: 10px; padding: 10px 16px; cursor: pointer; transition: background .15s; }
     .nearby-card:hover { background: #f9fafb; }
-    .nearby-logo {
-      width: 38px; height: 38px; border-radius: 50%;
-      object-fit: contain; border: 1px solid #f3f4f6;
-      padding: 4px; background: #fff; flex-shrink: 0;
-    }
+    .nearby-logo { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; border: 1px solid #f3f4f6; padding: 4px; background: #fff; flex-shrink: 0; }
     .nearby-body { flex: 1; min-width: 0; }
-    .nearby-name {
-      font-size: 13px; font-weight: 600; color: #111827;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px;
-    }
+    .nearby-name { font-size: 13px; font-weight: 600; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px; }
     .nearby-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b7280; flex-wrap: wrap; }
-    .nearby-dist { font-size: 13px; font-weight: 700; color: #3b82f6; white-space: nowrap; flex-shrink: 0; }
-    .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; }
+    .nearby-dist { font-size: 13px; font-weight: 700; color: var(--clr-primary); white-space: nowrap; flex-shrink: 0; }
+    .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; line-height: 1.7; }
+    .nearby-suggest-btn { display: inline-block; margin-top: 6px; padding: 5px 14px; border-radius: 16px; border: 1.5px solid var(--clr-primary); background: transparent; color: var(--clr-primary); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .12s; }
+    .nearby-suggest-btn:hover { background: var(--clr-primary-bg); }
 
-    /* ── Map pin markers ── */
-    .map-pin-img {
-      display: block;
-      cursor: pointer;
-      transform-origin: bottom center;
-      transition: transform .18s cubic-bezier(.34,1.56,.64,1), filter .18s ease;
-      will-change: transform, filter;
-    }
-    .map-pin-img:hover {
-      transform: scale(1.25) translateY(-6px);
-      filter: drop-shadow(0 6px 14px rgba(0,0,0,.55)) brightness(1.08) !important;
-    }
-    @keyframes markerBounce {
-      0%, 100% { transform: translateY(0)    scale(1);    }
-      30%       { transform: translateY(-14px) scale(1.12); }
-      60%       { transform: translateY(-6px)  scale(1.06); }
-      80%       { transform: translateY(-10px) scale(1.09); }
-    }
-    .map-pin-bounce {
-      animation: markerBounce .75s ease infinite !important;
-      transition: none !important;
-      transform-origin: bottom center;
-    }
+    /* map markers */
+    .map-pin-img { display: block; cursor: pointer; transform-origin: bottom center; transition: transform .18s cubic-bezier(.34,1.56,.64,1), filter .18s ease; will-change: transform, filter; }
+    .map-pin-img:hover { transform: scale(1.25) translateY(-6px); filter: drop-shadow(0 6px 14px rgba(0,0,0,.55)) brightness(1.08) !important; }
+    @keyframes markerBounce { 0%,100%{transform:translateY(0) scale(1)} 30%{transform:translateY(-14px) scale(1.12)} 60%{transform:translateY(-6px) scale(1.06)} 80%{transform:translateY(-10px) scale(1.09)} }
+    .map-pin-bounce { animation: markerBounce .75s ease infinite !important; transition: none !important; transform-origin: bottom center; }
   </style>
 </head>
 <body>
@@ -432,19 +255,18 @@
           <span class="tab-count" id="tabCount-igreen"></span>
         </button>
       </div>
+      <div class="brand-filter-bar" id="brandFilterBar"></div>
       <div class="sort-bar">
         <button class="sort-btn">
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-            <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           距离最近
-          <svg width="10" height="6" viewBox="0 0 10 6">
-            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          </svg>
+          <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
         </button>
+        <span id="listUpdatedHint">列表已更新 ↻</span>
       </div>
     </div>
     <div class="station-count" id="stationCount"></div>
+    <div class="station-sort-hint">按当前地图中心距离排序</div>
     <div class="station-list" id="stationList">
       <div class="empty-state"><p>地图加载中…</p></div>
     </div>
@@ -460,16 +282,21 @@
         <option value="">全部区域</option>
       </select>
       <div class="map-search">
-        <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-          <circle cx="7.5" cy="7.5" r="5.5" stroke="#9ca3af" stroke-width="1.5"/>
-          <path d="M12 12l3.5 3.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9ca3af" stroke-width="1.5"/><path d="M12 12l3.5 3.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>
         <input type="text" id="searchInput" placeholder="搜索地点或充电站" autocomplete="off"/>
       </div>
     </div>
     <div id="map"></div>
 
-    <!-- Detail panel — slides in from right over the map -->
+    <!-- locate me button -->
+    <button class="locate-btn" id="locateBtn" title="我的位置" onclick="locateMe()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/>
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>
+      </svg>
+    </button>
+
+    <!-- Detail panel -->
     <div class="detail-panel" id="detailPanel">
       <div class="detail-body" id="detailBody"></div>
       <button class="detail-close" onclick="closeDetail()">✕</button>
@@ -477,14 +304,13 @@
   </div>
 </div>
 
-<!-- data files -->
 <script src="data/pea.js"></script>
 <script src="data/ptt.js"></script>
 <script src="data/spark.js"></script>
 <script src="data/igreen.js"></script>
 
 <script>
-// ── Brand config ─────────────────────────────────────────────────────────────
+// ── Brand config ──────────────────────────────────────────────────────────────
 const BRANDS = {
   pea:    { label: 'PEA VOLTA', short: 'PEA',    color: '#7C3AED', bg: '#f3e8ff', text: '#7C3AED', logo: 'img/pea.png' },
   ptt:    { label: 'PTT EV',    short: 'PTT EV', color: '#1d4ed8', bg: '#dbeafe', text: '#1d4ed8', logo: 'img/ptt.png' },
@@ -492,7 +318,7 @@ const BRANDS = {
   igreen: { label: 'iGreen',   short: 'iGreen', color: '#16a34a', bg: '#dcfce7', text: '#16a34a', logo: 'img/igreen.png' },
 };
 
-// ── Normalize raw data ────────────────────────────────────────────────────────
+// ── Normalize ─────────────────────────────────────────────────────────────────
 function chargerTypeLabel(c) {
   const m = (c.model || '').toLowerCase();
   if (m.includes('chademo')) return (c.type === 'DC' ? 'DC ' : '') + 'CHAdeMO';
@@ -507,15 +333,12 @@ function chargerTypeLabel(c) {
 function normalizeStation(raw, brandKey) {
   let dc = 0, ac = 0, maxKw = 0;
   const connTypes = new Set();
-
   if (typeof raw.dc_total_heads === 'number') {
-    dc = raw.dc_total_heads;
-    ac = raw.ac_total_heads || 0;
+    dc = raw.dc_total_heads; ac = raw.ac_total_heads || 0;
   }
   (raw.chargers || []).forEach(c => {
     if (typeof raw.dc_total_heads !== 'number') {
-      if (c.type === 'DC') dc += (c.heads || 1);
-      else ac += (c.heads || 1);
+      if (c.type === 'DC') dc += (c.heads || 1); else ac += (c.heads || 1);
     }
     if (c.kw) maxKw = Math.max(maxKw, c.kw);
     const tl = chargerTypeLabel(c);
@@ -524,17 +347,10 @@ function normalizeStation(raw, brandKey) {
     else if (tl.includes('Type 2')) connTypes.add('Type 2');
     else if (tl === 'DC 快充' && !connTypes.size) connTypes.add('DC Fast');
   });
-
   let address = raw.address || null;
   if (!address && raw.district && raw.province) address = `${raw.district}, ${raw.province}`;
   else if (!address && raw.province) address = raw.province;
-
-  return {
-    brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon,
-    address, province: raw.province || null,
-    dc, ac, total: dc + ac, maxKw, connTypes: [...connTypes],
-    _raw: raw,
-  };
+  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, connTypes: [...connTypes], _raw: raw };
 }
 
 const allStations = [];
@@ -542,25 +358,24 @@ const allStations = [];
   data.forEach(raw => { if (raw.lat && raw.lon) allStations.push(normalizeStation(raw, brand)); });
 });
 
-// ── Tab counts ────────────────────────────────────────────────────────────────
+// Tab counts
 document.getElementById('tabCount-all').textContent = allStations.length;
 Object.keys(BRANDS).forEach(bk => {
-  const n = allStations.filter(s => s.brand === bk).length;
-  document.getElementById(`tabCount-${bk}`).textContent = n;
+  const el = document.getElementById(`tabCount-${bk}`);
+  if (el) el.textContent = allStations.filter(s => s.brand === bk).length;
 });
 
-// ── Province dropdown ─────────────────────────────────────────────────────────
+// Province dropdown
 const provinces = [...new Set(allStations.map(s => s.province).filter(Boolean))].sort();
 const areaSelect = document.getElementById('areaSelect');
 provinces.forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; areaSelect.appendChild(o); });
 
 // ── State ─────────────────────────────────────────────────────────────────────
-const activeBrands = new Set(); // empty = show all
-let activeSearch = '';
-let activeProvince = '';
-let activeOrigIdx = -1;   // highlighted station index in allStations
+const activeBrands = new Set();
+let activeSearch = '', activeProvince = '', activeOrigIdx = -1;
 let mapCenter = [13.7563, 100.5018];
-let currentStations = []; // filtered + sorted; each has ._origIdx
+let currentStations = [];
+let listShown = 80;
 
 // ── Haversine ─────────────────────────────────────────────────────────────────
 function dist(lat1, lon1, lat2, lon2) {
@@ -573,73 +388,39 @@ function fmtDist(km) { return km < 1 ? Math.round(km*1000)+' m' : km.toFixed(1)+
 
 // ── Google Maps globals ───────────────────────────────────────────────────────
 let gmap, clusterer, infoWindow;
-const allMarkers = []; // index matches allStations
+const allMarkers = [];
 
-// ── Smart cluster renderer ────────────────────────────────────────────────────
-// Single brand → brand-colored circle + logo (same as before)
-// Multi-brand  → dark circle with total count; hover shows per-brand breakdown
+// ── Cluster renderer ──────────────────────────────────────────────────────────
 const clusterRenderer = {
   render({ count, position, markers }) {
     const brandCounts = {};
     markers.forEach(m => { if (m._brand) brandCounts[m._brand] = (brandCounts[m._brand] || 0) + 1; });
     const brands = Object.keys(brandCounts);
-
     const sz = count < 10 ? 42 : count < 100 ? 50 : 58;
     const fontSize = count < 10 ? 14 : count < 100 ? 13 : 11;
     const countStr = count > 999 ? '999+' : String(count);
-    const BASE_CSS = `position:relative;width:${sz}px;height:${sz}px;border-radius:50%;` +
-      `display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;` +
-      `box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;border:3px solid rgba(255,255,255,.92);`;
-
+    const BASE = `position:relative;width:${sz}px;height:${sz}px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;box-shadow:0 2px 10px rgba(0,0,0,.35);cursor:pointer;border:3px solid rgba(255,255,255,.92);`;
     const el = document.createElement('div');
-
     if (brands.length === 1) {
-      // ── Single brand ──
       const bk = brands[0];
-      el.style.cssText = BASE_CSS + `background:${BRANDS[bk].color};`;
-      el.innerHTML =
-        `<img src="img/${bk}.png" style="width:${Math.round(sz*.38)}px;height:${Math.round(sz*.38)}px;object-fit:contain;border-radius:3px;flex-shrink:0;">` +
-        `<span style="color:#fff;font-size:${fontSize}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
+      el.style.cssText = BASE + `background:${BRANDS[bk].color};`;
+      el.innerHTML = `<img src="img/${bk}.png" style="width:${Math.round(sz*.38)}px;height:${Math.round(sz*.38)}px;object-fit:contain;border-radius:3px;flex-shrink:0;"><span style="color:#fff;font-size:${fontSize}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
     } else {
-      // ── Multi-brand: dark circle ──
-      el.style.cssText = BASE_CSS + 'background:#1f2937;';
-      el.innerHTML =
-        `<span style="color:#fff;font-size:${fontSize + 2}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
-
-      // Hover tooltip showing per-brand breakdown
+      el.style.cssText = BASE + 'background:#1f2937;';
+      el.innerHTML = `<span style="color:#fff;font-size:${fontSize+2}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
       const tip = document.createElement('div');
-      tip.style.cssText =
-        'position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);' +
-        'background:#1f2937;color:#fff;padding:8px 10px;border-radius:8px;' +
-        'font-size:12px;white-space:nowrap;pointer-events:none;' +
-        'box-shadow:0 4px 14px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);';
-      tip.innerHTML = brands
-        .sort((a, b) => brandCounts[b] - brandCounts[a])
-        .map(bk =>
-          `<div style="display:flex;align-items:center;gap:6px;padding:2px 0;">` +
-          `<span style="width:8px;height:8px;border-radius:50%;background:${BRANDS[bk].color};flex-shrink:0;"></span>` +
-          `<span style="flex:1;">${BRANDS[bk].short}</span>` +
-          `<span style="font-weight:700;margin-left:14px;">${brandCounts[bk]}</span>` +
-          `</div>`
-        ).join('');
-
-      el.addEventListener('mouseenter', () => {
-        const host = el.parentElement; // gmp-advanced-marker
-        if (host) host.style.zIndex = '99999';
-        el.appendChild(tip);
-      });
-      el.addEventListener('mouseleave', () => {
-        const host = el.parentElement;
-        if (host) host.style.zIndex = '';
-        tip.parentNode && tip.remove();
-      });
+      tip.style.cssText = 'position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:8px 10px;border-radius:8px;font-size:12px;white-space:nowrap;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);';
+      tip.innerHTML = brands.sort((a,b) => brandCounts[b]-brandCounts[a]).map(bk =>
+        `<div style="display:flex;align-items:center;gap:6px;padding:2px 0;"><span style="width:8px;height:8px;border-radius:50%;background:${BRANDS[bk].color};flex-shrink:0;"></span><span style="flex:1;">${BRANDS[bk].short}</span><span style="font-weight:700;margin-left:14px;">${brandCounts[bk]}</span></div>`
+      ).join('');
+      el.addEventListener('mouseenter', () => { const h = el.parentElement; if (h) h.style.zIndex='99999'; el.appendChild(tip); });
+      el.addEventListener('mouseleave', () => { const h = el.parentElement; if (h) h.style.zIndex=''; tip.parentNode && tip.remove(); });
     }
-
     return new google.maps.marker.AdvancedMarkerElement({ position, content: el, zIndex: 500 + count });
   }
 };
 
-// ── Marker element (img directly — no wrapper div, avoids white bg from AdvancedMarkerElement) ──
+// ── Marker element ────────────────────────────────────────────────────────────
 function createMarkerEl(brandKey, active) {
   if (active) {
     const wrap = document.createElement('div');
@@ -648,10 +429,8 @@ function createMarkerEl(brandKey, active) {
     pulse.className = 'pin-pulse';
     const img = document.createElement('img');
     img.src = `img/${brandKey}-address.png`;
-    img.style.cssText = 'width:72px;height:auto;display:block;' +
-      'filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));';
-    wrap.appendChild(pulse);
-    wrap.appendChild(img);
+    img.style.cssText = 'width:72px;height:auto;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.55));';
+    wrap.appendChild(pulse); wrap.appendChild(img);
     return wrap;
   }
   const img = document.createElement('img');
@@ -661,7 +440,7 @@ function createMarkerEl(brandKey, active) {
   return img;
 }
 
-// ── Filter + sort ─────────────────────────────────────────────────────────────
+// ── Filter / render ───────────────────────────────────────────────────────────
 function applyFilter() {
   const q = activeSearch.trim().toLowerCase();
   currentStations = allStations
@@ -674,18 +453,18 @@ function applyFilter() {
     .sort((a, b) => a.distance - b.distance);
 }
 
-// Full render: filter changed → update clusterer + list
 function fullRender() {
+  listShown = 80;
   applyFilter();
   if (clusterer) updateClusterer();
   renderList();
 }
 
-// Soft render: map moved → re-sort list only (no marker changes)
 function softRender() {
   currentStations.forEach(s => { s.distance = dist(mapCenter[0], mapCenter[1], s.lat, s.lon); });
   currentStations.sort((a, b) => a.distance - b.distance);
   renderList();
+  showListUpdated();
 }
 
 function updateClusterer() {
@@ -693,30 +472,40 @@ function updateClusterer() {
   clusterer.addMarkers(currentStations.map(s => allMarkers[s._origIdx]));
 }
 
-// ── Render list ───────────────────────────────────────────────────────────────
-const LIST_LIMIT = 80; // max visible cards; prevents 50k DOM nodes
+// ── List rendering ────────────────────────────────────────────────────────────
+const LIST_LIMIT = 80;
 
 function renderList() {
   const total = currentStations.length;
-  const visible = currentStations.slice(0, LIST_LIMIT);
   document.getElementById('stationCount').textContent =
-    total > LIST_LIMIT ? `显示最近 ${LIST_LIMIT} 个，共 ${total} 个充电站` : `共 ${total} 个充电站`;
+    total > listShown ? `显示最近 ${listShown} 个，共 ${total} 个充电站` : `共 ${total} 个充电站`;
   const list = document.getElementById('stationList');
-
   if (total === 0) {
-    list.innerHTML = `<div class="empty-state">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-        <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
-      </svg>
-      <p>暂无符合条件的充电站</p>
-    </div>`;
+    list.innerHTML = `<div class="empty-state"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>暂无符合条件的充电站</p></div>`;
     return;
   }
-
-  list.innerHTML = visible.map((s, rank) => buildCard(s, rank)).join('');
+  const visible = currentStations.slice(0, listShown);
+  const loadMoreHtml = total > listShown
+    ? `<div class="load-more-wrap"><button class="load-more-btn" onclick="loadMore()">显示更多（剩余 ${total - listShown} 个）</button></div>`
+    : '';
+  list.innerHTML = visible.map((s, rank) => buildCard(s, rank)).join('') + loadMoreHtml;
   list.querySelectorAll('.station-card').forEach(card => {
     card.addEventListener('click', () => selectStation(+card.dataset.rank, true));
   });
+}
+
+function loadMore() {
+  listShown += LIST_LIMIT;
+  renderList();
+}
+
+let _listHintTimer;
+function showListUpdated() {
+  const el = document.getElementById('listUpdatedHint');
+  if (!el) return;
+  el.style.opacity = '1';
+  clearTimeout(_listHintTimer);
+  _listHintTimer = setTimeout(() => { el.style.opacity = '0'; }, 2000);
 }
 
 function buildCard(s, rank) {
@@ -728,14 +517,10 @@ function buildCard(s, rank) {
   const kwPart = s.maxKw ? ` · 最大 ${s.maxKw} kW` : '';
   const addrHtml = s.address ? `<div class="card-addr">${escHtml(s.address)}</div>` : '';
   const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`;
-
   return `<div class="station-card${isActive ? ' active' : ''}" data-rank="${rank}">
     <img class="card-logo" src="${b.logo}" alt="${b.short}">
     <div class="card-body">
-      <div class="card-header">
-        <span class="card-brand">${b.short}</span>
-        <span class="card-dist">${fmtDist(s.distance)}</span>
-      </div>
+      <div class="card-header"><span class="card-brand">${b.short}</span><span class="card-dist">${fmtDist(s.distance)}</span></div>
       <div class="card-name">${escHtml(s.name)}</div>
       ${addrHtml}
       <div class="card-tags">${dcTag}${acTag}</div>
@@ -753,136 +538,140 @@ function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ── Detail panel helpers ──────────────────────────────────────────────────────
-function chargerIconSvg(type) {
-  const c = (type === 'DC') ? '#ea580c' : '#3b82f6';
-  return `<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="M512 917.312a128 128 0 1 1 0-256 128 128 0 0 1 0 256z m0-170.624a32 32 0 1 0 0-64 32 32 0 0 0 0 64z m32 117.312a31.936 31.936 0 1 0-63.872-0.064 31.936 31.936 0 0 0 63.872 0.064z m-85.312-42.688a31.744 31.744 0 0 0 32-32 32 32 0 1 0-32 32z m138.624-32a32 32 0 1 0-64 0 32 32 0 0 0 64 0zM725.312 597.312a85.312 85.312 0 1 0 0-170.624 85.312 85.312 0 0 0 0 170.624z" fill="${c}"/><path d="M896 512a170.688 170.688 0 1 1-341.376 0A170.688 170.688 0 0 1 896 512z m-64 0a106.688 106.688 0 1 0-213.312 0A106.688 106.688 0 0 0 832 512z" fill="${c}"/><path d="M512 1024A512 512 0 1 0 512 0a512 512 0 0 0 0 1024z m0-64A448 448 0 1 1 512 64a448 448 0 0 1 0 896z" fill="${c}"/><path d="M320.192 599.488a85.312 85.312 0 1 0 0-170.688 85.312 85.312 0 0 0 0 170.688z" fill="${c}"/><path d="M490.88 514.176a170.688 170.688 0 1 1-341.376 0 170.688 170.688 0 0 1 341.312 0z m-64 0a106.688 106.688 0 1 0-213.376 0 106.688 106.688 0 0 0 213.312 0zM512 362.432a128 128 0 1 1 0-256 128 128 0 0 1 0 256z m0-170.688a32 32 0 1 0 0-64 32 32 0 0 0 0 64z m32 117.312a31.936 31.936 0 1 0-64 0 32 32 0 1 0 64 0z m-85.312-42.624a31.808 31.808 0 0 0 32-32 32 32 0 1 0-32 32z m138.624-32a32 32 0 1 0-64 0 32 32 0 0 0 64 0z" fill="${c}"/></svg>`;
+// ── Brand filter bar ──────────────────────────────────────────────────────────
+function updateBrandFilterBar() {
+  const bar = document.getElementById('brandFilterBar');
+  if (activeBrands.size === 0) { bar.classList.remove('visible'); bar.innerHTML = ''; return; }
+  const tags = [...activeBrands].map(b => `<span class="brand-filter-tag">${BRANDS[b].short}</span>`).join('');
+  bar.innerHTML = `已筛选：${tags}<button class="brand-filter-clear" onclick="clearBrandFilter()">清除</button>`;
+  bar.classList.add('visible');
 }
 
-function copyText(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
-    if (btn) { btn.textContent = '已复制'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('copied'); }, 1500); }
-  });
+function clearBrandFilter() {
+  activeBrands.clear();
+  document.querySelectorAll('#brandTabs .tab').forEach(t => t.classList.toggle('active', t.dataset.brand === 'all'));
+  updateBrandFilterBar();
+  activeOrigIdx = -1;
+  fullRender();
+  if (_detailStation) renderNearby(_nearbyRadius);
 }
 
-function openDetail(s) {
+// ── Locate me ─────────────────────────────────────────────────────────────────
+function locateMe() {
+  if (!navigator.geolocation) return;
+  const btn = document.getElementById('locateBtn');
+  btn && btn.classList.add('locating');
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      btn && btn.classList.remove('locating');
+      const { latitude: lat, longitude: lng } = pos.coords;
+      mapCenter = [lat, lng];
+      if (gmap) { gmap.panTo({ lat, lng }); gmap.setZoom(13); }
+      softRender();
+    },
+    () => { btn && btn.classList.remove('locating'); }
+  );
+}
+
+// ── Copy coords ───────────────────────────────────────────────────────────────
+function copyCoords(lat, lon, btn) {
+  const text = `${lat}, ${lon}`;
+  const done = () => {
+    if (!btn) return;
+    btn.textContent = '✓ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '复制坐标'; btn.classList.remove('copied'); }, 1500);
+  };
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(done).catch(() => done());
+  } else {
+    // HTTP / file:// fallback
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch {}
+    document.body.removeChild(ta);
+    done();
+  }
+}
+
+// ── Detail panel ──────────────────────────────────────────────────────────────
+let _detailStation = null, _prevDetailStation = null;
+let _nearbyRadius = 3, _nearbyCache = [], _radiusCircle = null;
+
+function openDetail(s, fromNearby) {
   const b = BRANDS[s.brand];
   const raw = s._raw;
   const navUrl = `https://www.google.com/maps/dir/?api=1&destination=${s.lat},${s.lon}`;
-  const addr = s.address || '—';
-  const coords = `${s.lat}, ${s.lon}`;
   const chargers = raw.chargers || [];
 
-  // ── Top: brand + name ──
-  const topHtml =
-    `<div class="d-top">
-      <img class="d-logo" src="${b.logo}" alt="${b.short}">
-      <div class="d-title">
-        <div class="d-brand-label" style="color:${b.color}">${b.label}</div>
-        <h3 class="d-name">${escHtml(s.name)}</h3>
-      </div>
-    </div>`;
+  // breadcrumb
+  const prevIdx = _prevDetailStation
+    ? (_prevDetailStation._origIdx ?? allStations.findIndex(n => n === _prevDetailStation)) : -1;
+  const breadcrumb = fromNearby && _prevDetailStation && prevIdx >= 0
+    ? `<div class="d-breadcrumb" onclick="openDetailByIdx(${prevIdx},false)">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>
+        返回 ${escHtml(_prevDetailStation.name)}
+      </div>` : '';
 
-  // ── Address + navigate ──
   const PIN_SVG   = `<svg width="14" height="14" viewBox="0 0 16 16" fill="#9ca3af" style="flex-shrink:0;margin-top:1px"><path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>`;
-  const COORD_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v1M8 12.5v1M2.5 8h1M12.5 8h1"/><circle cx="8" cy="8" r="1.5" fill="#9ca3af" stroke="none"/></svg>`;
   const HOURS_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="6"/><path d="M8 4.5v3.5l2.5 2"/></svg>`;
-  const hoursRow  = raw.hours
-    ? `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">${escHtml(raw.hours)}</span></div>`
-    : `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">营业时间</span></div>`;
-  const addrHtml =
-    `<div class="d-addr-section">
-      <div class="d-addr-left">
-        <div class="d-loc-row">${PIN_SVG}<span class="d-loc-text">${escHtml(addr)}</span></div>
-        <div class="d-loc-row">${COORD_SVG}<span class="d-loc-coords">${coords}</span></div>
-        ${hoursRow}
-      </div>
-      <a class="d-nav-btn" href="${navUrl}" target="_blank">
-        <img src="img/navigation.png" style="width:15px;height:15px;object-fit:contain;filter:brightness(0) invert(1);">导航
-      </a>
-    </div>`;
+  const hoursRow  = raw.hours ? `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">${escHtml(raw.hours)}</span></div>` : '';
 
-  // ── Charger accordion ──
+  const topHtml = `<div class="d-top">
+    <img class="d-logo" src="${b.logo}" alt="${b.short}">
+    <div class="d-title">
+      <div class="d-brand-label" style="color:${b.color}">${b.label}</div>
+      <h3 class="d-name">${escHtml(s.name)}</h3>
+    </div>
+  </div>`;
+
+  const addrHtml = `<div class="d-addr-section">
+    <div class="d-addr-left">
+      <div class="d-loc-row">${PIN_SVG}<span class="d-loc-text">${escHtml(s.address || '—')}</span></div>
+      ${hoursRow}
+      <div class="d-loc-row">
+        <button class="copy-coord-btn" onclick="copyCoords(${s.lat},${s.lon},this)">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v1M8 12.5v1M2.5 8h1M12.5 8h1"/><circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg>
+          复制坐标
+        </button>
+      </div>
+    </div>
+    <a class="d-nav-btn" href="${navUrl}" target="_blank">
+      <img src="img/navigation.png" style="width:15px;height:15px;object-fit:contain;filter:brightness(0) invert(1);">导航
+    </a>
+  </div>`;
+
   const chargerListHtml = chargers.length === 0
     ? `<div style="padding:16px;font-size:13px;color:#9ca3af;text-align:center;">暂无充电桩数据</div>`
-    : (() => {
-        const cards = chargers.map((c, idx) => {
-          const unitId   = c.name || '—';
-          const typeLabel = chargerTypeLabel(c);
-          const kw        = c.kw ? `${c.kw} kW` : '—';
-          const connCls   = c.type === 'DC' ? 'dc' : 'ac';
-          const boltColor = connCls === 'dc' ? '#ea580c' : '#16a34a';
-          const boltSvg   = `<svg width="14" height="14" viewBox="0 0 16 16" fill="${boltColor}"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>`;
-          const headCount = (c.connectors && c.connectors.length) || c.heads || 1;
-          const cuLabel   = `${c.type || 'AC'}-${headCount}`;
+    : buildChargerList(chargers);
 
-          const rows = (c.connectors && c.connectors.length)
-            ? c.connectors.map((conn, hi) => {
-                const cType  = conn.type || typeLabel;
-                const cKw    = conn.kw ? `${conn.kw} kW` : kw;
-                const posLabel = conn.position || `枪口 ${String.fromCharCode(65 + hi)}`;
-                const dayCell   = conn.price_day   != null ? `<td class="td-day">฿ ${conn.price_day.toFixed(2)}</td>`   : `<td class="td-dash">—</td>`;
-                const nightCell = conn.price_night != null ? `<td class="td-night">฿ ${conn.price_night.toFixed(2)}</td>` : `<td class="td-dash">—</td>`;
-                return `<tr><td class="td-pos">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
-              }).join('')
-            : Array.from({ length: c.heads || 1 }, (_, hi) => {
-                const pos = `枪口 ${String.fromCharCode(65 + hi)}`;
-                return `<tr><td class="td-pos">${pos}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td><td class="td-dash">—</td><td class="td-dash">—</td></tr>`;
-              }).join('');
-
-          return `<div class="cu-card${idx === 0 ? ' open' : ''}" id="cu-${idx}">
-            <div class="cu-header" onclick="toggleCU(${idx})">
-              <div class="cu-bolt ${connCls}">${boltSvg}</div>
-              <div class="cu-main">
-                <span class="cu-label">${cuLabel}</span>
-                <span class="cu-sep">·</span>
-                <span class="cu-kw">${kw}</span>
-              </div>
-              <div class="cu-id">桩号：${escHtml(unitId)}</div>
-              <svg class="cu-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="cu-body">
-              <div class="cu-guns-label">充电枪（${headCount}）</div>
-              <table class="conn-table">
-                <thead><tr>
-                  <th class="th-left">枪口名称</th>
-                  <th style="white-space:nowrap">接口类型</th>
-                  <th style="white-space:nowrap">最大功率</th>
-                  <th style="white-space:nowrap">白天价格<span class="th-time">(06:00–22:00)</span></th>
-                  <th style="white-space:nowrap">夜间价格<span class="th-time">(22:00–06:00)</span></th>
-                </tr></thead>
-                <tbody>${rows}</tbody>
-              </table>
-            </div>
-          </div>`;
-        });
-        return `<div class="d-charger-title">充电桩列表（${chargers.length}）</div>
-        <div style="padding:0 0 4px;">${cards.join('')}</div>`;
-      })();
-
-  // ── Footnote ──
-  const footnote = `<div class="d-footnote">① 价格单位：THB/kWh（泰铢 / 度电）</div>`;
-
-  // ── Nearby section skeleton (list filled after render) ──
-  const nearbySkeleton =
-    `<div class="d-nearby-section">
-      <div class="d-nearby-header">
-        <div class="d-nearby-title" id="nearbyTitle">附近 ${_nearbyRadius} 公里充电桩</div>
-        <div class="d-radius-tabs">
-          ${[1,3,5].map(km =>
-            `<button class="r-tab${km === _nearbyRadius ? ' active' : ''}" data-km="${km}" onclick="changeRadius(${km})">${km}km</button>`
-          ).join('')}
-          <button class="r-tab" onclick="promptCustomRadius()">自定义</button>
+  const nearbySkeleton = `<div class="d-nearby-section">
+    <div class="d-nearby-header">
+      <div class="d-nearby-title" id="nearbyTitle">附近 ${_nearbyRadius} 公里充电桩</div>
+      <div class="d-radius-tabs">
+        ${[1,3,5].map(km => `<button class="r-tab${km === _nearbyRadius ? ' active' : ''}" data-km="${km}" onclick="changeRadius(${km})">${km}km</button>`).join('')}
+        <button class="r-tab" id="customRadiusBtn" onclick="toggleCustomInput()">自定义</button>
+        <div class="custom-radius-wrap" id="customRadiusWrap">
+          <input type="number" class="custom-radius-input" id="customKmInput" min="0.5" max="50" step="0.5" placeholder="km" onkeydown="if(event.key==='Enter')applyCustomRadius()">
+          <button class="custom-radius-confirm" onclick="applyCustomRadius()">确定</button>
         </div>
       </div>
-      <div id="nearbyList"></div>
-    </div>`;
+    </div>
+    <div id="nearbyList"></div>
+  </div>`;
 
+  const bodyEl = document.getElementById('detailBody');
   const _panel = document.getElementById('detailPanel');
   const _wasOpen = _panel.classList.contains('open');
-  document.getElementById('detailBody').innerHTML = topHtml + addrHtml + chargerListHtml + footnote + nearbySkeleton;
+
+  bodyEl.classList.remove('detail-body-fade');
+  bodyEl.innerHTML = breadcrumb + topHtml + addrHtml + chargerListHtml +
+    `<div class="d-footnote">① 价格单位：THB/kWh（泰铢 / 度电）</div>` + nearbySkeleton;
+  requestAnimationFrame(() => bodyEl.classList.add('detail-body-fade'));
+
   _panel.classList.add('open');
   if (gmap && !_wasOpen) gmap.panBy(_panel.offsetWidth / 2, 0);
 
@@ -897,81 +686,144 @@ function openDetail(s) {
   renderNearby(_nearbyRadius);
 }
 
+function buildChargerList(chargers) {
+  const title = `<div class="d-charger-title">充电桩列表（${chargers.length}）</div>`;
+
+  // single charger → flat (no accordion)
+  if (chargers.length === 1) {
+    const c = chargers[0];
+    const typeLabel = chargerTypeLabel(c), kw = c.kw ? `${c.kw} kW` : '—';
+    const connCls = c.type === 'DC' ? 'dc' : 'ac';
+    const boltColor = connCls === 'dc' ? 'var(--clr-dc)' : 'var(--clr-ac)';
+    const boltSvg = `<svg width="14" height="14" viewBox="0 0 16 16" style="fill:${boltColor}"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>`;
+    const headCount = (c.connectors && c.connectors.length) || c.heads || 1;
+    return `${title}<div class="cu-flat">
+      <div class="cu-flat-header">
+        <div class="cu-bolt ${connCls}">${boltSvg}</div>
+        <div class="cu-main"><span class="cu-label">${c.type||'AC'}-${headCount}</span><span class="cu-sep">·</span><span class="cu-kw">${kw}</span></div>
+        <div class="cu-id">桩号：${escHtml(c.name||'—')}</div>
+      </div>
+      ${buildConnectorTable(c, typeLabel, kw)}
+    </div>`;
+  }
+
+  // multiple → accordion
+  const cards = chargers.map((c, idx) => {
+    const typeLabel = chargerTypeLabel(c), kw = c.kw ? `${c.kw} kW` : '—';
+    const connCls = c.type === 'DC' ? 'dc' : 'ac';
+    const boltColor = connCls === 'dc' ? 'var(--clr-dc)' : 'var(--clr-ac)';
+    const boltSvg = `<svg width="14" height="14" viewBox="0 0 16 16" style="fill:${boltColor}"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z"/></svg>`;
+    const headCount = (c.connectors && c.connectors.length) || c.heads || 1;
+    return `<div class="cu-card${idx===0?' open':''}" id="cu-${idx}">
+      <div class="cu-header" onclick="toggleCU(${idx})">
+        <div class="cu-bolt ${connCls}">${boltSvg}</div>
+        <div class="cu-main"><span class="cu-label">${c.type||'AC'}-${headCount}</span><span class="cu-sep">·</span><span class="cu-kw">${kw}</span></div>
+        <div class="cu-id">桩号：${escHtml(c.name||'—')}</div>
+        <svg class="cu-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="cu-body">
+        <div class="cu-guns-label">充电枪（${headCount}）</div>
+        ${buildConnectorTable(c, typeLabel, kw)}
+      </div>
+    </div>`;
+  });
+  return `${title}<div style="padding:0 0 4px;">${cards.join('')}</div>`;
+}
+
+function buildConnectorTable(c, typeLabel, kw) {
+  const conns = c.connectors;
+  const hasPriceDay   = conns?.some(x => x.price_day   != null) ?? false;
+  const hasPriceNight = conns?.some(x => x.price_night != null) ?? false;
+  const dayTh   = hasPriceDay   ? `<th style="white-space:nowrap">白天价格<span class="th-time">(06:00–22:00)</span></th>` : '';
+  const nightTh = hasPriceNight ? `<th style="white-space:nowrap">夜间价格<span class="th-time">(22:00–06:00)</span></th>` : '';
+  const rows = conns && conns.length
+    ? conns.map((conn, hi) => {
+        const posLabel = conn.position || `枪口 ${String.fromCharCode(65+hi)}`;
+        const cType = conn.type || typeLabel, cKw = conn.kw ? `${conn.kw} kW` : kw;
+        const dayCell   = hasPriceDay   ? (conn.price_day   != null ? `<td class="td-day">฿ ${conn.price_day.toFixed(2)}</td>`   : `<td class="td-dash">—</td>`) : '';
+        const nightCell = hasPriceNight ? (conn.price_night != null ? `<td class="td-night">฿ ${conn.price_night.toFixed(2)}</td>` : `<td class="td-dash">—</td>`) : '';
+        return `<tr><td class="td-pos">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
+      }).join('')
+    : Array.from({ length: c.heads || 1 }, (_, hi) =>
+        `<tr><td class="td-pos">枪口 ${String.fromCharCode(65+hi)}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td></tr>`
+      ).join('');
+  return `<table class="conn-table">
+    <thead><tr><th class="th-left">枪口名称</th><th style="white-space:nowrap">接口类型</th><th style="white-space:nowrap">最大功率</th>${dayTh}${nightTh}</tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 function closeDetail() {
   document.getElementById('detailPanel').classList.remove('open');
   setRadiusCircle(null, 0);
-  _detailStation = null;
-  _nearbyCache = [];
+  _detailStation = null; _prevDetailStation = null; _nearbyCache = [];
 }
 
-function toggleCU(idx) {
-  document.getElementById(`cu-${idx}`)?.classList.toggle('open');
+function toggleCU(idx) { document.getElementById(`cu-${idx}`)?.classList.toggle('open'); }
+
+// ── Custom radius inline ──────────────────────────────────────────────────────
+function toggleCustomInput() {
+  const wrap = document.getElementById('customRadiusWrap');
+  const btn  = document.getElementById('customRadiusBtn');
+  if (!wrap) return;
+  const opening = !wrap.classList.contains('open');
+  wrap.classList.toggle('open', opening);
+  btn && btn.classList.toggle('active', opening);
+  if (opening) { const inp = document.getElementById('customKmInput'); inp && (inp.value='', inp.focus()); }
 }
 
-// ── Nearby stations + radius circle ──────────────────────────────────────────
-let _detailStation = null;
-let _nearbyRadius  = 3;
-let _nearbyCache   = []; // pre-sorted distances from current detail station
-let _radiusCircle  = null;
+function applyCustomRadius() {
+  const val = parseFloat(document.getElementById('customKmInput')?.value || '');
+  if (!isNaN(val) && val >= 0.5 && val <= 50) {
+    const wrap = document.getElementById('customRadiusWrap');
+    const btn  = document.getElementById('customRadiusBtn');
+    wrap && wrap.classList.remove('open');
+    btn  && btn.classList.remove('active');
+    changeRadius(Math.round(val * 10) / 10);
+  }
+}
 
+// ── Nearby ────────────────────────────────────────────────────────────────────
 function setRadiusCircle(station, radiusKm) {
   if (_radiusCircle) { _radiusCircle.setMap(null); _radiusCircle = null; }
   if (!station || !gmap || !radiusKm) return;
   _radiusCircle = new google.maps.Circle({
-    map: gmap,
-    center: { lat: station.lat, lng: station.lon },
-    radius: radiusKm * 1000,
-    fillColor: '#3b82f6',
-    fillOpacity: 0.06,
-    strokeColor: '#3b82f6',
-    strokeOpacity: 0.35,
-    strokeWeight: 1.5,
-    clickable: false,
+    map: gmap, center: { lat: station.lat, lng: station.lon }, radius: radiusKm * 1000,
+    fillColor: '#3b82f6', fillOpacity: 0.06, strokeColor: '#3b82f6', strokeOpacity: 0.35, strokeWeight: 1.5, clickable: false,
   });
 }
 
 function fitToRadius(station, radiusKm) {
   if (!gmap || !station || !radiusKm) return;
-  const bounds = new google.maps.Circle({
-    center: { lat: station.lat, lng: station.lon },
-    radius: radiusKm * 1000,
-  }).getBounds();
+  const bounds = new google.maps.Circle({ center: { lat: station.lat, lng: station.lon }, radius: radiusKm * 1000 }).getBounds();
   const panelEl = document.getElementById('detailPanel');
-  const rightPad = (panelEl && panelEl.classList.contains('open'))
-    ? panelEl.offsetWidth + 20 : 20;
+  const rightPad = (panelEl && panelEl.classList.contains('open')) ? panelEl.offsetWidth + 20 : 20;
   gmap.fitBounds(bounds, { top: 60, right: rightPad, bottom: 30, left: 20 });
 }
 
 function renderNearby(radiusKm) {
   _nearbyRadius = radiusKm;
-  document.querySelectorAll('.r-tab').forEach(t =>
-    t.classList.toggle('active', +t.dataset.km === radiusKm)
-  );
+  document.querySelectorAll('.r-tab[data-km]').forEach(t => t.classList.toggle('active', +t.dataset.km === radiusKm));
   const titleEl = document.getElementById('nearbyTitle');
   if (titleEl) titleEl.textContent = `附近 ${radiusKm} 公里充电桩`;
-
-  const nearby = _nearbyCache.filter(x =>
-    x.d <= radiusKm && (activeBrands.size === 0 || activeBrands.has(x.n.brand))
-  );
+  const nearby = _nearbyCache.filter(x => x.d <= radiusKm && (activeBrands.size === 0 || activeBrands.has(x.n.brand)));
   const el = document.getElementById('nearbyList');
   if (!el) return;
-
   if (nearby.length === 0) {
-    el.innerHTML = `<div class="nearby-empty">${radiusKm}km 内暂无其他充电站</div>`;
+    const nextKm = radiusKm < 3 ? 3 : radiusKm < 5 ? 5 : radiusKm < 10 ? 10 : null;
+    const suggest = nextKm ? `<br><button class="nearby-suggest-btn" onclick="changeRadius(${nextKm})">查看 ${nextKm}km 范围 →</button>` : '';
+    el.innerHTML = `<div class="nearby-empty">${radiusKm}km 内暂无其他充电站${suggest}</div>`;
     return;
   }
-
   el.innerHTML = nearby.map(({ n, i, d }) => {
     const b = BRANDS[n.brand];
     const dcTag = n.dc ? `<span class="ctag dc" style="font-size:10px;padding:1px 6px;">DC</span>` : '';
     const acTag = n.ac ? `<span class="ctag ac" style="font-size:10px;padding:1px 6px;">AC</span>` : '';
-    const totalStr = n.total ? `${n.total} 枪` : '';
-    const kwStr    = n.maxKw ? `${n.maxKw} kW` : '';
-    return `<div class="nearby-card" onclick="openDetailByIdx(${i})" onmouseenter="hoverNearby(${i})" onmouseleave="unhoverNearby(${i})">
+    return `<div class="nearby-card" onclick="openDetailByIdx(${i},true)" onmouseenter="hoverNearby(${i})" onmouseleave="unhoverNearby(${i})">
       <img class="nearby-logo" src="${b.logo}" alt="${b.short}">
       <div class="nearby-body">
         <div class="nearby-name">${escHtml(n.name)}</div>
-        <div class="nearby-meta">${dcTag}${acTag}<span>${totalStr}</span><span>${kwStr}</span></div>
+        <div class="nearby-meta">${dcTag}${acTag}${n.total?`<span>${n.total} 枪</span>`:''}${n.maxKw?`<span>${n.maxKw} kW</span>`:''}</div>
       </div>
       <div class="nearby-dist">${fmtDist(d)}</div>
     </div>`;
@@ -980,38 +832,25 @@ function renderNearby(radiusKm) {
 
 function changeRadius(km) {
   if (!_detailStation) return;
-  renderNearby(km);
-  setRadiusCircle(_detailStation, km);
-  fitToRadius(_detailStation, km);
+  renderNearby(km); setRadiusCircle(_detailStation, km); fitToRadius(_detailStation, km);
 }
 
 function hoverNearby(origIdx) {
-  const m = allMarkers[origIdx];
-  if (!m || !m.content) return;
+  const m = allMarkers[origIdx]; if (!m || !m.content) return;
   const img = m.content.tagName === 'IMG' ? m.content : m.content.querySelector('img');
   if (img) img.classList.add('map-pin-bounce');
   if (m.content.parentElement) m.content.parentElement.style.zIndex = '9000';
 }
-
 function unhoverNearby(origIdx) {
-  const m = allMarkers[origIdx];
-  if (!m || !m.content) return;
+  const m = allMarkers[origIdx]; if (!m || !m.content) return;
   const img = m.content.tagName === 'IMG' ? m.content : m.content.querySelector('img');
   if (img) img.classList.remove('map-pin-bounce');
   if (m.content.parentElement) m.content.parentElement.style.zIndex = '';
 }
 
-function promptCustomRadius() {
-  const val = prompt(`输入自定义距离（公里，1–50）`, _nearbyRadius);
-  if (val === null) return;
-  const km = parseFloat(val);
-  if (!isNaN(km) && km >= 0.5 && km <= 50) changeRadius(Math.round(km * 10) / 10);
-}
-
-function openDetailByIdx(origIdx) {
-  const s = allStations[origIdx];
-  if (!s) return;
-  // reset previous active marker
+function openDetailByIdx(origIdx, fromNearby) {
+  const s = allStations[origIdx]; if (!s) return;
+  _prevDetailStation = fromNearby ? _detailStation : null;
   if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
     allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
     allMarkers[activeOrigIdx].zIndex = 0;
@@ -1022,197 +861,121 @@ function openDetailByIdx(origIdx) {
     allMarkers[origIdx].zIndex = 999;
     if (gmap) gmap.panTo({ lat: s.lat, lng: s.lon });
   }
-  openDetail(s);
+  openDetail(s, fromNearby);
 }
 
 // ── Select station ────────────────────────────────────────────────────────────
 function selectStation(rank, flyTo) {
-  const s = currentStations[rank];
-  if (!s) return;
-
-  // reset previous marker
+  const s = currentStations[rank]; if (!s) return;
   if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
     allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
     allMarkers[activeOrigIdx].zIndex = 0;
   }
-
   activeOrigIdx = s._origIdx;
-
-  // enlarge new marker + fly to
+  _prevDetailStation = null;
   const m = allMarkers[s._origIdx];
   if (m) {
-    m.content = createMarkerEl(s.brand, true);
-    m.zIndex = 999;
-    if (flyTo) {
-      gmap.panTo({ lat: s.lat, lng: s.lon });
-      if (gmap.getZoom() < 14) gmap.setZoom(14);
-    }
+    m.content = createMarkerEl(s.brand, true); m.zIndex = 999;
+    if (flyTo) { gmap.panTo({ lat: s.lat, lng: s.lon }); if (gmap.getZoom() < 14) gmap.setZoom(14); }
   }
-
-  // open detail panel
-  openDetail(s);
+  openDetail(s, false);
 }
 
 function buildPopup(s, b) {
   const dcTag = s.dc ? `<span class="connector-tag dc" style="font-size:10px;padding:2px 6px;">⚡ DC×${s.dc}</span>` : '';
   const acTag = s.ac ? `<span class="connector-tag ac" style="font-size:10px;padding:2px 6px;">AC×${s.ac}</span>` : '';
-  const kw = s.maxKw ? `<span style="font-size:11px;color:#6b7280;margin-left:2px;">⚡ ${s.maxKw} kW</span>` : '';
-  const addr = s.address ? `<div class="popup-addr">${escHtml(s.address)}</div>` : '';
-  return `<div class="popup-content">
-    <div class="popup-brand" style="color:${b.color}">${b.label}</div>
-    <div class="popup-name">${escHtml(s.name)}</div>
-    ${addr}
-    <div class="popup-row">${dcTag}${acTag}${kw}</div>
-  </div>`;
+  return `<div class="popup-content"><div class="popup-brand" style="color:${b.color}">${b.label}</div><div class="popup-name">${escHtml(s.name)}</div>${s.address?`<div class="popup-addr">${escHtml(s.address)}</div>`:''}<div class="popup-row">${dcTag}${acTag}</div></div>`;
 }
 
-// ── initMap (Google Maps callback) ────────────────────────────────────────────
+// ── initMap ───────────────────────────────────────────────────────────────────
 window.initMap = function () {
   gmap = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 13.7563, lng: 100.5018 },
-    zoom: 6,
-    mapId: 'DEMO_MAP_ID',          // enables vector tiles + AdvancedMarkerElement
-    mapTypeControl: false,
-    streetViewControl: false,
-    fullscreenControl: false,
-    zoomControl: true,
-    zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_BOTTOM },
-    gestureHandling: 'greedy',
-    clickableIcons: false,
+    center: { lat: 13.7563, lng: 100.5018 }, zoom: 6, mapId: 'DEMO_MAP_ID',
+    mapTypeControl: false, streetViewControl: false, fullscreenControl: false,
+    zoomControl: true, zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_BOTTOM },
+    gestureHandling: 'greedy', clickableIcons: false,
   });
 
   infoWindow = new google.maps.InfoWindow({ maxWidth: 260 });
 
-  // single clusterer for all brands
   clusterer = new markerClusterer.MarkerClusterer({
-    map: gmap,
-    markers: [],
+    map: gmap, markers: [],
     algorithm: new markerClusterer.SuperClusterAlgorithm({ radius: 80, maxZoom: 14, minPoints: 2 }),
     renderer: clusterRenderer,
     onClusterClick(_, cluster, map) {
       const panelEl = document.getElementById('detailPanel');
-      const rightPad = (panelEl && panelEl.classList.contains('open'))
-        ? panelEl.offsetWidth + 20 : 60;
+      const rightPad = (panelEl && panelEl.classList.contains('open')) ? panelEl.offsetWidth + 20 : 60;
       map.fitBounds(cluster.bounds, { top: 60, right: rightPad, bottom: 60, left: 60 });
     },
   });
 
-  // Create all markers once
   allStations.forEach((s, i) => {
-    const b = BRANDS[s.brand];
-
     const marker = new google.maps.marker.AdvancedMarkerElement({
-      position: { lat: s.lat, lng: s.lon },
-      content: createMarkerEl(s.brand, false),
-      title: s.name,
+      position: { lat: s.lat, lng: s.lon }, content: createMarkerEl(s.brand, false), title: s.name,
     });
-    marker._brand = s.brand; // used by clusterRenderer to count per brand
-
+    marker._brand = s.brand;
     marker.addListener('click', () => {
       const rank = currentStations.findIndex(cs => cs._origIdx === i);
-      if (rank >= 0) {
-        selectStation(rank, false);
-      } else {
-        // station filtered out — still open detail
+      if (rank >= 0) { selectStation(rank, false); }
+      else {
         if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
           allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
           allMarkers[activeOrigIdx].zIndex = 0;
         }
-        activeOrigIdx = i;
-        marker.content = createMarkerEl(s.brand, true);
-        marker.zIndex = 999;
-        openDetail(s);
+        activeOrigIdx = i; _prevDetailStation = null;
+        marker.content = createMarkerEl(s.brand, true); marker.zIndex = 999;
+        openDetail(s, false);
       }
     });
-
     allMarkers.push(marker);
   });
 
-  // Map type toggle
-  document.getElementById('btnMap').onclick = () => {
-    gmap.setMapTypeId('roadmap');
-    document.getElementById('btnMap').classList.add('active');
-    document.getElementById('btnSat').classList.remove('active');
-  };
-  document.getElementById('btnSat').onclick = () => {
-    gmap.setMapTypeId('hybrid');
-    document.getElementById('btnSat').classList.add('active');
-    document.getElementById('btnMap').classList.remove('active');
-  };
+  document.getElementById('btnMap').onclick = () => { gmap.setMapTypeId('roadmap'); document.getElementById('btnMap').classList.add('active'); document.getElementById('btnSat').classList.remove('active'); };
+  document.getElementById('btnSat').onclick = () => { gmap.setMapTypeId('hybrid'); document.getElementById('btnSat').classList.add('active'); document.getElementById('btnMap').classList.remove('active'); };
 
-  // Places Autocomplete on search input
   const searchInput = document.getElementById('searchInput');
-  const autocomplete = new google.maps.places.Autocomplete(searchInput, {
-    componentRestrictions: { country: 'th' },
-    fields: ['geometry', 'name'],
-  });
+  const autocomplete = new google.maps.places.Autocomplete(searchInput, { componentRestrictions: { country: 'th' }, fields: ['geometry', 'name'] });
   autocomplete.bindTo('bounds', gmap);
   autocomplete.addListener('place_changed', () => {
-    const place = autocomplete.getPlace();
-    if (!place.geometry) return;
+    const place = autocomplete.getPlace(); if (!place.geometry) return;
     infoWindow.close();
     if (place.geometry.viewport) gmap.fitBounds(place.geometry.viewport);
     else { gmap.setCenter(place.geometry.location); gmap.setZoom(14); }
-    // reset text so list shows all stations near new center
-    setTimeout(() => {
-      searchInput.value = '';
-      activeSearch = '';
-      const c = gmap.getCenter();
-      mapCenter = [c.lat(), c.lng()];
-      fullRender();
-    }, 50);
+    setTimeout(() => { searchInput.value = ''; activeSearch = ''; const c = gmap.getCenter(); mapCenter = [c.lat(), c.lng()]; fullRender(); }, 50);
   });
 
-  // Station name filter (debounced)
   let filterTimer;
   searchInput.addEventListener('input', e => {
     clearTimeout(filterTimer);
-    filterTimer = setTimeout(() => {
-      activeSearch = e.target.value;
-      activeOrigIdx = -1;
-      fullRender();
-    }, 300);
+    filterTimer = setTimeout(() => { activeSearch = e.target.value; activeOrigIdx = -1; fullRender(); }, 300);
   });
 
-  // Re-sort list on map idle (debounced + distance-gated)
-  let idleTimer;
-  let lastSoftCenter = null;
+  let idleTimer, lastSoftCenter = null;
   gmap.addListener('idle', () => {
     clearTimeout(idleTimer);
     idleTimer = setTimeout(() => {
-      const c = gmap.getCenter();
-      const newCenter = [c.lat(), c.lng()];
-      // skip re-sort when map barely moved (< 300 m)
+      const c = gmap.getCenter(), newCenter = [c.lat(), c.lng()];
       if (lastSoftCenter && dist(lastSoftCenter[0], lastSoftCenter[1], newCenter[0], newCenter[1]) < 0.3) return;
-      mapCenter = newCenter;
-      lastSoftCenter = newCenter;
-      softRender();
+      mapCenter = newCenter; lastSoftCenter = newCenter; softRender();
     }, 400);
   });
 
-  // Province filter
   areaSelect.onchange = e => { activeProvince = e.target.value; activeOrigIdx = -1; fullRender(); };
 
-  // Brand tabs — multi-select; "全部" clears selection
   document.getElementById('brandTabs').addEventListener('click', e => {
-    const btn = e.target.closest('.tab');
-    if (!btn) return;
+    const btn = e.target.closest('.tab'); if (!btn) return;
     const brand = btn.dataset.brand;
-    if (brand === 'all') {
-      activeBrands.clear();
-    } else {
-      activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
-    }
+    if (brand === 'all') activeBrands.clear();
+    else activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
     document.querySelectorAll('#brandTabs .tab').forEach(t => {
       const b = t.dataset.brand;
       t.classList.toggle('active', b === 'all' ? activeBrands.size === 0 : activeBrands.has(b));
     });
-    activeOrigIdx = -1;
-    fullRender();
+    updateBrandFilterBar();
+    activeOrigIdx = -1; fullRender();
     if (_detailStation) renderNearby(_nearbyRadius);
   });
 
-  // Initial render + fit all stations
   fullRender();
   const bounds = new google.maps.LatLngBounds();
   allStations.forEach(s => bounds.extend({ lat: s.lat, lng: s.lon }));
@@ -1220,10 +983,6 @@ window.initMap = function () {
 };
 </script>
 
-<!-- Google Maps: vector tiles + Places + AdvancedMarkerElement -->
-<script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUNkBBVjIJ8rq_klcc2dkDttE-7vVutT0&libraries=places,marker&callback=initMap&v=weekly&loading=async">
-</script>
-
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUNkBBVjIJ8rq_klcc2dkDttE-7vVutT0&libraries=places,marker&callback=initMap&v=weekly&loading=async"></script>
 </body>
 </html>
