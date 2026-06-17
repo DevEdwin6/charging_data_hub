@@ -792,6 +792,8 @@ class EVStationPluZScraper:
         :param processed:    已处理 key 集合，由 run.py 从 DB 预加载
         :param max_stations: 采集总量上限；None = 全部
         :param run_id:       当前采集批次 ID
+        :return:             True = 正常完成（可标记批次 completed）；
+                             False = 中途因错误退出（批次保持 running，下次续采）
         """
         def reached_max():
             return max_stations is not None and len(results) >= max_stations
@@ -820,11 +822,14 @@ class EVStationPluZScraper:
                 self.force_restart_app()
                 if not self.ensure_map_page():
                     print("无法回到 Map 页，停止")
-                    break
+                    return False
 
             if not self.open_full_list():
-                print("无法打开全屏列表页，停止")
-                break
+                print("  !! 无法打开全屏列表页，尝试重启 App...")
+                self.force_restart_app()
+                if not self.open_full_list():
+                    print("无法打开全屏列表页（重启后仍失败），停止")
+                    return False
 
             # 快速跳过已知已处理区域（回退 3 格防边界遗漏）
             fast_to = max(0, resume_from - 3)
@@ -854,7 +859,7 @@ class EVStationPluZScraper:
                     resume_from = 0
                     continue
                 print("没有更多未处理站点，采集完成")
-                break
+                return True
 
             name = target["name"]
             key  = name + target["address"]
@@ -966,6 +971,9 @@ class EVStationPluZScraper:
             self.dismiss_alert()
             self.close_preview_card()
             time.sleep(1)
+
+        # while 循环因 reached_max() 退出
+        return True
 
     # ══════════════════════════════════════════════════════════
     # 详情页辅助

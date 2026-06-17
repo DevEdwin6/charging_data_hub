@@ -39,7 +39,8 @@ class _Tee:
 Path("logs").mkdir(exist_ok=True)
 _log_path = Path("logs") / f"{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 _log_file = open(_log_path, "w", encoding="utf-8")
-sys.stdout = _Tee(sys.stdout, _log_file)
+_real_stdout = sys.stdout          # 保留原始 stdout 引用
+sys.stdout = _Tee(_real_stdout, _log_file)
 
 # ══════════════════════════════════════════════════════════════
 # 采集参数
@@ -94,8 +95,11 @@ results = []
 scraper = EVStationPluZScraper(d)
 
 try:
-    scraper.collect(results, processed, MAX_STATIONS, run_id)
-    db.complete_run(run_id)
+    completed = scraper.collect(results, processed, MAX_STATIONS, run_id)
+    if completed:
+        db.complete_run(run_id)
+    else:
+        print("[未完成] 采集因错误中止，批次保持 running，下次运行自动续采")
 except KeyboardInterrupt:
     print("\n[中断] Ctrl+C，已保存进度，下次运行自动续采")
 finally:
@@ -103,4 +107,5 @@ finally:
     print(f"本次会话共采集 {len(results)} 个站点，详情见上方实时输出")
     print(f"日志已保存至：{_log_path}")
     print(f"{'=' * 60}")
+    sys.stdout = _real_stdout      # 先恢复，再关文件，避免退出时 flush 报错
     _log_file.close()
