@@ -1,4 +1,4 @@
-"""
+﻿"""
 ptt_sync.py — PTT 数据同步工具
 
 功能一（check）：
@@ -51,6 +51,58 @@ log = logging.getLogger(__name__)
 
 # ── JS 解析 ────────────────────────────────────────────────────────────────
 
+def _quote_unquoted_js_keys(raw: str) -> str:
+    """
+    只在字符串外部将 JS 对象的未加引号 key 转为 JSON key。
+
+    不能用简单正则全局替换 `xxx:`，因为营业时间字符串里会出现
+    `Mon:`、`Sat:`，全局替换会破坏字符串内容。
+    """
+    out = []
+    i = 0
+    in_string = False
+    escape = False
+
+    while i < len(raw):
+        ch = raw[i]
+
+        if in_string:
+            out.append(ch)
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_string = False
+            i += 1
+            continue
+
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+            i += 1
+            continue
+
+        if ch.isalpha() or ch == "_":
+            prev = raw[i - 1] if i > 0 else ""
+            if i == 0 or prev in "{[,\r\n\t ":
+                j = i + 1
+                while j < len(raw) and (raw[j].isalnum() or raw[j] == "_"):
+                    j += 1
+                k = j
+                while k < len(raw) and raw[k].isspace():
+                    k += 1
+                if k < len(raw) and raw[k] == ":":
+                    out.append(f'"{raw[i:j]}"')
+                    out.append(raw[j:k + 1])
+                    i = k + 1
+                    continue
+
+        out.append(ch)
+        i += 1
+
+    return "".join(out)
+
 def load_ptt_stations(filepath=DEFAULT_PTT_JS):
     """
     解析 ptt.js，返回站点列表（list[dict]）。
@@ -67,14 +119,14 @@ def load_ptt_stations(filepath=DEFAULT_PTT_JS):
     raw = re.sub(r"^\s*window\.\w+\s*=\s*", "", raw, flags=re.MULTILINE)
     raw = raw.strip().rstrip(";").strip()
 
-    # 将未加引号的 JS 键名改为 JSON 合法格式
-    # 负向后顾：跳过已用双引号包裹的键；匹配 "单词字符序列 + 冒号" 结构
-    raw = re.sub(r'(?<!["\w])([a-zA-Z_][a-zA-Z0-9_]*)\s*:', r'"\1":', raw)
-
     # 去掉 JS 尾随逗号（JSON 不允许 ,} 或 ,]）
     raw = re.sub(r',(\s*[}\]])', r'\1', raw)
 
-    return json.loads(raw)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        raw = _quote_unquoted_js_keys(raw)
+        return json.loads(raw)
 
 
 # ── 功能一 ──────────────────────────────────────────────────────────────────
@@ -568,3 +620,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

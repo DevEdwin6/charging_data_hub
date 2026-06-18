@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>充电桩列表</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
   <style>
     :root {
@@ -18,40 +21,48 @@
       --clr-primary-border: #bfdbfe;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif; height: 100vh; overflow: hidden; }
+    body { font-family: Inter, "Noto Sans SC", "Noto Sans Thai", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; height: 100vh; overflow: hidden; }
     .app { display: flex; height: 100vh; }
 
     /* ── Sidebar ── */
     .sidebar { width: 390px; flex-shrink: 0; display: flex; flex-direction: column; background: #fff; border-right: 1px solid #e5e7eb; z-index: 10; }
-    .sidebar-header { padding: 20px 20px 0; flex-shrink: 0; }
-    .sidebar-title { font-size: 20px; font-weight: 700; color: #111827; margin-bottom: 14px; }
+    .sidebar-header { padding: 14px 16px 0; flex-shrink: 0; }
+    .sidebar-heading { margin-bottom: 14px; }
+    .sidebar-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 4px; }
+    .sidebar-subtitle { font-size: 12px; color: #9ca3af; margin: 0; line-height: 1.5; }
 
-    .brand-tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
-    .brand-tabs::-webkit-scrollbar { display: none; }
-    .tab { display: flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1.5px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer; transition: all .15s; white-space: nowrap; flex-shrink: 0; }
-    .tab:hover { border-color: #93c5fd; background: var(--clr-primary-bg); }
-    .tab.active { border-color: var(--clr-primary); background: var(--clr-primary); }
-    .tab.active .tab-name { color: #fff; }
-    .tab-logo { width: 20px; height: 20px; object-fit: contain; border-radius: 4px; }
-    .tab-all-icon { width: 20px; height: 20px; border-radius: 4px; background: var(--clr-primary); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
-    .tab.active .tab-all-icon { background: rgba(255,255,255,.25); }
-    .tab-name { font-size: 12px; font-weight: 600; color: #374151; }
-    .tab-count { font-size: 10px; color: #d1d5db; font-weight: 400; }
-    .tab.active .tab-count { color: rgba(255,255,255,.4); }
-
-    /* brand filter pill bar */
-    .brand-filter-bar { display: none; align-items: center; gap: 6px; padding: 4px 0 8px; font-size: 12px; color: #374151; flex-wrap: wrap; }
+    .brand-tabs { display: flex; gap: 6px; padding-bottom: 12px; }
+    .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 10px; border: 1.5px solid #e5e7eb; border-radius: 14px; background: #fff; cursor: pointer; transition: border-color .15s, background .15s; position: relative; min-width: 0; }
+    .tab:hover { border-color: #93c5fd; background: #f8faff; }
+    .tab.active { border-color: var(--clr-primary); background: var(--clr-primary-bg); }
+    .tab.active .tab-name { color: var(--clr-primary); }
+    .tab.active .provider-count { color: var(--clr-primary); opacity: .75; }
+    /* checkmark badge */
+    .tab-check { display: none; position: absolute; top: 6px; right: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--clr-primary); align-items: center; justify-content: center; }
+    .tab-check svg { display: block; }
+    .tab.active .tab-check { display: flex; }
+    /* logo / all icon */
+    .tab-logo { width: 44px; height: 44px; object-fit: contain; }
+    .tab-all-icon { width: 44px; height: 44px; border-radius: 12px; background: #f3f4f6; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+    .tab.active .tab-all-icon { background: #dbeafe; }
+    .tab-name { font-size: 11px; font-weight: 500; color: #374151; text-align: center; line-height: 1.2; }
+    .provider-count { font-size: 11px; color: #98a2b3; line-height: 1; text-align: center; }
+    /* brand filter bar */
+    .brand-filter-bar { display: none; align-items: center; gap: 8px; padding: 6px 0 10px; }
     .brand-filter-bar.visible { display: flex; }
-    .brand-filter-tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 14px; background: var(--clr-primary-bg); color: var(--clr-primary); border: 1px solid var(--clr-primary-border); font-size: 11px; font-weight: 600; }
-    .brand-filter-clear { padding: 3px 9px; border-radius: 14px; background: #f3f4f6; color: #6b7280; border: 1px solid #e5e7eb; font-size: 11px; font-weight: 600; cursor: pointer; transition: background .12s; }
-    .brand-filter-clear:hover { background: #e5e7eb; color: #374151; }
+    .bfb-pills { display: flex; align-items: center; gap: 6px; flex: 1; min-width: 0; flex-wrap: nowrap; overflow: hidden; }
+    .bfb-pill { flex-shrink: 0; display: inline-flex; align-items: center; gap: 3px; padding: 4px 8px 4px 10px; border-radius: 20px; background: var(--clr-primary); color: #fff; font-size: 12px; font-weight: 500; cursor: pointer; transition: background .12s; }
+    .bfb-pill:hover { background: #1d4ed8; }
+    .bfb-pill-x { font-size: 13px; line-height: 1; opacity: .75; margin-left: 1px; }
+    .bfb-count { flex-shrink: 0; font-size: 12px; color: #6b7280; white-space: nowrap; }
+    .bfb-count strong { color: var(--clr-primary); font-weight: 600; }
+    .bfb-clear { flex-shrink: 0; font-size: 12px; font-weight: 600; color: var(--clr-primary); background: none; border: none; cursor: pointer; padding: 4px 0; white-space: nowrap; }
 
-    .sort-bar { padding: 8px 0 12px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: center; gap: 8px; }
+    .sort-bar { padding: 8px 0 10px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: center; justify-content: space-between; }
+    .sort-count { font-size: 12px; color: #9ca3af; }
     .sort-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #e5e7eb; border-radius: 20px; background: #fff; font-size: 13px; color: #374151; cursor: pointer; }
     #listUpdatedHint { font-size: 11px; color: #9ca3af; opacity: 0; transition: opacity .5s; }
 
-    .station-count { padding: 6px 20px 2px; font-size: 12px; color: #9ca3af; flex-shrink: 0; }
-    .station-sort-hint { padding: 0 20px 6px; font-size: 11px; color: #c5cad3; flex-shrink: 0; }
 
     .station-list { flex: 1; overflow-y: auto; padding: 0 12px 12px; scrollbar-width: thin; scrollbar-color: #d1d5db transparent; }
     .station-list::-webkit-scrollbar { width: 4px; }
@@ -60,16 +71,16 @@
     /* ── Card ── */
     .station-card { display: flex; gap: 10px; padding: 10px; border: 1px solid #f0f0f0; border-radius: 10px; background: #fff; margin-top: 8px; cursor: pointer; transition: background .12s, border-color .12s; position: relative; }
     .station-card:hover { background: #f9fafb; border-color: #e5e7eb; }
-    .station-card.active { background: var(--clr-primary-bg); border-color: var(--clr-primary-border); border-left: 3px solid var(--clr-primary); padding-left: 9px; }
+    .station-card.active { background: var(--clr-primary-bg); border: 1.5px solid var(--clr-primary); }
     .card-logo { width: 36px; height: 36px; border-radius: 8px; object-fit: contain; flex-shrink: 0; border: 1px solid #f3f4f6; padding: 2px; background: #fff; align-self: flex-start; margin-top: 2px; }
     .card-body { flex: 1; min-width: 0; }
     .card-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 1px; }
     .card-brand { font-size: 11px; color: #9ca3af; font-weight: 500; }
-    .card-dist  { font-size: 11.5px; font-weight: 600; color: #374151; flex-shrink: 0; }
-    .card-name { font-size: 13px; font-weight: 600; color: #111827; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 2px; }
-    .card-addr { font-size: 11.5px; color: #9ca3af; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px; }
+    .card-dist  { font-size: 13px; font-weight: 600; color: #374151; flex-shrink: 0; }
+    .card-name { font-size: 14px; font-weight: 700; color: #111827; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 2px; }
+    .card-addr { font-size: 12px; color: #9ca3af; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 6px; }
     .card-tags { display: flex; gap: 4px; margin-bottom: 5px; }
-    .ctag { display: inline-flex; align-items: center; padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 600; }
+    .ctag { display: inline-flex; align-items: center; padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 500; }
     .ctag.dc { background: var(--clr-dc-bg); color: var(--clr-dc); }
     .ctag.ac { background: var(--clr-ac-bg); color: var(--clr-ac); }
     .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
@@ -139,13 +150,23 @@
     .d-top { display: flex; align-items: flex-start; gap: 14px; padding: 20px 52px 16px 16px; }
     .d-logo { width: 56px; height: 56px; border-radius: 14px; object-fit: contain; border: 1px solid #f3f4f6; padding: 4px; background: #fff; flex-shrink: 0; }
     .d-title { flex: 1; min-width: 0; padding-top: 2px; }
-    .d-brand-label { font-size: 11px; font-weight: 600; margin-bottom: 5px; }
+    .d-brand-label { font-size: 11px; font-weight: 500; margin-bottom: 5px; }
     .d-name { font-size: 17px; font-weight: 700; color: #111827; line-height: 1.3; margin: 0; }
     .d-addr-section { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px 16px; border-top: 1px solid #f3f4f6; }
     .d-addr-left { flex: 1; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
     .d-loc-row { display: flex; align-items: flex-start; gap: 7px; }
-    .d-loc-text { font-size: 13px; color: #374151; line-height: 1.5; }
+    .d-loc-text { font-size: 12px; color: #374151; line-height: 1.5; }
     .d-hours-text { font-size: 12px; color: #374151; }
+    .d-hours-btn { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 10px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 12px; color: #374151; cursor: default; transition: border-color .12s, color .12s, background .12s; position: relative; user-select: none; }
+    .d-hours-btn:hover { border-color: var(--clr-primary); color: var(--clr-primary); background: var(--clr-primary-bg); }
+    @keyframes hoursPopIn { from{opacity:0;transform:translateY(4px)} to{opacity:1;transform:translateY(0)} }
+    .d-hours-popup { display: none; position: absolute; top: calc(100% + 8px); left: 0; min-width: 200px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 8px 0; font-size: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.12); z-index: 999; pointer-events: none; }
+    .d-hours-popup::before { content:''; position:absolute; top:-5px; left:18px; width:9px; height:9px; background:#fff; border-left:1px solid #e5e7eb; border-top:1px solid #e5e7eb; transform:rotate(45deg); }
+    .d-hours-btn:hover .d-hours-popup { display: block; animation: hoursPopIn .15s ease; }
+    .d-hours-row { display: flex; align-items: center; gap: 0; padding: 5px 14px; }
+    .d-hours-row:hover { background: #f9fafb; }
+    .d-hours-day { width: 36px; flex-shrink: 0; font-weight: 600; color: #374151; }
+    .d-hours-time { color: #6b7280; }
     .d-nav-btn { flex-shrink: 0; display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 10px; background: var(--clr-primary); color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background .15s; }
     .d-nav-btn:hover { background: #2563eb; }
     .copy-coord-btn { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 10px; border: 1px solid #e5e7eb; background: #f9fafb; font-size: 11px; color: #6b7280; cursor: pointer; transition: all .12s; }
@@ -153,7 +174,7 @@
     .copy-coord-btn.copied { border-color: var(--clr-ac); color: var(--clr-ac); background: var(--clr-ac-bg); }
 
     /* charger accordion */
-    .d-charger-title { display: flex; align-items: center; gap: 7px; padding: 14px 16px 10px; border-top: 1px solid #f3f4f6; font-size: 14px; font-weight: 700; color: #111827; }
+    .d-charger-title { display: flex; align-items: center; gap: 7px; padding: 14px 16px 10px; border-top: 1px solid #f3f4f6; font-size: 15px; font-weight: 700; color: #111827; }
     .cu-card { margin: 0 12px 8px; border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; }
     .cu-header { display: flex; align-items: center; gap: 10px; padding: 11px 14px; cursor: pointer; background: #fff; user-select: none; transition: background .15s; }
     .cu-header:hover { background: #f9fafb; }
@@ -184,17 +205,17 @@
     .td-pos  { font-size: 13px; font-weight: 600; color: #111827; }
     .td-type { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
     .td-kw   { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
-    .td-day  { font-size: 14px; font-weight: 700; color: #dc2626; text-align: center; white-space: nowrap; }
-    .td-night{ font-size: 14px; font-weight: 700; color: var(--clr-primary); text-align: center; white-space: nowrap; }
+    .td-day  { font-size: 13px; font-weight: 600; color: #dc2626; text-align: center; white-space: nowrap; }
+    .td-night{ font-size: 13px; font-weight: 600; color: var(--clr-primary); text-align: center; white-space: nowrap; }
     .td-dash { color: #d1d5db; text-align: center; }
     .d-footnote { padding: 10px 16px 16px; font-size: 11px; color: #9ca3af; border-top: 1px solid #f9fafb; }
 
     /* nearby */
     .d-nearby-section { border-top: 1px solid #f3f4f6; padding-bottom: 12px; }
     .d-nearby-header { padding: 14px 16px 10px; }
-    .d-nearby-title { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+    .d-nearby-title { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 10px; }
     .d-radius-tabs { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
-    .r-tab { padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280; cursor: pointer; transition: all .15s; }
+    .r-tab { padding: 5px 13px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1.5px solid #e5e7eb; background: #fff; color: #6b7280; cursor: pointer; transition: all .15s; }
     .r-tab:hover { border-color: #93c5fd; color: var(--clr-primary); }
     .r-tab.active { border-color: var(--clr-primary); background: var(--clr-primary); color: #fff; }
     /* inline custom radius input */
@@ -208,9 +229,9 @@
     .nearby-card:hover { background: #f9fafb; }
     .nearby-logo { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; border: 1px solid #f3f4f6; padding: 4px; background: #fff; flex-shrink: 0; }
     .nearby-body { flex: 1; min-width: 0; }
-    .nearby-name { font-size: 13px; font-weight: 600; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px; }
+    .nearby-name { font-size: 14px; font-weight: 700; color: #111827; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px; }
     .nearby-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b7280; flex-wrap: wrap; }
-    .nearby-dist { font-size: 13px; font-weight: 700; color: var(--clr-primary); white-space: nowrap; flex-shrink: 0; }
+    .nearby-dist { font-size: 13px; font-weight: 600; color: var(--clr-primary); white-space: nowrap; flex-shrink: 0; }
     .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; line-height: 1.7; }
     .nearby-suggest-btn { display: inline-block; margin-top: 6px; padding: 5px 14px; border-radius: 16px; border: 1.5px solid var(--clr-primary); background: transparent; color: var(--clr-primary); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .12s; }
     .nearby-suggest-btn:hover { background: var(--clr-primary-bg); }
@@ -227,46 +248,62 @@
 <div class="app">
   <aside class="sidebar">
     <div class="sidebar-header">
-      <h2 class="sidebar-title">充电桩站点地图</h2>
+      <div class="sidebar-heading">
+        <h2 class="sidebar-title">按厂商筛选</h2>
+        <p class="sidebar-subtitle">选择一个充电运营商，查看该厂商的充电站分布与详情</p>
+      </div>
       <div class="brand-tabs" id="brandTabs">
         <button class="tab active" data-brand="all">
-          <div class="tab-all-icon">全</div>
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="tab-all-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="1" y="1" width="8.5" height="8.5" rx="2" fill="#6b7280"/>
+              <rect x="12.5" y="1" width="8.5" height="8.5" rx="2" fill="#6b7280"/>
+              <rect x="1" y="12.5" width="8.5" height="8.5" rx="2" fill="#6b7280"/>
+              <rect x="12.5" y="12.5" width="8.5" height="8.5" rx="2" fill="#6b7280"/>
+            </svg>
+          </div>
           <span class="tab-name">全部</span>
-          <span class="tab-count" id="tabCount-all"></span>
-        </button>
-        <button class="tab" data-brand="pea">
-          <img class="tab-logo" src="img/pea.png" alt="PEA">
-          <span class="tab-name">PEA</span>
-          <span class="tab-count" id="tabCount-pea"></span>
+          <span class="provider-count" id="tabCount-all"></span>
         </button>
         <button class="tab" data-brand="ptt">
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <img class="tab-logo" src="img/ptt.png" alt="PTT">
           <span class="tab-name">PTT</span>
-          <span class="tab-count" id="tabCount-ptt"></span>
+          <span class="provider-count" id="tabCount-ptt"></span>
         </button>
-        <button class="tab" data-brand="spark">
-          <img class="tab-logo" src="img/spark.png" alt="Spark">
-          <span class="tab-name">Spark</span>
-          <span class="tab-count" id="tabCount-spark"></span>
+        <button class="tab" data-brand="pea">
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img class="tab-logo" src="img/pea.png" alt="PEA">
+          <span class="tab-name">PEA</span>
+          <span class="provider-count" id="tabCount-pea"></span>
         </button>
         <button class="tab" data-brand="igreen">
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <img class="tab-logo" src="img/igreen.png" alt="iGreen">
           <span class="tab-name">iGreen</span>
-          <span class="tab-count" id="tabCount-igreen"></span>
+          <span class="provider-count" id="tabCount-igreen"></span>
+        </button>
+        <button class="tab" data-brand="spark">
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img class="tab-logo" src="img/spark.png" alt="Spark">
+          <span class="tab-name">Spark</span>
+          <span class="provider-count" id="tabCount-spark"></span>
         </button>
       </div>
       <div class="brand-filter-bar" id="brandFilterBar"></div>
       <div class="sort-bar">
-        <button class="sort-btn">
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          距离最近
-          <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
-        </button>
-        <span id="listUpdatedHint">列表已更新 ↻</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button class="sort-btn">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            距离最近
+            <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <span id="listUpdatedHint">列表已更新 ↻</span>
+        </div>
+        <span class="sort-count" id="stationCount"></span>
       </div>
     </div>
-    <div class="station-count" id="stationCount"></div>
-    <div class="station-sort-hint">按当前地图中心距离排序</div>
     <div class="station-list" id="stationList">
       <div class="empty-state"><p>地图加载中…</p></div>
     </div>
@@ -359,11 +396,15 @@ const allStations = [];
 });
 
 // Tab counts
-document.getElementById('tabCount-all').textContent = allStations.length;
+document.getElementById('tabCount-all').textContent = `${allStations.length}`;
 Object.keys(BRANDS).forEach(bk => {
   const el = document.getElementById(`tabCount-${bk}`);
-  if (el) el.textContent = allStations.filter(s => s.brand === bk).length;
+  if (el) el.textContent = `${allStations.filter(s => s.brand === bk).length}`;
 });
+// 更多按钮：显示弹层内品牌数量
+const EXTRA_BRANDS = ['igreen'];
+const moreCountEl = document.getElementById('moreBrandsCount');
+if (moreCountEl) moreCountEl.textContent = EXTRA_BRANDS.length;
 
 // Province dropdown
 const provinces = [...new Set(allStations.map(s => s.province).filter(Boolean))].sort();
@@ -404,10 +445,10 @@ const clusterRenderer = {
     if (brands.length === 1) {
       const bk = brands[0];
       el.style.cssText = BASE + `background:${BRANDS[bk].color};`;
-      el.innerHTML = `<img src="img/${bk}.png" style="width:${Math.round(sz*.38)}px;height:${Math.round(sz*.38)}px;object-fit:contain;border-radius:3px;flex-shrink:0;"><span style="color:#fff;font-size:${fontSize}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
+      el.innerHTML = `<img src="img/${bk}.png" style="width:${Math.round(sz*.38)}px;height:${Math.round(sz*.38)}px;object-fit:contain;border-radius:3px;flex-shrink:0;"><span style="color:#fff;font-size:${fontSize}px;font-weight:700;line-height:1;font-family:Inter,'Noto Sans SC','Noto Sans Thai',sans-serif;">${countStr}</span>`;
     } else {
       el.style.cssText = BASE + 'background:#1f2937;';
-      el.innerHTML = `<span style="color:#fff;font-size:${fontSize+2}px;font-weight:700;line-height:1;font-family:-apple-system,sans-serif;">${countStr}</span>`;
+      el.innerHTML = `<span style="color:#fff;font-size:${fontSize+2}px;font-weight:700;line-height:1;font-family:Inter,'Noto Sans SC','Noto Sans Thai',sans-serif;">${countStr}</span>`;
       const tip = document.createElement('div');
       tip.style.cssText = 'position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:8px 10px;border-radius:8px;font-size:12px;white-space:nowrap;pointer-events:none;box-shadow:0 4px 14px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12);';
       tip.innerHTML = brands.sort((a,b) => brandCounts[b]-brandCounts[a]).map(bk =>
@@ -478,7 +519,7 @@ const LIST_LIMIT = 80;
 function renderList() {
   const total = currentStations.length;
   document.getElementById('stationCount').textContent =
-    total > listShown ? `显示最近 ${listShown} 个，共 ${total} 个充电站` : `共 ${total} 个充电站`;
+    total > listShown ? `${listShown} / ${total} 个` : `共 ${total} 个`;
   const list = document.getElementById('stationList');
   if (total === 0) {
     list.innerHTML = `<div class="empty-state"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><p>暂无符合条件的充电站</p></div>`;
@@ -542,19 +583,78 @@ function escHtml(s) {
 function updateBrandFilterBar() {
   const bar = document.getElementById('brandFilterBar');
   if (activeBrands.size === 0) { bar.classList.remove('visible'); bar.innerHTML = ''; return; }
-  const tags = [...activeBrands].map(b => `<span class="brand-filter-tag">${BRANDS[b].short}</span>`).join('');
-  bar.innerHTML = `已筛选：${tags}<button class="brand-filter-clear" onclick="clearBrandFilter()">清除</button>`;
+  const total = allStations.filter(s => activeBrands.has(s.brand)).length;
+  const pillsHtml = [...activeBrands].map(b =>
+    `<span class="bfb-pill" onclick="removeBrand('${b}')">${escHtml(BRANDS[b].short)}<span class="bfb-pill-x">×</span></span>`
+  ).join('');
+  bar.innerHTML = `
+    <div class="bfb-pills">${pillsHtml}<span class="bfb-count">共 <strong>${total.toLocaleString()}</strong> 个站点</span></div>
+    <button class="bfb-clear" onclick="clearBrandFilter()">清除</button>`;
   bar.classList.add('visible');
+}
+
+function removeBrand(bk) {
+  activeBrands.delete(bk);
+  syncBrandTabStates();
+  updateBrandFilterBar();
+  renderList();
 }
 
 function clearBrandFilter() {
   activeBrands.clear();
-  document.querySelectorAll('#brandTabs .tab').forEach(t => t.classList.toggle('active', t.dataset.brand === 'all'));
+  syncBrandTabStates();
   updateBrandFilterBar();
   activeOrigIdx = -1;
   fullRender();
   if (_detailStation) renderNearby(_nearbyRadius);
 }
+
+// 同步所有 tab 和弹层 item 的 active 状态
+function syncBrandTabStates() {
+  document.querySelectorAll('#brandTabs .tab').forEach(t => {
+    const b = t.dataset.brand;
+    if (!b) return; // 更多按钮本身无 data-brand
+    t.classList.toggle('active', b === 'all' ? activeBrands.size === 0 : activeBrands.has(b));
+  });
+  document.querySelectorAll('.tab-more-item').forEach(t => {
+    t.classList.toggle('active', activeBrands.has(t.dataset.brand));
+  });
+  // 更多按钮：有弹层品牌被选中时高亮
+  const moreBtn = document.getElementById('moreBrandsBtn');
+  if (moreBtn) moreBtn.classList.toggle('has-active', EXTRA_BRANDS.some(b => activeBrands.has(b)));
+}
+
+// 更多弹层开关
+function toggleMoreBrands(e) {
+  e.stopPropagation();
+  const btn = document.getElementById('moreBrandsBtn');
+  const popup = document.getElementById('moreBrandsPopup');
+  const opening = !popup.classList.contains('open');
+  popup.classList.toggle('open', opening);
+  btn.classList.toggle('open', opening);
+}
+
+// 弹层品牌点击
+document.addEventListener('click', e => {
+  const item = e.target.closest('.tab-more-item');
+  if (item) {
+    e.stopPropagation();
+    const brand = item.dataset.brand;
+    activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
+    syncBrandTabStates();
+    updateBrandFilterBar();
+    activeOrigIdx = -1; fullRender();
+    if (_detailStation) renderNearby(_nearbyRadius);
+    return;
+  }
+  // 点击弹层外部关闭
+  const popup = document.getElementById('moreBrandsPopup');
+  const btn = document.getElementById('moreBrandsBtn');
+  if (popup && !btn.contains(e.target)) {
+    popup.classList.remove('open');
+    btn.classList.remove('open');
+  }
+});
 
 // ── Locate me ─────────────────────────────────────────────────────────────────
 function locateMe() {
@@ -618,7 +718,26 @@ function openDetail(s, fromNearby) {
 
   const PIN_SVG   = `<svg width="14" height="14" viewBox="0 0 16 16" fill="#9ca3af" style="flex-shrink:0;margin-top:1px"><path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3 4.5 8.5 4.5 8.5S12.5 9 12.5 6A4.5 4.5 0 0 0 8 1.5zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>`;
   const HOURS_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="#9ca3af" stroke-width="1.4" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="6"/><path d="M8 4.5v3.5l2.5 2"/></svg>`;
-  const hoursRow  = raw.hours ? `<div class="d-loc-row">${HOURS_SVG}<span class="d-hours-text">${escHtml(raw.hours)}</span></div>` : '';
+  let hoursInner = '';
+  if (raw.hours) {
+    if (raw.hours.includes(';')) {
+      const entries = raw.hours.split(';').map(s => s.trim()).filter(Boolean);
+      const popupRows = entries.map(e => {
+        const colonIdx = e.indexOf(':');
+        if (colonIdx === -1) return `<div class="d-hours-row"><span class="d-hours-time">${escHtml(e)}</span></div>`;
+        const day = e.slice(0, colonIdx).trim();
+        const time = e.slice(colonIdx + 1).trim();
+        return `<div class="d-hours-row"><span class="d-hours-day">${escHtml(day)}</span><span class="d-hours-time">${escHtml(time)}</span></div>`;
+      }).join('');
+      hoursInner = `${HOURS_SVG}<button class="d-hours-btn">
+        营业时间
+        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 6l4 4 4-4"/></svg>
+        <div class="d-hours-popup">${popupRows}</div>
+      </button>`;
+    } else {
+      hoursInner = `${HOURS_SVG}<span class="d-hours-text">${escHtml(raw.hours)}</span>`;
+    }
+  }
 
   const topHtml = `<div class="d-top">
     <img class="d-logo" src="${b.logo}" alt="${b.short}">
@@ -631,8 +750,8 @@ function openDetail(s, fromNearby) {
   const addrHtml = `<div class="d-addr-section">
     <div class="d-addr-left">
       <div class="d-loc-row">${PIN_SVG}<span class="d-loc-text">${escHtml(s.address || '—')}</span></div>
-      ${hoursRow}
-      <div class="d-loc-row">
+      <div class="d-loc-row" style="align-items:center;gap:8px;flex-wrap:wrap;">
+        ${hoursInner}
         <button class="copy-coord-btn" onclick="copyCoords(${s.lat},${s.lon},this)">
           <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v1M8 12.5v1M2.5 8h1M12.5 8h1"/><circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none"/></svg>
           复制坐标
@@ -963,14 +1082,13 @@ window.initMap = function () {
   areaSelect.onchange = e => { activeProvince = e.target.value; activeOrigIdx = -1; fullRender(); };
 
   document.getElementById('brandTabs').addEventListener('click', e => {
-    const btn = e.target.closest('.tab'); if (!btn) return;
+    const btn = e.target.closest('.tab');
+    if (!btn || btn.classList.contains('tab-more')) return; // 更多按钮由 toggleMoreBrands 处理
     const brand = btn.dataset.brand;
+    if (!brand) return;
     if (brand === 'all') activeBrands.clear();
     else activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
-    document.querySelectorAll('#brandTabs .tab').forEach(t => {
-      const b = t.dataset.brand;
-      t.classList.toggle('active', b === 'all' ? activeBrands.size === 0 : activeBrands.has(b));
-    });
+    syncBrandTabStates();
     updateBrandFilterBar();
     activeOrigIdx = -1; fullRender();
     if (_detailStation) renderNearby(_nearbyRadius);

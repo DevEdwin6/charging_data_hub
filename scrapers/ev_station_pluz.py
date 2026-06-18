@@ -336,7 +336,11 @@ class EVStationPluZScraper:
         time.sleep(2.5)         # 等待搜索结果列表出现
         return True
 
-    def _click_map_search_result(self, name):
+    @staticmethod
+    def _norm_search_text(text):
+        return re.sub(r"\s+", " ", text or "").strip().casefold()
+
+    def _click_map_search_result(self, name, timeout=8.0):
         """
         点击 Map 搜索结果列表（出现在页面下方）中与站点名匹配的条目。
 
@@ -346,31 +350,104 @@ class EVStationPluZScraper:
           3. text 与站点名完全相同，且节点位于屏幕中下方
 
         :param name: 站点名称
+        :param timeout: 最长等待搜索结果渲染的秒数
         :return: True = 找到并点击；False = 未找到
         """
-        root = dump(self.d)
+        target = self._norm_search_text(name)
+        deadline = time.time() + timeout
+        nav_labels = {"Home", "Map", "Scan", "History", "Profile"}
 
-        # 策略 1：带 km 距离（最精确）
-        for node in self._app_nodes(root):
-            if node.attrib.get("clickable") != "true":
-                continue
-            desc = node.attrib.get("content-desc", "")
-            if name in desc and re.search(r"\d+\.\d+ km", desc):
-                return click_node(self.d, node)
+        while True:
+            root = dump(self.d)
+            parent = {child: p for p in root.iter("node") for child in p}
 
-        # 策略 2/3：宽松匹配，限定在屏幕中下方区域（避免误触顶部搜索框本身）
-        for node in self._app_nodes(root):
-            if node.attrib.get("clickable") != "true":
-                continue
-            bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
-            if len(bounds) != 4 or int(bounds[1]) < 400:
-                continue
-            desc = node.attrib.get("content-desc", "").strip()
-            text = node.attrib.get("text", "").strip()
-            if desc.startswith(name) or text == name:
-                return click_node(self.d, node)
+            nav_top = 99999
+            for node in self._app_nodes(root):
+                label = node.attrib.get("content-desc", "") or node.attrib.get("text", "")
+                if label not in nav_labels:
+                    continue
+                bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
+                if len(bounds) == 4:
+                    nav_top = min(nav_top, int(bounds[1]))
 
-        return False
+            def result_area(node):
+                bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
+                if len(bounds) != 4:
+                    return False
+                y1 = int(bounds[1])
+                label = node.attrib.get("content-desc", "") or node.attrib.get("text", "")
+                return 400 <= y1 < nav_top - 20 and label not in nav_labels
+
+            def click_result_node(node):
+                bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
+                if len(bounds) != 4:
+                    return False
+                x1, y1, x2, y2 = map(int, bounds)
+
+                # Click the upper-left area of the result card. The geometric
+                # center of full-width cards can overlap the Scan hot zone.
+                cx = x1 + min(220, max(80, (x2 - x1) // 4))
+                cy = y1 + min(90, max(24, (y2 - y1) // 4))
+                cx = max(x1 + 20, min(cx, x2 - 20))
+                cy = max(y1 + 20, min(cy, y2 - 20, nav_top - 30))
+
+                # Extra guard for devices where Scan has a tall invisible hitbox.
+                if 438 <= cx <= 642:
+                    left = x1 + 140
+                    right = x2 - 140
+                    cx = left if left < 438 else right
+
+                for _ in range(2):
+                    try:
+                        self.d.click(cx, cy)
+                        return True
+                    except RemoteDisconnected:
+                        ensure_connected(self.d)
+                return False
+
+            def text_matches(value, exact_start=False):
+                val = self._norm_search_text(value)
+                if not val:
+                    return False
+                return val.startswith(target) if exact_start else target in val
+
+            # 策略 1：搜索结果卡片 content-desc 含站点名和距离。
+            for node in self._app_nodes(root):
+                if node.attrib.get("clickable") != "true" or not result_area(node):
+                    continue
+                desc = node.attrib.get("content-desc", "")
+                if text_matches(desc) and re.search(r"\d+\.\d+\s*km", desc):
+                    return click_result_node(node)
+
+            # 策略 2：搜索结果卡片 content-desc 以站点名开头。
+            for node in self._app_nodes(root):
+                if node.attrib.get("clickable") != "true" or not result_area(node):
+                    continue
+                desc = node.attrib.get("content-desc", "")
+                text = node.attrib.get("text", "")
+                if text_matches(desc, exact_start=True) or self._norm_search_text(text) == target:
+                    return click_result_node(node)
+
+            # 策略 3：站点名在不可点击 TextView 上，向上找可点击父容器。
+            for node in self._app_nodes(root):
+                text = node.attrib.get("text", "")
+                desc = node.attrib.get("content-desc", "")
+                if not result_area(node) or not (
+                    text_matches(text, exact_start=True)
+                    or text_matches(desc, exact_start=True)
+                ):
+                    continue
+                p = parent.get(node)
+                while p is not None:
+                    if (p.attrib.get("package") == self.APP_PKG
+                            and p.attrib.get("clickable") == "true"
+                            and result_area(p)):
+                        return click_result_node(p)
+                    p = parent.get(p)
+
+            if time.time() >= deadline:
+                return False
+            time.sleep(0.5)
 
     def click_station_in_list(self, name):
         """
