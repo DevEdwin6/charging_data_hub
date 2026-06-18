@@ -1,5 +1,5 @@
 """
-utils.py — 通用工具模块
+utils — 通用工具模块
 
 与具体 App 解耦，供所有 scraper 复用。包含三类功能：
   1. 设备连接管理（uiautomator2 断线重连）

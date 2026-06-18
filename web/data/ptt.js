@@ -14,7 +14,6 @@ window.PTT_DATA = [
         connectors: [
           {
             position: "ซ้าย-A",
-            position_cn: "左侧",
             type: "DC CCS2",
             kw: 200,
             price_day: 9.0,
@@ -23,7 +22,6 @@ window.PTT_DATA = [
           },
           {
             position: "ขวา-B",
-            position_cn: "右侧",
             type: "DC CCS2",
             kw: 200,
             price_day: 9.0,

@@ -49,10 +49,12 @@ sys.stdout = _Tee(_real_stdout, _log_file)
 # MAX_STATIONS = 5     → 最终总量目标（含历史记录，非本次增量）
 # RUN_MODE     = 'full'    → 初次全量采集（跳过已处理站点）
 # RUN_MODE     = 'refresh' → 状态刷新（重新采集所有站点快照）
+# RUN_MODE     = 'patch'   → 补齐模式（搜索价格缺失站点并补全当前时段价格）
+# RUN_MODE     = 'fill'    → 补全模式（搜索地址或价格任一缺失的站点并补全所有数据）
 # ══════════════════════════════════════════════════════════════
 DEVICE_SERIAL = "7391e8d9"
-MAX_STATIONS = 1325
-RUN_MODE = "full"
+MAX_STATIONS = None
+RUN_MODE = "fill"
 
 # ── 初始化数据库连接 ──────────────────────────────────────────
 print("连接数据库...")
@@ -95,7 +97,10 @@ results = []
 scraper = EVStationPluZScraper(d)
 
 try:
-    completed = scraper.collect(results, processed, MAX_STATIONS, run_id)
+    if RUN_MODE in ("patch", "fill"):
+        completed = scraper.collect_patch(results, processed, MAX_STATIONS, run_id, mode=RUN_MODE)
+    else:
+        completed = scraper.collect(results, processed, MAX_STATIONS, run_id)
     if completed:
         db.complete_run(run_id)
     else:

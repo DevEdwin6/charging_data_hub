@@ -298,6 +298,80 @@ class EVStationPluZScraper:
             except RemoteDisconnected:
                 ensure_connected(self.d)
 
+    def _search_on_map(self, name):
+        """
+        在 Map 页顶部搜索框输入站点名并按 Enter 提交搜索。
+
+        搜索框识别：y1 < 500 的顶部区域内，class 含 EditText 或
+        text/content-desc 为 "Search" 的节点。
+
+        搜索结果通常以预览卡形式出现在地图上，由调用方等待并处理。
+
+        :param name: 站点名称
+        :return: True = 找到搜索框并提交；False = 未找到搜索框
+        """
+        root = dump(self.d)
+        search_node = None
+        for node in self._app_nodes(root):
+            bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
+            if len(bounds) != 4 or int(bounds[1]) > 500:
+                continue
+            cls  = node.attrib.get("class", "")
+            text = node.attrib.get("text", "").strip()
+            desc = node.attrib.get("content-desc", "").strip()
+            if ("EditText" in cls
+                    or text.lower() == "search"
+                    or desc.lower() == "search"):
+                search_node = node
+                break
+
+        if search_node is None:
+            return False
+
+        click_node(self.d, search_node)
+        time.sleep(0.5)
+        self.d.send_keys(name, clear=True)
+        time.sleep(0.5)
+        self.d.press("enter")   # 提交搜索
+        time.sleep(2.5)         # 等待搜索结果列表出现
+        return True
+
+    def _click_map_search_result(self, name):
+        """
+        点击 Map 搜索结果列表（出现在页面下方）中与站点名匹配的条目。
+
+        匹配策略（按优先级）：
+          1. content-desc 包含站点名 + 距离（km）—— 与全屏列表格式相同
+          2. content-desc 以站点名开头，且节点位于屏幕中下方（y1 > 400）
+          3. text 与站点名完全相同，且节点位于屏幕中下方
+
+        :param name: 站点名称
+        :return: True = 找到并点击；False = 未找到
+        """
+        root = dump(self.d)
+
+        # 策略 1：带 km 距离（最精确）
+        for node in self._app_nodes(root):
+            if node.attrib.get("clickable") != "true":
+                continue
+            desc = node.attrib.get("content-desc", "")
+            if name in desc and re.search(r"\d+\.\d+ km", desc):
+                return click_node(self.d, node)
+
+        # 策略 2/3：宽松匹配，限定在屏幕中下方区域（避免误触顶部搜索框本身）
+        for node in self._app_nodes(root):
+            if node.attrib.get("clickable") != "true":
+                continue
+            bounds = re.findall(r"\d+", node.attrib.get("bounds", ""))
+            if len(bounds) != 4 or int(bounds[1]) < 400:
+                continue
+            desc = node.attrib.get("content-desc", "").strip()
+            text = node.attrib.get("text", "").strip()
+            if desc.startswith(name) or text == name:
+                return click_node(self.d, node)
+
+        return False
+
     def click_station_in_list(self, name):
         """
         在全屏列表页中找到指定名称的站点行并点击。
@@ -562,6 +636,13 @@ class EVStationPluZScraper:
         :return: dict {"full_address": str, "hours_by_day": {day: hours}}；
                  未找到按钮时返回空 dict
         """
+        # _read_charger_units() 会把详情页向下滚动若干屏，
+        # "More information >" 位于页面顶部，此时已不在视口内。
+        # 先连续上滑回到页面顶部，再查找按钮。
+        for _ in range(6):
+            self.d.swipe(540, 900, 540, 1800, duration=0.25)
+        time.sleep(0.8)
+
         root = dump(self.d)
         btn = next(
             (n for n in self._app_nodes(root)
@@ -616,19 +697,34 @@ class EVStationPluZScraper:
             has_digit = bool(re.search(r"\d", text))
             return has_addr_kw or (has_thai and has_digit)
 
+        # 已知在 "Address" 标签之后出现的文本就是地址，不再用关键词做二次校验。
+        # 只排除：已知 UI 按钮/标签、星期名、营业时间格式、极短字符串。
+        UI_SKIP = {"View map", "Back", "Station information", "Operating hours",
+                   "More information", "Show all", "Available connectors"}
+
+        def is_after_label_candidate(text):
+            return (text
+                    and text not in DAYS
+                    and text not in ADDR_LABELS
+                    and text not in UI_SKIP
+                    and not is_hours_text(text)
+                    and len(text) > 5)
+
         for i, t in enumerate(texts):
             if not full_address and ":" in t:
                 label, value = [p.strip() for p in t.split(":", 1)]
-                if label in ADDR_LABELS and is_address_candidate(value):
+                if label in ADDR_LABELS and is_after_label_candidate(value):
                     full_address = value
                     continue
 
             if not full_address and t in ADDR_LABELS:
+                # 在 Address 标签之后，用宽松规则取第一个非 UI 的文本
                 for candidate in texts[i + 1:]:
-                    if is_address_candidate(candidate):
+                    if is_after_label_candidate(candidate):
                         full_address = candidate
                         break
 
+            # 兜底：没有找到 Address 标签时，用原有关键词规则扫描全文
             if not full_address and is_address_candidate(t):
                 full_address = t
 
@@ -973,6 +1069,186 @@ class EVStationPluZScraper:
             time.sleep(1)
 
         # while 循环因 reached_max() 退出
+        return True
+
+    # ══════════════════════════════════════════════════════════
+    # 补齐模式采集循环
+    # ══════════════════════════════════════════════════════════
+
+    def collect_patch(self, results, processed, max_stations, run_id, mode="patch"):
+        """
+        搜索补全模式（patch / fill）：从 DB 查询数据不完整的站点，
+        在 Map 页顶部搜索框逐一搜索后补全数据。
+
+        mode='patch'：仅补当前时段价格缺失的站点（db.get_stations_missing_price）
+        mode='fill' ：补地址或价格任一缺失的站点（db.get_stations_incomplete）
+
+        与 collect() 的区别：
+          - 始终在 Map 页操作，不打开全屏列表
+          - 通过 _search_on_map() 在 Map 顶部搜索框输入名称并按 Enter
+          - 点击页面下方搜索结果 → 预览卡 → View more → 详情页
+
+        :param results:      当前会话采集结果
+        :param processed:    已处理 key 集合，由 run.py 从 DB 预加载
+        :param max_stations: 采集总量上限；None = 全部
+        :param run_id:       当前采集批次 ID
+        :param mode:         'patch' 或 'fill'
+        :return:             True = 正常完成；False = 错误中止
+        """
+        _get_todo = (db.get_stations_incomplete if mode == "fill"
+                     else db.get_stations_missing_price)
+        mode_label = "补全" if mode == "fill" else "补齐"
+
+        active_period = self.get_time_period(datetime.now())
+        todo = _get_todo(self.PLATFORM_CODE, active_period)
+        todo = [s for s in todo
+                if (s["station_name"] + s["brief_address"]) not in processed]
+
+        print(f"[{mode_label}模式] 时段={active_period}  待处理 {len(todo)} 个站点\n")
+        if not todo:
+            print(f"[{mode_label}模式] 所有站点数据已完整，无需处理")
+            return True
+
+        for station in todo:
+
+            # 时段切换检测
+            now_period = self.get_time_period(datetime.now())
+            if now_period != active_period:
+                print(f"\n[时段切换] {active_period} → {now_period}，重新加载待处理列表...")
+                active_period = now_period
+                fresh = _get_todo(self.PLATFORM_CODE, active_period)
+                fresh_done = db.get_processed_stations(self.PLATFORM_CODE, run_id, active_period)
+                processed.clear()
+                processed.update(fresh_done)
+                todo = [s for s in fresh
+                        if (s["station_name"] + s["brief_address"]) not in processed]
+                print(f"[时段切换] {active_period} 时段待处理 {len(todo)} 个站点\n")
+                if not todo:
+                    print(f"[{mode_label}模式] 当前时段已全部处理完毕")
+                    return True
+
+            if max_stations is not None and len(results) >= max_stations:
+                break
+
+            name  = station["station_name"]
+            brief = station["brief_address"]
+            key   = name + brief
+
+            if key in processed:
+                continue
+
+            idx   = len(results) + 1
+            label = f"{idx}/{max_stations}" if max_stations is not None else str(idx)
+            print(f"[{mode_label} {label}] 搜索: {name}")
+
+            self.ensure_app_running()
+
+            # 确保在 Map 页（搜索框所在页面）
+            if not self.ensure_map_page():
+                self.force_restart_app()
+                if not self.ensure_map_page():
+                    print("无法回到 Map 页，停止")
+                    return False
+
+            # 在 Map 顶部搜索框输入名称并按 Enter
+            if not self._search_on_map(name):
+                print(f"  !! Map 搜索框未找到，跳过 {name}")
+                processed.add(key)
+                continue
+
+            self.ensure_app_running()
+            self.dismiss_alert()
+
+            # 点击页面下方搜索结果列表中的匹配条目
+            if not self._click_map_search_result(name):
+                print(f"  !! 搜索结果无匹配 [{name}]，跳过")
+                self.d.press("back")   # 关闭搜索，回到干净的 Map 页
+                time.sleep(1.5)
+                processed.add(key)
+                continue
+            time.sleep(2)
+            self.ensure_app_running()
+            self.dismiss_alert()
+
+            # 点击搜索结果后等待预览卡弹出
+            if not self.preview_card_open():
+                time.sleep(2)
+                self.ensure_app_running()
+                self.dismiss_alert()
+                if not self.preview_card_open():
+                    print("  !! 预览卡未出现，跳过")
+                    self.d.press("back")
+                    time.sleep(1.5)
+                    processed.add(key)
+                    continue
+
+            # 点击 View more 进入详情页
+            if not self.click_view_more():
+                time.sleep(1)
+                self.dismiss_alert()
+                if not self.click_view_more():
+                    print("  !! View more 未找到，跳过")
+                    self.close_preview_card()
+                    processed.add(key)
+                    continue
+            time.sleep(3)
+            self.ensure_app_running()
+            self.dismiss_alert()
+
+            station_start = time.time()
+
+            charger_units = self._read_charger_units()
+            target = {
+                "name":          name,
+                "address":       brief,
+                "charger_units": charger_units,
+                "charger_count": sum(len(u["connectors"]) for u in charger_units),
+            }
+            print(f"  → {len(charger_units)} 个充电桩  {target['charger_count']} 个枪口  ({label})")
+
+            detail = self.read_detail_info()
+            target["overall_status"] = detail.get("overall_status", "")
+            target["last_update"]    = detail.get("last_update", "")
+            target["remarks"]        = detail.get("remarks", "")
+
+            more = self.read_more_information()
+            target["full_address"] = more.get("full_address", "")
+            target["hours_by_day"] = more.get("hours_by_day", {})
+            if target["full_address"]:
+                print(f"  → 地址: {target['full_address']}")
+
+            self._last_google_url = None
+            target["lat"] = target["lng"] = target["google_url"] = None
+            target["elapsed_sec"]   = round(time.time() - station_start, 1)
+            target["platform_code"] = self.PLATFORM_CODE
+
+            collected_at = datetime.now()
+            time_period  = self.get_time_period(collected_at)
+            try:
+                db.save_station(run_id, target, time_period, collected_at)
+            except Exception as e:
+                print(f"  !! DB 保存失败（{e}），跳过，下次重试")
+                self.d.press("back")
+                time.sleep(2)
+                self.ensure_app_running()
+                self.dismiss_alert()
+                self.close_preview_card()
+                time.sleep(1)
+                continue
+
+            results.append(target)
+            processed.add(key)
+            self._print_station(target, label, time_period, target["elapsed_sec"])
+
+            # 返回 Map 页，准备下一站
+            self.d.press("back")
+            time.sleep(2)
+            self.ensure_app_running()
+            self.dismiss_alert()
+            self.close_preview_card()
+            time.sleep(1)
+
+        print(f"\n[{mode_label}模式] 本次共处理 {len(results)} 个站点")
         return True
 
     # ══════════════════════════════════════════════════════════

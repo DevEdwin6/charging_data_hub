@@ -153,6 +153,83 @@ def get_processed_stations(platform_code, run_id, time_period):
     return processed
 
 
+def get_stations_missing_price(platform_code, time_period):
+    """
+    查询指定平台、指定时段价格完全缺失的站点。
+    "缺失"定义：站点在 connector_status_snapshots 中存在快照，
+    但所有快照的该时段价格列均为 NULL（即没有任何一条非空价格）。
+
+    用于补齐模式确定待处理列表；已补齐的站点（任意快照中有非空价格）自动排除。
+
+    :param platform_code: 平台编码
+    :param time_period:   'day' 或 'night'
+    :return: list of dict {id, station_name, brief_address}
+    """
+    price_col = "day_price_per_kwh" if time_period == "day" else "night_price_per_kwh"
+    conn = _get_conn()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(f"""
+                   SELECT ss.id,
+                          ss.station_name,
+                          COALESCE(ss.brief_address, '') AS brief_address
+                   FROM station_sites ss
+                   WHERE ss.platform_code = %s
+                     AND EXISTS (SELECT 1
+                                 FROM connector_status_snapshots
+                                 WHERE station_id = ss.id)
+                     AND NOT EXISTS (SELECT 1
+                                     FROM connector_status_snapshots
+                                     WHERE station_id = ss.id
+                                       AND {price_col} IS NOT NULL)
+                   ORDER BY ss.station_name
+                   """, (platform_code,))
+    rows = cursor.fetchall()
+    cursor.close()
+    if rows:
+        print(f"[补齐模式] 发现 {len(rows)} 个站点的 {time_period} 时段价格缺失")
+    return rows
+
+
+def get_stations_incomplete(platform_code, time_period):
+    """
+    查询地址或当前时段价格任一缺失的站点，用于 fill 补全模式。
+
+    触发条件（OR 关系）：
+      - station_sites.brief_address 为 NULL 或空字符串（列表简短地址缺失）
+      - station_sites.address 为 NULL 或空字符串（详情完整地址缺失）
+      - connector_status_snapshots 中该时段无任何非空价格（含从未有过快照）
+
+    :param platform_code: 平台编码
+    :param time_period:   'day' 或 'night'
+    :return: list of dict {id, station_name, brief_address}
+    """
+    price_col = "day_price_per_kwh" if time_period == "day" else "night_price_per_kwh"
+    conn = _get_conn()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(f"""
+                   SELECT ss.id,
+                          ss.station_name,
+                          COALESCE(ss.brief_address, '') AS brief_address
+                   FROM station_sites ss
+                   WHERE ss.platform_code = %s
+                     AND (
+                         ss.brief_address IS NULL OR ss.brief_address = ''
+                         OR ss.address    IS NULL OR ss.address    = ''
+                         OR NOT EXISTS (
+                             SELECT 1 FROM connector_status_snapshots
+                             WHERE station_id = ss.id
+                               AND {price_col} IS NOT NULL
+                         )
+                     )
+                   ORDER BY ss.station_name
+                   """, (platform_code,))
+    rows = cursor.fetchall()
+    cursor.close()
+    if rows:
+        print(f"[补全模式] 发现 {len(rows)} 个站点数据不完整（地址或 {time_period} 价格缺失）")
+    return rows
+
+
 def complete_run(run_id):
     """
     将批次状态标记为 completed，记录结束时间。
