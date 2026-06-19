@@ -77,6 +77,8 @@
     .sp-power-input::-webkit-inner-spin-button { -webkit-appearance: none; }
     .sp-power-unit { font-size: 13px; color: var(--clr-primary); font-weight: 500; flex-shrink: 0; }
     .sp-power-sep { font-size: 16px; color: #c0c4cc; flex-shrink: 0; line-height: 1; }
+    .sp-power-reset { flex-shrink: 0; border: none; background: none; font-size: 12px; color: var(--clr-primary); cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: background .12s; }
+    .sp-power-reset:hover { background: var(--clr-primary-bg); }
     /* preset dropdown */
     .sp-power-dropdown { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.12); z-index: 200; overflow: hidden; }
     .sp-power-dropdown.open { display: block; }
@@ -256,6 +258,7 @@
     .nearby-meta { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #6b7280; flex-wrap: wrap; }
     .nearby-dist { font-size: 13px; font-weight: 600; color: var(--clr-primary); white-space: nowrap; flex-shrink: 0; }
     .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; line-height: 1.7; }
+    .nearby-filter-hint { margin: 8px 16px 4px; padding: 5px 10px; background: #eff6ff; border-radius: 6px; font-size: 11px; color: var(--clr-primary); }
     .nearby-suggest-btn { display: inline-block; margin-top: 6px; padding: 5px 14px; border-radius: 16px; border: 1.5px solid var(--clr-primary); background: transparent; color: var(--clr-primary); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .12s; }
     .nearby-suggest-btn:hover { background: var(--clr-primary-bg); }
 
@@ -274,9 +277,89 @@
     .mtt-row { display: flex; align-items: center; gap: 6px; font-size: 11px; }
     .mtt-row-label { flex-shrink: 0; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
     .mtt-row-val { color: #374151; font-weight: 500; }
+    /* ── Login overlay ──────────────────────────────────────────────────────── */
+    #login-overlay {
+      position: fixed; inset: 0; z-index: 9999; display: none;
+      background: url('img/background.png') center/cover no-repeat;
+      align-items: center; justify-content: center;
+      transition: opacity .4s ease;
+    }
+    .login-card {
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 28px; padding: 52px 44px 46px;
+      width: 380px; text-align: center;
+      box-shadow: 0 20px 60px rgba(30,80,200,0.12), 0 2px 8px rgba(0,0,0,0.06);
+      position: relative; left: -18%;
+    }
+    .login-avatar {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: linear-gradient(145deg, #dbeafe, #bfdbfe);
+      margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 18px rgba(59,130,246,0.2);
+    }
+    .login-title { font-size: 26px; font-weight: 700; color: #111827; margin: 0 0 8px; }
+    .login-sub { font-size: 14px; color: #9ca3af; margin: 0 0 32px; line-height: 1.6; }
+    .login-input-wrap {
+      display: flex; align-items: center; gap: 10px;
+      border: 1.5px solid #e5e7eb; border-radius: 14px;
+      padding: 14px 16px; margin-bottom: 8px; background: #fff;
+      transition: border-color .15s;
+    }
+    .login-input-wrap:focus-within { border-color: var(--clr-primary); box-shadow: 0 0 0 3px rgba(59,130,246,0.08); }
+    .login-input-wrap input {
+      flex: 1; border: none; outline: none; font-size: 15px;
+      color: #111827; background: transparent;
+    }
+    .login-input-wrap input::placeholder { color: #b0b7c3; }
+    .login-eye { border: none; background: none; cursor: pointer; padding: 0; color: #9ca3af; flex-shrink: 0; line-height: 0; }
+    .login-eye:hover { color: #6b7280; }
+    .login-error { font-size: 13px; color: #ef4444; min-height: 22px; margin-bottom: 8px; }
+    .login-btn {
+      width: 100%; padding: 15px; border: none; border-radius: 14px;
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+      color: #fff; font-size: 16px; font-weight: 600;
+      cursor: pointer; letter-spacing: .4px;
+      transition: opacity .15s, transform .1s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.38);
+    }
+    .login-btn:hover:not(:disabled) { opacity: .9; }
+    .login-btn:active:not(:disabled) { transform: scale(.98); }
+    .login-btn:disabled { opacity: .65; cursor: not-allowed; }
   </style>
 </head>
 <body>
+
+<!-- ── Login overlay ──────────────────────────────────────────────────────── -->
+<div id="login-overlay">
+  <div class="login-card">
+    <div class="login-avatar">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="8" r="4" fill="#3b82f6"/>
+        <path d="M4 20c0-4 3.582-7 8-7s8 3 8 7" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <h1 class="login-title">Welcome Back</h1>
+    <p class="login-sub">Please enter your password to continue</p>
+    <div class="login-input-wrap">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0">
+        <rect x="3" y="11" width="18" height="11" rx="2" stroke="#9ca3af" stroke-width="1.8"/>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input type="password" id="loginPwd" placeholder="Password" autocomplete="current-password">
+      <button class="login-eye" id="loginEye" type="button">
+        <svg id="eyeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#9ca3af" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="3" stroke="#9ca3af" stroke-width="1.8"/>
+        </svg>
+      </button>
+    </div>
+    <div class="login-error" id="loginError"></div>
+    <button class="login-btn" id="loginBtn" type="button">Login</button>
+  </div>
+</div>
 
 <div class="app">
   <aside class="sidebar">
@@ -351,6 +434,7 @@
               <div class="sp-dd-item" data-val="240">240 <span class="sp-dd-unit">kW</span></div>
             </div>
           </div>
+          <button class="sp-power-reset" id="pfReset" style="display:none">重置</button>
         </div>
       </div>
 
@@ -396,10 +480,7 @@
   </div>
 </div>
 
-<script src="data/pea.js"></script>
-<script src="data/ptt.js"></script>
-<script src="data/spark.js"></script>
-<script src="data/igreen.js"></script>
+<!-- data loaded dynamically after login -->
 
 <script>
 // ── Brand config ──────────────────────────────────────────────────────────────
@@ -452,21 +533,32 @@ function normalizeStation(raw, brandKey) {
   return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPrice, maxPrice, connTypes: [...connTypes], _raw: raw };
 }
 
-const allStations = [];
-[['pea', window.PEA_DATA||[]], ['ptt', window.PTT_DATA||[]], ['spark', window.SPARK_DATA||[]], ['igreen', window.IGREEN_DATA||[]]].forEach(([brand, data]) => {
-  data.forEach(raw => { if (raw.lat && raw.lon) allStations.push(normalizeStation(raw, brand)); });
-});
+let allStations = [];
 
-// Tab counts
-document.getElementById('tabCount-all').textContent = `${allStations.length}`;
-Object.keys(BRANDS).forEach(bk => {
-  const el = document.getElementById(`tabCount-${bk}`);
-  if (el) el.textContent = `${allStations.filter(s => s.brand === bk).length}`;
-});
-// 更多按钮：显示弹层内品牌数量
+// Called after decryption succeeds
+function initData(datasets) {
+  [['pea', datasets.pea||[]], ['ptt', datasets.ptt||[]], ['spark', datasets.spark||[]], ['igreen', datasets.igreen||[]]].forEach(([brand, data]) => {
+    data.forEach(raw => { if (raw.lat && raw.lon) allStations.push(normalizeStation(raw, brand)); });
+  });
+  document.getElementById('tabCount-all').textContent = `${allStations.length}`;
+  Object.keys(BRANDS).forEach(bk => {
+    const el = document.getElementById(`tabCount-${bk}`);
+    if (el) el.textContent = `${allStations.filter(s => s.brand === bk).length}`;
+  });
+  const moreCountEl = document.getElementById('moreBrandsCount');
+  if (moreCountEl) moreCountEl.textContent = EXTRA_BRANDS.length;
+  loadGoogleMaps();
+}
+
+function loadGoogleMaps() {
+  const s = document.createElement('script');
+  s.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBUNkBBVjIJ8rq_klcc2dkDttE-7vVutT0&libraries=places,marker&callback=initMap&v=weekly&loading=async';
+  s.async = true;
+  document.head.appendChild(s);
+}
+
+// 更多按钮：弹层品牌列表
 const EXTRA_BRANDS = ['igreen'];
-const moreCountEl = document.getElementById('moreBrandsCount');
-if (moreCountEl) moreCountEl.textContent = EXTRA_BRANDS.length;
 
 
 // ── State ─────────────────────────────────────────────────────────────────────
@@ -1036,13 +1128,24 @@ function renderNearby(radiusKm) {
   document.querySelectorAll('.r-tab[data-km]').forEach(t => t.classList.toggle('active', +t.dataset.km === radiusKm));
   const titleEl = document.getElementById('nearbyTitle');
   if (titleEl) titleEl.textContent = `附近 ${radiusKm} 公里充电桩`;
-  const nearby = _nearbyCache.filter(x => x.d <= radiusKm && (activeBrands.size === 0 || activeBrands.has(x.n.brand)));
+  const q = activeSearch.trim().toLowerCase();
+  const nearby = _nearbyCache.filter(x => {
+    if (x.d > radiusKm) return false;
+    if (activeBrands.size > 0 && !activeBrands.has(x.n.brand)) return false;
+    if (q && !x.n.name.toLowerCase().includes(q)) return false;
+    if (activePowerMin && x.n.maxKw < activePowerMin) return false;
+    if (activePowerMax && x.n.minKw > activePowerMax) return false;
+    if (activeProvince && x.n.province !== activeProvince) return false;
+    return true;
+  });
   const el = document.getElementById('nearbyList');
   if (!el) return;
+  const hasFilter = q || activePowerMin || activePowerMax || activeBrands.size > 0 || activeProvince;
+  const hint = hasFilter ? `<div class="nearby-filter-hint">已应用搜索筛选条件</div>` : '';
   if (nearby.length === 0) {
     const nextKm = radiusKm < 3 ? 3 : radiusKm < 5 ? 5 : radiusKm < 10 ? 10 : null;
     const suggest = nextKm ? `<br><button class="nearby-suggest-btn" onclick="changeRadius(${nextKm})">查看 ${nextKm}km 范围 →</button>` : '';
-    el.innerHTML = `<div class="nearby-empty">${radiusKm}km 内暂无其他充电站${suggest}</div>`;
+    el.innerHTML = hint + `<div class="nearby-empty">${radiusKm}km 内暂无符合条件的充电站${suggest}</div>`;
     return;
   }
   el.innerHTML = nearby.map(({ n, i, d }) => {
@@ -1058,6 +1161,7 @@ function renderNearby(radiusKm) {
       <div class="nearby-dist">${fmtDist(d)}</div>
     </div>`;
   }).join('');
+  el.innerHTML = hint + el.innerHTML;
 }
 
 function changeRadius(km) {
@@ -1187,6 +1291,11 @@ window.initMap = function () {
   const pfMaxInput = document.getElementById('pfMaxInput');
   const spMinDropdown = document.getElementById('spMinDropdown');
   const spMaxDropdown = document.getElementById('spMaxDropdown');
+  const pfReset = document.getElementById('pfReset');
+
+  function updatePfResetVisibility() {
+    pfReset.style.display = (activePowerMin || activePowerMax) ? 'inline-block' : 'none';
+  }
 
   function syncDdSelected(dropdown, val) {
     dropdown.querySelectorAll('.sp-dd-item').forEach(item => {
@@ -1210,6 +1319,7 @@ window.initMap = function () {
       activePowerMin = val; pfMinInput.value = val;
       syncDdSelected(spMinDropdown, val);
       spMinDropdown.classList.remove('open');
+      updatePfResetVisibility();
       activeOrigIdx = -1; fullRender();
     });
   });
@@ -1220,17 +1330,26 @@ window.initMap = function () {
       activePowerMax = val; pfMaxInput.value = val;
       syncDdSelected(spMaxDropdown, val);
       spMaxDropdown.classList.remove('open');
+      updatePfResetVisibility();
       activeOrigIdx = -1; fullRender();
     });
   });
 
   pfMinInput.addEventListener('input', e => {
     clearTimeout(pfTimer);
-    pfTimer = setTimeout(() => { activePowerMin = parseFloat(e.target.value) || 0; activeOrigIdx = -1; fullRender(); }, 400);
+    pfTimer = setTimeout(() => { activePowerMin = parseFloat(e.target.value) || 0; updatePfResetVisibility(); activeOrigIdx = -1; fullRender(); }, 400);
   });
   pfMaxInput.addEventListener('input', e => {
     clearTimeout(pfTimer);
-    pfTimer = setTimeout(() => { activePowerMax = parseFloat(e.target.value) || 0; activeOrigIdx = -1; fullRender(); }, 400);
+    pfTimer = setTimeout(() => { activePowerMax = parseFloat(e.target.value) || 0; updatePfResetVisibility(); activeOrigIdx = -1; fullRender(); }, 400);
+  });
+
+  pfReset.addEventListener('click', () => {
+    activePowerMin = 0; activePowerMax = 0;
+    pfMinInput.value = ''; pfMaxInput.value = '';
+    syncDdSelected(spMinDropdown, 0); syncDdSelected(spMaxDropdown, 0);
+    updatePfResetVisibility();
+    activeOrigIdx = -1; fullRender();
   });
 
   let idleTimer, lastSoftCenter = null;
@@ -1264,7 +1383,107 @@ window.initMap = function () {
 };
 </script>
 
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUNkBBVjIJ8rq_klcc2dkDttE-7vVutT0&libraries=places,marker&callback=initMap&v=weekly&loading=async"></script>
+<!-- Google Maps loaded dynamically by loadGoogleMaps() after login -->
 <div id="map-tooltip"></div>
+
+<script>
+(function () {
+  // ── AES-256-GCM decrypt ──────────────────────────────────────────────────
+  // File format: [salt(16) | iv(12) | ciphertext | authTag(16)]  base64
+
+  async function deriveKey(password, salt) {
+    const km = await crypto.subtle.importKey(
+      'raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']
+    );
+    return crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
+      km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
+    );
+  }
+
+  async function decryptFile(url, password) {
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error('fetch ' + url);
+    const raw = Uint8Array.from(atob((await res.text()).trim()), c => c.charCodeAt(0));
+    const salt       = raw.slice(0, 16);
+    const iv         = raw.slice(16, 28);
+    const ciphertext = raw.slice(28);          // ciphertext || authTag
+    const key        = await deriveKey(password, salt);
+    const plain      = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+    return JSON.parse(new TextDecoder().decode(plain));
+  }
+
+  async function decryptAll(pwd) {
+    const keys = ['ptt', 'pea', 'spark', 'igreen'];
+    const results = await Promise.all(keys.map(k => decryptFile(`data/${k}.enc`, pwd)));
+    return Object.fromEntries(keys.map((k, i) => [k, results[i]]));
+  }
+
+  // ── Session cache (cleared on tab close) ────────────────────────────────
+  const SK = '_chk';
+
+  async function tryAuto() {
+    const v = sessionStorage.getItem(SK);
+    if (!v) return false;
+    try {
+      initData(await decryptAll(decodeURIComponent(atob(v))));
+      hideOverlay();
+      return true;
+    } catch { sessionStorage.removeItem(SK); return false; }
+  }
+
+  function hideOverlay() {
+    const el = document.getElementById('login-overlay');
+    el.style.opacity = '0';
+    setTimeout(() => el.style.display = 'none', 400);
+  }
+
+  // ── Eye toggle SVGs ──────────────────────────────────────────────────────
+  const EYE_ON  = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="#9ca3af" stroke-width="1.8"/><circle cx="12" cy="12" r="3" stroke="#9ca3af" stroke-width="1.8"/></svg>`;
+  const EYE_OFF = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/><path d="M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/><line x1="1" y1="1" x2="23" y2="23" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"/></svg>`;
+
+  // ── Init ─────────────────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', async () => {
+    if (await tryAuto()) return;
+
+    const overlay  = document.getElementById('login-overlay');
+    overlay.style.display = 'flex';
+    overlay.style.opacity = '1';
+
+    const pwdInput = document.getElementById('loginPwd');
+    const loginBtn = document.getElementById('loginBtn');
+    const errorEl  = document.getElementById('loginError');
+    const eyeBtn   = document.getElementById('loginEye');
+
+    eyeBtn.addEventListener('click', () => {
+      const show = pwdInput.type === 'password';
+      pwdInput.type = show ? 'text' : 'password';
+      eyeBtn.innerHTML = show ? EYE_OFF : EYE_ON;
+    });
+
+    pwdInput.addEventListener('keydown', e => { if (e.key === 'Enter') loginBtn.click(); });
+
+    loginBtn.addEventListener('click', async () => {
+      const pwd = pwdInput.value;
+      if (!pwd) return;
+      loginBtn.disabled = true;
+      loginBtn.textContent = '验证中…';
+      errorEl.textContent = '';
+      try {
+        const datasets = await decryptAll(pwd);
+        sessionStorage.setItem(SK, btoa(encodeURIComponent(pwd)));
+        initData(datasets);
+        hideOverlay();
+      } catch (e) {
+        console.error('[login error]', e);
+        errorEl.textContent = '密码错误，请重试 (' + (e?.message || e) + ')';
+        loginBtn.disabled = false;
+        loginBtn.textContent = 'Login';
+        pwdInput.select();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
