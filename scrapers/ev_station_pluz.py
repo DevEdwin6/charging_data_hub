@@ -356,6 +356,7 @@ class EVStationPluZScraper:
         target = self._norm_search_text(name)
         deadline = time.time() + timeout
         nav_labels = {"Home", "Map", "Scan", "History", "Profile"}
+        scroll_attempts = 0
 
         while True:
             root = dump(self.d)
@@ -405,37 +406,53 @@ class EVStationPluZScraper:
                         ensure_connected(self.d)
                 return False
 
-            def text_matches(value, exact_start=False):
-                val = self._norm_search_text(value)
-                if not val:
-                    return False
-                return val.startswith(target) if exact_start else target in val
+            def scroll_search_results():
+                for _ in range(2):
+                    try:
+                        self.d.swipe(540, 1750, 540, 760, duration=0.3)
+                        time.sleep(0.8)
+                        return True
+                    except RemoteDisconnected:
+                        ensure_connected(self.d)
+                return False
 
-            # 策略 1：搜索结果卡片 content-desc 含站点名和距离。
-            for node in self._app_nodes(root):
-                if node.attrib.get("clickable") != "true" or not result_area(node):
-                    continue
+            def exact_name(value):
+                val = self._norm_search_text(value)
+                return val == target
+
+            def desc_exact_prefix(value):
+                val = self._norm_search_text(value)
+                return val == target or bool(re.match(rf"^{re.escape(target)}\s*,", val))
+
+            def result_name_matches(node):
+                for item in node.iter("node"):
+                    if exact_name(item.attrib.get("text", "")):
+                        return True
+                    if exact_name(item.attrib.get("content-desc", "")):
+                        return True
+                return desc_exact_prefix(node.attrib.get("content-desc", ""))
+
+            result_cards = [
+                node for node in self._app_nodes(root)
+                if node.attrib.get("clickable") == "true" and result_area(node)
+            ]
+
+            # 策略 1：搜索结果卡片标题精确匹配，且 content-desc 含距离。
+            for node in result_cards:
                 desc = node.attrib.get("content-desc", "")
-                if text_matches(desc) and re.search(r"\d+\.\d+\s*km", desc):
+                if result_name_matches(node) and re.search(r"\d+\.\d+\s*km", desc):
                     return click_result_node(node)
 
-            # 策略 2：搜索结果卡片 content-desc 以站点名开头。
-            for node in self._app_nodes(root):
-                if node.attrib.get("clickable") != "true" or not result_area(node):
-                    continue
-                desc = node.attrib.get("content-desc", "")
-                text = node.attrib.get("text", "")
-                if text_matches(desc, exact_start=True) or self._norm_search_text(text) == target:
+            # 策略 2：搜索结果卡片标题精确匹配。
+            for node in result_cards:
+                if result_name_matches(node):
                     return click_result_node(node)
 
             # 策略 3：站点名在不可点击 TextView 上，向上找可点击父容器。
             for node in self._app_nodes(root):
                 text = node.attrib.get("text", "")
                 desc = node.attrib.get("content-desc", "")
-                if not result_area(node) or not (
-                    text_matches(text, exact_start=True)
-                    or text_matches(desc, exact_start=True)
-                ):
+                if not result_area(node) or not (exact_name(text) or exact_name(desc)):
                     continue
                 p = parent.get(node)
                 while p is not None:
@@ -444,6 +461,11 @@ class EVStationPluZScraper:
                             and result_area(p)):
                         return click_result_node(p)
                     p = parent.get(p)
+
+            if result_cards and scroll_attempts < 2:
+                scroll_attempts += 1
+                if scroll_search_results():
+                    continue
 
             if time.time() >= deadline:
                 return False

@@ -78,6 +78,46 @@ def init_db() -> None:
     )
 
 
+def find_or_create_mode_run(platform_code: str, mode: str) -> int:
+    conn = db._get_conn()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(
+        """
+        SELECT id, run_label
+        FROM collection_runs
+        WHERE platform_code = %s
+          AND mode = %s
+          AND status = 'running'
+        ORDER BY started_at DESC
+        LIMIT 1
+        """,
+        (platform_code, mode),
+    )
+    row = cursor.fetchone()
+    cursor.close()
+
+    if row:
+        print(f"[续跑] 发现进行中的 {mode} 批次  run_id={row['id']}  label={row['run_label']}")
+        return row["id"]
+
+    now = datetime.now()
+    run_label = f"{platform_code}_{now.strftime('%Y%m%d_%H%M')}_{mode}"
+    cursor = conn.cursor()
+    cursor.execute(
+        """
+        INSERT INTO collection_runs
+            (platform_code, run_label, mode, status, started_at)
+        VALUES (%s, %s, %s, 'running', %s)
+        """,
+        (platform_code, run_label, mode, now),
+    )
+    conn.commit()
+    run_id = cursor.lastrowid
+    cursor.close()
+    print(f"[新批次] run_id={run_id}  label={run_label}")
+    return run_id
+
+
 def current_period() -> str:
     return EVStationPluZScraper.get_time_period(datetime.now())
 
@@ -201,6 +241,77 @@ def query_ptt_todo_stations(platform_code: str, time_period: str) -> list[dict]:
         todo.append(row)
 
     return todo
+
+
+def _split_station_ids(value: str | None) -> list[int]:
+    if not value:
+        return []
+    ids: list[int] = []
+    for part in value.replace("\n", ",").split(","):
+        part = part.strip()
+        if not part:
+            continue
+        ids.append(int(part))
+    return ids
+
+
+def load_station_ids(args: argparse.Namespace) -> list[int]:
+    ids = _split_station_ids(args.station_ids)
+    if args.station_ids_file:
+        path = Path(args.station_ids_file)
+        if not path.is_absolute():
+            path = ROOT / path
+        ids.extend(_split_station_ids(path.read_text(encoding="utf-8")))
+
+    seen: set[int] = set()
+    ordered: list[int] = []
+    for station_id in ids:
+        if station_id in seen:
+            continue
+        seen.add(station_id)
+        ordered.append(station_id)
+    return ordered
+
+
+def query_stations_by_ids(platform_code: str, station_ids: list[int]) -> list[dict]:
+    if not station_ids:
+        return []
+
+    placeholders = ", ".join(["%s"] * len(station_ids))
+    conn = db._get_conn()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute(
+        f"""
+        SELECT id, station_name,
+               COALESCE(brief_address, '') AS brief_address,
+               COALESCE(address, '') AS address,
+               hours_text, latitude, longitude, google_url
+        FROM station_sites
+        WHERE platform_code = %s
+          AND id IN ({placeholders})
+        ORDER BY FIELD(id, {placeholders})
+        """,
+        (platform_code, *station_ids, *station_ids),
+    )
+    rows = cursor.fetchall()
+    cursor.close()
+
+    stats_by_station = query_snapshot_stats(platform_code)
+    for row in rows:
+        stats = stats_by_station.get(row["id"])
+        row.update(
+            {
+                "reason": "force_recollect",
+                "address_missing": not _text(row.get("address")),
+                "no_snapshots": stats is None,
+                "connector_groups": _int(stats.get("connector_groups")) if stats else 0,
+                "missing_day_groups": _int(stats.get("missing_day_groups")) if stats else 0,
+                "missing_night_groups": _int(stats.get("missing_night_groups")) if stats else 0,
+                "snapshot_rows": _int(stats.get("snapshot_rows")) if stats else 0,
+                "needs_snapshot_or_price": True,
+            }
+        )
+    return rows
 
 
 def print_todo_summary(todo: list[dict], time_period: str, show: int) -> None:
@@ -331,7 +442,7 @@ def collect_station(
         existing_brief = _text(station.get("brief_address"))
         existing_address = _text(station.get("address"))
         full_address = scraped_full_address or existing_address or existing_brief
-        brief_address = existing_brief or existing_address or scraped_full_address
+        brief_address = scraped_full_address or existing_brief or existing_address
         hours_by_day = more.get("hours_by_day") or _load_hours_fallback(station.get("hours_text"))
 
         target = {
@@ -386,6 +497,16 @@ def parse_args() -> argparse.Namespace:
         help="Only print the current todo list. Do not connect to device or write DB.",
     )
     parser.add_argument(
+        "--station-ids",
+        default=None,
+        help="Comma-separated station_sites.id list to force recollect.",
+    )
+    parser.add_argument(
+        "--station-ids-file",
+        default=None,
+        help="UTF-8 file containing comma/newline-separated station_sites.id values to force recollect.",
+    )
+    parser.add_argument(
         "--show",
         type=int,
         default=30,
@@ -410,7 +531,16 @@ def main() -> int:
         print("数据库连接成功\n")
 
         period = current_period()
-        todo = query_ptt_todo_stations(EVStationPluZScraper.PLATFORM_CODE, period)
+        station_id_filter = load_station_ids(args)
+        if station_id_filter:
+            todo = query_stations_by_ids(EVStationPluZScraper.PLATFORM_CODE, station_id_filter)
+            found_ids = {row["id"] for row in todo}
+            missing_ids = [station_id for station_id in station_id_filter if station_id not in found_ids]
+            print(f"强制重采站点：{len(todo)}")
+            if missing_ids:
+                print(f"  !! 未找到 station_id：{', '.join(map(str, missing_ids))}")
+        else:
+            todo = query_ptt_todo_stations(EVStationPluZScraper.PLATFORM_CODE, period)
         print_todo_summary(todo, period, args.show)
 
         if args.dry_run:
@@ -420,7 +550,7 @@ def main() -> int:
             print("\n当前时段无待采站点")
             return 0
 
-        run_id = db.find_or_create_run(EVStationPluZScraper.PLATFORM_CODE, RUN_MODE)
+        run_id = find_or_create_mode_run(EVStationPluZScraper.PLATFORM_CODE, RUN_MODE)
         target_desc = f"{args.max_stations} 个站点" if args.max_stations else "全部待采站点"
         print(f"\n开始 PTT 补采，目标：{target_desc}  批次：run_id={run_id}\n")
 
@@ -444,10 +574,20 @@ def main() -> int:
                 active_period = now_period
                 attempted_ids.clear()
 
-            todo = query_ptt_todo_stations(EVStationPluZScraper.PLATFORM_CODE, active_period)
+            if station_id_filter:
+                todo = query_stations_by_ids(EVStationPluZScraper.PLATFORM_CODE, station_id_filter)
+            else:
+                todo = query_ptt_todo_stations(EVStationPluZScraper.PLATFORM_CODE, active_period)
             todo = [row for row in todo if row["id"] not in attempted_ids]
 
             if not todo:
+                if station_id_filter:
+                    print(f"\n指定站点已尝试完：成功 {success_count}，失败 {failure_count}")
+                    if failure_count:
+                        return 1
+                    db.complete_run(run_id)
+                    return 0
+
                 remaining = query_ptt_todo_stations(EVStationPluZScraper.PLATFORM_CODE, active_period)
                 if remaining:
                     print(f"\n本轮可尝试站点已处理完，但仍有 {len(remaining)} 个站点未补齐")

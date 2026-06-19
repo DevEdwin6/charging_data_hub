@@ -174,16 +174,40 @@ window.PTT_DATA = [
     "lon": 99.23365,
     "chargers": [
       {
-        "name": "GWC-OR-0087",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0087",
+        "name": "0087",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "163/2 Moo.12 Phahonyothin Road, Lom Raet, Thoen, Lampang 52160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S.Y.T.P Group",
@@ -275,6 +299,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -282,6 +307,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -306,6 +332,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -313,6 +340,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -320,6 +348,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -344,6 +373,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -351,6 +381,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -358,6 +389,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -382,6 +414,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 160.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -389,6 +422,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 160.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -396,6 +430,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -411,6 +446,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 160.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -418,6 +454,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 160.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -425,6 +462,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -439,16 +477,40 @@ window.PTT_DATA = [
     "lon": 100.106,
     "chargers": [
       {
-        "name": "GWC-OR-0249",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0249",
+        "name": "0249",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "280 Moo.11 Thung Nui, Khuan Kalong, Satun 91130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Chaiyaphum",
@@ -507,6 +569,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -514,6 +577,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -538,6 +602,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -545,6 +610,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -552,6 +618,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -566,11 +633,32 @@ window.PTT_DATA = [
     "lon": 99.139191,
     "chargers": [
       {
-        "name": "GWC-OR-0413",
+        "name": "0413",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "82 Moo.3 SaiAsia Road, Khlong Sai, Tha Chang, Surat Thani 84150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Khonkaen-Mitraphab",
@@ -578,11 +666,30 @@ window.PTT_DATA = [
     "lon": 102.8208085,
     "chargers": [
       {
-        "name": "THPORE240060",
+        "name": "240060",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "398/1 Moo.17, Nai Mueang Subdistrict, Mueang Khon Kaen District, Khon Kaen Province 40000 Nai Mueang, Mueang Khon Kaen, Khon Kaen 40000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Raming Oil",
@@ -590,11 +697,32 @@ window.PTT_DATA = [
     "lon": 99.01928,
     "chargers": [
       {
-        "name": "GWC-OR-1231",
+        "name": "1231",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "169 Moo.4 Nong Hoi, Mueang Chiang Mai, Chiang Mai 50000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Courtyard Phuket, Patong Beach Resort",
@@ -686,6 +814,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -693,6 +822,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -700,6 +830,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -714,11 +845,32 @@ window.PTT_DATA = [
     "lon": 99.973738,
     "chargers": [
       {
-        "name": "THPORE240077",
+        "name": "240077",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "16 Ratchadamnoen Road, Nai Mueang, Mueang Nakhon Si Thammarat, Nakhon Si Thammarat 80000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Prachuap Khiri Khan Petroleum",
@@ -726,16 +878,56 @@ window.PTT_DATA = [
     "lon": 99.782017,
     "chargers": [
       {
-        "name": "THPORE240243",
+        "name": "240243",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240244",
+        "name": "240244",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88 Moo.2 Phetkasem Road, Ko Lak, Mueang Prachuap Khiri Khan, Prachuap Khiri Khan 77000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "SUSCO Bang Wa",
@@ -786,6 +978,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -793,6 +986,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -800,6 +994,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -824,6 +1019,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -831,6 +1027,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -883,11 +1080,32 @@ window.PTT_DATA = [
     "lon": 104.089702,
     "chargers": [
       {
-        "name": "GWC-OR-0369",
+        "name": "0369",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "504 Udomkiat Road, That Choeng Chum, Mueang Sakon Nakhon, Sakon Nakhon 47000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Mulberry Mellow",
@@ -905,6 +1123,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 7.4,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -920,6 +1139,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -927,6 +1147,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -951,6 +1172,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -958,6 +1180,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -965,6 +1188,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -979,11 +1203,32 @@ window.PTT_DATA = [
     "lon": 100.631072,
     "chargers": [
       {
-        "name": "GWC-OR-0386",
+        "name": "0386",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "888/2 Moo.11 Khlong Nueng, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Phyathai 1 Hospital (Parking Building, 3rd Floor)",
@@ -1067,6 +1312,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1074,6 +1320,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -1088,16 +1335,37 @@ window.PTT_DATA = [
     "lon": 99.08907,
     "chargers": [
       {
-        "name": "GWC-OR-1128",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1128",
+        "name": "1128",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "129/4 Moo.12 San Kamphaeng, San Kamphaeng, Chiang Mai 50130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jiang-Asawan Nongkhai (Khu Khot)",
@@ -1115,7 +1383,6 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1123,7 +1390,6 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -1148,6 +1414,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1155,6 +1422,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -1169,11 +1437,32 @@ window.PTT_DATA = [
     "lon": 99.23423,
     "chargers": [
       {
-        "name": "GWC-OR-1235",
+        "name": "1235",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "171/4 Moo.12 Phahonyothin Road, Lom Raet, Thoen, Lampang 52160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Meechok Power Plus",
@@ -1191,6 +1480,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1198,6 +1488,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1205,6 +1496,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -1229,6 +1521,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -1236,6 +1529,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -1250,16 +1544,37 @@ window.PTT_DATA = [
     "lon": 99.62632,
     "chargers": [
       {
-        "name": "GWC-OR-0290",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0290",
+        "name": "0290",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "138 Phatthalung Road, Thap Thiang, Mueang Trang, Trang 92000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Phitsanulok Teerawat (Singhawat)",
@@ -1277,6 +1592,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1284,6 +1600,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -1308,6 +1625,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -1315,6 +1633,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -1322,6 +1641,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -1461,6 +1781,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1468,6 +1789,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -1475,6 +1797,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -1499,6 +1822,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -1506,6 +1830,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -1521,6 +1846,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -1528,6 +1854,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -1543,6 +1870,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -1550,6 +1878,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -1574,6 +1903,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1581,6 +1911,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1588,6 +1919,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -1595,6 +1927,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -1602,6 +1935,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1609,6 +1943,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -1624,6 +1959,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -1631,6 +1967,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -1638,6 +1975,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -1645,6 +1983,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1652,6 +1991,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           }
         ]
@@ -1667,6 +2007,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -1674,6 +2015,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1681,6 +2023,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1688,6 +2031,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -1695,6 +2039,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1702,6 +2047,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 480.0,
             "price_day": 9.4,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -1709,6 +2055,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -1716,6 +2063,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 240.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -1730,16 +2078,40 @@ window.PTT_DATA = [
     "lon": 102.5048,
     "chargers": [
       {
-        "name": "GWC-OR-0278",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0278",
+        "name": "0278",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "30/1 Moo.5 Trat-Laem Ngop Road Nong Samet, Mueang Trat, Trat 23000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chai Phromburi Petroleum",
@@ -1757,6 +2129,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -1764,6 +2137,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -1771,6 +2145,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -1785,11 +2160,32 @@ window.PTT_DATA = [
     "lon": 100.1658,
     "chargers": [
       {
-        "name": "GWC-OR-0283",
+        "name": "0283",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "35/22 Moo.1 Bang Kaeo, Nakhon Chai Si, Nakhon Pathom 73120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Wang Chan Energy",
@@ -1797,11 +2193,32 @@ window.PTT_DATA = [
     "lon": 101.5229885,
     "chargers": [
       {
-        "name": "GWC-OR-1410",
+        "name": "1410",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "444 Moo.1 Chum Saeng, Wang Chan, Rayong 21210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Suwan Energy and Trade",
@@ -1809,16 +2226,40 @@ window.PTT_DATA = [
     "lon": 100.3113,
     "chargers": [
       {
-        "name": "GWC-OR-0339",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0339",
+        "name": "0339",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "68/3 Moo.13 Om Noi, Krathum Baen, Samut Sakhon 74130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC VarinChamrab",
@@ -1900,16 +2341,40 @@ window.PTT_DATA = [
     "lon": 100.5448,
     "chargers": [
       {
-        "name": "GWC-OR-0228",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0228",
+        "name": "0228",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "47/15 Moo.6 Nam Noi, Hat Yai, Songkhla 90110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Siam Scape Building (4th Floor)",
@@ -2159,6 +2624,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2166,6 +2632,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -2190,6 +2657,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2197,6 +2665,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -2254,6 +2723,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2261,6 +2731,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2285,6 +2756,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2292,6 +2764,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2316,6 +2789,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -2323,6 +2797,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -2330,6 +2805,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -2344,11 +2820,30 @@ window.PTT_DATA = [
     "lon": 100.432466,
     "chargers": [
       {
-        "name": "THPORE240206",
+        "name": "240206",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Nonthaburi-Western Ring Road Km 51",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sichon",
@@ -2356,16 +2851,40 @@ window.PTT_DATA = [
     "lon": 99.881517,
     "chargers": [
       {
-        "name": "GWC-OR-0066",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0066",
+        "name": "0066",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "40 Moo.9 Sichon, Sichon, Nakhon Si Thammarat 80120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Yasothon",
@@ -2424,6 +2943,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2431,6 +2951,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -2455,6 +2976,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2462,6 +2984,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2486,6 +3009,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2493,6 +3017,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2550,6 +3075,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2557,6 +3083,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -2581,6 +3108,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2588,6 +3116,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2595,6 +3124,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2619,6 +3149,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2626,6 +3157,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2633,6 +3165,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2647,11 +3180,32 @@ window.PTT_DATA = [
     "lon": 102.8268173,
     "chargers": [
       {
-        "name": "GWC-OR-1357",
+        "name": "1357",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "78 Moo.14 Mueang Kao, Mueang Khon Kaen, Khon Kaen 40000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Sukhothai",
@@ -2791,16 +3345,37 @@ window.PTT_DATA = [
     "lon": 101.0835,
     "chargers": [
       {
-        "name": "GWC-OR-0248",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0248",
+        "name": "0248",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "354 Moo.6 Bo Win, Si Racha, Chon Buri 20230",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Ban Pho",
@@ -2818,6 +3393,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2825,6 +3401,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -2832,6 +3409,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2846,11 +3424,32 @@ window.PTT_DATA = [
     "lon": 101.788655,
     "chargers": [
       {
-        "name": "THPORE240068",
+        "name": "240068",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "191 Moo.10 Si Kiew - Chaiyaphum Road, Nong Bua Takiat, Dan Khun Thot, Nakhon Ratchasima 30210",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Supthawee Km. 6",
@@ -2858,11 +3457,32 @@ window.PTT_DATA = [
     "lon": 102.7899,
     "chargers": [
       {
-        "name": "GWC-OR-1276",
+        "name": "1276",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "158 Moo.13 Nong Khai - Phon Phisai Road, Hat Kham, Mueang Nong Khai, Nong Khai 43000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ban Bueng",
@@ -2880,6 +3500,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2887,6 +3508,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2894,6 +3516,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2908,11 +3531,32 @@ window.PTT_DATA = [
     "lon": 103.0862113,
     "chargers": [
       {
-        "name": "THPORE240236",
+        "name": "240236",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "287 Moo.5 Prakhon Chai, Prakhon Chai, Buri Ram 31140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sida Thaveechai Petroleum",
@@ -2920,11 +3564,32 @@ window.PTT_DATA = [
     "lon": 102.547833,
     "chargers": [
       {
-        "name": "THPORE250011",
+        "name": "250011",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "211 Moo.1 Mittraphap Road, Phon Thong, Sida, Nakhon Ratchasima 30430",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jomthong Petroleum Service",
@@ -2942,6 +3607,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2949,6 +3615,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -2973,6 +3640,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -2980,6 +3648,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -2987,6 +3656,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3011,6 +3681,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3018,6 +3689,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -3025,6 +3697,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3039,11 +3712,32 @@ window.PTT_DATA = [
     "lon": 99.96733,
     "chargers": [
       {
-        "name": "GWC-OR-1237",
+        "name": "1237",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "151 Moo.2 Na Kae, Ngao, Lampang 52110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ratchaburi",
@@ -3051,16 +3745,40 @@ window.PTT_DATA = [
     "lon": 99.79778,
     "chargers": [
       {
-        "name": "GWC-OR-0076",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0076",
+        "name": "0076",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "218 Moo.4 Ang Thong, Mueang Ratchaburi, Ratchaburi 70000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "SUSCO Sukhapiban 5",
@@ -3101,16 +3819,40 @@ window.PTT_DATA = [
     "lon": 101.0592,
     "chargers": [
       {
-        "name": "GWC-OR-1060",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1060",
+        "name": "1060",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.5 Khok Sa-at, Si Thep, Phetchabun 67170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Koh Chang Gas (1)",
@@ -3128,6 +3870,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3135,6 +3878,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3149,11 +3893,32 @@ window.PTT_DATA = [
     "lon": 99.9122,
     "chargers": [
       {
-        "name": "GWC-OR-0109",
+        "name": "0109",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "403/1 Phahonyothin Road, Mae Tam, Mueang Phayao, Phayao 56000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "The Mall Ngamwongwan (3rd Floor)",
@@ -3266,6 +4031,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "AC Type 2",
             "kw": 22.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           },
@@ -3273,6 +4039,7 @@ window.PTT_DATA = [
             "position": "ซ้าย-A",
             "type": "AC Type 2",
             "kw": 22.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -3343,7 +4110,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "408, 410, 412, 414, 416, 418, 420, 422, 424, 426, 428, 430, 430/1 Ngamwongwan Road, Bang Khen, Mueang Nonthaburi, Nonthaburi 11000"
+    "address": "408, 410, 412, 414, 416, 418, 420, 422, 424, 426, 428, 430, 430/1 Ngamwongwan Road, Bang Khen, Mueang Nonthaburi, Nonthaburi 11000",
+    "hours": "09:00 - 23:00 hr."
   },
   {
     "name": "PTT Station Chainarong Southern Petroleum",
@@ -3361,6 +4129,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3368,6 +4137,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -3392,6 +4162,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -3399,6 +4170,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -3406,6 +4178,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3430,6 +4203,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3437,6 +4211,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -3444,6 +4219,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3468,6 +4244,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3475,6 +4252,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -3490,6 +4268,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3497,6 +4276,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -3512,6 +4292,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3519,6 +4300,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -3534,6 +4316,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -3541,6 +4324,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -3555,16 +4339,40 @@ window.PTT_DATA = [
     "lon": 102.7977,
     "chargers": [
       {
-        "name": "GWC-OR-0095",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0095",
+        "name": "0095",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "252/8-9,10 Prajaksilpakom Road, Mak Khaeng, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phukang Premium",
@@ -3615,6 +4423,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3622,6 +4431,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3679,6 +4489,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3686,6 +4497,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3700,11 +4512,32 @@ window.PTT_DATA = [
     "lon": 100.413405,
     "chargers": [
       {
-        "name": "THPORE240270",
+        "name": "240270",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "189/11 Moo.5 Tha Chang, Bang Klam, Songkhla 90110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Ratchadamri (B Floor)",
@@ -3745,16 +4578,40 @@ window.PTT_DATA = [
     "lon": 101.3067,
     "chargers": [
       {
-        "name": "GWC-OR-0264",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0264",
+        "name": "0264",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "18/18 Moo.9 Hua Samrong, Plaeng Yao, Chachoengsao 24190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "LPG Auto Station Maliwan Gas",
@@ -3772,6 +4629,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3779,6 +4637,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -3786,6 +4645,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -3876,6 +4736,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -3883,6 +4744,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -3898,6 +4760,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3905,6 +4768,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -3920,6 +4784,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3927,6 +4792,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -3942,6 +4808,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -3949,6 +4816,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -4004,11 +4872,30 @@ window.PTT_DATA = [
     "lon": 99.313182,
     "chargers": [
       {
-        "name": "THPORE240120",
+        "name": "240120",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "71/3 Moo.6 Donsak-Khanom Road, Don Sak, Don Sak, Surat Thani 84220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Udonthani-Nakha Km.470 (IB)",
@@ -4016,11 +4903,30 @@ window.PTT_DATA = [
     "lon": 102.8008059,
     "chargers": [
       {
-        "name": "THPORE240220",
+        "name": "240220",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "509 Moo.1 Na Kha, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Rangsit Khlong 6",
@@ -4071,6 +4977,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4078,6 +4985,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -4192,6 +5100,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -4199,6 +5108,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -4206,6 +5116,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4230,6 +5141,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4237,6 +5149,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4252,6 +5165,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -4259,6 +5173,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4274,6 +5189,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -4281,6 +5197,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -4296,6 +5213,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -4303,6 +5221,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -4318,6 +5237,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -4325,6 +5245,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -4340,6 +5261,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -4347,6 +5269,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -4371,6 +5294,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -4378,6 +5302,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4443,6 +5368,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4450,6 +5376,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4457,6 +5384,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4812,6 +5740,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4819,6 +5748,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -4833,16 +5763,40 @@ window.PTT_DATA = [
     "lon": 101.0471,
     "chargers": [
       {
-        "name": "GWC-OR-1073",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1073",
+        "name": "1073",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "36/2 Moo.3 Suwinthawong Road Wang Takhian, Mueang Chachoengsao, Chachoengsao 24000",
+    "hours": "Fri: 06:00 - 22:00 hr.; Mon: 06:00 - 22:00 hr.; Sat: Facilities; Sun: 06:00 - 22:00 hr.; Thu: 06:00 - 22:00 hr.; Tue: 06:00 - 22:00 hr.; Wed: 06:00 - 22:00 hr."
   },
   {
     "name": "PTT NGV Station Handlita Engineering",
@@ -4860,6 +5814,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -4867,6 +5822,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -4891,7 +5847,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "available"
+            "status": "occupied"
           },
           {
             "position": "ขวา-B",
@@ -5097,11 +6053,32 @@ window.PTT_DATA = [
     "lon": 101.692321,
     "chargers": [
       {
-        "name": "THPORE240050",
+        "name": "240050",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "62/6 Moo.21 Suranarai Road, Ban Phet, Bamnet Narong, Chaiyaphum 36160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Werachai Lomsak Service",
@@ -5109,16 +6086,40 @@ window.PTT_DATA = [
     "lon": 101.1269,
     "chargers": [
       {
-        "name": "GWC-OR-1019",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1019",
+        "name": "1019",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "239/102 Moo.1 Chon Phrai, Mueang Phetchabun, Phetchabun 67000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station 11.5 Oil",
@@ -5169,6 +6170,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -5176,6 +6178,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -5190,11 +6193,30 @@ window.PTT_DATA = [
     "lon": 100.843432,
     "chargers": [
       {
-        "name": "THPORE240251",
+        "name": "240251",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Bangna-Trad km.27",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "JC Town Square Wanghin",
@@ -5261,6 +6283,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -5268,6 +6291,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -5283,6 +6307,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -5290,6 +6315,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -5305,6 +6331,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -5312,6 +6339,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -5327,6 +6355,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -5334,6 +6363,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -5349,6 +6379,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -5356,6 +6387,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -5363,6 +6395,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -5428,6 +6461,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -5435,6 +6469,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -5459,6 +6494,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -5466,6 +6502,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -5556,6 +6593,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -5563,6 +6601,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -5570,6 +6609,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -5584,16 +6624,37 @@ window.PTT_DATA = [
     "lon": 100.1285,
     "chargers": [
       {
-        "name": "GWC-OR-0237",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0237",
+        "name": "0237",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "449 Moo.5 Tha Rahat, Mueang Suphan Buri, Suphan Buri 72000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Siam Power Rich",
@@ -5859,11 +6920,32 @@ window.PTT_DATA = [
     "lon": 102.7357,
     "chargers": [
       {
-        "name": "GWC-OR-1368",
+        "name": "1368",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "706/11-14 Moo.1 Jane Jobtit Road, Nai Mueang, Ban Phai, Khon Kaen 40110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thamrat Petroleum",
@@ -5871,16 +6953,40 @@ window.PTT_DATA = [
     "lon": 99.4957314,
     "chargers": [
       {
-        "name": "GWC-OR-0079",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0079",
+        "name": "0079",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "8/13 Moo.13 Phahonyothin Road, Nakhon Chum, Mueang Kamphaeng Phet, Kamphaeng Phet 62000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station ChanpenPTT Sriracha",
@@ -5898,6 +7004,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -5905,6 +7012,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -5912,6 +7020,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -5936,6 +7045,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -5943,6 +7053,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -5950,6 +7061,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6056,6 +7168,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6063,6 +7176,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -6070,6 +7184,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6239,11 +7354,30 @@ window.PTT_DATA = [
     "lon": 101.327012,
     "chargers": [
       {
-        "name": "THPORE250096",
+        "name": "250096",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Rayong–Sukhumvit 2",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Wang Chan (DC 6 guns)",
@@ -6251,21 +7385,80 @@ window.PTT_DATA = [
     "lon": 101.4464286,
     "chargers": [
       {
-        "name": "GWC-OR-5004",
+        "name": "5004",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-5005",
+        "name": "5005",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-5006",
+        "name": "5006",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "152 Moo.6 Pa Yup Nai, Wang Chan, Rayong 21210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Thai Watsadu Singburi",
@@ -6273,16 +7466,37 @@ window.PTT_DATA = [
     "lon": 100.4092502,
     "chargers": [
       {
-        "name": "GWC-OR-0239",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0239",
+        "name": "0239",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "150 Moo.1 Bang Man, Mueang Sing Buri, Sing Buri 16000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Phetchaburi Lum Yuk",
@@ -6300,6 +7514,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6307,6 +7522,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6331,6 +7547,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6338,6 +7555,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6345,6 +7563,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6400,11 +7619,32 @@ window.PTT_DATA = [
     "lon": 101.1696,
     "chargers": [
       {
-        "name": "GWC-OR-1184",
+        "name": "1184",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTT Station Tambon Map Kha",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station T.V.S. Oil",
@@ -6412,16 +7652,40 @@ window.PTT_DATA = [
     "lon": 104.271478,
     "chargers": [
       {
-        "name": "GWC-OR-0214",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0214",
+        "name": "0214",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "239 Moo.7 Nong Phai, Mueang Si Sa Ket, Si Sa Ket 33000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station PTD Group 1441",
@@ -6429,16 +7693,40 @@ window.PTT_DATA = [
     "lon": 101.2615,
     "chargers": [
       {
-        "name": "GWC-OR-0230",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0230",
+        "name": "0230",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "2/13 Moo.4 Tha Sap, Mueang Yala, Yala 95000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Extra Ramintra",
@@ -6512,11 +7800,32 @@ window.PTT_DATA = [
     "lon": 99.64787,
     "chargers": [
       {
-        "name": "GWC-OR-4010",
+        "name": "4010",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "2/1 Moo.2 Phetkasem Road, Saeng Arun, Thap Sakae, Prachuap Khiri Khan 77130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S.S. Petroleum  2015",
@@ -6524,16 +7833,40 @@ window.PTT_DATA = [
     "lon": 102.7996,
     "chargers": [
       {
-        "name": "GWC-OR-1012",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1012",
+        "name": "1012",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "567 Moo.7 Nong Bua, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 05:00 - 22:00 hr.; Mon: 05:00 - 22:00 hr.; Sat: Facilities; Sun: 05:00 - 22:00 hr.; Thu: 05:00 - 22:00 hr.; Tue: 05:00 - 22:00 hr.; Wed: 05:00 - 22:00 hr."
   },
   {
     "name": "PTT Station Mahapoka Petroleum",
@@ -6551,6 +7884,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6558,6 +7892,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -6572,16 +7907,37 @@ window.PTT_DATA = [
     "lon": 103.532,
     "chargers": [
       {
-        "name": "GWC-OR-0245",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0245",
+        "name": "0245",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "338 Moo.16 Salakdai, Mueang Surin, Surin 32000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Fusang Service 2008",
@@ -6599,6 +7955,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -6606,6 +7963,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6620,11 +7978,30 @@ window.PTT_DATA = [
     "lon": 99.0157026,
     "chargers": [
       {
-        "name": "THPORE240091",
+        "name": "240091",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "469 Moo.4 Nong Chom, San Sai, Chiang Mai 50210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Viyada Petroleum (2000) (Don Sak)",
@@ -6632,11 +8009,30 @@ window.PTT_DATA = [
     "lon": 99.7205,
     "chargers": [
       {
-        "name": "GWC-OR-1363",
+        "name": "1363",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "71/3 Moo.6 Donsak-Khanom Road, Don Sak, Don Sak, Surat Thani 84220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Hua Sai Petroleum",
@@ -6654,6 +8050,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6661,6 +8058,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -6675,11 +8073,32 @@ window.PTT_DATA = [
     "lon": 102.1236836,
     "chargers": [
       {
-        "name": "THPORE240061",
+        "name": "240061",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "999 Moo.18 Chum Phae, Chum Phae, Khon Kaen 40130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Rayong-Banchang Km.192 (IB)",
@@ -6687,16 +8106,37 @@ window.PTT_DATA = [
     "lon": 101.040015,
     "chargers": [
       {
-        "name": "GWC-OR-4066",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-4066",
+        "name": "4066",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "76/119 Moo.3 Phala, Ban Chang, Rayong 21130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Tiwanon",
@@ -6745,16 +8185,40 @@ window.PTT_DATA = [
     "lon": 101.0571,
     "chargers": [
       {
-        "name": "GWC-OR-1170",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1170",
+        "name": "1170",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "27/3 Moo.5 Bypass road-bypass Road, Bang Phra, Mueang Chachoengsao, Chachoengsao 24000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nopphadung Patthana",
@@ -6772,6 +8236,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6779,6 +8244,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -6803,6 +8269,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -6810,6 +8277,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -6825,6 +8293,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -6832,6 +8301,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -6847,6 +8317,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -6854,6 +8325,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -6869,6 +8341,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -6876,6 +8349,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -6891,6 +8365,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -6898,6 +8373,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -6905,6 +8381,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -6929,6 +8406,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -6936,6 +8414,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -6943,6 +8422,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "available"
           }
         ]
@@ -6967,6 +8447,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -6974,6 +8455,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -6989,6 +8471,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -6996,6 +8479,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7011,6 +8495,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -7018,6 +8503,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -7033,6 +8519,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -7040,6 +8527,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7097,7 +8585,153 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "PTT Station Bang Pa-In Industrial Estate",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Saraphi (HUB)",
+    "lat": 18.66963,
+    "lon": 99.05187,
+    "chargers": [
+      {
+        "name": "250021",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "name": "250022",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
+      },
+      {
+        "name": "250023",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "name": "250101",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "75 Chiang Mai-Lampang Road, Saraphi, Saraphi, Chiang Mai 50140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "Robinson Lifestyle Mukdahan",
+    "lat": 16.56934,
+    "lon": 104.7185,
+    "chargers": [
+      {
+        "name": "1075",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
           },
           {
             "position": "ขวา-B",
@@ -7116,52 +8750,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "PTT Station Bang Pa-In Industrial Estate",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Saraphi (HUB)",
-    "lat": 18.66963,
-    "lon": 99.05187,
-    "chargers": [
-      {
-        "name": "THPORE250021",
-        "type": "DC",
-        "heads": 2
-      },
-      {
-        "name": "THPORE250022",
-        "type": "DC",
-        "heads": 2
-      },
-      {
-        "name": "THPORE250023",
-        "type": "DC",
-        "heads": 2
-      },
-      {
-        "name": "THPORE250101",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "Robinson Lifestyle Mukdahan",
-    "lat": 16.56934,
-    "lon": 104.7185,
-    "chargers": [
-      {
-        "name": "GWC-OR-1075",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1075",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "99/11 Chayangkun Road, Mukdahan, Mueang Mukdahan, Mukdahan 49000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Sawatdekarnkongbin 1",
@@ -7169,16 +8759,40 @@ window.PTT_DATA = [
     "lon": 102.0567,
     "chargers": [
       {
-        "name": "GWC-OR-0092",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0092",
+        "name": "0092",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1 Moo.1 Nong Phai Lom, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Supaphol Petroleum",
@@ -7186,16 +8800,40 @@ window.PTT_DATA = [
     "lon": 101.7522069,
     "chargers": [
       {
-        "name": "GWC-OR-0343",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0343",
+        "name": "0343",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "55,77 Moo.13 Mueang Kao, Kabin Buri, Prachin Buri 25240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Hat Yai International Airport",
@@ -7213,6 +8851,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -7220,6 +8859,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7227,6 +8867,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7241,26 +8882,104 @@ window.PTT_DATA = [
     "lon": 101.6318054,
     "chargers": [
       {
-        "name": "THPORE240291",
+        "name": "240291",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240292",
+        "name": "240292",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240293",
+        "name": "240293",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240294",
+        "name": "240294",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "226 Moo.15 Mittraphap Road, Lat Bua Khao, Sikhio, Nakhon Ratchasima 30340",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Oriental Residence Bangkok",
@@ -7310,6 +9029,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7317,6 +9037,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -7324,6 +9045,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7338,11 +9060,32 @@ window.PTT_DATA = [
     "lon": 103.634865,
     "chargers": [
       {
-        "name": "GWC-OR-1459",
+        "name": "1459",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "119 Moo.4 Roi-et-Kalasin Road, Nong Waeng, Mueang Roi Et, Roi Et 45000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Hua Hin (HUB)",
@@ -7360,6 +9103,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7367,6 +9111,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7382,6 +9127,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "closed"
           },
           {
@@ -7389,6 +9135,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7404,6 +9151,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -7411,6 +9159,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7426,6 +9175,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -7433,6 +9183,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7448,6 +9199,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -7455,6 +9207,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7535,11 +9288,32 @@ window.PTT_DATA = [
     "lon": 104.386308,
     "chargers": [
       {
-        "name": "GWC-OR-1377",
+        "name": "1377",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "159 Moo.6 Pho, Mueang Si Sa Ket, Si Sa Ket 33000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station K.T.D. Petroleum (HUB)",
@@ -7557,6 +9331,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7564,6 +9339,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -7571,6 +9347,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7586,6 +9363,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -7593,6 +9371,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7608,6 +9387,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -7615,6 +9395,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7630,6 +9411,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -7637,6 +9419,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7652,6 +9435,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -7659,6 +9443,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -7740,6 +9525,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7747,6 +9533,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -7754,6 +9541,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -7768,11 +9556,32 @@ window.PTT_DATA = [
     "lon": 101.367839,
     "chargers": [
       {
-        "name": "THPORE240183",
+        "name": "240183",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "312 Moo.7 Nong Bua, Phu Ruea, Loei 42160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phukang Oil",
@@ -7790,6 +9599,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7797,6 +9607,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7811,16 +9622,40 @@ window.PTT_DATA = [
     "lon": 100.0742,
     "chargers": [
       {
-        "name": "GWC-OR-0140",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0140",
+        "name": "0140",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "451 Moo.1 Khuan Khanun, Khao Chaison, Phatthalung 93130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Wachirabarami (HUB)",
@@ -7828,21 +9663,80 @@ window.PTT_DATA = [
     "lon": 100.145309,
     "chargers": [
       {
-        "name": "THPORE240373",
+        "name": "240373",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE240374",
+        "name": "240374",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE240375",
+        "name": "240375",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "61 Moo.5 Ban Na, Wachirabarami, Phichit 66140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nongkhai Jaruvong Service",
@@ -7860,6 +9754,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7867,6 +9762,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7874,6 +9770,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7898,6 +9795,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -7905,6 +9803,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -7952,18 +9851,37 @@ window.PTT_DATA = [
     "lon": 98.36231,
     "chargers": [
       {
-        "name": "GWC-OR-0288",
-        "type": "AC",
-        "heads": 1,
-        "kw": 22.0
-      },
-      {
-        "name": "GWC-OR-0288",
+        "name": "0288",
         "type": "DC",
-        "heads": 2,
-        "kw": 120.0
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "8/88 Moo.5 Si Sunthon, Thalang, Phuket 83110",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "Design Village Phutthamonthon",
@@ -8027,11 +9945,32 @@ window.PTT_DATA = [
     "lon": 101.4377304,
     "chargers": [
       {
-        "name": "THPORE240049",
+        "name": "240049",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "780/11 Moo.1 Suranarai Rd., Watabaek Subdistrict, Thepsathit District, Chaiyaphum 36230 Wa Tabaek, Thep Sathit, Chaiyaphum 36230",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Oil Thaipermpool",
@@ -8049,6 +9988,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -8056,6 +9996,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -8063,6 +10004,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -8077,11 +10019,32 @@ window.PTT_DATA = [
     "lon": 99.22106,
     "chargers": [
       {
-        "name": "GWC-OR-0474",
+        "name": "0474",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "123/3 Moo.4 Sap Thawi, Ban Na Doem, Surat Thani 84240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kitseri Petroleum",
@@ -8099,6 +10062,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8106,6 +10070,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -8186,6 +10151,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8193,6 +10159,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8200,6 +10167,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -8214,11 +10182,32 @@ window.PTT_DATA = [
     "lon": 100.4281,
     "chargers": [
       {
-        "name": "GWC-OR-1383",
+        "name": "1383",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "69/1 Moo.2 Bang Nom Kho, Sena, Phra Nakhon Si Ayutthaya 13110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Nakhon Si Thammarat 2",
@@ -8350,6 +10339,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           },
@@ -8357,6 +10347,7 @@ window.PTT_DATA = [
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8372,6 +10363,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8387,6 +10379,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8402,6 +10395,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8417,6 +10411,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8432,6 +10427,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8447,6 +10443,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8462,6 +10459,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8477,6 +10475,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8516,6 +10515,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           },
@@ -8523,6 +10523,7 @@ window.PTT_DATA = [
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           }
@@ -8538,6 +10539,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "not in operating hours"
           },
@@ -8552,7 +10554,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "414  Phayathai  Road, Wang Mai, Pathum Wan, Bangkok 10330"
+    "address": "414  Phayathai  Road, Wang Mai, Pathum Wan, Bangkok 10330",
+    "hours": "05:00 - 23:59 hr."
   },
   {
     "name": "PTT Station Prasertsin Petroleum",
@@ -8560,11 +10563,32 @@ window.PTT_DATA = [
     "lon": 101.9636,
     "chargers": [
       {
-        "name": "GWC-OR-1268",
+        "name": "1268",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "42 Moo.6 Mitrtraphap Road, Khok Kruat, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30280",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jiang-Asawan Nongkhai (Suvarnabhumi)",
@@ -8605,11 +10629,32 @@ window.PTT_DATA = [
     "lon": 101.7202,
     "chargers": [
       {
-        "name": "GWC-OR-1370",
+        "name": "1370",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "789 Moo.2 Mittraphap, Sikhio, Nakhon Ratchasima 30140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Bangkok LifeStyle",
@@ -8627,6 +10672,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -8634,6 +10680,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -8658,6 +10705,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -8665,6 +10713,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -8689,6 +10738,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8696,6 +10746,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -8710,11 +10761,32 @@ window.PTT_DATA = [
     "lon": 101.0208,
     "chargers": [
       {
-        "name": "GWC-OR-1217",
+        "name": "1217",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1/14 Moo.11 Na Pa, Mueang Chon Buri, Chon Buri 20000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "LPG Auto Station Sarakham Auto Gas",
@@ -8732,6 +10804,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8739,6 +10812,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8746,6 +10820,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -8760,11 +10835,30 @@ window.PTT_DATA = [
     "lon": 99.8110579,
     "chargers": [
       {
-        "name": "GWC-OR-2110",
+        "name": "2110",
         "type": "AC",
-        "heads": 2
+        "heads": 2,
+        "kw": 22.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "265 Sri Suriyawong Road, Na Mueang, Mueang Ratchaburi, Ratchaburi 70000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Ratsada Phuket (DC 6 guns)",
@@ -8772,24 +10866,80 @@ window.PTT_DATA = [
     "lon": 98.369964,
     "chargers": [
       {
-        "name": "THPORE250035",
+        "name": "250035",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE250036",
+        "name": "250036",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE250037",
+        "name": "250037",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "108/190 Moo.5 Ratsada, Mueang Phuket, Phuket 83000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kathu 2 (HUB)",
@@ -8807,6 +10957,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8814,6 +10965,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -8829,6 +10981,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -8836,6 +10989,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -8851,6 +11005,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -8858,6 +11013,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -8873,6 +11029,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "closed"
           },
           {
@@ -8880,6 +11037,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "closed"
           }
         ]
@@ -8895,6 +11053,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "closed"
           },
           {
@@ -8902,6 +11061,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "closed"
           }
         ]
@@ -8917,6 +11077,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -8924,6 +11085,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -9014,6 +11176,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9021,6 +11184,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9028,6 +11192,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9042,11 +11207,32 @@ window.PTT_DATA = [
     "lon": 101.2668,
     "chargers": [
       {
-        "name": "GWC-OR-1140",
+        "name": "1140",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "65/3 Moo.3 Sukhumvit Road, Choeng Noen, Mueang Rayong, Rayong 21000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kiat Sompong (HUB)",
@@ -9064,6 +11250,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9071,6 +11258,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9078,6 +11266,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9093,6 +11282,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -9100,6 +11290,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -9115,6 +11306,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -9122,6 +11314,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -9137,6 +11330,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -9144,6 +11338,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -9159,6 +11354,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -9166,6 +11362,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -9180,16 +11377,37 @@ window.PTT_DATA = [
     "lon": 103.0642,
     "chargers": [
       {
-        "name": "GWC-OR-0243",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0243",
+        "name": "0243",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "125 Moo.6 Buriram-Nangrong Road, Krasang, Mueang Buri Ram, Buri Ram 31000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Limroongsup Branch 2",
@@ -9207,6 +11425,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9214,6 +11433,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9238,6 +11458,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9245,6 +11466,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9260,6 +11482,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -9267,6 +11490,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -9282,6 +11506,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -9289,6 +11514,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -9304,6 +11530,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -9311,6 +11538,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -9326,6 +11554,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -9333,6 +11562,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -9347,11 +11577,32 @@ window.PTT_DATA = [
     "lon": 100.3457291,
     "chargers": [
       {
-        "name": "THPORE240001",
+        "name": "240001",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "63 Moo.ึ7 Phan Thai Norasing, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Dancoon Green Power",
@@ -9392,16 +11643,45 @@ window.PTT_DATA = [
     "lon": 102.0882,
     "chargers": [
       {
-        "name": "THPORE240323",
-        "type": "DC",
-        "heads": 2
+        "name": "2038",
+        "type": "AC",
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2038",
-        "type": "AC",
-        "heads": 1
+        "name": "240323",
+        "type": "DC",
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 8.0,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 8.0,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Mittraphap Road, Nai Mueang, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "10:00 - 23:00 hr."
   },
   {
     "name": "PTT Station Petchprakong",
@@ -9475,6 +11755,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9482,6 +11763,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9506,6 +11788,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9513,6 +11796,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           }
         ]
@@ -9537,6 +11821,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9544,6 +11829,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9558,16 +11844,40 @@ window.PTT_DATA = [
     "lon": 100.3969,
     "chargers": [
       {
-        "name": "GWC-OR-0338",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0338",
+        "name": "0338",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "38/6 Moo.6 Suphanburi-Bang Bua Thong Road, Lahan, Bang Bua Thong, Nonthaburi 11110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Korchangyu Petroleum Business",
@@ -9585,6 +11895,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9592,6 +11903,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9672,6 +11984,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9679,6 +11992,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9686,6 +12000,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9743,6 +12058,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9750,6 +12066,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9774,6 +12091,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9781,6 +12099,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9828,16 +12147,40 @@ window.PTT_DATA = [
     "lon": 104.8155,
     "chargers": [
       {
-        "name": "GWC-OR-0216",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0216",
+        "name": "0216",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "3 Moo.2 Non Phueng, Warin Chamrap, Ubon Ratchathani 34190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phutthamonthon Sai 5",
@@ -9855,6 +12198,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9862,6 +12206,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -9869,6 +12214,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -9893,6 +12239,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -9900,6 +12247,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -9998,6 +12346,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -10005,6 +12354,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -10019,11 +12369,32 @@ window.PTT_DATA = [
     "lon": 101.6312,
     "chargers": [
       {
-        "name": "GWC-OR-1143",
+        "name": "1143",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 7.9,
+            "status": "booked"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "299 Moo.3 Sukhumvit Road, Wang Wa, Klaeng, Rayong 21110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chiang Mai Sahachai Wattana",
@@ -10032,6 +12403,146 @@ window.PTT_DATA = [
     "chargers": [
       {
         "name": "1039",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "157 Moo.5 San Na Meng, San Sai, Chiang Mai 50210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station VSS Petroleum",
+    "lat": 14.24754,
+    "lon": 99.81238,
+    "chargers": [
+      {
+        "name": "1333",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "224 Moo.9 Rang Wai, Phanom Thuan, Kanchanaburi 71170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Hiaphol Sunglui Sonong Chattem Mangmi Srisuk",
+    "lat": 13.811676,
+    "lon": 102.079225,
+    "chargers": [
+      {
+        "name": "240274",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "1111 Suwannasorn Road, Sa Kaeo, Mueang Sa Kaeo, Sa kaeo 27000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Thanawin 24",
+    "lat": 16.4590731,
+    "lon": 103.521222,
+    "chargers": [
+      {
+        "name": "1433",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "405 หมู่บ้าน บ้านหนองบัวน้อย Moo.5 Phon Thong, Mueang Kalasin, Kalasin 46000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "Robinson Lifestyle Chonburi",
+    "lat": 13.40645,
+    "lon": 101.0413,
+    "chargers": [
+      {
+        "name": "0260",
         "type": "DC",
         "heads": 3,
         "kw": 120.0,
@@ -10060,80 +12571,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "157 Moo.5 San Na Meng, San Sai, Chiang Mai 50210",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station VSS Petroleum",
-    "lat": 14.24754,
-    "lon": 99.81238,
-    "chargers": [
-      {
-        "name": "GWC-OR-1333",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Hiaphol Sunglui Sonong Chattem Mangmi Srisuk",
-    "lat": 13.811676,
-    "lon": 102.079225,
-    "chargers": [
-      {
-        "name": "240274",
-        "type": "DC",
-        "heads": 2,
-        "kw": 180.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 180.0,
-            "price_day": 7.9,
-            "status": "occupied"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 180.0,
-            "price_day": 7.9,
-            "status": "available"
-          }
-        ]
-      }
-    ],
-    "address": "1111 Suwannasorn Road, Sa Kaeo, Mueang Sa Kaeo, Sa kaeo 27000",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Thanawin 24",
-    "lat": 16.4590731,
-    "lon": 103.521222,
-    "chargers": [
-      {
-        "name": "GWC-OR-1433",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "Robinson Lifestyle Chonburi",
-    "lat": 13.40645,
-    "lon": 101.0413,
-    "chargers": [
-      {
-        "name": "GWC-OR-0260",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0260",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "55/90 Moo.1 Samet, Mueang Chon Buri, Chon Buri 20000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Nakhaprasit",
@@ -10151,6 +12590,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -10158,6 +12598,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           }
         ]
@@ -10366,11 +12807,32 @@ window.PTT_DATA = [
     "lon": 101.404366,
     "chargers": [
       {
-        "name": "THPORE250267",
+        "name": "250267",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9/4 Pak Chong – Sap Sanun Road, Pak Chong, Pak Chong, Nakhon Ratchasima 30130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Jumbo Ayutthaya",
@@ -10470,6 +12932,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -10477,6 +12940,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -10484,6 +12948,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -10498,11 +12963,32 @@ window.PTT_DATA = [
     "lon": 103.352376,
     "chargers": [
       {
-        "name": "THPORE240085",
+        "name": "240085",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "149 Moo.20 Theenanont Road, Yang Talat, Yang Talat, Kalasin 46120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Karon (DC 8 guns)",
@@ -10520,6 +13006,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -10527,6 +13014,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -10542,6 +13030,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -10549,6 +13038,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -10564,6 +13054,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -10571,6 +13062,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -10586,6 +13078,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -10593,6 +13086,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -10617,6 +13111,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -10624,6 +13119,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -10631,6 +13127,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -10797,11 +13294,32 @@ window.PTT_DATA = [
     "lon": 100.4347144,
     "chargers": [
       {
-        "name": "THPORE240032",
+        "name": "240032",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "224 Moo.4 Muang Mu, Mueang Sing Buri, Sing Buri 16000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Energy Park",
@@ -10924,11 +13442,32 @@ window.PTT_DATA = [
     "lon": 100.65,
     "chargers": [
       {
-        "name": "GWC-OR-1352",
+        "name": "1352",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "117/1 Moo.1 Pa Tan, Mueang Lop Buri, Lop Buri 15000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "OR Space Ramkhamhang 129",
@@ -10992,11 +13531,32 @@ window.PTT_DATA = [
     "lon": 99.7992,
     "chargers": [
       {
-        "name": "GWC-OR-1324",
+        "name": "1324",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111 Moo.5 Salokbat, Khanu Woralaksaburi, Kamphaeng Phet 62140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phachachuen 2",
@@ -11078,6 +13638,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -11085,6 +13646,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -11109,6 +13671,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -11116,6 +13679,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -11140,6 +13704,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -11147,6 +13712,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -11235,16 +13801,40 @@ window.PTT_DATA = [
     "lon": 103.51524,
     "chargers": [
       {
-        "name": "GWC-OR-0144",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0144",
+        "name": "0144",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "244 Moo.8 Kae Yai, Mueang Surin, Surin 32000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Raman Charasaeng",
@@ -11252,11 +13842,32 @@ window.PTT_DATA = [
     "lon": 100.1141,
     "chargers": [
       {
-        "name": "GWC-OR-1311",
+        "name": "1311",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9/9 Moo.5 Bang Len, Song Phi Nong, Suphan Buri 72110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Saweepiya Gas (3)",
@@ -11264,11 +13875,30 @@ window.PTT_DATA = [
     "lon": 98.77613,
     "chargers": [
       {
-        "name": "GWC-OR-0464",
+        "name": "0464",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "292,292/1,292/2,292/3 Moo.2 Nam Chuet, Kra Buri, Ranong 85110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station B.S.P Marketing",
@@ -11286,6 +13916,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -11293,6 +13924,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -11300,6 +13932,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -11357,6 +13990,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -11364,6 +13998,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -11621,6 +14256,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -11628,6 +14264,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -11635,6 +14272,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -11659,6 +14297,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "under maintenance"
           },
           {
@@ -11666,6 +14305,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "under maintenance"
           }
         ]
@@ -11747,23 +14387,20 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "price_night": 6.6,
-            "status": "occupied"
+            "status": "available"
           },
           {
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "price_night": 6.6,
-            "status": "available"
+            "status": "occupied"
           },
           {
             "position": "ซ้าย ที-2",
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
-            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -11778,11 +14415,32 @@ window.PTT_DATA = [
     "lon": 101.951774,
     "chargers": [
       {
-        "name": "THPORE240025",
+        "name": "240025",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "under maintenance"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "under maintenance"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "28/3 Moo.9 Wang Tanot, Na Yai Am, Chanthaburi 22170",
+    "hours": "24 hours"
   },
   {
     "name": "Phulay Bay, a Ritz-Carlton Reserve",
@@ -11800,6 +14458,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 7.4,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -11815,6 +14474,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 7.4,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -11984,6 +14644,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -11991,6 +14652,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -12005,11 +14667,32 @@ window.PTT_DATA = [
     "lon": 99.670877,
     "chargers": [
       {
-        "name": "THPORE240003",
+        "name": "240003",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "169 Moo.1 Trang–Palian Road, Yan Ta Khao, Yan Ta Khao, Trang 92140",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station CS 2018 Oil",
@@ -12027,6 +14710,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12034,6 +14718,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -12058,6 +14743,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12065,6 +14751,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12128,11 +14815,32 @@ window.PTT_DATA = [
     "lon": 103.2826866,
     "chargers": [
       {
-        "name": "THPORE240014",
+        "name": "240014",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "135 Theenanon Road, Talat Subdistrict, Mueang Mahasarakham District, Mahasarakham 44000 Talat, Mueang Maha Sarakham, Maha Sarakham 44000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Hua Khao Petroleum",
@@ -12150,6 +14858,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12157,6 +14866,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -12181,6 +14891,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -12188,6 +14899,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -12203,6 +14915,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           },
           {
@@ -12210,6 +14923,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -12234,6 +14948,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -12241,6 +14956,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12248,6 +14964,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12272,6 +14989,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12279,6 +14997,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12303,6 +15022,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -12310,6 +15030,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12324,24 +15045,80 @@ window.PTT_DATA = [
     "lon": 98.391504,
     "chargers": [
       {
-        "name": "THPORE250032",
+        "name": "250032",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE250033",
+        "name": "250033",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE250034",
+        "name": "250034",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "24/3 Moo.6 Thepkasattri Road, Ratsada, Mueang Phuket, Phuket 83000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rattananicha Oil",
@@ -12349,11 +15126,32 @@ window.PTT_DATA = [
     "lon": 101.281,
     "chargers": [
       {
-        "name": "GWC-OR-1113",
+        "name": "1113",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1/8 Moo.4 Highway 331 Road, Tha Bun Mi, Ko Chan, Chon Buri 20240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Tha Makham",
@@ -12361,11 +15159,32 @@ window.PTT_DATA = [
     "lon": 99.50109,
     "chargers": [
       {
-        "name": "GWC-OR-0077",
+        "name": "0077",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "116/2 Moo.5 Tha Makham, Mueang Kanchanaburi, Kanchanaburi 71000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mana-Sermphon Petroleum (Nong Ki)",
@@ -12383,6 +15202,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12390,6 +15210,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12414,6 +15235,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12421,6 +15243,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -12445,6 +15268,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12452,6 +15276,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12466,18 +15291,40 @@ window.PTT_DATA = [
     "lon": 98.25453,
     "chargers": [
       {
-        "name": "GWC-OR-0235",
-        "type": "AC",
-        "heads": 1,
-        "kw": 22.0
-      },
-      {
-        "name": "GWC-OR-0235",
+        "name": "0235",
         "type": "DC",
-        "heads": 2,
-        "kw": 120.0
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "42/4 Moo.3 Khuekkhak, Takua Pa, Phang-nga 82190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Khao Khitchakut Station",
@@ -12495,6 +15342,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12502,6 +15350,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12638,16 +15487,40 @@ window.PTT_DATA = [
     "lon": 101.09,
     "chargers": [
       {
-        "name": "GWC-OR-1173",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1173",
+        "name": "1173",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99/5 Moo.1 Bang Khwan, Mueang Chachoengsao, Chachoengsao 24000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station White Power",
@@ -12665,6 +15538,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12672,6 +15546,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12687,6 +15562,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12694,6 +15570,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12718,6 +15595,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12725,6 +15603,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -12749,6 +15628,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12756,6 +15636,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12770,11 +15651,30 @@ window.PTT_DATA = [
     "lon": 100.402143,
     "chargers": [
       {
-        "name": "GWC-OR-1315",
+        "name": "1315",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Asia Highway Km.90 (OB)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station V Plus Station",
@@ -12833,6 +15733,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12840,6 +15741,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12847,6 +15749,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12871,6 +15774,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -12878,6 +15782,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -12999,6 +15904,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -13006,6 +15912,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -13013,6 +15920,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13223,16 +16131,40 @@ window.PTT_DATA = [
     "lon": 101.1220211,
     "chargers": [
       {
-        "name": "GWC-OR-0348",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0348",
+        "name": "0348",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "555 Moo.5 Ban Tok, Mueang Phetchabun, Phetchabun 67000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Navapracha",
@@ -13250,6 +16182,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -13257,6 +16190,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -13281,6 +16215,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13288,6 +16223,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13417,16 +16353,37 @@ window.PTT_DATA = [
     "lon": 102.6070211,
     "chargers": [
       {
-        "name": "GWC-OR-0196",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0196",
+        "name": "0196",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "6 Mittraphap Road, Mueang Phon, Phon, Khon Kaen 40120",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Muangnang Petroleum",
@@ -13444,6 +16401,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13451,6 +16409,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13458,6 +16417,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13538,6 +16498,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13545,6 +16506,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13569,6 +16531,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 8.0,
+            "price_night": 8.0,
             "status": "available"
           },
           {
@@ -13576,6 +16539,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 8.0,
+            "price_night": 8.0,
             "status": "occupied"
           }
         ]
@@ -13600,6 +16564,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13607,6 +16572,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13621,11 +16587,32 @@ window.PTT_DATA = [
     "lon": 100.9742,
     "chargers": [
       {
-        "name": "GWC-OR-1120",
+        "name": "1120",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88 Moo.5 Bueng, Si Racha, Chon Buri 20230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Udonthani Nonsa-at KM.403 (IB)",
@@ -13633,11 +16620,30 @@ window.PTT_DATA = [
     "lon": 102.8927407,
     "chargers": [
       {
-        "name": "THPORE240217",
+        "name": "240217",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "66 Moo.1 Non Sa-at, Non Sa-at, Udon Thani 41240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Green Auto Group",
@@ -13678,16 +16684,37 @@ window.PTT_DATA = [
     "lon": 102.1192,
     "chargers": [
       {
-        "name": "GWC-OR-0195",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0195",
+        "name": "0195",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "133/3 Moo.13 Suranarai Road, Cho Ho, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30310",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Sukhum Service (Amphoe Mueang)",
@@ -13695,16 +16722,40 @@ window.PTT_DATA = [
     "lon": 97.964173,
     "chargers": [
       {
-        "name": "GWC-OR-1052",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1052",
+        "name": "1052",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTT Station Sukhum Service (Amphoe Mueang)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Khun Teng (Cha-am) Petroleum (HUB)",
@@ -13722,6 +16773,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -13729,6 +16781,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -13744,6 +16797,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -13751,6 +16805,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -13766,6 +16821,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -13773,6 +16829,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -13788,6 +16845,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -13795,6 +16853,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -13850,6 +16909,47 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "119 Moo.1 Phahonyothin Road, Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "Recall Isaan Isan Concept at Khaoyai",
+    "lat": 14.5135,
+    "lon": 101.3756,
+    "chargers": [
+      {
+        "name": "0127",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
             "status": "available"
           },
           {
@@ -13869,25 +16969,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "119 Moo.1 Phahonyothin Road, Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "Recall Isaan Isan Concept at Khaoyai",
-    "lat": 14.5135,
-    "lon": 101.3756,
-    "chargers": [
-      {
-        "name": "GWC-OR-0127",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0127",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "54 Moo.17 Mu Si, Pak Chong, Nakhon Ratchasima 30130",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station KabinBuri Petrolium",
@@ -13905,7 +16988,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "available"
+            "status": "occupied"
           },
           {
             "position": "ซ้าย-A",
@@ -13936,6 +17019,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -13943,6 +17027,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -13950,6 +17035,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -13974,6 +17060,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -13981,6 +17068,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14005,6 +17093,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -14012,6 +17101,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14036,6 +17126,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -14043,6 +17134,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -14050,6 +17142,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -14113,11 +17206,32 @@ window.PTT_DATA = [
     "lon": 101.2266,
     "chargers": [
       {
-        "name": "GWC-OR-0252",
+        "name": "0252",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "36/17 Moo.4 Nong Chik Road, Ru Samilae, Mueang Pattani, Pattani 94000",
+    "hours": "Fri: 06:00 - 21:00 hr.; Mon: 06:00 - 21:00 hr.; Sat: Facilities; Sun: 06:00 - 21:00 hr.; Thu: 06:00 - 21:00 hr.; Tue: 06:00 - 21:00 hr.; Wed: 06:00 - 21:00 hr."
   },
   {
     "name": "BigC Itsaraphap",
@@ -14158,11 +17272,32 @@ window.PTT_DATA = [
     "lon": 101.1569192,
     "chargers": [
       {
-        "name": "THPORE240076",
+        "name": "240076",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "69 Moo.6 Saraburi-Lomsak Road, Na Ngua, Mueang Phetchabun, Phetchabun 67000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Prakit Petroleum",
@@ -14170,11 +17305,32 @@ window.PTT_DATA = [
     "lon": 102.4028,
     "chargers": [
       {
-        "name": "GWC-OR-1369",
+        "name": "1369",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "49 Moo.12 Mitrtraphap Road, Than Prasat, Non Sung, Nakhon Ratchasima 30420",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pak Chong (DC 6 หัว)",
@@ -14192,6 +17348,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -14199,6 +17356,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -14214,6 +17372,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           },
           {
@@ -14221,6 +17380,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -14236,6 +17396,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -14243,6 +17404,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -14388,6 +17550,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -14395,6 +17558,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14419,6 +17583,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -14426,6 +17591,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14538,16 +17704,37 @@ window.PTT_DATA = [
     "lon": 99.963,
     "chargers": [
       {
-        "name": "GWC-OR-0141",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0141",
+        "name": "0141",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "551 Moo.5 Pak Phun, Mueang Nakhon Si Thammarat, Nakhon Si Thammarat 80000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Asawa Ratchaburi Group",
@@ -14565,6 +17752,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -14572,6 +17760,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14596,6 +17785,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -14603,6 +17793,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -14683,6 +17874,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -14690,6 +17882,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -14714,6 +17907,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -14721,6 +17915,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -14728,6 +17923,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -14743,6 +17939,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14750,6 +17947,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -14765,6 +17963,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14772,6 +17971,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -14787,6 +17987,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14794,6 +17995,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -14809,6 +18011,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14816,6 +18019,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -14840,6 +18044,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14847,6 +18052,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -14862,6 +18068,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -14869,6 +18076,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -14884,6 +18092,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -14891,6 +18100,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -14906,6 +18116,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           },
           {
@@ -14913,6 +18124,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -14927,18 +18139,40 @@ window.PTT_DATA = [
     "lon": 100.3932,
     "chargers": [
       {
-        "name": "GWC-OR-0120",
-        "type": "AC",
-        "heads": 1,
-        "kw": 22.0
-      },
-      {
-        "name": "GWC-OR-0120",
+        "name": "0120",
         "type": "DC",
-        "heads": 2,
-        "kw": 120.0
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "585 Rama 2 Road, Samae Dam, Bang Khun Thian, Bangkok 10150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Supaphol Oil",
@@ -14946,16 +18180,40 @@ window.PTT_DATA = [
     "lon": 101.756503,
     "chargers": [
       {
-        "name": "GWC-OR-0344",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0344",
+        "name": "0344",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "199 Moo.17 Mueang Kao, Kabin Buri, Prachin Buri 25240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Hemaraj Mappu",
@@ -14973,6 +18231,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -14980,6 +18239,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -15037,6 +18297,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -15044,6 +18305,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -15058,11 +18320,32 @@ window.PTT_DATA = [
     "lon": 101.1927,
     "chargers": [
       {
-        "name": "GWC-OR-1191",
+        "name": "1191",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "87 Moo.9 Thung Khwang, Phanat Nikhom, Chon Buri 20140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Kwan Pochana 2",
@@ -15121,6 +18404,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -15128,6 +18412,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -15135,6 +18420,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -15159,6 +18445,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -15166,6 +18453,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "available"
           }
         ]
@@ -15181,6 +18469,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -15188,6 +18477,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -15203,6 +18493,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           },
           {
@@ -15210,6 +18501,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 200.0,
             "price_day": 8.4,
+            "price_night": 7.1,
             "status": "occupied"
           }
         ]
@@ -15326,11 +18618,32 @@ window.PTT_DATA = [
     "lon": 100.3245,
     "chargers": [
       {
-        "name": "GWC-OR-0465",
+        "name": "0465",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "68/6 Moo.2 Banmai-Sai Noi (NB.5027) Road Nong Phrao Ngai, Sai Noi, Nonthaburi 11150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Samyan",
@@ -15371,11 +18684,32 @@ window.PTT_DATA = [
     "lon": 101.3108,
     "chargers": [
       {
-        "name": "GWC-OR-1180",
+        "name": "1180",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "17/1 Moo.7 Suwanson Road, Khok Mai Lai, Mueang Prachin Buri, Prachin Buri 25230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam Plus Petroleum",
@@ -15383,11 +18717,32 @@ window.PTT_DATA = [
     "lon": 99.27484,
     "chargers": [
       {
-        "name": "GWC-OR-0470",
+        "name": "0470",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "27/5 Moo.1 Tha Ruea, Ban Na Doem, Surat Thani 84240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Together Oil (2017)",
@@ -15395,16 +18750,40 @@ window.PTT_DATA = [
     "lon": 99.87878,
     "chargers": [
       {
-        "name": "GWC-OR-1152",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1152",
+        "name": "1152",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "173 Moo.3 Pak Raet, Ban Pong, Ratchaburi 70110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam Dankhuntod Oil",
@@ -15412,16 +18791,40 @@ window.PTT_DATA = [
     "lon": 101.7636,
     "chargers": [
       {
-        "name": "GWC-OR-0112",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0112",
+        "name": "0112",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "459 Moo.2 Sikhio-Chaiyaphum Road, Dan Khun Thot, Dan Khun Thot, Nakhon Ratchasima 30210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Theparak Chaimongkol",
@@ -15495,26 +18898,104 @@ window.PTT_DATA = [
     "lon": 102.784337,
     "chargers": [
       {
-        "name": "THPORE240381",
+        "name": "240381",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE240382",
+        "name": "240382",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240383",
+        "name": "240383",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240384",
+        "name": "240384",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "740 Chokchai-Det Udom Road, Nang Rong, Nang Rong, Buri Ram 31110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station JP Elite Au-Ngern",
@@ -15573,6 +19054,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -15580,6 +19062,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -15676,11 +19159,32 @@ window.PTT_DATA = [
     "lon": 103.9456316,
     "chargers": [
       {
-        "name": "THPORE240015",
+        "name": "240015",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "42 Moo.11 Chaengsanit Road, Khwan Mueang, Selaphum, Roi Et 45120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phukhang Yokkamlangkao",
@@ -15721,7 +19225,7 @@ window.PTT_DATA = [
     "lon": 98.32706,
     "chargers": [
       {
-        "name": "0107",
+        "name": "0424",
         "type": "DC",
         "heads": 2,
         "kw": 120.0,
@@ -15731,6 +19235,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -15738,117 +19243,8 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
-          }
-        ]
-      },
-      {
-        "name": "0123",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "กลาง-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
-          },
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "available"
-          }
-        ]
-      },
-      {
-        "name": "250321",
-        "type": "DC",
-        "heads": 2,
-        "kw": 200.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "available"
-          }
-        ]
-      },
-      {
-        "name": "250322",
-        "type": "DC",
-        "heads": 2,
-        "kw": 200.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "closed"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "closed"
-          }
-        ]
-      },
-      {
-        "name": "250323",
-        "type": "DC",
-        "heads": 2,
-        "kw": 200.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "closed"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "closed"
-          }
-        ]
-      },
-      {
-        "name": "250324",
-        "type": "DC",
-        "heads": 2,
-        "kw": 200.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 200.0,
-            "price_day": 8.4,
-            "status": "occupied"
           }
         ]
       }
@@ -15905,6 +19301,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -15912,6 +19309,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -15959,11 +19357,32 @@ window.PTT_DATA = [
     "lon": 100.4585,
     "chargers": [
       {
-        "name": "GWC-OR-1342",
+        "name": "1342",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTT Station Thaweeporn Service, Phrom Buri District",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Bang Kruai-Sai Noi (OB)",
@@ -16080,6 +19499,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -16087,6 +19507,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -16101,11 +19522,32 @@ window.PTT_DATA = [
     "lon": 99.20505,
     "chargers": [
       {
-        "name": "GWC-OR-0296",
+        "name": "0296",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "130 Moo.2 Sap Anan, Tha Sae, Chumphon 86140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Nan",
@@ -16197,6 +19639,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -16204,6 +19647,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -16218,11 +19662,30 @@ window.PTT_DATA = [
     "lon": 100.929968,
     "chargers": [
       {
-        "name": "THPORE240340",
+        "name": "240340",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "8 Soi Laemket Jermjomphol Road, Si Racha, Si Racha, Chon Buri 20110",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Prasat Petroleum",
@@ -16230,11 +19693,32 @@ window.PTT_DATA = [
     "lon": 103.4046,
     "chargers": [
       {
-        "name": "GWC-OR-1278",
+        "name": "1278",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1 Moo.5 Chokchai-Det Udom Road Ban Phluang, Prasat, Surin 32140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Three K Oil",
@@ -16242,16 +19726,40 @@ window.PTT_DATA = [
     "lon": 101.1811,
     "chargers": [
       {
-        "name": "GWC-OR-1061",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1061",
+        "name": "1061",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "55 Moo.11 Nam Chun, Lom Sak, Phetchabun 67110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Terminal 21 Pattaya (1st Floor,Building B)",
@@ -16259,21 +19767,81 @@ window.PTT_DATA = [
     "lon": 100.888674,
     "chargers": [
       {
-        "name": "THPORE240320",
+        "name": "2044",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240355",
+        "name": "240320",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2044",
-        "type": "AC",
-        "heads": 1
+        "name": "240355",
+        "type": "DC",
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "456, 777, 777/1 Moo.6 Na Kluea, Bang Lamung, Chon Buri 20150",
+    "hours": "24 hours"
   },
   {
     "name": "Q House Lumpini (G Floor)",
@@ -16388,6 +19956,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -16395,6 +19964,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -16402,6 +19972,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -16426,6 +19997,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -16433,6 +20005,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -16585,6 +20158,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -16592,6 +20166,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -16606,16 +20181,40 @@ window.PTT_DATA = [
     "lon": 104.8374,
     "chargers": [
       {
-        "name": "GWC-OR-0217",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0217",
+        "name": "0217",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "240/9 Moo.4 Chayangkun Road Kham Yai, Mueang Ubon Ratchathani, Ubon Ratchathani 34000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Café Amazon Flagship Store Ari (Parking Floor B1)",
@@ -16656,16 +20255,40 @@ window.PTT_DATA = [
     "lon": 99.84429,
     "chargers": [
       {
-        "name": "GWC-OR-1067",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1067",
+        "name": "1067",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "483 Moo.5 Phahonyothin Road, Rim Kok, Mueang Chiang Rai, Chiang Rai 57100",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chansen Oil",
@@ -16683,6 +20306,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -16690,6 +20314,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -16714,6 +20339,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -16721,6 +20347,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -16811,6 +20438,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -16818,6 +20446,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -16832,11 +20461,32 @@ window.PTT_DATA = [
     "lon": 100.5548,
     "chargers": [
       {
-        "name": "GWC-OR-1347",
+        "name": "1347",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "238/13 Moo.1 Sathing Mo, Singhanakhon, Songkhla 90280",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam Taparak Service",
@@ -16887,6 +20537,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -16894,6 +20545,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -16918,14 +20570,14 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "available"
+            "status": "occupied"
           },
           {
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           }
         ]
       }
@@ -17077,66 +20729,188 @@ window.PTT_DATA = [
     "lon": 102.0771,
     "chargers": [
       {
-        "name": "GWC-OR-2213",
+        "name": "2067",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2217",
+        "name": "2070",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2236",
+        "name": "2071",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2070",
+        "name": "2074",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2117",
+        "name": "2085",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2118",
+        "name": "2115",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2071",
+        "name": "2116",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2067",
+        "name": "2117",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2116",
+        "name": "2118",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2115",
+        "name": "2213",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2074",
+        "name": "2217",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2085",
+        "name": "2236",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1242/2 Mittraphap Road, Nai Mueang, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "09:00 - 23:00 hr."
   },
   {
     "name": "PTT Station Sri Saowapha Service",
@@ -17144,11 +20918,32 @@ window.PTT_DATA = [
     "lon": 100.9951,
     "chargers": [
       {
-        "name": "GWC-OR-1338",
+        "name": "1338",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "329 Moo.2 Nakhon Nayok-Rangsit Road, Ongkharak, Ongkharak, Nakhon Nayok 26120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station Asia Minburi",
@@ -17222,6 +21017,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -17229,6 +21025,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17276,11 +21073,32 @@ window.PTT_DATA = [
     "lon": 101.1883,
     "chargers": [
       {
-        "name": "GWC-OR-4031",
+        "name": "4031",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "37/4 Moo.10 Phrommani, Mueang Nakhon Nayok, Nakhon Nayok 26000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Anong Service",
@@ -17298,6 +21116,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -17305,6 +21124,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17319,16 +21139,40 @@ window.PTT_DATA = [
     "lon": 101.0529,
     "chargers": [
       {
-        "name": "GWC-OR-1171",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1171",
+        "name": "1171",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "199/9 Chachoengsao-Bang Pakong Road, Na Mueang, Mueang Chachoengsao, Chachoengsao 24000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Khlongsailompetroleum",
@@ -17346,6 +21190,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17353,6 +21198,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17418,6 +21264,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17425,6 +21272,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17449,6 +21297,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17456,6 +21305,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17463,6 +21313,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17520,6 +21371,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17527,6 +21379,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -17534,6 +21387,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17548,11 +21402,32 @@ window.PTT_DATA = [
     "lon": 99.33356,
     "chargers": [
       {
-        "name": "GWC-OR-1450",
+        "name": "1450",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "555/1 Chon Kasem Road, Talat, Mueang Surat Thani, Surat Thani 84000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mae Sot Petroleum (HO)",
@@ -17570,6 +21445,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17577,6 +21453,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17584,6 +21461,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17723,6 +21601,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -17730,6 +21609,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -17737,6 +21617,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17835,6 +21716,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -17842,6 +21724,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17856,16 +21739,40 @@ window.PTT_DATA = [
     "lon": 103.9383,
     "chargers": [
       {
-        "name": "GWC-OR-1205",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1205",
+        "name": "1205",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "148 Moo.10 Samrong Thap-Sisaket Road, Samrong Thap, Samrong Thap, Surin 32170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kriengsak Yasothon Petroleum",
@@ -17883,6 +21790,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17890,6 +21798,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17897,6 +21806,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -17921,6 +21831,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -17928,6 +21839,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -17943,6 +21855,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 7.4,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -17957,18 +21870,40 @@ window.PTT_DATA = [
     "lon": 100.4432,
     "chargers": [
       {
-        "name": "GWC-OR-0351",
-        "type": "AC",
-        "heads": 1,
-        "kw": 22.0
-      },
-      {
-        "name": "GWC-OR-0351",
+        "name": "0351",
         "type": "DC",
-        "heads": 2,
-        "kw": 120.0
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "96/1-6,96/9 Tha Kham Road, Samae Dam, Bang Khun Thian, Bangkok 10150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pattaya Siriwattana",
@@ -17986,6 +21921,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -17993,6 +21929,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -18007,11 +21944,32 @@ window.PTT_DATA = [
     "lon": 103.930118,
     "chargers": [
       {
-        "name": "THPORE240016",
+        "name": "240016",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "241 Moo.7 Khlang Subdistrict, Selaphum District, Roi Et 45120 Klang, Selaphum, Roi Et 45120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thung Song",
@@ -18019,16 +21977,40 @@ window.PTT_DATA = [
     "lon": 99.6324,
     "chargers": [
       {
-        "name": "GWC-OR-0298",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0298",
+        "name": "0298",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "397 Moo.7 Nong Hong, Thung Song, Nakhon Si Thammarat 80110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chai Seri Petroleum",
@@ -18046,6 +22028,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -18053,6 +22036,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -18100,29 +22084,36 @@ window.PTT_DATA = [
     "lon": 98.90526,
     "chargers": [
       {
-        "name": "0419",
+        "name": "0301",
         "type": "DC",
-        "heads": 2,
+        "heads": 3,
         "kw": 120.0,
         "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
           {
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           },
           {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           }
         ]
       }
     ],
-    "address": "139 Moo.1 Ao Luek Nuea, Ao Luek, Krabi 81110",
+    "address": "9/23 Sri Phang Nga Road, Krabi Yai, Mueang Krabi, Krabi 81000",
     "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
@@ -18190,6 +22181,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -18197,6 +22189,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -18212,6 +22205,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -18219,6 +22213,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -18233,11 +22228,32 @@ window.PTT_DATA = [
     "lon": 100.1884,
     "chargers": [
       {
-        "name": "GWC-OR-1243",
+        "name": "1243",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "6/6 Moo.6 Nong Pling, Mueang Nakhon Sawan, Nakhon Sawan 60000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Amari Pattaya (Park Building)",
@@ -18319,11 +22335,32 @@ window.PTT_DATA = [
     "lon": 98.894741,
     "chargers": [
       {
-        "name": "THPORE240172",
+        "name": "240172",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "110 Moo.3 Khao Wong, Ban Ta Khun, Surat Thani 84230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Suksawat (OB)",
@@ -18444,16 +22481,40 @@ window.PTT_DATA = [
     "lon": 100.6063581,
     "chargers": [
       {
-        "name": "GWC-OR-1090",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1090",
+        "name": "1090",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99/2351 Moo.18 Khlong Nueng, Khlong Luang, Pathum Thani 12121",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Siam Country Club Bangkok",
@@ -18461,16 +22522,45 @@ window.PTT_DATA = [
     "lon": 100.7942,
     "chargers": [
       {
-        "name": "GWC-OR-2076",
+        "name": "2063",
         "type": "AC",
-        "heads": 2
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2063",
+        "name": "2076",
         "type": "AC",
-        "heads": 1
+        "heads": 2,
+        "kw": 22.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "Siam Country Club Bangkok",
+    "hours": "06:00 - 18:59 hr."
   },
   {
     "name": "PTT Station Phanusorn 1991",
@@ -18488,6 +22578,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -18495,6 +22586,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -18542,11 +22634,32 @@ window.PTT_DATA = [
     "lon": 99.8193533,
     "chargers": [
       {
-        "name": "THPORE240231",
+        "name": "240231",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "108 Moo 10, Ron Phibun, Ron Phibun District, Nakhon Si Thammarat 80130 Ron Phibun, Ron Phibun, Nakhon Si Thammarat 80130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Ratchaburi-Photharam",
@@ -18554,11 +22667,30 @@ window.PTT_DATA = [
     "lon": 99.887627,
     "chargers": [
       {
-        "name": "THPORE240272",
+        "name": "240272",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "146/2 Moo.1 Ban Khong, Photharam, Ratchaburi 70120",
+    "hours": "24 hours"
   },
   {
     "name": "BigC Pak Chong",
@@ -18607,7 +22739,45 @@ window.PTT_DATA = [
     "lon": 102.771,
     "chargers": [
       {
-        "name": "1297",
+        "name": "1013",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "129/6 Moo.5 Mak Khaeng, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Sor Surasak Oil (Bang Kung)",
+    "lat": 9.140751,
+    "lon": 99.364644,
+    "chargers": [
+      {
+        "name": "240007",
         "type": "DC",
         "heads": 2,
         "kw": 120.0,
@@ -18617,32 +22787,22 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "available"
+            "price_night": 6.6,
+            "status": "booked"
           },
           {
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
       }
     ],
-    "address": "57 Moo.18 Khu Khot, Lam Luk Ka, Pathum Thani 12130",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Sor Surasak Oil (Bang Kung)",
-    "lat": 9.140751,
-    "lon": 99.364644,
-    "chargers": [
-      {
-        "name": "THPORE240007",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "PTT Station Sor Surasak Oil (Bang Kung)",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Ratchaphruek 1",
@@ -18691,16 +22851,37 @@ window.PTT_DATA = [
     "lon": 99.89379,
     "chargers": [
       {
-        "name": "GWC-OR-1043",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1043",
+        "name": "1043",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "500 Moo.12 Tha Wang Thong, Mueang Phayao, Phayao 56000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Yuenyong Petroleum",
@@ -18708,11 +22889,30 @@ window.PTT_DATA = [
     "lon": 100.2923,
     "chargers": [
       {
-        "name": "GWC-OR-1365",
+        "name": "1365",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "78 Moo.1 SaiAsia Road, Khuan Ru, Rattaphum, Songkhla 90180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Yekmaung Pathum Thani",
@@ -18720,24 +22920,74 @@ window.PTT_DATA = [
     "lon": 100.525773,
     "chargers": [
       {
-        "name": "THPORE250084",
+        "name": "250082",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE250082",
+        "name": "250083",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE250083",
+        "name": "250084",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTT Station Yekmaung Pathum Thani (DC 6 หัว)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Café Amazon Phutthabucha 36",
@@ -18811,6 +23061,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -18818,6 +23069,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -18939,6 +23191,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -18946,6 +23199,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -19001,16 +23255,37 @@ window.PTT_DATA = [
     "lon": 104.1196,
     "chargers": [
       {
-        "name": "GWC-OR-1058",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1058",
+        "name": "1058",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88/8 Nittayo Road, That Na Weng, Mueang Sakon Nakhon, Sakon Nakhon 47000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT NGV Station Chor Sam Sien",
@@ -19212,11 +23487,30 @@ window.PTT_DATA = [
     "lon": 101.927107,
     "chargers": [
       {
-        "name": "GWC-OR-6005",
+        "name": "6005",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "73 Moo.5 Chalerm Burapa Chollathit Road, Khlong Khut, Tha Mai, Chanthaburi 22120",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station KPS Energy (1)",
@@ -19234,6 +23528,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19241,6 +23536,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19255,11 +23551,32 @@ window.PTT_DATA = [
     "lon": 99.8860443,
     "chargers": [
       {
-        "name": "THPORE240227",
+        "name": "240227",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo 6 Thung Pho, Chulabhorn , Nakhon Si Thammarat 80130 Thung Pho, Chulabhorn, Nakhon Si Thammarat 80130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chuanpanit Khlung",
@@ -19277,6 +23594,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19284,6 +23602,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19291,6 +23610,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19315,6 +23635,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19322,6 +23643,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -19346,6 +23668,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19353,6 +23676,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19410,6 +23734,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19417,6 +23742,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -19464,11 +23790,32 @@ window.PTT_DATA = [
     "lon": 99.95179,
     "chargers": [
       {
-        "name": "GWC-OR-1412",
+        "name": "1412",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1337/28 Phetkasem Road, Cha-am, Cha-am, Phetchaburi 76120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phet Kaen Nakhon Petroleum",
@@ -19476,11 +23823,32 @@ window.PTT_DATA = [
     "lon": 102.9357,
     "chargers": [
       {
-        "name": "GWC-OR-1356",
+        "name": "1356",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "289 Moo.4 Buengneam Road, Bueng Niam, Mueang Khon Kaen, Khon Kaen 40000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Inburi Km. 104 (IB)",
@@ -19488,11 +23856,30 @@ window.PTT_DATA = [
     "lon": 100.33884,
     "chargers": [
       {
-        "name": "GWC-OR-1314",
+        "name": "1314",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111 Moo.2 Tha Ngam, In Buri, Sing Buri 16110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Srisomwongservice(Niwetrat)",
@@ -19500,11 +23887,32 @@ window.PTT_DATA = [
     "lon": 102.0419116,
     "chargers": [
       {
-        "name": "THPORE240072",
+        "name": "240072",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "49/3 Moo.8 Nai Mueang, Mueang Chaiyaphum, Chaiyaphum 36000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Deeyiam Innovation",
@@ -19555,6 +23963,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19562,6 +23971,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19569,6 +23979,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19616,6 +24027,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "available"
           },
@@ -19623,13 +24035,15 @@ window.PTT_DATA = [
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "available"
           }
         ]
       }
     ],
-    "address": "436 Ramkhamhaeng Road, Hua Mak, Bang Kapi, Bangkok 10240"
+    "address": "436 Ramkhamhaeng Road, Hua Mak, Bang Kapi, Bangkok 10240",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Pinwiset",
@@ -19647,6 +24061,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19654,6 +24069,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19678,6 +24094,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19685,6 +24102,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -19709,6 +24127,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -19716,6 +24135,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19723,6 +24143,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -19737,16 +24158,40 @@ window.PTT_DATA = [
     "lon": 99.83972,
     "chargers": [
       {
-        "name": "GWC-OR-1150",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1150",
+        "name": "1150",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111/9 Moo.1 Wang Manao, Pak Tho, Ratchaburi 70140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Winner Petroleum (2022)",
@@ -19754,11 +24199,32 @@ window.PTT_DATA = [
     "lon": 101.1856743,
     "chargers": [
       {
-        "name": "GWC-OR-1221",
+        "name": "1221",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "135/4 Moo.3 Nong Irun, Ban Bueng, Chon Buri 20220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rama 2 Trading",
@@ -19766,11 +24232,32 @@ window.PTT_DATA = [
     "lon": 99.8401,
     "chargers": [
       {
-        "name": "GWC-OR-0460",
+        "name": "0460",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "128 Moo.7 Sam Ruean, Mueang Ratchaburi, Ratchaburi 70000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "The Emporium (GU Floor)",
@@ -19925,6 +24412,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19932,6 +24420,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19939,6 +24428,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -19963,6 +24453,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -19970,6 +24461,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20027,6 +24519,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -20034,6 +24527,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -20058,6 +24552,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20065,6 +24560,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20072,6 +24568,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20086,16 +24583,40 @@ window.PTT_DATA = [
     "lon": 102.0814,
     "chargers": [
       {
-        "name": "GWC-OR-0208",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0208",
+        "name": "0208",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1202 Mittraphap Road Nai Mueang, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chomphra Petroleum",
@@ -20113,6 +24634,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -20120,6 +24642,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -20134,11 +24657,30 @@ window.PTT_DATA = [
     "lon": 100.6176668,
     "chargers": [
       {
-        "name": "THPORE240253",
+        "name": "240253",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1/7 Moo.7 Chiang Rak Noi, Bang Pa-in, Phra Nakhon Si Ayutthaya 13180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Café Amazon Space Phutthamonthon Sai 3",
@@ -20230,6 +24772,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20237,6 +24780,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -20261,6 +24805,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20268,6 +24813,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -20275,6 +24821,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20289,11 +24836,32 @@ window.PTT_DATA = [
     "lon": 100.6246,
     "chargers": [
       {
-        "name": "GWC-OR-1300",
+        "name": "1300",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "26/91 Moo.8 Khlong Nueng, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Muang Khon Kaen",
@@ -20311,6 +24879,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20318,6 +24887,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -20325,6 +24895,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20372,11 +24943,30 @@ window.PTT_DATA = [
     "lon": 98.9514136,
     "chargers": [
       {
-        "name": "THPORE240088",
+        "name": "240088",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "297 Moo.4 San Phak Wan, Hang Dong, Chiang Mai 50230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pongkit (8) (Route 24)",
@@ -20384,11 +24974,32 @@ window.PTT_DATA = [
     "lon": 102.025029,
     "chargers": [
       {
-        "name": "THPORE240182",
+        "name": "240182",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "136 Moo.1 Thong Chai Nuea, Pak Thong Chai, Nakhon Ratchasima 30150",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Sinjaroen Service Gas",
@@ -20447,6 +25058,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -20454,6 +25066,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20582,6 +25195,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20589,6 +25203,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20613,6 +25228,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20620,6 +25236,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -20634,16 +25251,40 @@ window.PTT_DATA = [
     "lon": 104.6264,
     "chargers": [
       {
-        "name": "GWC-OR-0219",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0219",
+        "name": "0219",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "15 Moo.9 Chayangkun Road, Non Nam Thaeng, Mueang Amnat Charoen, Amnat Charoen 37000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Wittayakit Building (4th floor)",
@@ -20710,6 +25351,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -20717,6 +25359,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -20991,11 +25634,30 @@ window.PTT_DATA = [
     "lon": 100.3273,
     "chargers": [
       {
-        "name": "GWC-OR-1283",
+        "name": "1283",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "245 Moo.1 Wat Bot, Wat Bot, Phitsanulok 65160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station TIM Energy Development",
@@ -21003,16 +25665,40 @@ window.PTT_DATA = [
     "lon": 101.176561,
     "chargers": [
       {
-        "name": "GWC-OR-1149",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1149",
+        "name": "1149",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "554/39 Moo.7 Khao Khansong, Si Racha, Chon Buri 20110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Samart Energy",
@@ -21020,12 +25706,32 @@ window.PTT_DATA = [
     "lon": 98.376643,
     "chargers": [
       {
-        "name": "THPORE240062",
+        "name": "240062",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "24/18 Moo 5, Ratsada Subdistrict, Mueang Phuket District, Phuket 83000 Ratsada, Mueang Phuket, Phuket 83000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Trading Organization of SKSC",
@@ -21033,11 +25739,32 @@ window.PTT_DATA = [
     "lon": 100.1454367,
     "chargers": [
       {
-        "name": "THPORE240256",
+        "name": "240256",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "190 Moo.1 Ngio Ngam, Mueang Uttaradit, Uttaradit 53000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chaiwiwat Petroleum",
@@ -21055,6 +25782,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21062,6 +25790,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21086,6 +25815,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21093,6 +25823,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21100,6 +25831,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21124,6 +25856,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21131,6 +25864,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21155,6 +25889,47 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "127 Moo.4 Phetkasem Road, Tham Rong, Ban Lat, Phetchaburi 76150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "River Curve Khaoyai Restaurant & Cafe",
+    "lat": 14.7167514,
+    "lon": 101.4307453,
+    "chargers": [
+      {
+        "name": "0194",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
             "status": "occupied"
           },
           {
@@ -21174,25 +25949,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "127 Moo.4 Phetkasem Road, Tham Rong, Ban Lat, Phetchaburi 76150",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "River Curve Khaoyai Restaurant & Cafe",
-    "lat": 14.7167514,
-    "lon": 101.4307453,
-    "chargers": [
-      {
-        "name": "GWC-OR-0194",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0194",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "944/9 Mittraphap Road, Pak Chong, Pak Chong, Nakhon Ratchasima 30130",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station MHC Petroleum",
@@ -21210,6 +25968,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21217,6 +25976,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -21241,6 +26001,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21248,6 +26009,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21262,16 +26024,40 @@ window.PTT_DATA = [
     "lon": 102.0614,
     "chargers": [
       {
-        "name": "GWC-OR-0125",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0125",
+        "name": "0125",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "61/11 Moo.9 Khao Wua, Tha Mai, Chanthaburi 22120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S. Phongchai Petroleum",
@@ -21279,11 +26065,32 @@ window.PTT_DATA = [
     "lon": 101.4456,
     "chargers": [
       {
-        "name": "GWC-OR-1261",
+        "name": "1261",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "195/10 Moo.10 Dong Khilek, Mueang Prachin Buri, Prachin Buri 25000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station K.N.Petroleum",
@@ -21301,6 +26108,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21308,6 +26116,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -21332,6 +26141,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21339,6 +26149,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -21363,6 +26174,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21370,6 +26182,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21377,6 +26190,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21391,11 +26205,30 @@ window.PTT_DATA = [
     "lon": 100.4280428,
     "chargers": [
       {
-        "name": "THPORE240285",
+        "name": "240285",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "172 Moo.ึ7 Bang Nga, Tha Wung, Lop Buri 15150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam Phokaew Petroleum",
@@ -21403,11 +26236,32 @@ window.PTT_DATA = [
     "lon": 100.5989,
     "chargers": [
       {
-        "name": "GWC-OR-1398",
+        "name": "1398",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "203 Moo.4 Bang Rakam, Nakhon Luang, Phra Nakhon Si Ayutthaya 13260",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sukhothai Nakorn 2018",
@@ -21415,11 +26269,32 @@ window.PTT_DATA = [
     "lon": 99.82453,
     "chargers": [
       {
-        "name": "GWC-OR-1028",
+        "name": "1028",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "92/12 Moo.4 Thani, Mueang Sukhothai, Sukhothai 64000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pongkit Sapyangyuen",
@@ -21427,11 +26302,32 @@ window.PTT_DATA = [
     "lon": 101.957864,
     "chargers": [
       {
-        "name": "THPORE240195",
+        "name": "240195",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "399 Moo.9 Udom Sap, Wang Nam Khiao, Nakhon Ratchasima 30370",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Lam Luk Ka 4 (Chornma)",
@@ -21472,16 +26368,40 @@ window.PTT_DATA = [
     "lon": 100.2379,
     "chargers": [
       {
-        "name": "GWC-OR-0054",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0054",
+        "name": "0054",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88 Moo.2 Bang Krachao, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Maha Sarakham",
@@ -21499,6 +26419,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21506,6 +26427,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21513,6 +26435,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21601,16 +26524,37 @@ window.PTT_DATA = [
     "lon": 100.3380832,
     "chargers": [
       {
-        "name": "GWC-OR-1054",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1054",
+        "name": "1054",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "332 Moo.3 Khlong Khachen, Mueang Phichit, Phichit 66000",
+    "hours": "08:00 - 23:59 hr."
   },
   {
     "name": "PTT Station Rama 2 (IB)",
@@ -21618,16 +26562,40 @@ window.PTT_DATA = [
     "lon": 100.3381,
     "chargers": [
       {
-        "name": "GWC-OR-4052",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-4052",
+        "name": "4052",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "59/29 Moo.1 Khok Krabue, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Up and Aik",
@@ -21635,11 +26603,32 @@ window.PTT_DATA = [
     "lon": 100.1736,
     "chargers": [
       {
-        "name": "GWC-OR-1312",
+        "name": "1312",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "300 Moo.1 Khok Kho Thao, Mueang Suphan Buri, Suphan Buri 72000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Mahasarakham",
@@ -21802,6 +26791,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21809,6 +26799,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -21833,6 +26824,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21840,6 +26832,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -21864,6 +26857,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21871,6 +26865,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21895,6 +26890,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21902,6 +26898,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21926,6 +26923,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21933,6 +26931,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -21940,6 +26939,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -21954,16 +26954,40 @@ window.PTT_DATA = [
     "lon": 104.1348,
     "chargers": [
       {
-        "name": "GWC-OR-1050",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1050",
+        "name": "1050",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "485 Nittayo Road, That Choeng Chum, Mueang Sakon Nakhon, Sakon Nakhon 47000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Natthalin Construction (1)",
@@ -21981,6 +27005,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -21988,6 +27013,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22002,16 +27028,40 @@ window.PTT_DATA = [
     "lon": 102.0522,
     "chargers": [
       {
-        "name": "GWC-OR-0083",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0083",
+        "name": "0083",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "325 Moo.1 Pru Yai, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Ribs Mannn",
@@ -22019,16 +27069,37 @@ window.PTT_DATA = [
     "lon": 101.4117,
     "chargers": [
       {
-        "name": "GWC-OR-0304",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0304",
+        "name": "0304",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 9.0,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "55/5 Moo.4 Nong Nam Daeng, Pak Chong, Nakhon Ratchasima 30130",
+    "hours": "24 hours"
   },
   {
     "name": "M2 Hotel Waterside",
@@ -22046,6 +27117,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22053,6 +27125,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22060,6 +27133,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22074,11 +27148,32 @@ window.PTT_DATA = [
     "lon": 102.0251,
     "chargers": [
       {
-        "name": "GWC-OR-0213",
+        "name": "0213",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "234 Moo.8 Chaiyaphum-Sikhio Road, Nong Na Saeng, Mueang Chaiyaphum, Chaiyaphum 36000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mahasiri Poka",
@@ -22096,6 +27191,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -22103,6 +27199,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22110,6 +27207,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -22175,14 +27273,14 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           },
           {
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
-            "status": "available"
+            "status": "occupied"
           }
         ]
       }
@@ -22247,6 +27345,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22254,6 +27353,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -22311,6 +27411,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22318,6 +27419,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22342,6 +27444,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22349,6 +27452,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -22414,6 +27518,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -22421,6 +27526,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22428,6 +27534,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22442,11 +27549,30 @@ window.PTT_DATA = [
     "lon": 100.393,
     "chargers": [
       {
-        "name": "GWC-OR-0350",
+        "name": "0350",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "64/7 Moo.10 Ton Pho, Mueang Sing Buri, Sing Buri 16000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Lang Suan Piya Gas (1)",
@@ -22464,6 +27590,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -22471,6 +27598,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22518,11 +27646,32 @@ window.PTT_DATA = [
     "lon": 98.64902,
     "chargers": [
       {
-        "name": "GWC-OR-1155",
+        "name": "1155",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "233/9 Moo.1 Tha Khanun, Thong Pha Phum, Kanchanaburi 71180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Centara Korat",
@@ -22563,16 +27712,40 @@ window.PTT_DATA = [
     "lon": 99.69587,
     "chargers": [
       {
-        "name": "GWC-OR-0104",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0104",
+        "name": "0104",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9/1 Ban Nai Wang Road, Pak Phraek, Thung Song, Nakhon Si Thammarat 80110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Teeraphada Petroleum",
@@ -22580,11 +27753,32 @@ window.PTT_DATA = [
     "lon": 103.5751,
     "chargers": [
       {
-        "name": "GWC-OR-1414",
+        "name": "1414",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "159 Moo.9 Changsanit Road, Dong Lan, Mueang Roi Et, Roi Et 45000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Soidao Petroleum",
@@ -22592,11 +27786,32 @@ window.PTT_DATA = [
     "lon": 102.2289,
     "chargers": [
       {
-        "name": "GWC-OR-0394",
+        "name": "0394",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTT Station Soidao Petroleum",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Romklao Innovation",
@@ -22655,6 +27870,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -22662,6 +27878,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -22676,18 +27893,45 @@ window.PTT_DATA = [
     "lon": 98.298407,
     "chargers": [
       {
-        "name": "GWC-OR-2109",
-        "type": "AC",
-        "heads": 2,
-        "kw": 22.0
-      },
-      {
-        "name": "GWC-OR-2050",
+        "name": "2050",
         "type": "AC",
         "heads": 1,
-        "kw": 7.4
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "name": "2109",
+        "type": "AC",
+        "heads": 2,
+        "kw": 22.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "555 Moo.3 Mai Khao, Thalang, Phuket 83110",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station V.T. Group (2013) (1)",
@@ -22695,11 +27939,32 @@ window.PTT_DATA = [
     "lon": 100.826383,
     "chargers": [
       {
-        "name": "GWC-OR-1308",
+        "name": "1308",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88 Moo.9 Phahonyothin Road, Phu Kham Chan, Phra Phutthabat, Saraburi 18120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Arunrung Oil",
@@ -22717,6 +27982,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22724,6 +27990,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22731,6 +27998,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -22755,6 +28023,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -22762,6 +28031,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -22776,11 +28046,32 @@ window.PTT_DATA = [
     "lon": 101.7117,
     "chargers": [
       {
-        "name": "GWC-OR-1288",
+        "name": "1288",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "345/40 Loei-Dansai Road, Kut Pong, Mueang Loei, Loei 42000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chukiat Petroleum (HO)",
@@ -22798,6 +28089,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -22805,6 +28097,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -22819,11 +28112,32 @@ window.PTT_DATA = [
     "lon": 102.014612,
     "chargers": [
       {
-        "name": "GWC-OR-1462",
+        "name": "1462",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "42 Moo.12 Ngio, Pak Thong Chai, Nakhon Ratchasima 30150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Petroleum Avenue Chang Watthana",
@@ -22872,11 +28186,32 @@ window.PTT_DATA = [
     "lon": 101.206,
     "chargers": [
       {
-        "name": "GWC-OR-1185",
+        "name": "1185",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "244 Moo.1 Nikhom Phatthana, Nikhom Phatthana, Rayong 21180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phukhang Petroleum",
@@ -22960,6 +28295,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -22967,6 +28303,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23032,6 +28369,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -23039,6 +28377,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23063,6 +28402,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -23070,6 +28410,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23084,11 +28425,30 @@ window.PTT_DATA = [
     "lon": 101.3340412,
     "chargers": [
       {
-        "name": "GWC-OR-1142",
+        "name": "1142",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "115/2 Moo.4 Sukhumvit Road, Taphong, Mueang Rayong, Rayong 21000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Krabi P.N. Oil",
@@ -23106,7 +28466,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           },
           {
             "position": "ซ้าย-A",
@@ -23170,6 +28530,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -23177,6 +28538,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23224,11 +28586,32 @@ window.PTT_DATA = [
     "lon": 100.593051,
     "chargers": [
       {
-        "name": "THPORE240065",
+        "name": "240065",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9 Songkhla Plaza Road, Bo Yang, Mueang Songkhla, Songkhla 90000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pracha Uthit-Ladprao",
@@ -23292,26 +28675,128 @@ window.PTT_DATA = [
     "lon": 99.201936,
     "chargers": [
       {
-        "name": "THPORE240369",
+        "name": "240369",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240370",
+        "name": "240370",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240371",
+        "name": "240371",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "THPORE240372",
+        "name": "240372",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "name": "250126",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "96 Moo.16 Tha Sae, Tha Sae, Chumphon 86140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "The Glass Market Bangna",
@@ -23375,16 +28860,40 @@ window.PTT_DATA = [
     "lon": 102.0963,
     "chargers": [
       {
-        "name": "GWC-OR-1001",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1001",
+        "name": "1001",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "403 Mittraphap-Nong Khai Road Nai Mueang, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "At Saima Park Avenue",
@@ -23443,6 +28952,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "closed"
           },
           {
@@ -23450,6 +28960,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "closed"
           }
         ]
@@ -23497,11 +29008,30 @@ window.PTT_DATA = [
     "lon": 100.91551,
     "chargers": [
       {
-        "name": "THPORE240023",
+        "name": "240023",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "42/1 Thung Sukhla, Si Racha, Chon Buri 20230",
+    "hours": "05:00 - 20:59 hr."
   },
   {
     "name": "PTT Station Kor Kit Petroleum",
@@ -23519,6 +29049,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -23526,6 +29057,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23550,6 +29082,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -23557,6 +29090,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -23564,6 +29098,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23662,6 +29197,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -23669,6 +29205,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -23676,6 +29213,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -23700,6 +29238,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -23707,6 +29246,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -23721,11 +29261,32 @@ window.PTT_DATA = [
     "lon": 100.8886,
     "chargers": [
       {
-        "name": "GWC-OR-0326",
+        "name": "0326",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "361/6 Moo.12 Thepprasit Road, Nong Prue, Bang Lamung, Chon Buri 20150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station D.K. Petroleum",
@@ -23743,6 +29304,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -23750,6 +29312,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -23820,16 +29383,40 @@ window.PTT_DATA = [
     "lon": 99.85311,
     "chargers": [
       {
-        "name": "GWC-OR-0088",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0088",
+        "name": "0088",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "129 Moo.10 Phetkasem Road, Sam Krathai, Kui Buri, Prachuap Khiri Khan 77150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "The Promenade (1st Floor)",
@@ -23886,16 +29473,37 @@ window.PTT_DATA = [
     "lon": 101.0485,
     "chargers": [
       {
-        "name": "GWC-OR-0199",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0199",
+        "name": "0199",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "910 Moo.4 Chachoengsao-Bang Pakong Road, Na Mueang, Mueang Chachoengsao, Chachoengsao 24000",
+    "hours": "24 hours"
   },
   {
     "name": "Design Village Kaset–Nawamin",
@@ -23969,6 +29577,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -23976,6 +29585,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -24000,6 +29610,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -24007,6 +29618,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -24014,6 +29626,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24038,6 +29651,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24045,6 +29659,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -24059,26 +29674,104 @@ window.PTT_DATA = [
     "lon": 100.9662,
     "chargers": [
       {
-        "name": "GWC-OR-4071",
+        "name": "4071",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-4072",
+        "name": "4072",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-4073",
+        "name": "4073",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-4074",
+        "name": "4074",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "price_night": 7.1,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "112 Moo.2 Mittraphap Road, Taling Chan, Mueang Saraburi, Saraburi 18000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Somjit Service",
@@ -24137,6 +29830,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24144,6 +29838,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24168,6 +29863,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24175,6 +29871,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24199,6 +29896,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24206,6 +29904,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24213,6 +29912,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24260,11 +29960,32 @@ window.PTT_DATA = [
     "lon": 100.6854843,
     "chargers": [
       {
-        "name": "THPORE250041",
+        "name": "250041",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "95 Moo.6 Lat Sawai, Lam Luk Ka, Pathum Thani 12150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Bonito Chinos Hotel",
@@ -24436,16 +30157,40 @@ window.PTT_DATA = [
     "lon": 102.8412,
     "chargers": [
       {
-        "name": "GWC-OR-1091",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1091",
+        "name": "1091",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1/68 Moo.13 Kasikorn Thung Sang Road Nai Mueang, Mueang Khon Kaen, Khon Kaen 40000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sahapattana Petroleum",
@@ -24453,16 +30198,40 @@ window.PTT_DATA = [
     "lon": 101.1975,
     "chargers": [
       {
-        "name": "GWC-OR-1018",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1018",
+        "name": "1018",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "71 Moo.16 Nam Chun, Lom Sak, Phetchabun 67110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station J.M.W. Hua Hin",
@@ -24480,6 +30249,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24487,6 +30257,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24575,6 +30346,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -24582,6 +30354,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -24589,6 +30362,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24683,11 +30457,32 @@ window.PTT_DATA = [
     "lon": 99.0669747,
     "chargers": [
       {
-        "name": "THPORE240239",
+        "name": "240239",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "7 Moo.8 San Pu Loei, Doi Saket, Chiang Mai 50220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Amnat Charoen",
@@ -24736,11 +30531,32 @@ window.PTT_DATA = [
     "lon": 100.336576,
     "chargers": [
       {
-        "name": "THPORE240009",
+        "name": "240009",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "96 Moo.1 Nong Nam Yai, Phak Hai, Phra Nakhon Si Ayutthaya 13280",
+    "hours": "24 hours"
   },
   {
     "name": "Cosi Samui Chaweng Beach",
@@ -24815,6 +30631,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24822,6 +30639,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -24846,6 +30664,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -24853,6 +30672,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24918,6 +30738,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -24925,6 +30746,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -24932,6 +30754,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -24946,11 +30769,30 @@ window.PTT_DATA = [
     "lon": 101.522764,
     "chargers": [
       {
-        "name": "GWC-OR-0410",
+        "name": "0410",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "871 Moo.2 Khao Hin Son, Phanom Sarakham, Chachoengsao 24120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nuanchan",
@@ -25024,6 +30866,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -25031,6 +30874,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -25045,12 +30889,32 @@ window.PTT_DATA = [
     "lon": 100.83239,
     "chargers": [
       {
-        "name": "GWC-OR-1246",
+        "name": "1246",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "95/10 Moo.9 Chalongkrung Road, Lam Phak Chi, Nong Chok, Bangkok 10530",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station PM (Prawet)",
@@ -25109,6 +30973,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -25116,6 +30981,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -25123,6 +30989,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -25147,6 +31014,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25154,6 +31022,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -25161,6 +31030,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -25175,16 +31045,40 @@ window.PTT_DATA = [
     "lon": 100.9322,
     "chargers": [
       {
-        "name": "GWC-OR-1103",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1103",
+        "name": "1103",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9 Sukhumvit Road Si Racha, Si Racha, Chon Buri 20110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station San Kamphaeng",
@@ -25192,16 +31086,37 @@ window.PTT_DATA = [
     "lon": 99.06314,
     "chargers": [
       {
-        "name": "GWC-OR-0082",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0082",
+        "name": "0082",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "129/4 Moo.12 San Kamphaeng, San Kamphaeng, Chiang Mai 50130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chonburi-Bypass 4",
@@ -25209,11 +31124,30 @@ window.PTT_DATA = [
     "lon": 100.9944076,
     "chargers": [
       {
-        "name": "THPORE240134",
+        "name": "240134",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "158/2 Moo.2 Chonburi-Bypass Road, Ban Suan, Mueang Chon Buri, Chon Buri 20000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kanokporn Phangnga",
@@ -25231,6 +31165,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25238,6 +31173,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -25245,6 +31181,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -25292,11 +31229,32 @@ window.PTT_DATA = [
     "lon": 101.0937,
     "chargers": [
       {
-        "name": "GWC-OR-4028",
+        "name": "4028",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "98 Moo.1 Saraburi-Lom Sak Road, Chai Narai, Chai Badan, Lop Buri 15130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S. Rungphon",
@@ -25347,6 +31305,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -25354,6 +31313,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -25368,11 +31328,32 @@ window.PTT_DATA = [
     "lon": 100.0069,
     "chargers": [
       {
-        "name": "GWC-OR-1330",
+        "name": "1330",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "109 Moo.13 Phrong Maduea, Mueang Nakhon Pathom, Nakhon Pathom 73000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phetthawee Choke",
@@ -25446,6 +31427,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25453,6 +31435,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -25477,6 +31460,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25484,6 +31468,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -25703,6 +31688,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25710,6 +31696,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -25757,16 +31744,40 @@ window.PTT_DATA = [
     "lon": 99.92576,
     "chargers": [
       {
-        "name": "GWC-OR-0226",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0226",
+        "name": "0226",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "116 Moo.2 Na Phru, Phra Phrom, Nakhon Si Thammarat 80000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Brax & Ben",
@@ -25815,11 +31826,32 @@ window.PTT_DATA = [
     "lon": 100.0801,
     "chargers": [
       {
-        "name": "GWC-OR-0374",
+        "name": "0374",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "76 Moo.1 Sam Ngam, Don Tum, Nakhon Pathom 73150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Samruai Service 2",
@@ -25827,16 +31859,37 @@ window.PTT_DATA = [
     "lon": 101.2225,
     "chargers": [
       {
-        "name": "GWC-OR-1203",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1203",
+        "name": "1203",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "113 Moo.1 Bang Krabao, Ban Sang, Prachin Buri 25150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thepha",
@@ -25844,11 +31897,30 @@ window.PTT_DATA = [
     "lon": 100.959,
     "chargers": [
       {
-        "name": "GWC-OR-0233",
+        "name": "0233",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "79 Moo.4 Blang Phli Yai, Bang Phli, Samut Prakarn 10540",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station KCF Petro",
@@ -25866,6 +31938,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -25873,6 +31946,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26009,11 +32083,30 @@ window.PTT_DATA = [
     "lon": 101.237509,
     "chargers": [
       {
-        "name": "GWC-OR-0416",
+        "name": "0416",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Ban Bueng 4 (Road 331 Km. 70)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Samut Sakhon Petroleum",
@@ -26021,11 +32114,32 @@ window.PTT_DATA = [
     "lon": 100.3192,
     "chargers": [
       {
-        "name": "GWC-OR-1329",
+        "name": "1329",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "23/5 Moo.6 Rama 2 Road, Khok Krabue, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Golden Dragon Energy",
@@ -26109,6 +32223,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26116,6 +32231,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -26140,6 +32256,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -26147,6 +32264,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26154,6 +32272,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26225,11 +32344,30 @@ window.PTT_DATA = [
     "lon": 100.6302,
     "chargers": [
       {
-        "name": "GWC-OR-1282",
+        "name": "1282",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111 Moo.2 Wang Ngio Tai, Dong Charoen, Phichit 66210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sri Nakhon Power Oil",
@@ -26237,11 +32375,32 @@ window.PTT_DATA = [
     "lon": 100.097849,
     "chargers": [
       {
-        "name": "GWC-OR-1404",
+        "name": "1404",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111/1 Moo.5 Wat Sai, Mueang Nakhon Sawan, Nakhon Sawan 60000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Hop Inn (Hua Hin)",
@@ -26292,6 +32451,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -26299,6 +32459,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -26306,6 +32467,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26353,16 +32515,52 @@ window.PTT_DATA = [
     "lon": 100.82921,
     "chargers": [
       {
-        "name": "GWC-OR-1448",
+        "name": "1448",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2209",
+        "name": "2209",
         "type": "AC",
-        "heads": 2
+        "heads": 2,
+        "kw": 22.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "Siam Premium Outlets Bangkok",
+    "hours": "10:00 - 22:00 hr."
   },
   {
     "name": "PTT Station Puncharoen Group (Lumsai)",
@@ -26370,11 +32568,30 @@ window.PTT_DATA = [
     "lon": 100.628856,
     "chargers": [
       {
-        "name": "THPORE240254",
+        "name": "240254",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "18/8 Moo.1 Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Lampang",
@@ -26423,11 +32640,30 @@ window.PTT_DATA = [
     "lon": 100.7241,
     "chargers": [
       {
-        "name": "GWC-OR-4030",
+        "name": "4030",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "12/3 Moo.3 Lam Ta Sao, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phaisan Inter Oil",
@@ -26445,6 +32681,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26452,6 +32689,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -26466,11 +32704,32 @@ window.PTT_DATA = [
     "lon": 102.748602,
     "chargers": [
       {
-        "name": "THPORE240022",
+        "name": "240022",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "517 Moo.5 Nong Khai–Bueng Kan Road, Pho Chai, Mueang Nong Khai, Nong Khai 43000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Galaphaphruek",
@@ -26488,6 +32747,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -26495,6 +32755,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -26502,6 +32763,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26559,6 +32821,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26566,6 +32829,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -26590,7 +32854,104 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      },
+      {
+        "name": "2011",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      },
+      {
+        "name": "2012",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "55/5 Moo.2 Phahonyothin Road, Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "Robinson Lifestyle Roi Et",
+    "lat": 16.06018,
+    "lon": 103.6175,
+    "chargers": [
+      {
+        "name": "1057",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
           },
           {
             "position": "ขวา-B",
@@ -26607,78 +32968,10 @@ window.PTT_DATA = [
             "status": "available"
           }
         ]
-      },
-      {
-        "name": "2011",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "กลาง-A",
-            "type": "AC Type 2",
-            "kw": 7.4,
-            "price_day": 7.9,
-            "status": "available"
-          },
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "occupied"
-          }
-        ]
-      },
-      {
-        "name": "2012",
-        "type": "DC",
-        "heads": 3,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "กลาง-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "closed"
-          },
-          {
-            "position": "ขวา-B",
-            "type": "AC Type 2",
-            "kw": 22.0,
-            "price_day": 7.9,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "AC Type 2",
-            "kw": 22.0,
-            "price_day": 7.9,
-            "status": "available"
-          }
-        ]
       }
     ],
-    "address": "55/5 Moo.2 Phahonyothin Road, Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "Robinson Lifestyle Roi Et",
-    "lat": 16.06018,
-    "lon": 103.6175,
-    "chargers": [
-      {
-        "name": "GWC-OR-1057",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1057",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "137 Moo.3 Dong Lan, Mueang Roi Et, Roi Et 45000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station S. Charoenkit Sukhaphiban 5",
@@ -26719,11 +33012,32 @@ window.PTT_DATA = [
     "lon": 100.8512068,
     "chargers": [
       {
-        "name": "GWC-OR-1303",
+        "name": "1303",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "34/3 Moo.3 Bua Loi, Nong Khae, Saraburi 18140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station En Rich Station",
@@ -26741,6 +33055,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26748,6 +33063,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26762,11 +33078,32 @@ window.PTT_DATA = [
     "lon": 103.5360699,
     "chargers": [
       {
-        "name": "GWC-OR-1272",
+        "name": "1272",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "159 Moo.6 Kalasin - Roi Et Road Lup, Mueang Kalasin, Kalasin 46000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Petroplus Corporation (Nong Ri)",
@@ -26784,6 +33121,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26791,6 +33129,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -26798,6 +33137,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26863,6 +33203,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -26870,6 +33211,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -26884,16 +33226,40 @@ window.PTT_DATA = [
     "lon": 99.96526,
     "chargers": [
       {
-        "name": "GWC-OR-1094",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1094",
+        "name": "1094",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "110/120 Nong Kae, Hua Hin, Prachuap Khiri Khan 77110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station NGV Km.5",
@@ -26957,11 +33323,30 @@ window.PTT_DATA = [
     "lon": 99.9008071,
     "chargers": [
       {
-        "name": "THPORE240121",
+        "name": "240121",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "22/6 Moo.3 Songphol Road, Nong O, Ban Pong, Ratchaburi 70110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sukhum Service (Saraphi)",
@@ -26969,11 +33354,32 @@ window.PTT_DATA = [
     "lon": 99.05002,
     "chargers": [
       {
-        "name": "GWC-OR-1361",
+        "name": "1361",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "169 Moo.3 Chiang Mai-Lampang Road, Saraphi, Saraphi, Chiang Mai 50140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station A Ka Nong Petroleum",
@@ -26991,6 +33397,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -26998,6 +33405,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27005,6 +33413,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27019,11 +33428,32 @@ window.PTT_DATA = [
     "lon": 103.0503104,
     "chargers": [
       {
-        "name": "THPORE240234",
+        "name": "240234",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "222 Moo.14 Chokchai-Det Udom Road, Prakhon Chai, Prakhon Chai, Buri Ram 31140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kanchanapisek-Bangbon",
@@ -27041,6 +33471,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27048,6 +33479,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27055,6 +33487,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27233,11 +33666,32 @@ window.PTT_DATA = [
     "lon": 99.094282,
     "chargers": [
       {
-        "name": "GWC-OR-1444",
+        "name": "1444",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "208,208/1,208/2,208/3 Moo.9 Wang Mai, Mueang Chumphon, Chumphon 86190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station OK Pak Chong",
@@ -27255,6 +33709,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27262,6 +33717,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -27286,6 +33742,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27293,6 +33750,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -27317,6 +33775,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27324,6 +33783,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -27389,6 +33849,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27396,6 +33857,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27403,6 +33865,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27427,6 +33890,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27434,6 +33898,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27441,6 +33906,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27455,16 +33921,40 @@ window.PTT_DATA = [
     "lon": 101.2097,
     "chargers": [
       {
-        "name": "GWC-OR-0263",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0263",
+        "name": "0263",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "91/8 Moo.1 Tha Thonglang, Bang Khla, Chachoengsao 24110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S. Thian Thong Petroleum",
@@ -27472,11 +33962,32 @@ window.PTT_DATA = [
     "lon": 102.320987,
     "chargers": [
       {
-        "name": "THPORE240002",
+        "name": "240002",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "booked"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1288 Moo.10 Suwanson Road, Watthana Nakhon, Watthana Nakhon, Sa kaeo 27160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sinchaikan Petroleum",
@@ -27484,16 +33995,40 @@ window.PTT_DATA = [
     "lon": 103.789,
     "chargers": [
       {
-        "name": "GWC-OR-0145",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0145",
+        "name": "0145",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "276/1 Moo.10 Ra-ngaeng, Sikhoraphum, Surin 32110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nong Hoy",
@@ -27511,6 +34046,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27518,6 +34054,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27525,6 +34062,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27590,6 +34128,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27597,6 +34136,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27717,7 +34257,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           }
         ]
       }
@@ -27741,6 +34281,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27748,6 +34289,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27755,6 +34297,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27769,11 +34312,32 @@ window.PTT_DATA = [
     "lon": 99.65643,
     "chargers": [
       {
-        "name": "GWC-OR-0403",
+        "name": "0403",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "44 Moo.3 Khao Wang - Nampu Road, Nam Phu, Mueang Ratchaburi, Ratchaburi 70000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thiti Petroleum (2014) (Branch 1)",
@@ -27781,11 +34345,32 @@ window.PTT_DATA = [
     "lon": 101.1362,
     "chargers": [
       {
-        "name": "GWC-OR-1081",
+        "name": "1081",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "337/4 Moo.7 Bo Win, Si Racha, Chon Buri 20230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Mingle Hill Minburi",
@@ -27836,6 +34421,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -27843,6 +34429,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -27850,6 +34437,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -27874,6 +34462,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27881,6 +34470,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -27954,6 +34544,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -27961,6 +34552,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -27976,6 +34568,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -27983,6 +34576,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -27998,6 +34592,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28005,6 +34600,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28029,6 +34625,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28036,6 +34633,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28083,11 +34681,32 @@ window.PTT_DATA = [
     "lon": 100.2065,
     "chargers": [
       {
-        "name": "GWC-OR-0396",
+        "name": "0396",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "4/29 Moo.4 Nakhon Chai Si-Huai Phlu Road, Don Faek, Nakhon Chai Si, Nakhon Pathom 73120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ekkachai-Bangbon (OB)",
@@ -28138,6 +34757,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28145,6 +34765,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28192,21 +34813,9 @@ window.PTT_DATA = [
     "lon": 99.86777,
     "chargers": [
       {
-        "name": "GWC-OR-0089",
+        "name": "0089",
         "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Heng Petroleum Services",
-    "lat": 12.96002,
-    "lon": 99.90128,
-    "chargers": [
-      {
-        "name": "0056",
-        "type": "DC",
-        "heads": 3,
+        "heads": 2,
         "kw": 120.0,
         "connectors": [
           {
@@ -28214,20 +34823,48 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "price_night": 6.6,
+            "status": "available"
           },
           {
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "255/1 Moo.1 Rai Kao, Sam Roi Yot, Prachuap Khiri Khan 77180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Heng Petroleum Services",
+    "lat": 12.96002,
+    "lon": 99.90128,
+    "chargers": [
+      {
+        "name": "1328",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
-            "position": "ซ้าย ที-2",
-            "type": "AC Type 2",
-            "kw": 22.0,
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28242,11 +34879,32 @@ window.PTT_DATA = [
     "lon": 101.1260904,
     "chargers": [
       {
-        "name": "GWC-OR-1139",
+        "name": "1139",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "383 Sukhumvit Road, Huai Pong, Mueang Rayong, Rayong 21150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thani Business (1993)",
@@ -28254,11 +34912,32 @@ window.PTT_DATA = [
     "lon": 102.7826186,
     "chargers": [
       {
-        "name": "THPORE240019",
+        "name": "240019",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "119 Moo.5 Rop Muang Road, Ban Lueam Subdistrict, Mueang Udon Thani District, Udon Thani 41000 Ban Lueam, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Tha Rong Chang",
@@ -28266,16 +34945,40 @@ window.PTT_DATA = [
     "lon": 99.15364,
     "chargers": [
       {
-        "name": "GWC-OR-0261",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0261",
+        "name": "0261",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "90/9 Moo.3 Tha Rong Chang, Phunphin, Surat Thani 84130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station BG Station (1)",
@@ -28284,6 +34987,70 @@ window.PTT_DATA = [
     "chargers": [
       {
         "name": "240241",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "207  Sala Thammasop, Thawi Watthana, Bangkok 10170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Srithongprae Petroleum",
+    "lat": 9.22639,
+    "lon": 98.38707,
+    "chargers": [
+      {
+        "name": "0429",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "89/1 Moo.3 Khura, Khura Buri, Phang-nga 82150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Samut Songkhram Petroleum",
+    "lat": 13.433665,
+    "lon": 100.054916,
+    "chargers": [
+      {
+        "name": "8003",
         "type": "DC",
         "heads": 2,
         "kw": 180.0,
@@ -28307,33 +35074,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "207  Sala Thammasop, Thawi Watthana, Bangkok 10170",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Srithongprae Petroleum",
-    "lat": 9.22639,
-    "lon": 98.38707,
-    "chargers": [
-      {
-        "name": "GWC-OR-0429",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Samut Songkhram Petroleum",
-    "lat": 13.433665,
-    "lon": 100.054916,
-    "chargers": [
-      {
-        "name": "GWC-OR-8003",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "80/1 Moo.6 Thonburi-Paktho Road, Bang Kaeo, Mueang Samut Songkhram, Samut Songkhram 75000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Petchtana Group",
@@ -28351,6 +35093,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28358,6 +35101,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28372,11 +35116,30 @@ window.PTT_DATA = [
     "lon": 100.498478,
     "chargers": [
       {
-        "name": "THPORE250016",
+        "name": "250016",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Ayutthaya-Asia Highway Km.98",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam Total Energy",
@@ -28384,11 +35147,32 @@ window.PTT_DATA = [
     "lon": 100.362,
     "chargers": [
       {
-        "name": "GWC-OR-0414",
+        "name": "0414",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "38/12 Moo.1 Bang Nam Chuet, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station MSL Energy",
@@ -28406,6 +35190,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28413,6 +35198,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28437,6 +35223,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28444,6 +35231,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -28491,16 +35279,40 @@ window.PTT_DATA = [
     "lon": 101.0676,
     "chargers": [
       {
-        "name": "GWC-OR-1059",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1059",
+        "name": "1059",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "255 Moo.13 Sa Kruat, Si Thep, Phetchabun 67170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Dusit Motor Oil",
@@ -28518,6 +35330,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28525,6 +35338,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28532,6 +35346,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28556,6 +35371,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28563,6 +35379,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28653,6 +35470,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28660,6 +35478,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28674,11 +35493,32 @@ window.PTT_DATA = [
     "lon": 100.903565,
     "chargers": [
       {
-        "name": "GWC-OR-0316",
+        "name": "0316",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "219 Moo.6 Sukhumvit Road, Na Kluea, Bang Lamung, Chon Buri 20150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Café Amazon Siri Sap Market",
@@ -28729,6 +35569,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28736,6 +35577,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28760,6 +35602,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -28767,6 +35610,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28832,6 +35676,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -28839,6 +35684,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -28853,11 +35699,32 @@ window.PTT_DATA = [
     "lon": 100.7644124,
     "chargers": [
       {
-        "name": "GWC-OR-1299",
+        "name": "1299",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "51/1 Moo.2 Rangsit-Nakhon Nayok Road, Lam Phak Kut, Thanyaburi, Pathum Thani 12110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Nakhon Pathom-Lamphaya 3",
@@ -28865,11 +35732,30 @@ window.PTT_DATA = [
     "lon": 99.962096,
     "chargers": [
       {
-        "name": "THPORE240260",
+        "name": "240260",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "271 Moo.2 Sra Kathiam, Mueang Nakhon Pathom, Nakhon Pathom 73000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Theprak (HUB)",
@@ -29048,6 +35934,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29055,6 +35942,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -29102,11 +35990,32 @@ window.PTT_DATA = [
     "lon": 100.2717,
     "chargers": [
       {
-        "name": "GWC-OR-0404",
+        "name": "0404",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "94/315 Moo.7 Tha Sai, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rung Ruangchai 2014",
@@ -29114,16 +36023,40 @@ window.PTT_DATA = [
     "lon": 103.544962,
     "chargers": [
       {
-        "name": "GWC-OR-0143",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0143",
+        "name": "0143",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "278 Moo.7 Salakdai, Mueang Surin, Surin 32000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thanachai Karnchang Sakon Nakhon",
@@ -29131,11 +36064,32 @@ window.PTT_DATA = [
     "lon": 104.143506,
     "chargers": [
       {
-        "name": "GWC-OR-1318",
+        "name": "1318",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "203 Moo.12 Sakon Nakhon-Nakae Road, Ngio Don, Mueang Sakon Nakhon, Sakon Nakhon 47000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT NGV Station Kanittha Panich",
@@ -29232,11 +36186,32 @@ window.PTT_DATA = [
     "lon": 104.543787,
     "chargers": [
       {
-        "name": "THPORE240071",
+        "name": "240071",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "711 Moo.12 Sam Yaek, Loeng Nok Tha, Yasothon 35120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Uttaradit Oil",
@@ -29244,11 +36219,32 @@ window.PTT_DATA = [
     "lon": 100.1242,
     "chargers": [
       {
-        "name": "GWC-OR-1286",
+        "name": "1286",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "85 Moo.4 SaiAsia Road, Pa Sao, Mueang Uttaradit, Uttaradit 53000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Paolo Kaset Hospital",
@@ -29322,11 +36318,32 @@ window.PTT_DATA = [
     "lon": 100.3344477,
     "chargers": [
       {
-        "name": "GWC-OR-1323",
+        "name": "1323",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "612 Phahonyothin Road, Takhli, Takhli, Nakhon Sawan 60140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Isan Services (HO)",
@@ -29344,6 +36361,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29351,6 +36369,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29375,6 +36394,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29382,6 +36402,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29396,11 +36417,30 @@ window.PTT_DATA = [
     "lon": 100.90883,
     "chargers": [
       {
-        "name": "THPORE240273",
+        "name": "240273",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "126/83 Moo.6 Sukhumvit Road, Na Kluea, Bang Lamung, Chon Buri 20150",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station For B Logistics",
@@ -29418,6 +36458,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29425,6 +36466,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29482,6 +36524,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29489,6 +36532,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29513,6 +36557,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29520,6 +36565,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -29544,6 +36590,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29551,6 +36598,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29558,6 +36606,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29572,11 +36621,30 @@ window.PTT_DATA = [
     "lon": 100.921248,
     "chargers": [
       {
-        "name": "GWC-OR-1215",
+        "name": "1215",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "16 Moo.10 Sukhumvit Road, Thung Sukhla, Si Racha, Chon Buri 20230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siriwatthanaporn",
@@ -29584,11 +36652,32 @@ window.PTT_DATA = [
     "lon": 99.4385,
     "chargers": [
       {
-        "name": "GWC-OR-0441",
+        "name": "0441",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "249 Moo.4 Phetkasem Road, Ron Thong, Bang Saphan, Prachuap Khiri Khan 77230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Robinson Lifestyle Chalong",
@@ -29596,12 +36685,30 @@ window.PTT_DATA = [
     "lon": 98.3476205,
     "chargers": [
       {
-        "name": "GWC-OR-6021",
+        "name": "6021",
         "type": "DC",
         "heads": 2,
-        "kw": 40.0
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "10/53 Moo.1 Chalong, Mueang Phuket, Phuket 83130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thanarak Petroleum",
@@ -29609,11 +36716,32 @@ window.PTT_DATA = [
     "lon": 99.7314037,
     "chargers": [
       {
-        "name": "GWC-OR-1238",
+        "name": "1238",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "71 Moo.11 Phahonyothin Road, Chom Mok Kaeo, Mae Lao, Chiang Rai 57250",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Fashion Island A (2nd Floor)",
@@ -29680,6 +36808,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29687,6 +36816,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29711,6 +36841,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29718,6 +36849,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29814,16 +36946,40 @@ window.PTT_DATA = [
     "lon": 101.2606,
     "chargers": [
       {
-        "name": "GWC-OR-0229",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0229",
+        "name": "0229",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "162 Moo.11 Naklua Road, Bana, Mueang Pattani, Pattani 94000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chunlee Petroleum",
@@ -29841,6 +36997,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29848,6 +37005,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29855,6 +37013,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29879,6 +37038,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -29886,6 +37046,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -29910,6 +37071,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -29917,6 +37079,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -29941,6 +37104,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -29948,6 +37112,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -29963,6 +37128,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 7.4,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -29977,11 +37143,30 @@ window.PTT_DATA = [
     "lon": 102.820028,
     "chargers": [
       {
-        "name": "THPORE250026",
+        "name": "250026",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "244 Moo.4 Ban Chan, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mitrtae Capital",
@@ -30032,6 +37217,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30039,6 +37225,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30063,6 +37250,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30070,6 +37258,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30216,6 +37405,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30223,6 +37413,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30247,6 +37438,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30254,6 +37446,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -30278,6 +37471,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30285,6 +37479,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30299,16 +37494,40 @@ window.PTT_DATA = [
     "lon": 101.3393,
     "chargers": [
       {
-        "name": "GWC-OR-1077",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1077",
+        "name": "1077",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "123 Moo.4 Chachoengsao-Kabinburi Road, Mueang Kao, Phanom Sarakham, Chachoengsao 24120",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station La-ngu Petroleum",
@@ -30326,6 +37545,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30333,6 +37553,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30340,6 +37561,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30354,11 +37576,32 @@ window.PTT_DATA = [
     "lon": 99.8349477,
     "chargers": [
       {
-        "name": "GWC-OR-1242",
+        "name": "1242",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "130 Moo.8 Phahonyothin Road, Bang Kaeo, Banphot Phisai, Nakhon Sawan 60180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Petch Nam Aek Petroleum",
@@ -30376,6 +37619,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30383,6 +37627,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -30489,6 +37734,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30496,6 +37742,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30520,6 +37767,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30527,6 +37775,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -30551,6 +37800,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30558,6 +37808,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30582,6 +37833,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30589,6 +37841,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30603,16 +37856,40 @@ window.PTT_DATA = [
     "lon": 100.9032,
     "chargers": [
       {
-        "name": "GWC-OR-0331",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0331",
+        "name": "0331",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 8.9,
+            "price_night": 8.1,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 8.9,
+            "price_night": 8.1,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 8.9,
+            "price_night": 8.1,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "133/1 Moo.8 Sukhumvit Road, Bang Sare, Sattahip, Chon Buri 20250",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Century The Movie Plaza Sukhumvit (3st floor)",
@@ -30686,11 +37963,32 @@ window.PTT_DATA = [
     "lon": 100.3297,
     "chargers": [
       {
-        "name": "GWC-OR-0393",
+        "name": "0393",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "20/1 Moo.8 Krathum Lom, Sam Phran, Nakhon Pathom 73220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Double S Petro Service",
@@ -30708,6 +38006,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30715,6 +38014,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30722,6 +38022,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30812,6 +38113,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30819,6 +38121,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30843,6 +38146,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30850,6 +38154,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30874,6 +38179,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -30881,6 +38187,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30905,6 +38212,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -30912,6 +38220,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30936,6 +38245,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -30943,6 +38253,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -30957,16 +38268,37 @@ window.PTT_DATA = [
     "lon": 101.081,
     "chargers": [
       {
-        "name": "GWC-OR-0201",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0201",
+        "name": "0201",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "162 Moo.6 Sukhumvit Road, Ban Chang, Ban Chang, Rayong 21130",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Chang Phueak Petroleum (OB)",
@@ -30975,6 +38307,136 @@ window.PTT_DATA = [
     "chargers": [
       {
         "name": "240233",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "89 Moo.3 Phetkasem Road, Khao Chai Rat, Pathio, Chumphon 86210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Sang Sawang Nakhonratchasima Phanich",
+    "lat": 15.5947349,
+    "lon": 102.4208005,
+    "chargers": [
+      {
+        "name": "240084",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "5 Moo.15 Bua Yai-Prathai Road, Bua Yai, Bua Yai, Nakhon Ratchasima 30120",
+    "hours": "24 hours"
+  },
+  {
+    "name": "PTTRM Rayong–Sukhumvit 4",
+    "lat": 12.724241,
+    "lon": 101.15122,
+    "chargers": [
+      {
+        "name": "250091",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "PTTRM Rayong–Sukhumvit 4",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Kritiporn Petroleum",
+    "lat": 16.4599254,
+    "lon": 103.5456527,
+    "chargers": [
+      {
+        "name": "1274",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "219 Moo.7 Thinanon Road, Phon Thong, Mueang Kalasin, Kalasin 46000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTTRM Pathum Thani Highway 346 Km.12 (Santisuk)",
+    "lat": 14.0284034,
+    "lon": 100.5180024,
+    "chargers": [
+      {
+        "name": "240249",
         "type": "DC",
         "heads": 2,
         "kw": 180.0,
@@ -30996,75 +38458,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "89 Moo.3 Phetkasem Road, Khao Chai Rat, Pathio, Chumphon 86210",
+    "address": "PTTRM Pathum Thani Highway 346 Km.12 (Santisuk)",
     "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Sang Sawang Nakhonratchasima Phanich",
-    "lat": 15.5947349,
-    "lon": 102.4208005,
-    "chargers": [
-      {
-        "name": "THPORE240084",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTTRM Rayong–Sukhumvit 4",
-    "lat": 12.724241,
-    "lon": 101.15122,
-    "chargers": [
-      {
-        "name": "THPORE250091",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Kritiporn Petroleum",
-    "lat": 16.4599254,
-    "lon": 103.5456527,
-    "chargers": [
-      {
-        "name": "1274",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "ขวา-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "available"
-          }
-        ]
-      }
-    ],
-    "address": "219 Moo.7 Thinanon Road, Phon Thong, Mueang Kalasin, Kalasin 46000",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTTRM Pathum Thani Highway 346 Km.12 (Santisuk)",
-    "lat": 14.0284034,
-    "lon": 100.5180024,
-    "chargers": [
-      {
-        "name": "THPORE240249",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
   },
   {
     "name": "PTTRM Saraphi-Hang Dong",
@@ -31072,11 +38467,30 @@ window.PTT_DATA = [
     "lon": 99.012513,
     "chargers": [
       {
-        "name": "THPORE250073",
+        "name": "250073",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "384 Moo.6 Nong Phueng, Saraphi, Chiang Mai 50140",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station A.T. Bo Thong Petroleum",
@@ -31094,6 +38508,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31101,6 +38516,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31108,6 +38524,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31122,11 +38539,32 @@ window.PTT_DATA = [
     "lon": 101.222279,
     "chargers": [
       {
-        "name": "THPORE240074",
+        "name": "240074",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "97 Moo.7 Nong Khwai, Lom Sak, Phetchabun 67110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jarunee Petroleum",
@@ -31144,6 +38582,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31151,6 +38590,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31165,11 +38605,32 @@ window.PTT_DATA = [
     "lon": 102.833847,
     "chargers": [
       {
-        "name": "GWC-OR-1463",
+        "name": "1463",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "592 Moo.4 Udon-Khon Kaen Road, Ban Chan, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station P.O.A Petroleum Chainat",
@@ -31187,6 +38648,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31194,6 +38656,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31218,6 +38681,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31225,6 +38689,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31239,11 +38704,30 @@ window.PTT_DATA = [
     "lon": 100.7886476,
     "chargers": [
       {
-        "name": "THPORE240111",
+        "name": "240111",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "SUSCO Bang Phriang",
+    "hours": "00:00 - 23:59 hr."
   },
   {
     "name": "PTT Station Jindasak Intertrade",
@@ -31261,6 +38745,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31268,6 +38753,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31333,6 +38819,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31340,6 +38827,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31347,6 +38835,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31394,11 +38883,32 @@ window.PTT_DATA = [
     "lon": 101.900457,
     "chargers": [
       {
-        "name": "GWC-OR-0421",
+        "name": "0421",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "243 Moo.6 Bu Phram, Na Di, Prachin Buri 25220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jiang-Asawan Nongkhai (Phraekkasa)",
@@ -31439,12 +38949,30 @@ window.PTT_DATA = [
     "lon": 99.145167,
     "chargers": [
       {
-        "name": "GWC-OR-0420",
+        "name": "0420",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "95/3 Moo.2 Phetkasem Road, Khlong Thom Tai, Khlong Thom, Krabi 81120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chonburi-Sriracha (Laem Thong)",
@@ -31452,11 +38980,30 @@ window.PTT_DATA = [
     "lon": 100.9222088,
     "chargers": [
       {
-        "name": "THPORE240143",
+        "name": "240143",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "141/32 Sukhumvit Road, Si Racha, Si Racha, Chon Buri 20110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Benz TTC Motor",
@@ -31507,6 +39054,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31514,6 +39062,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31561,16 +39110,37 @@ window.PTT_DATA = [
     "lon": 101.6916,
     "chargers": [
       {
-        "name": "GWC-OR-0345",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0345",
+        "name": "0345",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "227/10 Moo.6 Sukhumvit Road, Thung Khwai Kin, Klaeng, Rayong 21110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station Phawadee Kanchanaphisek",
@@ -31677,6 +39247,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31684,6 +39255,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31708,6 +39280,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31715,6 +39288,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31813,6 +39387,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31820,6 +39395,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31844,6 +39420,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31851,6 +39428,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31858,6 +39436,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -31915,6 +39494,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -31922,6 +39502,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -31929,6 +39510,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31943,16 +39525,37 @@ window.PTT_DATA = [
     "lon": 101.0223,
     "chargers": [
       {
-        "name": "GWC-OR-1183",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1183",
+        "name": "1183",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "51/4 Moo.5 Pong, Bang Lamung, Chon Buri 20150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Koh Kha Karn Petroleum",
@@ -31970,6 +39573,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -31977,6 +39581,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -31991,11 +39596,32 @@ window.PTT_DATA = [
     "lon": 103.8375,
     "chargers": [
       {
-        "name": "GWC-OR-1279",
+        "name": "1279",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "143 Moo.1 Ban Chop, Sangkha, Surin 32150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phaknhua-Chaiwatthana",
@@ -32013,6 +39639,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32020,6 +39647,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32027,6 +39655,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32041,11 +39670,32 @@ window.PTT_DATA = [
     "lon": 103.7284,
     "chargers": [
       {
-        "name": "GWC-OR-1446",
+        "name": "1446",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "17 Moo.6 Teenanon Road, Nong Waeng, Somdet, Kalasin 46150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Tak Mai Ngam Energy",
@@ -32053,11 +39703,32 @@ window.PTT_DATA = [
     "lon": 99.123069,
     "chargers": [
       {
-        "name": "THPORE240255",
+        "name": "240255",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "24/14 Moo.7 Mai Ngam, Mueang Tak, Tak 63000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pak Kret Bypass",
@@ -32149,6 +39820,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32156,6 +39828,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32163,6 +39836,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32187,6 +39861,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32194,6 +39869,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -32264,11 +39940,32 @@ window.PTT_DATA = [
     "lon": 100.5316,
     "chargers": [
       {
-        "name": "GWC-OR-4034",
+        "name": "4034",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "52/78 Pathum Sam Khok Road, Bang Prok, Mueang Pathum Thani, Pathum Thani 12000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phet Panpee",
@@ -32416,6 +40113,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32423,6 +40121,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32437,16 +40136,56 @@ window.PTT_DATA = [
     "lon": 98.98354,
     "chargers": [
       {
-        "name": "THPORE250292",
+        "name": "250292",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "not in operating hours"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "not in operating hours"
+          }
+        ]
       },
       {
-        "name": "THPORE250293",
+        "name": "250293",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "not in operating hours"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "not in operating hours"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "235/1 Mahidol Road, Chang Khlan, Mueang Chiang Mai, Chiang Mai 50100",
+    "hours": "Fri: 00:00 - 23:59 hr.; Mon: Close; Sat: Facilities; Sun: 00:00 - 08:30 hr.; Thu: 22:30 - 23:59 hr.; Tue: Close; Wed: Close"
   },
   {
     "name": "PTT Station Sinthip Energy",
@@ -32538,6 +40277,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32545,6 +40285,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32569,6 +40310,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32576,6 +40318,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -32656,6 +40399,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32663,6 +40407,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32677,11 +40422,30 @@ window.PTT_DATA = [
     "lon": 99.12864,
     "chargers": [
       {
-        "name": "GWC-OR-1351",
+        "name": "1351",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Phahonyothin km.524 (OB)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Station45@Ongkharak",
@@ -32689,16 +40453,37 @@ window.PTT_DATA = [
     "lon": 100.986649,
     "chargers": [
       {
-        "name": "GWC-OR-0349",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0349",
+        "name": "0349",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "45 Moo.9 Khlong Yai, Ongkharak, Nakhon Nayok 26120",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Nong Chang Gas",
@@ -32716,6 +40501,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32723,6 +40509,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -32737,11 +40524,32 @@ window.PTT_DATA = [
     "lon": 99.82947,
     "chargers": [
       {
-        "name": "GWC-OR-0436",
+        "name": "0436",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.2 Phetkasem Road Huai Rong, Khao Yoi, Phetchaburi 76140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nopbhadung Service (1)",
@@ -32759,6 +40567,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -32766,6 +40575,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32773,6 +40583,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -32796,6 +40607,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "occupied"
           },
@@ -32803,6 +40615,7 @@ window.PTT_DATA = [
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
           }
@@ -32943,6 +40756,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -32950,6 +40764,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -32965,6 +40780,154 @@ window.PTT_DATA = [
     "chargers": [
       {
         "name": "1014",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "16 Moo.12 Muang Wan, Nam Phong, Khon Kaen 40310",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Sarakham Oil",
+    "lat": 16.052039,
+    "lon": 103.128988,
+    "chargers": [
+      {
+        "name": "240129",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "29 Moo.16 Borabue, Borabue, Maha Sarakham 44130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Sup Suwan Petroleum",
+    "lat": 13.30896,
+    "lon": 101.4349,
+    "chargers": [
+      {
+        "name": "1079",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "555 Moo.2 Wat Suwan, Bo Thong, Chon Buri 20270",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Ruedeephen (Issara Ban Nai)",
+    "lat": 9.140403,
+    "lon": 99.669203,
+    "chargers": [
+      {
+        "name": "1416",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
+      }
+    ],
+    "address": "15/5 Moo.5 Surat-Sichon Road, Tha U-thae, Kanchanadit, Surat Thani 84160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "Samui International Airport",
+    "lat": 9.548669,
+    "lon": 100.063,
+    "chargers": [
+      {
+        "name": "0325",
         "type": "DC",
         "heads": 3,
         "kw": 120.0,
@@ -32993,66 +40956,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "16 Moo.12 Muang Wan, Nam Phong, Khon Kaen 40310",
-    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
-  },
-  {
-    "name": "PTT Station Sarakham Oil",
-    "lat": 16.052039,
-    "lon": 103.128988,
-    "chargers": [
-      {
-        "name": "THPORE240129",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Sup Suwan Petroleum",
-    "lat": 13.30896,
-    "lon": 101.4349,
-    "chargers": [
-      {
-        "name": "GWC-OR-1079",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1079",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Ruedeephen (Issara Ban Nai)",
-    "lat": 9.140403,
-    "lon": 99.669203,
-    "chargers": [
-      {
-        "name": "GWC-OR-1416",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "Samui International Airport",
-    "lat": 9.548669,
-    "lon": 100.063,
-    "chargers": [
-      {
-        "name": "GWC-OR-0325",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0325",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
+    "address": "99 Moo.4 Bo Phut, Ko Samui, Surat Thani 84320",
+    "hours": "07:00 - 20:59 hr."
   },
   {
     "name": "PTT Station Sukhothai Nakorn Petroleum",
@@ -33060,11 +40965,32 @@ window.PTT_DATA = [
     "lon": 99.87421,
     "chargers": [
       {
-        "name": "GWC-OR-1253",
+        "name": "1253",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "384/17 Moo.2 Ban Suan, Mueang Sukhothai, Sukhothai 64220",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station Siri Charoen Wattana",
@@ -33128,16 +41054,40 @@ window.PTT_DATA = [
     "lon": 99.79378,
     "chargers": [
       {
-        "name": "GWC-OR-1151",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1151",
+        "name": "1151",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "127 Moo.5 Phetkasem Road, Don Tako, Mueang Ratchaburi, Ratchaburi 70000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siharat Petroleum",
@@ -33145,11 +41095,32 @@ window.PTT_DATA = [
     "lon": 100.2368,
     "chargers": [
       {
-        "name": "GWC-OR-1026",
+        "name": "1026",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "34/9 Moo.10 Wat Chan, Mueang Phitsanulok, Phitsanulok 65000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "LPG Auto Station Subnirun Petroleum",
@@ -33167,6 +41138,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33174,6 +41146,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33181,6 +41154,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33205,6 +41179,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33212,6 +41187,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -33226,11 +41202,32 @@ window.PTT_DATA = [
     "lon": 99.60677,
     "chargers": [
       {
-        "name": "GWC-OR-8004",
+        "name": "8004",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111/30 Moo.6 Phetkasem Road, Thap Sakae, Thap Sakae, Prachuap Khiri Khan 77130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station P-Power Plus",
@@ -33281,6 +41278,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33288,6 +41286,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33312,6 +41311,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33319,6 +41319,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -33333,11 +41334,30 @@ window.PTT_DATA = [
     "lon": 102.0263,
     "chargers": [
       {
-        "name": "GWC-OR-0212",
+        "name": "0212",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "456 Moo.1 Nong Na Saeng, Mueang Chaiyaphum, Chaiyaphum 36000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rama 2 Petroleum",
@@ -33345,16 +41365,40 @@ window.PTT_DATA = [
     "lon": 99.93816,
     "chargers": [
       {
-        "name": "GWC-OR-1134",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1134",
+        "name": "1134",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "13/12 Moo.6 Rama 2 Road, Khlong Khon, Mueang Samut Songkhram, Samut Songkhram 75000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thongkhamthip",
@@ -33436,16 +41480,37 @@ window.PTT_DATA = [
     "lon": 101.0801,
     "chargers": [
       {
-        "name": "GWC-OR-1130",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1130",
+        "name": "1130",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "booked"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "31/23 Moo.1 Bo Win, Si Racha, Chon Buri 20230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siam I.B. O.R.",
@@ -33496,6 +41561,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33503,6 +41569,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33517,11 +41584,32 @@ window.PTT_DATA = [
     "lon": 99.014685,
     "chargers": [
       {
-        "name": "THPORE240087",
+        "name": "240087",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "405/1 Moo.4 Chiang Mai - Lamphun Road, Nong Phueng, Saraphi, Chiang Mai 50140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station W Trio",
@@ -33529,16 +41617,40 @@ window.PTT_DATA = [
     "lon": 100.6992,
     "chargers": [
       {
-        "name": "GWC-OR-0341",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0341",
+        "name": "0341",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88/33 Moo.20 Tamru-Bang Phli Road, Blang Phli Yai, Bang Phli, Samut Prakarn 10540",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Phuket Marriott Resort & Spa, Merlin Beach",
@@ -33556,6 +41668,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33563,6 +41676,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33577,11 +41691,30 @@ window.PTT_DATA = [
     "lon": 100.695,
     "chargers": [
       {
-        "name": "GWC-OR-1386",
+        "name": "1386",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "24/14 Moo.7 Khlong Si, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Porncharoen 2014",
@@ -33589,11 +41722,32 @@ window.PTT_DATA = [
     "lon": 102.4595107,
     "chargers": [
       {
-        "name": "THPORE240278",
+        "name": "240278",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "172 Moo.9 Nong Ruea, Nong Ruea, Khon Kaen 40210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Siri Phrom Charoen Petroleum",
@@ -33601,11 +41755,32 @@ window.PTT_DATA = [
     "lon": 99.47084,
     "chargers": [
       {
-        "name": "GWC-OR-0427",
+        "name": "0427",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "66/3 Moo.3 Prik, Thung Yai, Nakhon Si Thammarat 80240",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Minburi",
@@ -33705,6 +41880,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33712,6 +41888,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33736,6 +41913,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33743,6 +41921,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33750,6 +41929,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33774,6 +41954,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33781,6 +41962,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33805,6 +41987,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33812,6 +41995,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33819,6 +42003,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33843,6 +42028,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -33850,6 +42036,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -33874,6 +42061,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33881,6 +42069,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33905,6 +42094,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -33912,6 +42102,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -33926,11 +42117,30 @@ window.PTT_DATA = [
     "lon": 100.904077,
     "chargers": [
       {
-        "name": "THPORE240240",
+        "name": "240240",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1/16 Moo.6 Sukhumvit Road, Na Kluea, Bang Lamung, Chon Buri 20150",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station S.T.P. Talaybok Petroleum",
@@ -33938,11 +42148,32 @@ window.PTT_DATA = [
     "lon": 99.9867,
     "chargers": [
       {
-        "name": "GWC-OR-0285",
+        "name": "0285",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "222 Moo.6 huai Muang, Kamphaeng Saen, Nakhon Pathom 73180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Du Tai",
@@ -33960,6 +42191,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33967,6 +42199,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -33974,6 +42207,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -33988,12 +42222,32 @@ window.PTT_DATA = [
     "lon": 98.882989,
     "chargers": [
       {
-        "name": "GWC-OR-1419",
+        "name": "1419",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "booked"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99/9 Moo.2 Sai Thai, Mueang Krabi, Krabi 81000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mae Fah Pinyo Petroleum",
@@ -34011,6 +42265,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34018,6 +42273,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -34042,6 +42298,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34049,6 +42306,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34056,6 +42314,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -34070,16 +42329,40 @@ window.PTT_DATA = [
     "lon": 98.6449,
     "chargers": [
       {
-        "name": "GWC-OR-0236",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0236",
+        "name": "0236",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "56/15 Moo.4 Bang Non, Mueang Ranong, Ranong 85000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Parking Building 4, Chulalongkorn University (2nd Floor)",
@@ -34212,6 +42495,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34219,6 +42503,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34226,6 +42511,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34240,16 +42526,40 @@ window.PTT_DATA = [
     "lon": 99.20864,
     "chargers": [
       {
-        "name": "GWC-OR-0297",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0297",
+        "name": "0297",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "44/1 Moo.5 Tha Kham, Phunphin, Surat Thani 84130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Charoensak Thani Oil",
@@ -34267,6 +42577,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34274,6 +42585,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34281,6 +42593,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34305,6 +42618,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34312,6 +42626,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34319,6 +42634,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34442,6 +42758,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34449,6 +42766,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34463,11 +42781,32 @@ window.PTT_DATA = [
     "lon": 100.3568,
     "chargers": [
       {
-        "name": "GWC-OR-0406",
+        "name": "0406",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.3 Bang Nam Chuet, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Jiamchotiwat",
@@ -34485,6 +42824,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34492,6 +42832,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34499,6 +42840,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34595,11 +42937,32 @@ window.PTT_DATA = [
     "lon": 99.614003,
     "chargers": [
       {
-        "name": "THPORE240044",
+        "name": "240044",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "98 Ratsada Road, Thap Thiang, Mueang Trang, Trang 92000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Sangaree Station (4)",
@@ -34683,6 +43046,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -34690,6 +43054,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -34704,48 +43069,7 @@ window.PTT_DATA = [
     "lon": 100.6618,
     "chargers": [
       {
-        "name": "GWC-OR-1156",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1156",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Satun Petroleum (2)",
-    "lat": 7.060877,
-    "lon": 100.4857,
-    "chargers": [
-      {
-        "name": "GWC-OR-1346",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTTRM Rayong-Sukhumvit (Highway 3) km.193 (OB)",
-    "lat": 12.7186941,
-    "lon": 101.0413798,
-    "chargers": [
-      {
-        "name": "THPORE250051",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Nopporn Oil",
-    "lat": 16.828339,
-    "lon": 100.414572,
-    "chargers": [
-      {
-        "name": "1027",
+        "name": "1156",
         "type": "DC",
         "heads": 3,
         "kw": 120.0,
@@ -34774,6 +43098,111 @@ window.PTT_DATA = [
         ]
       }
     ],
+    "address": "100 Moo.3 Lam Sai, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Satun Petroleum (2)",
+    "lat": 7.060877,
+    "lon": 100.4857,
+    "chargers": [
+      {
+        "name": "1346",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "89/1 Moo.11 Bypass Road, Khlong Hae, Hat Yai, Songkhla 90110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTTRM Rayong-Sukhumvit (Highway 3) km.193 (OB)",
+    "lat": 12.7186941,
+    "lon": 101.0413798,
+    "chargers": [
+      {
+        "name": "250051",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "PTTRM Rayong-Sukhumvit (Highway 3) km.193 (OB)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Nopporn Oil",
+    "lat": 16.828339,
+    "lon": 100.414572,
+    "chargers": [
+      {
+        "name": "1027",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
     "address": "555 Moo.1 Wang Thong, Wang Thong, Phitsanulok 65130",
     "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
@@ -34793,6 +43222,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -34800,6 +43230,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -34939,6 +43370,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34946,6 +43378,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34953,6 +43386,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -34977,6 +43411,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34984,6 +43419,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -34991,6 +43427,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -35015,6 +43452,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35022,6 +43460,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35029,6 +43468,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35099,16 +43539,37 @@ window.PTT_DATA = [
     "lon": 100.9525438,
     "chargers": [
       {
-        "name": "GWC-OR-0241",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0241",
+        "name": "0241",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.7 Mittraphap Road, Taling Chan, Mueang Saraburi, Saraburi 18000",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Preechasap Service",
@@ -35116,11 +43577,32 @@ window.PTT_DATA = [
     "lon": 101.0483,
     "chargers": [
       {
-        "name": "GWC-OR-1339",
+        "name": "1339",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.10 Rangsit-Nakhon Nayok Road, Bang O, Ban Na, Nakhon Nayok 26110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chonburi-Bypass 3",
@@ -35128,11 +43610,30 @@ window.PTT_DATA = [
     "lon": 100.99464,
     "chargers": [
       {
-        "name": "THPORE240133",
+        "name": "240133",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "21/17 Moo.1 Chonburi-Bypass Road, Nong Khang Khok, Mueang Chon Buri, Chon Buri 20000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Samui Oil",
@@ -35140,11 +43641,32 @@ window.PTT_DATA = [
     "lon": 100.0273,
     "chargers": [
       {
-        "name": "GWC-OR-0224",
+        "name": "0224",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "106/43 ม.1 Moo.1 Bo Phut, Ko Samui, Surat Thani 84320",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Grande Centre Point Surawong",
@@ -35195,6 +43717,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35202,6 +43725,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35216,19 +43740,7 @@ window.PTT_DATA = [
     "lon": 99.1911023,
     "chargers": [
       {
-        "name": "GWC-OR-1402",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station KabinBuri",
-    "lat": 14.0167157,
-    "lon": 101.7772454,
-    "chargers": [
-      {
-        "name": "240135",
+        "name": "1402",
         "type": "DC",
         "heads": 2,
         "kw": 120.0,
@@ -35238,12 +43750,52 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
+    "address": "110 Moo.4 Phaholyotin Road, Pradang, Wang Chao, Tak 63180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station KabinBuri",
+    "lat": 14.0167157,
+    "lon": 101.7772454,
+    "chargers": [
+      {
+        "name": "1182",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
             "price_day": 7.9,
             "status": "available"
           }
@@ -35269,6 +43821,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35276,6 +43829,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -35300,6 +43854,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35307,6 +43862,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -35331,6 +43887,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35338,6 +43895,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35418,6 +43976,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35425,6 +43984,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -35439,11 +43999,32 @@ window.PTT_DATA = [
     "lon": 100.533324,
     "chargers": [
       {
-        "name": "GWC-OR-1384",
+        "name": "1384",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "58 Moo.1 Bang Krabue, Sam Khok, Pathum Thani 12160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Meet&Eat",
@@ -35461,6 +44042,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -35468,6 +44050,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "occupied"
           }
         ]
@@ -35492,6 +44075,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35499,6 +44083,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35506,6 +44091,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35520,11 +44106,32 @@ window.PTT_DATA = [
     "lon": 100.901431,
     "chargers": [
       {
-        "name": "THPORE240047",
+        "name": "240047",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "26/1 Moo.7 Phahonyothin Road, Dao Rueang, Mueang Saraburi, Saraburi 18000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Banmai Petroleum",
@@ -35542,6 +44149,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35549,6 +44157,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -35606,6 +44215,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35613,6 +44223,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -35627,11 +44238,32 @@ window.PTT_DATA = [
     "lon": 99.393344,
     "chargers": [
       {
-        "name": "THPORE250020",
+        "name": "250020",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "price_night": 6.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "323 Moo.2 Pong Yang Khok, Hang Chat, Lampang 52190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Der Duck Family Cafe & Learning Playground",
@@ -35779,11 +44411,32 @@ window.PTT_DATA = [
     "lon": 99.12394,
     "chargers": [
       {
-        "name": "GWC-OR-1452",
+        "name": "1452",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "54 Moo.1 Phaholyotin Road, Wang Man, Sam Ngao, Tak 63130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station GC Energy 999",
@@ -35801,6 +44454,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35808,6 +44462,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35832,6 +44487,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35839,6 +44495,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35863,6 +44520,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -35870,6 +44528,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35927,6 +44586,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -35934,6 +44594,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -35948,11 +44609,30 @@ window.PTT_DATA = [
     "lon": 100.925639,
     "chargers": [
       {
-        "name": "GWC-OR-1214",
+        "name": "1214",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Sukhumvit Km.131 (IB)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Nikanti Golf Club",
@@ -35970,6 +44650,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -35977,6 +44658,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -35991,11 +44673,32 @@ window.PTT_DATA = [
     "lon": 100.228233,
     "chargers": [
       {
-        "name": "GWC-OR-1248",
+        "name": "1248",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "199 Moo.4 Phlai Chumphon, Mueang Phitsanulok, Phitsanulok 65000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Term Tem Petroleum",
@@ -36003,11 +44706,32 @@ window.PTT_DATA = [
     "lon": 102.5019,
     "chargers": [
       {
-        "name": "GWC-OR-0126",
+        "name": "0126",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "174 Moo.2 Wang Krachae, Mueang Trat, Trat 23000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station P.T. Pairat Petroleum Service",
@@ -36025,6 +44749,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36032,6 +44757,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36056,6 +44782,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36063,6 +44790,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36077,16 +44805,37 @@ window.PTT_DATA = [
     "lon": 98.586924,
     "chargers": [
       {
-        "name": "GWC-OR-1055",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1055",
+        "name": "1055",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99/115 SaiAsia Road, Mae Sot, Mae Sot, Tak 63110",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "Vanilla Moon",
@@ -36135,11 +44884,32 @@ window.PTT_DATA = [
     "lon": 101.0927,
     "chargers": [
       {
-        "name": "GWC-OR-1334",
+        "name": "1334",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "92/4 Moo.5 Thap Kwang, Kaeng Khoi, Saraburi 18260",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Market Khubon",
@@ -36180,11 +44950,32 @@ window.PTT_DATA = [
     "lon": 102.473159,
     "chargers": [
       {
-        "name": "THPORE240127",
+        "name": "240127",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "141 Moo.7 Nai Mueang, Phimai, Nakhon Ratchasima 30110",
+    "hours": "24 hours"
   },
   {
     "name": "Phyathai 3 Hospital (Underground Parking lot)",
@@ -36258,16 +45049,40 @@ window.PTT_DATA = [
     "lon": 102.3782,
     "chargers": [
       {
-        "name": "GWC-OR-1145",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1145",
+        "name": "1145",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "168 Moo.1 Sukhumvit Road, Saen Tung, Khao Saming, Trat 23150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Tak (Tak KT & Son)",
@@ -36275,11 +45090,32 @@ window.PTT_DATA = [
     "lon": 99.13501,
     "chargers": [
       {
-        "name": "GWC-OR-0097",
+        "name": "0097",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "5 Phahonyothin Road, Chiang Ngoen, Mueang Tak, Tak 63000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mung Pun Dee",
@@ -36297,6 +45133,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36304,6 +45141,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36311,6 +45149,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36335,6 +45174,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -36342,6 +45182,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -36539,6 +45380,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36546,6 +45388,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36570,6 +45413,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36577,6 +45421,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36601,6 +45446,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36608,6 +45454,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36622,11 +45469,30 @@ window.PTT_DATA = [
     "lon": 101.0016077,
     "chargers": [
       {
-        "name": "THPORE240271",
+        "name": "240271",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Chachoengsao Bangna Km.51",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ngio Ngam",
@@ -36644,6 +45510,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36651,6 +45518,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -36665,11 +45533,30 @@ window.PTT_DATA = [
     "lon": 101.005409,
     "chargers": [
       {
-        "name": "THPORE250027",
+        "name": "250027",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Chachoengsao Bangna Trat Km.49",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Ayutthaya-Asia Highway Km.55",
@@ -36677,11 +45564,30 @@ window.PTT_DATA = [
     "lon": 100.607373,
     "chargers": [
       {
-        "name": "THPORE250064",
+        "name": "250064",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Ayutthaya-Asia Highway Km.55",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pongkit (10) (SUT)",
@@ -36699,6 +45605,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -36706,6 +45613,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -36720,16 +45628,40 @@ window.PTT_DATA = [
     "lon": 104.8147,
     "chargers": [
       {
-        "name": "GWC-OR-1049",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1049",
+        "name": "1049",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "111 Moo.4 Kham Nam Saep, Warin Chamrap, Ubon Ratchathani 34190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Hua Hin Marriott Resort & Spa",
@@ -36770,16 +45702,40 @@ window.PTT_DATA = [
     "lon": 103.2392,
     "chargers": [
       {
-        "name": "GWC-OR-1003",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1003",
+        "name": "1003",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "558/7 Moo.1 Tha Song Khon, Mueang Maha Sarakham, Maha Sarakham 44000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Robinson Lifestyle Chaiyaphum",
@@ -36787,36 +45743,7 @@ window.PTT_DATA = [
     "lon": 102.0309,
     "chargers": [
       {
-        "name": "GWC-OR-0242",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0242",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Pranburi Trade",
-    "lat": 12.39011,
-    "lon": 99.914165,
-    "chargers": [
-      {
-        "name": "THPORE240229",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Maesuai Petroleum",
-    "lat": 19.64762,
-    "lon": 99.53193,
-    "chargers": [
-      {
-        "name": "1047",
+        "name": "0242",
         "type": "DC",
         "heads": 3,
         "kw": 120.0,
@@ -36840,6 +45767,80 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "299 Chaiyaphum-Sikhiu Road, Nai Mueang, Mueang Chaiyaphum, Chaiyaphum 36000",
+    "hours": "09:00 - 21:59 hr."
+  },
+  {
+    "name": "PTT Station Pranburi Trade",
+    "lat": 12.39011,
+    "lon": 99.914165,
+    "chargers": [
+      {
+        "name": "240229",
+        "type": "DC",
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
+    "address": "31 Phet Kasem Rd, Khao Noi, Pran Buri , Prachuap Khiri Khan 77120 Khao Noi, Pran Buri, Prachuap Khiri Khan 77120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Maesuai Petroleum",
+    "lat": 19.64762,
+    "lon": 99.53193,
+    "chargers": [
+      {
+        "name": "1047",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -36854,11 +45855,32 @@ window.PTT_DATA = [
     "lon": 101.2822,
     "chargers": [
       {
-        "name": "GWC-OR-1395",
+        "name": "1395",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "44/2 Moo.1 Rayong-Ban Khai Road Nong Taphan, Ban Khai, Rayong 21120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Place Saraburi",
@@ -36909,6 +45931,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -36916,6 +45939,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -36971,11 +45995,32 @@ window.PTT_DATA = [
     "lon": 101.403353,
     "chargers": [
       {
-        "name": "GWC-OR-1461",
+        "name": "1461",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "129/3 Mitrtraphap Road, Pak Chong, Pak Chong, Nakhon Ratchasima 30130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phuengsuk Petroleum",
@@ -37016,16 +46061,40 @@ window.PTT_DATA = [
     "lon": 101.8354,
     "chargers": [
       {
-        "name": "GWC-OR-0231",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0231",
+        "name": "0231",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "98 Takbai Road, Bang Nak, Mueang Narathiwat, Narathiwat 96000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Paolo Hospital Samut Prakan",
@@ -37066,12 +46135,32 @@ window.PTT_DATA = [
     "lon": 100.847605,
     "chargers": [
       {
-        "name": "GWC-OR-1292",
+        "name": "1292",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "41/66 Moo.5 Chueam Samphan Road, Khok Faet, Nong Chok, Bangkok 10530",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Royal Bang Pa-in Golf Club",
@@ -37079,16 +46168,45 @@ window.PTT_DATA = [
     "lon": 100.538932,
     "chargers": [
       {
-        "name": "GWC-OR-2138",
+        "name": "2138",
         "type": "AC",
-        "heads": 2
+        "heads": 2,
+        "kw": 22.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       },
       {
-        "name": "GWC-OR-2149",
+        "name": "2149",
         "type": "AC",
-        "heads": 1
+        "heads": 1,
+        "kw": 7.4,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "AC Type 2",
+            "kw": 7.4,
+            "price_day": 9.0,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "Royal Bang Pa-in Golf Club",
+    "hours": "24 hours"
   },
   {
     "name": "Marriott Executive Apartments Sathorn Vista Bangkok",
@@ -37105,6 +46223,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "available"
           }
@@ -37136,13 +46255,15 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "AC Type 2",
             "kw": 7.4,
+            "price_day": 9.0,
             "price_night": 9.0,
             "status": "available"
           }
         ]
       }
     ],
-    "address": "1  Soi Suan Phlu Thung Maha Mek, Sathon, Bangkok 10120"
+    "address": "1  Soi Suan Phlu Thung Maha Mek, Sathon, Bangkok 10120",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Sor. Somboon Petroleum",
@@ -37150,11 +46271,32 @@ window.PTT_DATA = [
     "lon": 99.85941,
     "chargers": [
       {
-        "name": "GWC-OR-0434",
+        "name": "0434",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "679 Moo.1 Phetkasem Road, Kui Buri, Kui Buri, Prachuap Khiri Khan 77150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sawangwattana Malaiman",
@@ -37162,16 +46304,40 @@ window.PTT_DATA = [
     "lon": 99.98928,
     "chargers": [
       {
-        "name": "GWC-OR-0284",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0284",
+        "name": "0284",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1 Moo.21 Malaiman Road, Sa Si Mum, Kamphaeng Saen, Nakhon Pathom 73140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Ratchaburi",
@@ -37230,6 +46396,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -37237,6 +46404,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -37261,6 +46429,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37268,6 +46437,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -37282,11 +46452,32 @@ window.PTT_DATA = [
     "lon": 100.8204859,
     "chargers": [
       {
-        "name": "THPORE240252",
+        "name": "240252",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "5/5 Moo.7 Phahonyothin Road, Sanap Thuep, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ram Inthra Km.6.5",
@@ -37327,11 +46518,32 @@ window.PTT_DATA = [
     "lon": 101.6784,
     "chargers": [
       {
-        "name": "GWC-OR-1373",
+        "name": "1373",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "234/5 Moo.11 Sikhiw - Chaiyaphum Road, Kut Noi, Sikhio, Nakhon Ratchasima 30140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Khao Hin Son (OB)",
@@ -37339,11 +46551,30 @@ window.PTT_DATA = [
     "lon": 101.495514,
     "chargers": [
       {
-        "name": "GWC-OR-0415",
+        "name": "0415",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "55 Moo.10 Khao Hin Son, Phanom Sarakham, Chachoengsao 24120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Bangkok-Sathon Taksin 1",
@@ -37427,6 +46658,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37434,6 +46666,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -37448,11 +46681,32 @@ window.PTT_DATA = [
     "lon": 100.3012,
     "chargers": [
       {
-        "name": "GWC-OR-0370",
+        "name": "0370",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "118 Moo.12 Rai Khing, Sam Phran, Nakhon Pathom 73210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rayong Gas Separation Plant",
@@ -37460,16 +46714,40 @@ window.PTT_DATA = [
     "lon": 101.1519,
     "chargers": [
       {
-        "name": "GWC-OR-0281",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0281",
+        "name": "0281",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "555/1 Sukhumvit Road Map Ta Phut, Mueang Rayong, Rayong 21150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Udon Thani 1",
@@ -37518,11 +46796,32 @@ window.PTT_DATA = [
     "lon": 98.9368034,
     "chargers": [
       {
-        "name": "THPORE240257",
+        "name": "240257",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "172 Moo.3 Chotana Road, Khilek, Mae Taeng, Chiang Mai 50150",
+    "hours": "24 hours"
   },
   {
     "name": "BigC Bangpakok",
@@ -37573,6 +46872,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37580,6 +46880,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -37594,11 +46895,30 @@ window.PTT_DATA = [
     "lon": 102.8079654,
     "chargers": [
       {
-        "name": "THPORE240212",
+        "name": "240212",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.10 Maliwan Road, Ban Ped Subdistrict, Mueang Khon Kaen District, Khon Kaen Province 40000 Ban Pet, Mueang Khon Kaen, Khon Kaen 40000",
+    "hours": "24 hours"
   },
   {
     "name": "Nathalin",
@@ -37639,11 +46959,32 @@ window.PTT_DATA = [
     "lon": 100.818,
     "chargers": [
       {
-        "name": "GWC-OR-0122",
+        "name": "0122",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "160 Moo.7 Sanap Thuep, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rung Phithak Service",
@@ -37651,16 +46992,40 @@ window.PTT_DATA = [
     "lon": 101.369545,
     "chargers": [
       {
-        "name": "GWC-OR-0274",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0274",
+        "name": "0274",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "234/5 Moo.4 Chachoengsao-Kabinburi Road, Tha Than, Phanom Sarakham, Chachoengsao 24120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Kanoknapa Petroleum",
@@ -37678,6 +47043,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37685,6 +47051,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -37709,6 +47076,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37716,6 +47084,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37723,6 +47092,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -37780,6 +47150,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -37787,6 +47158,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -37801,11 +47173,32 @@ window.PTT_DATA = [
     "lon": 100.2795,
     "chargers": [
       {
-        "name": "GWC-OR-0377",
+        "name": "0377",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "74 Moo.3 Maha Sawat, Phutthamonthon, Nakhon Pathom 73170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chonburi-Bangsaen (Makro)",
@@ -37813,11 +47206,30 @@ window.PTT_DATA = [
     "lon": 100.9604006,
     "chargers": [
       {
-        "name": "THPORE240142",
+        "name": "240142",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Chonburi-Bangsaen (Makro)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Star Gas",
@@ -37868,6 +47280,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37875,6 +47288,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37882,6 +47296,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -37929,11 +47344,32 @@ window.PTT_DATA = [
     "lon": 100.089,
     "chargers": [
       {
-        "name": "GWC-OR-0440",
+        "name": "0440",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88/8 Moo.2 Rama 2 (km. 52 +100) Road, Na Khok, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "24 hours"
   },
   {
     "name": "SUSCO Ekkachai 101",
@@ -37941,12 +47377,30 @@ window.PTT_DATA = [
     "lon": 100.3941488,
     "chargers": [
       {
-        "name": "THPORE240103",
+        "name": "240103",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1133/1-2 Ekkachai Road, Bang Bon Tai, Bang Bon, Bangkok 10150",
+    "hours": "05:00 - 22:00 hr."
   },
   {
     "name": "PTT Station DNSP Rungroj",
@@ -37964,6 +47418,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -37971,6 +47426,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -37985,11 +47441,32 @@ window.PTT_DATA = [
     "lon": 100.093,
     "chargers": [
       {
-        "name": "GWC-OR-1313",
+        "name": "1313",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9/1 Moo.2 Khao Phra, Doem Bang Nang Buat, Suphan Buri 72120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Sakaeo-Hwy.359 (Km. 60) Inbound",
@@ -37997,11 +47474,30 @@ window.PTT_DATA = [
     "lon": 102.077366,
     "chargers": [
       {
-        "name": "THPORE240180",
+        "name": "240180",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Sakaeo-Hwy.359 (Km. 60) Inbound",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sirisomboon Station",
@@ -38009,11 +47505,32 @@ window.PTT_DATA = [
     "lon": 100.6961,
     "chargers": [
       {
-        "name": "GWC-OR-1336",
+        "name": "1336",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "24/7 Moo.7 Khlong Si, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station S.Srithong Petroleum",
@@ -38021,16 +47538,40 @@ window.PTT_DATA = [
     "lon": 100.5686,
     "chargers": [
       {
-        "name": "GWC-OR-4027",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-4027",
+        "name": "4027",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "83 Moo.6 Pho Talat Kaeo, Tha Wung, Lop Buri 15150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Union Infinity Group",
@@ -38081,6 +47622,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38088,6 +47630,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -38102,11 +47645,32 @@ window.PTT_DATA = [
     "lon": 100.1335,
     "chargers": [
       {
-        "name": "GWC-OR-0361",
+        "name": "0361",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "83 Moo.5 Phetkasem Road, Sisa Thong, Nakhon Chai Si, Nakhon Pathom 73120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Bangkok-Ramintra 1",
@@ -38147,16 +47711,40 @@ window.PTT_DATA = [
     "lon": 99.35186,
     "chargers": [
       {
-        "name": "GWC-OR-0262",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0262",
+        "name": "0262",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "139 Moo.2 Khao Niphan, Wiang Sa, Surat Thani 84190",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chiang Mai-Mae Jo 1",
@@ -38164,11 +47752,30 @@ window.PTT_DATA = [
     "lon": 99.0119641,
     "chargers": [
       {
-        "name": "THPORE240090",
+        "name": "240090",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "264 Moo.2 Chiang Mai-Mae Jo Road, Nong Chom, San Sai, Chiang Mai 50210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pho Thong Kuan Khanun Petroleum",
@@ -38186,6 +47793,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38193,6 +47801,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38240,16 +47849,37 @@ window.PTT_DATA = [
     "lon": 101.396,
     "chargers": [
       {
-        "name": "GWC-OR-0200",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0200",
+        "name": "0200",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "72 Moo.3 Bang Boribun, Mueang Prachin Buri, Prachin Buri 25000",
+    "hours": "06:00 - 23:00 hr."
   },
   {
     "name": "PTT Station K.C. Sakaeo",
@@ -38267,6 +47897,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -38274,6 +47905,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38298,6 +47930,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38305,6 +47938,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -38329,6 +47963,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -38336,6 +47971,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "occupied"
           },
           {
@@ -38343,6 +47979,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "available"
           }
         ]
@@ -38431,11 +48068,32 @@ window.PTT_DATA = [
     "lon": 103.068449,
     "chargers": [
       {
-        "name": "THPORE240157",
+        "name": "240157",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "128 Moo.2 Si Kosum Road, Hua Khwang, Kosum Phisai, Maha Sarakham 44140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "LPG Auto Station Lertratchapruek",
@@ -38494,6 +48152,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38501,6 +48160,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38525,6 +48185,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38532,6 +48193,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -38556,6 +48218,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38563,6 +48226,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38570,6 +48234,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -38625,7 +48290,7 @@ window.PTT_DATA = [
     "lon": 99.17473,
     "chargers": [
       {
-        "name": "0475",
+        "name": "0417",
         "type": "DC",
         "heads": 2,
         "kw": 120.0,
@@ -38642,7 +48307,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           }
         ]
       }
@@ -38656,11 +48321,32 @@ window.PTT_DATA = [
     "lon": 101.262472,
     "chargers": [
       {
-        "name": "THPORE240177",
+        "name": "240177",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "12/37 Moo.1 Talubo, Mueang Pattani, Pattani 94000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Ananoppon (1991)",
@@ -38678,6 +48364,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38685,6 +48372,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38699,11 +48387,32 @@ window.PTT_DATA = [
     "lon": 100.309,
     "chargers": [
       {
-        "name": "GWC-OR-1337",
+        "name": "1337",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "119 Moo.2 Sai Yai, Sai Noi, Nonthaburi 11150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Lopburi-Thasala",
@@ -38711,11 +48420,30 @@ window.PTT_DATA = [
     "lon": 100.6685444,
     "chargers": [
       {
-        "name": "THPORE250070",
+        "name": "250070",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "261 Moo.2 Phahonyothin Road, Tha Sala, Mueang Lop Buri, Lop Buri 15000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phet Songtham Petroleum",
@@ -38733,6 +48461,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38740,6 +48469,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -38754,11 +48484,32 @@ window.PTT_DATA = [
     "lon": 100.7728,
     "chargers": [
       {
-        "name": "THPORE240224",
+        "name": "240224",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "8/49 Lam Luk Ka Road, Lum Luk Ka, Lam Luk Ka, Pathum Thani 12150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Asia Service (2528)",
@@ -38776,6 +48527,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38783,6 +48535,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38863,6 +48616,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -38870,6 +48624,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -38877,6 +48632,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -38901,6 +48657,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -38908,6 +48665,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           }
         ]
@@ -38955,11 +48713,30 @@ window.PTT_DATA = [
     "lon": 100.7463357,
     "chargers": [
       {
-        "name": "THPORE250068",
+        "name": "250068",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Pathum Thani - Rangsit (Khlong 7)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phaisan Phalang Thai",
@@ -39043,6 +48820,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -39050,6 +48828,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39057,6 +48836,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39081,6 +48861,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39088,6 +48869,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39095,6 +48877,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39175,16 +48958,37 @@ window.PTT_DATA = [
     "lon": 103.1136077,
     "chargers": [
       {
-        "name": "GWC-OR-1074",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1074",
+        "name": "1074",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "109 Moo.11 Nong Han, Nong Han, Udon Thani 41130",
+    "hours": "09:00 - 21:59 hr."
   },
   {
     "name": "PTT Station Jomthong Sikharee Petroluem",
@@ -39202,6 +49006,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39209,6 +49014,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39233,6 +49039,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -39240,6 +49047,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39264,6 +49072,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -39271,6 +49080,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -39295,6 +49105,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39302,6 +49113,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39326,6 +49138,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39333,6 +49146,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39340,6 +49154,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39354,22 +49169,22 @@ window.PTT_DATA = [
     "lon": 100.3146,
     "chargers": [
       {
-        "name": "240241",
+        "name": "0373",
         "type": "DC",
         "heads": 2,
-        "kw": 180.0,
+        "kw": 120.0,
         "connectors": [
           {
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
-            "kw": 180.0,
+            "kw": 120.0,
             "price_day": 7.9,
-            "status": "occupied"
+            "status": "available"
           },
           {
             "position": "ซ้าย-A",
             "type": "DC CCS COMBO 2",
-            "kw": 180.0,
+            "kw": 120.0,
             "price_day": 7.9,
             "status": "occupied"
           }
@@ -39385,11 +49200,32 @@ window.PTT_DATA = [
     "lon": 101.036944,
     "chargers": [
       {
-        "name": "THPORE240140",
+        "name": "240140",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "39 Moo.7 Thap Kwang, Kaeng Khoi, Saraburi 18260",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Trat Tha Phrik Petroleum",
@@ -39397,11 +49233,30 @@ window.PTT_DATA = [
     "lon": 102.5871,
     "chargers": [
       {
-        "name": "GWC-OR-0367",
+        "name": "0367",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "29/3 Moo.5 Tha Phrik, Mueang Trat, Trat 23000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT NGV Station Chaiyo NGV",
@@ -39419,6 +49274,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -39426,6 +49282,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -39440,11 +49297,32 @@ window.PTT_DATA = [
     "lon": 100.6396927,
     "chargers": [
       {
-        "name": "THPORE240008",
+        "name": "240008",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "207 Moo.4 Phayom, Wang Noi, Phra Nakhon Si Ayutthaya 13170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Western Ring Road (OB) (Sam Khok)",
@@ -39452,11 +49330,30 @@ window.PTT_DATA = [
     "lon": 100.5324,
     "chargers": [
       {
-        "name": "GWC-OR-0380",
+        "name": "0380",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Western Ring Road (OB) (Sam Khok)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Centara Life Cha Am Beach Resort Hua Hin",
@@ -39497,11 +49394,30 @@ window.PTT_DATA = [
     "lon": 99.326664,
     "chargers": [
       {
-        "name": "GWC-OR-6018",
+        "name": "6018",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "201/4 Wat Pho Rd. Makham Tia, Mueang Surat Thani District, Surat Thani 84000 Makham Tia, Mueang Surat Thani, Surat Thani 84000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Charoenchai Service",
@@ -39519,6 +49435,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39526,6 +49443,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39573,11 +49491,30 @@ window.PTT_DATA = [
     "lon": 100.8985,
     "chargers": [
       {
-        "name": "GWC-OR-1304",
+        "name": "1304",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "9 Moo.4 Huai Sai, Nong Khae, Saraburi 18230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station National Housing Authority Bang Phli",
@@ -39595,6 +49532,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39602,6 +49540,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39616,11 +49555,32 @@ window.PTT_DATA = [
     "lon": 99.086707,
     "chargers": [
       {
-        "name": "GWC-OR-0468",
+        "name": "0468",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.2 Tha Sao, Sai Yok, Kanchanaburi 71150",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sangaree Station (6)",
@@ -39669,11 +49629,30 @@ window.PTT_DATA = [
     "lon": 100.826132,
     "chargers": [
       {
-        "name": "THPORE240242",
+        "name": "240242",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Bangna-Trad km.25",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Nadech Petroleum",
@@ -39691,6 +49670,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -39698,6 +49678,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -39722,6 +49703,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -39729,6 +49711,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -39786,6 +49769,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -39793,6 +49777,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -39807,11 +49792,30 @@ window.PTT_DATA = [
     "lon": 100.6182,
     "chargers": [
       {
-        "name": "GWC-OR-0366",
+        "name": "0366",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "66 Moo.9 Phahonyothin Road, Khlong Nueng, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "SUSCO Bang Ao",
@@ -39885,11 +49889,30 @@ window.PTT_DATA = [
     "lon": 103.6986,
     "chargers": [
       {
-        "name": "GWC-OR-1280",
+        "name": "1280",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "200 Moo.7 Chaengsanit Road Niwet, Thawat Buri, Roi Et 45170",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Inburi Petroleum",
@@ -39907,6 +49930,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -39914,6 +49938,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -39968,11 +49993,32 @@ window.PTT_DATA = [
     "lon": 100.0038,
     "chargers": [
       {
-        "name": "GWC-OR-1132",
+        "name": "1132",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99/2 Moo.2 Lat Yai, Mueang Samut Songkhram, Samut Songkhram 75000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Chonburi-Nong Mon",
@@ -39980,11 +50026,30 @@ window.PTT_DATA = [
     "lon": 100.938098,
     "chargers": [
       {
-        "name": "THPORE240178",
+        "name": "240178",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "366/6 Moo.10 Sukhumvit Road, Bang Phra, Si Racha, Chon Buri 20110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Warin Petroleum (Mukdahan)",
@@ -39992,16 +50057,40 @@ window.PTT_DATA = [
     "lon": 104.6984,
     "chargers": [
       {
-        "name": "GWC-OR-1007",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1007",
+        "name": "1007",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "34 Chayangkun Road, Mukdahan, Mueang Mukdahan, Mukdahan 49000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Thanunta Petroleum",
@@ -40009,16 +50098,40 @@ window.PTT_DATA = [
     "lon": 99.52439,
     "chargers": [
       {
-        "name": "GWC-OR-1034",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1034",
+        "name": "1034",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "133/3 Moo.1 Lampang-Ngao Road, Phichai, Mueang Lampang, Lampang 52000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Rayong-Sukhumvit km.212 (IB)",
@@ -40026,11 +50139,30 @@ window.PTT_DATA = [
     "lon": 101.195655,
     "chargers": [
       {
-        "name": "THPORE250092",
+        "name": "250092",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.2,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "PTTRM Rayong-Sukhumvit km.212 (IB)",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sawi",
@@ -40038,11 +50170,32 @@ window.PTT_DATA = [
     "lon": 99.09615,
     "chargers": [
       {
-        "name": "GWC-OR-0450",
+        "name": "0450",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "5/27 Moo.4 Na Pho, Sawi, Chumphon 86130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "BigC Nham Daeng (FP)",
@@ -40083,11 +50236,32 @@ window.PTT_DATA = [
     "lon": 100.6331,
     "chargers": [
       {
-        "name": "GWC-OR-0063",
+        "name": "0063",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "100/2 Moo.2 Khan Ham, Uthai, Phra Nakhon Si Ayutthaya 13210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Lertsawat Petroleum",
@@ -40105,6 +50279,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40112,6 +50287,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40202,6 +50378,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40209,6 +50386,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40233,6 +50411,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40240,6 +50419,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40287,11 +50467,32 @@ window.PTT_DATA = [
     "lon": 99.84127,
     "chargers": [
       {
-        "name": "GWC-OR-1325",
+        "name": "1325",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "not in operating hours"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "not in operating hours"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "679 Moo.2 Ban Du, Mueang Chiang Rai, Chiang Rai 57100",
+    "hours": "Fri: 06:00 - 21:00 hr.; Mon: 06:00 - 21:00 hr.; Sat: Facilities; Sun: 06:00 - 21:00 hr.; Thu: 06:00 - 21:00 hr.; Tue: 06:00 - 21:00 hr.; Wed: 06:00 - 21:00 hr."
   },
   {
     "name": "PTT Station Royal Burapha Petroleum",
@@ -40299,11 +50500,32 @@ window.PTT_DATA = [
     "lon": 102.4758,
     "chargers": [
       {
-        "name": "GWC-OR-1454",
+        "name": "1454",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "171 Moo.9 Sukhumvit Road, Wang Krachae, Mueang Trat, Trat 23000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Udonthani Dusadee Km.121",
@@ -40311,11 +50533,30 @@ window.PTT_DATA = [
     "lon": 102.7919461,
     "chargers": [
       {
-        "name": "THPORE240219",
+        "name": "240219",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "255 Moo.8 Mu Mon, Mueang Udon Thani, Udon Thani 41000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station P.S.T. Pairat Service",
@@ -40333,6 +50574,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40340,6 +50582,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40354,16 +50597,37 @@ window.PTT_DATA = [
     "lon": 100.6928,
     "chargers": [
       {
-        "name": "GWC-OR-0192",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0192",
+        "name": "0192",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "555/5 Moo.4 Kok Ko, Mueang Lop Buri, Lop Buri 15000",
+    "hours": "24 hours"
   },
   {
     "name": "PTT Station Office of The Permanent Secretary for Defence (Bangna-Out)",
@@ -40488,6 +50752,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -40495,6 +50760,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -40519,6 +50785,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -40526,6 +50793,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -40583,6 +50851,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40590,6 +50859,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40604,11 +50874,30 @@ window.PTT_DATA = [
     "lon": 101.9345228,
     "chargers": [
       {
-        "name": "GWC-OR-1381",
+        "name": "1381",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "222 Moo.5 Nong Takai, Sung Noen, Nakhon Ratchasima 30380",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Udomchaiwit",
@@ -40616,11 +50905,32 @@ window.PTT_DATA = [
     "lon": 100.2423,
     "chargers": [
       {
-        "name": "GWC-OR-0368",
+        "name": "0368",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "31/2 Moo.2 Phetkasem Km. 32/5 Road Yai Cha, Sam Phran, Nakhon Pathom 73110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Piti Arpa",
@@ -40694,11 +51004,32 @@ window.PTT_DATA = [
     "lon": 99.97331,
     "chargers": [
       {
-        "name": "GWC-OR-0428",
+        "name": "0428",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "999 Phatthanakan Khu Khwang Road, Nai Mueang, Mueang Nakhon Si Thammarat, Nakhon Si Thammarat 80000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Korat-Sikhiu",
@@ -40706,31 +51037,7 @@ window.PTT_DATA = [
     "lon": 101.690013,
     "chargers": [
       {
-        "name": "GWC-OR-1382",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Thiti Petroleum (2014)",
-    "lat": 13.02973,
-    "lon": 101.0563,
-    "chargers": [
-      {
-        "name": "GWC-OR-1123",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Manachai Rungruang",
-    "lat": 13.6308,
-    "lon": 100.2947,
-    "chargers": [
-      {
-        "name": "0457",
+        "name": "1382",
         "type": "DC",
         "heads": 2,
         "kw": 120.0,
@@ -40752,6 +51059,70 @@ window.PTT_DATA = [
         ]
       }
     ],
+    "address": "94/6 Moo.6 Mitrtraphap Road, Mittraphap, Sikhio, Nakhon Ratchasima 30140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Thiti Petroleum (2014)",
+    "lat": 13.02973,
+    "lon": 101.0563,
+    "chargers": [
+      {
+        "name": "1123",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
+      }
+    ],
+    "address": "31/23 Moo.1 Bo Win, Si Racha, Chon Buri 20230",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Manachai Rungruang",
+    "lat": 13.6308,
+    "lon": 100.2947,
+    "chargers": [
+      {
+        "name": "0457",
+        "type": "DC",
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
+      }
+    ],
     "address": "17/4 Moo.8 Setthakit Road, Khlong Maduea, Krathum Baen, Samut Sakhon 74110",
     "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
@@ -40761,12 +51132,32 @@ window.PTT_DATA = [
     "lon": 100.8507,
     "chargers": [
       {
-        "name": "GWC-OR-1263",
+        "name": "1263",
         "type": "DC",
         "heads": 2,
-        "kw": 120.0
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "137 Along Varee Road, Krathum Rai, Nong Chok, Bangkok 10530",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "LPG Auto Station Lamaepiya Group (Mueang) Part., Ltd",
@@ -40784,6 +51175,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -40791,6 +51183,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40798,6 +51191,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40812,16 +51206,40 @@ window.PTT_DATA = [
     "lon": 98.99155,
     "chargers": [
       {
-        "name": "GWC-OR-1037",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1037",
+        "name": "1037",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "168 Moo.2 Pa Daet, Mueang Chiang Mai, Chiang Mai 50100",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Pongkit (Techno)",
@@ -40829,16 +51247,40 @@ window.PTT_DATA = [
     "lon": 102.117,
     "chargers": [
       {
-        "name": "GWC-OR-0209",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0209",
+        "name": "0209",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1089 Suranarai Road, Nai Mueang, Mueang Nakhon Ratchasima, Nakhon Ratchasima 30000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Khao Yai Station",
@@ -40856,6 +51298,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40863,6 +51306,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40870,6 +51314,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -40935,6 +51380,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -40942,6 +51388,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -40966,6 +51413,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -40973,6 +51421,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -41053,24 +51502,7 @@ window.PTT_DATA = [
     "lon": 103.397,
     "chargers": [
       {
-        "name": "GWC-OR-1006",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1006",
-        "type": "DC",
-        "heads": 2
-      }
-    ]
-  },
-  {
-    "name": "PTT Station Krabi International Airport",
-    "lat": 8.102694,
-    "lon": 98.96747,
-    "chargers": [
-      {
-        "name": "0071",
+        "name": "1006",
         "type": "DC",
         "heads": 3,
         "kw": 120.0,
@@ -41099,6 +51531,47 @@ window.PTT_DATA = [
         ]
       }
     ],
+    "address": "71 Moo.5 Yang Talat, Yang Talat, Kalasin 46120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
+  },
+  {
+    "name": "PTT Station Krabi International Airport",
+    "lat": 8.102694,
+    "lon": 98.96747,
+    "chargers": [
+      {
+        "name": "0071",
+        "type": "DC",
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
+      }
+    ],
     "address": "327/4 Moo.2 Krabi Noi, Mueang Krabi, Krabi 81000",
     "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
@@ -41108,11 +51581,32 @@ window.PTT_DATA = [
     "lon": 100.269714,
     "chargers": [
       {
-        "name": "GWC-OR-1428",
+        "name": "1428",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "88/12 Moo.1 Song Khanong, Sam Phran, Nakhon Pathom 73210",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mana Sermpol Petroleum",
@@ -41130,6 +51624,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -41137,6 +51632,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -41144,6 +51640,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41168,6 +51665,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41175,6 +51673,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41182,6 +51681,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41206,6 +51706,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41213,6 +51714,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41220,6 +51722,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41276,6 +51779,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "closed"
           },
           {
@@ -41283,6 +51787,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "closed"
           }
         ]
@@ -41474,11 +51979,32 @@ window.PTT_DATA = [
     "lon": 100.362874,
     "chargers": [
       {
-        "name": "GWC-OR-1251",
+        "name": "1251",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "100/2 Moo.4 Samo Khae, Mueang Phitsanulok, Phitsanulok 65000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phetchabun Rajabhat University",
@@ -41496,6 +52022,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "under maintenance"
           },
           {
@@ -41503,6 +52030,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "under maintenance"
           },
           {
@@ -41510,6 +52038,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "under maintenance"
           }
         ]
@@ -41524,16 +52053,40 @@ window.PTT_DATA = [
     "lon": 99.46678,
     "chargers": [
       {
-        "name": "GWC-OR-0096",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0096",
+        "name": "0096",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "26 Lampang-Ngao Highway Road, Chomphu, Mueang Lampang, Lampang 52100",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "SUSCO Hathairat",
@@ -41617,6 +52170,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41624,6 +52178,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41638,11 +52193,32 @@ window.PTT_DATA = [
     "lon": 100.6508,
     "chargers": [
       {
-        "name": "GWC-OR-0376",
+        "name": "0376",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "735 Rangsit - Nakhon Nayok (km.3+800) Road, Prachathipat, Thanyaburi, Pathum Thani 12130",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Pinehurst (HUB)",
@@ -41650,21 +52226,74 @@ window.PTT_DATA = [
     "lon": 100.616,
     "chargers": [
       {
-        "name": "THPORE250017",
+        "name": "250017",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE250018",
+        "name": "250018",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "occupied"
+          }
+        ]
       },
       {
-        "name": "THPORE250019",
+        "name": "250019",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 180.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 180.0,
+            "price_day": 8.4,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "54/1 Moo.6 Phahonyothin Road, Khlong Nueng, Khlong Luang, Pathum Thani 12120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Bypass Aranyaprathet",
@@ -41682,6 +52311,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41689,6 +52319,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41696,6 +52327,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41710,11 +52342,32 @@ window.PTT_DATA = [
     "lon": 102.31629,
     "chargers": [
       {
-        "name": "THPORE240028",
+        "name": "240028",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "1299 Moo.10 Watthana Nakhon, Watthana Nakhon, Sa kaeo 27160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Suksawat",
@@ -41731,6 +52384,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
           },
@@ -41738,6 +52392,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "occupied"
           },
@@ -41745,6 +52400,7 @@ window.PTT_DATA = [
             "position": "ซ้าย ที-2",
             "type": "AC Type 2",
             "kw": 22.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
           }
@@ -41760,6 +52416,7 @@ window.PTT_DATA = [
             "position": "กลาง-A",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
           },
@@ -41767,6 +52424,7 @@ window.PTT_DATA = [
             "position": "ขวา-B",
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
+            "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
           },
@@ -41774,52 +52432,6 @@ window.PTT_DATA = [
             "position": "ซ้าย ที-2",
             "type": "AC Type 2",
             "kw": 22.0,
-            "price_night": 6.6,
-            "status": "available"
-          }
-        ]
-      },
-      {
-        "name": "4057",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "กลาง-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "price_night": 6.6,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "price_night": 6.6,
-            "status": "occupied"
-          }
-        ]
-      },
-      {
-        "name": "4058",
-        "type": "DC",
-        "heads": 2,
-        "kw": 120.0,
-        "connectors": [
-          {
-            "position": "กลาง-B",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
-            "price_day": 7.9,
-            "status": "available"
-          },
-          {
-            "position": "ซ้าย-A",
-            "type": "DC CCS COMBO 2",
-            "kw": 120.0,
             "price_day": 7.9,
             "price_night": 6.6,
             "status": "available"
@@ -41827,7 +52439,8 @@ window.PTT_DATA = [
         ]
       }
     ],
-    "address": "100/1  Suksawat Road, Bang Pa Kok, Rat Burana, Bangkok 10140"
+    "address": "100/1  Suksawat Road, Bang Pa Kok, Rat Burana, Bangkok 10140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Manachai Services",
@@ -41845,6 +52458,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41852,6 +52466,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -41859,6 +52474,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -41873,16 +52489,40 @@ window.PTT_DATA = [
     "lon": 100.4792,
     "chargers": [
       {
-        "name": "GWC-OR-0227",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-0227",
+        "name": "0227",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "80/4 Moo.4 Khao Daeng-Ranot Road, Muang Ngam, Singhanakhon, Songkhla 90330",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Sawangwattana Phanom Thuan",
@@ -41890,11 +52530,32 @@ window.PTT_DATA = [
     "lon": 99.69547,
     "chargers": [
       {
-        "name": "GWC-OR-0409",
+        "name": "0409",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "391 Moo.8 Phanom Thuan, Phanom Thuan, Kanchanaburi 71140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Wattananukit Banphe",
@@ -41902,11 +52563,32 @@ window.PTT_DATA = [
     "lon": 101.4171182,
     "chargers": [
       {
-        "name": "THPORE240138",
+        "name": "240138",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "99 Moo.6 Phe, Mueang Rayong, Rayong 21160",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTTRM Rama 2 Km.35",
@@ -41914,11 +52596,30 @@ window.PTT_DATA = [
     "lon": 100.2092,
     "chargers": [
       {
-        "name": "GWC-OR-1129",
+        "name": "1129",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "5/14 Moo.3 Bang Krachao, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "O-Nes tower",
@@ -41992,6 +52693,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -41999,6 +52701,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -42013,16 +52716,40 @@ window.PTT_DATA = [
     "lon": 98.9409212,
     "chargers": [
       {
-        "name": "GWC-OR-1041",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1041",
+        "name": "1041",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "5/15 Moo.7 Rim Tai, Mae Rim, Chiang Mai 50180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Phaisan Phalang Thai Kanchana",
@@ -42040,6 +52767,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "booked"
           },
           {
@@ -42047,6 +52775,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -42061,16 +52790,40 @@ window.PTT_DATA = [
     "lon": 99.03425,
     "chargers": [
       {
-        "name": "GWC-OR-1127",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1127",
+        "name": "1127",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "303/6 Moo.2 Nong Phueng, Saraphi, Chiang Mai 50140",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chang Phueak Petroleum",
@@ -42126,6 +52879,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -42133,6 +52887,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42157,6 +52912,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           },
           {
@@ -42164,6 +52920,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "closed"
           }
         ]
@@ -42221,6 +52978,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "closed"
           },
           {
@@ -42228,6 +52986,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "available"
           },
           {
@@ -42235,6 +52994,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 8.9,
+            "price_night": 8.1,
             "status": "available"
           }
         ]
@@ -42249,11 +53009,32 @@ window.PTT_DATA = [
     "lon": 99.94198,
     "chargers": [
       {
-        "name": "GWC-OR-0463",
+        "name": "0463",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "720/6 Phetkasem Road, Cha-am, Cha-am, Phetchaburi 76120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Food and Drug Administration",
@@ -42294,11 +53075,32 @@ window.PTT_DATA = [
     "lon": 100.9178714,
     "chargers": [
       {
-        "name": "THPORE240099",
+        "name": "240099",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "185 Moo.7 Pua, Pua, Nan 55120",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "Hop Inn Chiang Mai",
@@ -42431,6 +53233,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "available"
           },
           {
@@ -42438,6 +53241,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 40.0,
             "price_day": 9.0,
+            "price_night": 9.0,
             "status": "occupied"
           }
         ]
@@ -42462,6 +53266,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42469,6 +53274,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42493,6 +53299,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42500,6 +53307,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42573,6 +53381,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42580,6 +53389,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -42702,6 +53512,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -42709,6 +53520,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -42716,6 +53528,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42740,6 +53553,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -42747,6 +53561,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42754,6 +53569,7 @@ window.PTT_DATA = [
             "type": "AC Type 2",
             "kw": 22.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42768,11 +53584,32 @@ window.PTT_DATA = [
     "lon": 100.28,
     "chargers": [
       {
-        "name": "GWC-OR-0462",
+        "name": "0462",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "43/11 Moo.2 Na Di, Mueang Samut Sakhon, Samut Sakhon 74000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Chaipithan Energy",
@@ -42790,6 +53627,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           },
           {
@@ -42797,6 +53635,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42811,11 +53650,30 @@ window.PTT_DATA = [
     "lon": 101.286152,
     "chargers": [
       {
-        "name": "THPORE240305",
+        "name": "240305",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 40.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 40.0,
+            "price_day": 9.0,
+            "status": "occupied"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "320 Phang Mueang 4 Road, Sateng, Mueang Yala, Yala 95000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Detudomchokchai",
@@ -42833,6 +53691,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42840,6 +53699,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           }
         ]
@@ -42887,11 +53747,32 @@ window.PTT_DATA = [
     "lon": 100.502458,
     "chargers": [
       {
-        "name": "THPORE240064",
+        "name": "240064",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "occupied"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "270/1 Kanchanawanit Road, Hat yai, Hat Yai, Songkhla 90110",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Mu Mon",
@@ -42909,6 +53790,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "occupied"
           },
           {
@@ -42916,6 +53798,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 120.0,
             "price_day": 7.9,
+            "price_night": 6.6,
             "status": "available"
           }
         ]
@@ -42989,6 +53872,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -42996,6 +53880,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           }
         ]
@@ -43011,6 +53896,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "available"
           },
           {
@@ -43018,6 +53904,7 @@ window.PTT_DATA = [
             "type": "DC CCS COMBO 2",
             "kw": 180.0,
             "price_day": 8.2,
+            "price_night": 6.9,
             "status": "occupied"
           }
         ]
@@ -43065,11 +53952,32 @@ window.PTT_DATA = [
     "lon": 99.48725,
     "chargers": [
       {
-        "name": "GWC-OR-1403",
+        "name": "1403",
         "type": "DC",
-        "heads": 2
+        "heads": 2,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "closed"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "359 Phaholyotin Road, Nakhon Chum, Mueang Kamphaeng Phet, Kamphaeng Phet 62000",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   },
   {
     "name": "PTT Station Rungsit Petroleum",
@@ -43077,15 +53985,39 @@ window.PTT_DATA = [
     "lon": 99.87108,
     "chargers": [
       {
-        "name": "GWC-OR-1135",
-        "type": "AC",
-        "heads": 1
-      },
-      {
-        "name": "GWC-OR-1135",
+        "name": "1135",
         "type": "DC",
-        "heads": 2
+        "heads": 3,
+        "kw": 120.0,
+        "connectors": [
+          {
+            "position": "กลาง-A",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ขวา-B",
+            "type": "DC CCS COMBO 2",
+            "kw": 120.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          },
+          {
+            "position": "ซ้าย ที-2",
+            "type": "AC Type 2",
+            "kw": 22.0,
+            "price_day": 7.9,
+            "price_night": 6.6,
+            "status": "available"
+          }
+        ]
       }
-    ]
+    ],
+    "address": "60 Moo.5 Salalai, Sam Roi Yot, Prachuap Khiri Khan 77180",
+    "hours": "Fri: 24 hours; Mon: 24 hours; Sat: Facilities; Sun: 24 hours; Thu: 24 hours; Tue: 24 hours; Wed: 24 hours"
   }
 ];

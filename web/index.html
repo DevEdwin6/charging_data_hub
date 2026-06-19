@@ -58,6 +58,33 @@
     .bfb-count strong { color: var(--clr-primary); font-weight: 600; }
     .bfb-clear { flex-shrink: 0; font-size: 12px; font-weight: 600; color: var(--clr-primary); background: none; border: none; cursor: pointer; padding: 4px 0; white-space: nowrap; }
 
+    /* search panel */
+    .search-panel { background: #fff; border: 1.5px solid #e8eaed; border-radius: 20px; box-shadow: 0 4px 16px rgba(0,0,0,.07); margin-bottom: 12px; padding: 14px; position: relative; }
+    /* search input box */
+    .sp-search-box { display: flex; align-items: center; gap: 10px; border: 1.5px solid #e8eaed; border-radius: 12px; padding: 11px 14px; transition: border-color .15s, background .15s; margin-bottom: 12px; }
+    .sp-search-box:focus-within { border-color: var(--clr-primary); background: #f0f4ff; }
+    .sp-search-box:focus-within .sp-search-icon path, .sp-search-box:focus-within .sp-search-icon circle { stroke: var(--clr-primary); }
+    .sp-search-icon { flex-shrink: 0; transition: stroke .15s; }
+    .sp-search-box input { flex: 1; border: none; outline: none; font-size: 14px; color: #111827; background: transparent; min-width: 0; }
+    .sp-search-box input::placeholder { color: #b0b7c3; }
+    .sp-search-clear { flex-shrink: 0; display: none; width: 18px; height: 18px; border: none; background: #c9cdd4; border-radius: 50%; color: #fff; font-size: 11px; line-height: 1; cursor: pointer; align-items: center; justify-content: center; padding: 0; }
+    /* power row */
+    .sp-power-row { display: flex; align-items: center; gap: 8px; }
+    .sp-power-field { flex: 1; display: flex; align-items: center; gap: 6px; border: 1.5px solid #e8eaed; border-radius: 12px; padding: 11px 14px; position: relative; transition: border-color .15s; }
+    .sp-power-field:focus-within { border-color: var(--clr-primary); }
+    .sp-power-label { font-size: 13px; color: #b0b7c3; flex-shrink: 0; white-space: nowrap; }
+    .sp-power-input { flex: 1; border: none; outline: none; font-size: 13px; color: #111827; background: transparent; min-width: 0; }
+    .sp-power-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+    .sp-power-unit { font-size: 13px; color: var(--clr-primary); font-weight: 500; flex-shrink: 0; }
+    .sp-power-sep { font-size: 16px; color: #c0c4cc; flex-shrink: 0; line-height: 1; }
+    /* preset dropdown */
+    .sp-power-dropdown { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #fff; border: 1.5px solid #e5e7eb; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.12); z-index: 200; overflow: hidden; }
+    .sp-power-dropdown.open { display: block; }
+    .sp-dd-item { padding: 10px 14px; font-size: 13px; color: #374151; cursor: pointer; transition: background .1s; display: flex; align-items: center; justify-content: space-between; }
+    .sp-dd-item:hover { background: #f0f4ff; color: var(--clr-primary); }
+    .sp-dd-item.selected { color: var(--clr-primary); font-weight: 600; background: #f0f4ff; }
+    .sp-dd-item .sp-dd-unit { font-size: 11px; color: #9ca3af; }
+
     .sort-bar { padding: 8px 0 10px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: center; justify-content: space-between; }
     .sort-count { font-size: 12px; color: #9ca3af; }
     .sort-btn { display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border: 1px solid #e5e7eb; border-radius: 20px; background: #fff; font-size: 13px; color: #374151; cursor: pointer; }
@@ -105,10 +132,6 @@
     .map-type-toggle { display: flex; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); overflow: hidden; flex-shrink: 0; }
     .map-toggle { padding: 7px 14px; font-size: 13px; font-weight: 500; color: #374151; border: none; background: transparent; cursor: pointer; }
     .map-toggle.active { color: var(--clr-primary); font-weight: 700; box-shadow: inset 0 -2px 0 var(--clr-primary); }
-    .area-select { padding: 7px 28px 7px 12px; border-radius: 8px; border: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center; box-shadow: 0 2px 8px rgba(0,0,0,.15); font-size: 13px; color: #374151; cursor: pointer; appearance: none; min-width: 110px; }
-    .map-search { display: flex; align-items: center; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.15); padding: 7px 12px; gap: 8px; max-width: 280px; margin-left: auto; }
-    .map-search input { border: none; outline: none; font-size: 13px; color: #374151; width: 100%; background: transparent; }
-    .map-search input::placeholder { color: #9ca3af; }
 
     /* locate button */
     .locate-btn { position: absolute; bottom: 116px; right: 10px; width: 40px; height: 40px; border-radius: 8px; background: #fff; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.15); display: flex; align-items: center; justify-content: center; z-index: 5; transition: background .15s; }
@@ -241,6 +264,16 @@
     .map-pin-img:hover { transform: scale(1.25) translateY(-6px); filter: drop-shadow(0 6px 14px rgba(0,0,0,.55)) brightness(1.08) !important; }
     @keyframes markerBounce { 0%,100%{transform:translateY(0) scale(1)} 30%{transform:translateY(-14px) scale(1.12)} 60%{transform:translateY(-6px) scale(1.06)} 80%{transform:translateY(-10px) scale(1.09)} }
     .map-pin-bounce { animation: markerBounce .75s ease infinite !important; transition: none !important; transform-origin: bottom center; }
+
+    /* map hover tooltip */
+    #map-tooltip { display: none; position: fixed; z-index: 2000; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.14); padding: 10px 12px; pointer-events: none; max-width: 220px; min-width: 160px; }
+    .mtt-brand { font-size: 11px; color: #9ca3af; margin-bottom: 2px; }
+    .mtt-name { font-size: 13px; font-weight: 700; color: #111827; margin-bottom: 7px; line-height: 1.35; }
+    .mtt-tags { display: flex; gap: 5px; margin-bottom: 6px; flex-wrap: wrap; }
+    .mtt-rows { display: flex; flex-direction: column; gap: 3px; margin-top: 2px; }
+    .mtt-row { display: flex; align-items: center; gap: 6px; font-size: 11px; }
+    .mtt-row-label { flex-shrink: 0; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
+    .mtt-row-val { color: #374151; font-weight: 500; }
   </style>
 </head>
 <body>
@@ -292,6 +325,35 @@
         </button>
       </div>
       <div class="brand-filter-bar" id="brandFilterBar"></div>
+
+      <!-- search + power panel -->
+      <div class="search-panel">
+        <div class="sp-search-box">
+          <svg class="sp-search-icon" width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9ca3af" stroke-width="1.5"/><path d="M12 12l3.5 3.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input type="text" id="sidebarSearch" placeholder="请输入站点名称" autocomplete="off">
+          <button class="sp-search-clear" id="sidebarSearchClear">✕</button>
+        </div>
+        <div class="sp-power-row">
+          <div class="sp-power-field" id="spMinField">
+            <input class="sp-power-input" type="number" id="pfMinInput" placeholder="最小功率" min="0" max="9999">
+            <span class="sp-power-unit">kW</span>
+            <div class="sp-power-dropdown" id="spMinDropdown">
+              <div class="sp-dd-item" data-val="120">120 <span class="sp-dd-unit">kW</span></div>
+              <div class="sp-dd-item" data-val="240">240 <span class="sp-dd-unit">kW</span></div>
+            </div>
+          </div>
+          <span class="sp-power-sep">—</span>
+          <div class="sp-power-field" id="spMaxField">
+            <input class="sp-power-input" type="number" id="pfMaxInput" placeholder="最大功率" min="0" max="9999">
+            <span class="sp-power-unit">kW</span>
+            <div class="sp-power-dropdown" id="spMaxDropdown">
+              <div class="sp-dd-item" data-val="120">120 <span class="sp-dd-unit">kW</span></div>
+              <div class="sp-dd-item" data-val="240">240 <span class="sp-dd-unit">kW</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="sort-bar">
         <div style="display:flex;align-items:center;gap:8px;">
           <button class="sort-btn">
@@ -314,13 +376,6 @@
       <div class="map-type-toggle">
         <button class="map-toggle active" id="btnMap">地图</button>
         <button class="map-toggle" id="btnSat">卫星</button>
-      </div>
-      <select class="area-select" id="areaSelect">
-        <option value="">全部区域</option>
-      </select>
-      <div class="map-search">
-        <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><circle cx="7.5" cy="7.5" r="5.5" stroke="#9ca3af" stroke-width="1.5"/><path d="M12 12l3.5 3.5" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"/></svg>
-        <input type="text" id="searchInput" placeholder="搜索地点或充电站" autocomplete="off"/>
       </div>
     </div>
     <div id="map"></div>
@@ -368,7 +423,8 @@ function chargerTypeLabel(c) {
 }
 
 function normalizeStation(raw, brandKey) {
-  let dc = 0, ac = 0, maxKw = 0;
+  let dc = 0, ac = 0, maxKw = 0, minKw = Infinity;
+  let minPrice = Infinity, maxPrice = -Infinity;
   const connTypes = new Set();
   if (typeof raw.dc_total_heads === 'number') {
     dc = raw.dc_total_heads; ac = raw.ac_total_heads || 0;
@@ -377,7 +433,10 @@ function normalizeStation(raw, brandKey) {
     if (typeof raw.dc_total_heads !== 'number') {
       if (c.type === 'DC') dc += (c.heads || 1); else ac += (c.heads || 1);
     }
-    if (c.kw) maxKw = Math.max(maxKw, c.kw);
+    if (c.kw) { maxKw = Math.max(maxKw, c.kw); minKw = Math.min(minKw, c.kw); }
+    (c.connectors || []).forEach(conn => {
+      if (conn.price_day != null) { minPrice = Math.min(minPrice, conn.price_day); maxPrice = Math.max(maxPrice, conn.price_day); }
+    });
     const tl = chargerTypeLabel(c);
     if (tl.includes('CCS')) connTypes.add('CCS2');
     else if (tl.includes('CHAdeMO')) connTypes.add('CHAdeMO');
@@ -387,7 +446,10 @@ function normalizeStation(raw, brandKey) {
   let address = raw.address || null;
   if (!address && raw.district && raw.province) address = `${raw.district}, ${raw.province}`;
   else if (!address && raw.province) address = raw.province;
-  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, connTypes: [...connTypes], _raw: raw };
+  minKw = minKw === Infinity ? 0 : minKw;
+  minPrice = minPrice === Infinity ? null : minPrice;
+  maxPrice = maxPrice === -Infinity ? null : maxPrice;
+  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPrice, maxPrice, connTypes: [...connTypes], _raw: raw };
 }
 
 const allStations = [];
@@ -406,14 +468,11 @@ const EXTRA_BRANDS = ['igreen'];
 const moreCountEl = document.getElementById('moreBrandsCount');
 if (moreCountEl) moreCountEl.textContent = EXTRA_BRANDS.length;
 
-// Province dropdown
-const provinces = [...new Set(allStations.map(s => s.province).filter(Boolean))].sort();
-const areaSelect = document.getElementById('areaSelect');
-provinces.forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; areaSelect.appendChild(o); });
 
 // ── State ─────────────────────────────────────────────────────────────────────
 const activeBrands = new Set();
 let activeSearch = '', activeProvince = '', activeOrigIdx = -1;
+let activePowerMin = 0, activePowerMax = 0;
 let mapCenter = [13.7563, 100.5018];
 let currentStations = [];
 let listShown = 80;
@@ -489,7 +548,9 @@ function applyFilter() {
     .filter(s =>
       (activeBrands.size === 0 || activeBrands.has(s.brand)) &&
       (!activeProvince || s.province === activeProvince) &&
-      (!q || s.name.toLowerCase().includes(q) || (s.address||'').toLowerCase().includes(q))
+      (!q || s.name.toLowerCase().includes(q) || (s.address||'').toLowerCase().includes(q)) &&
+      (!activePowerMin || s.maxKw >= activePowerMin) &&
+      (!activePowerMax || s.minKw <= activePowerMax)
     )
     .sort((a, b) => a.distance - b.distance);
 }
@@ -607,6 +668,56 @@ function clearBrandFilter() {
   activeOrigIdx = -1;
   fullRender();
   if (_detailStation) renderNearby(_nearbyRadius);
+}
+
+// ── Map hover tooltip ──────────────────────────────────────────────────────────
+let _mouseX = 0, _mouseY = 0;
+document.addEventListener('mousemove', e => { _mouseX = e.clientX; _mouseY = e.clientY; });
+
+function showMapTooltip(s, x, y) {
+  const b = BRANDS[s.brand];
+  const dcTag = s.dc ? `<span class="ctag dc" style="font-size:10px;padding:2px 6px;">DC × ${s.dc}</span>` : '';
+  const acTag = s.ac ? `<span class="ctag ac" style="font-size:10px;padding:2px 6px;">AC × ${s.ac}</span>` : '';
+  const priceStr = s.minPrice != null
+    ? (s.minPrice === s.maxPrice ? `฿${s.minPrice.toFixed(2)}/kWh` : `฿${s.minPrice.toFixed(2)} – ${s.maxPrice.toFixed(2)}/kWh`)
+    : '';
+  const kwStr = s.maxKw
+    ? (s.minKw && s.minKw !== s.maxKw ? `${s.minKw} – ${s.maxKw} kW` : `最大 ${s.maxKw} kW`)
+    : '';
+  const tt = document.getElementById('map-tooltip');
+  tt.innerHTML = `
+    <div class="mtt-brand">${escHtml(b.label)}</div>
+    <div class="mtt-name">${escHtml(s.name)}</div>
+    <div class="mtt-tags">${dcTag}${acTag}</div>
+    <div class="mtt-rows">
+      ${priceStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 1024 1024" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.251879 0 0 229.251879 0 512S229.251879 1024 512 1024C794.779152 1024 1024 794.748121 1024 512S794.779152 0 512 0z m182.768485 581.259636a34.195394 34.195394 0 0 1 33.667879 39.87394c-2.730667 16.756364-18.494061 28.392727-35.498667 28.392727h-118.194424c-18.773333 0-33.978182 15.235879-33.978182 33.978182v65.877333c0 17.004606-11.605333 32.768-28.392727 35.498667a34.133333 34.133333 0 0 1-39.87394-33.667879v-67.739151c0-18.773333-15.204848-33.978182-33.978182-33.978182h-118.194424c-16.973576 0-32.73697-11.605333-35.467636-28.392728a34.133333 34.133333 0 0 1 33.667879-39.873939h120.335515a33.636848 33.636848 0 1 0 0-67.304727h-118.535758c-16.973576 0-32.73697-11.605333-35.467636-28.392727a34.133333 34.133333 0 0 1 33.667879-39.87394h65.629091a17.159758 17.159758 0 0 0 12.008727-29.416727l-66.125576-64.822303c-12.132848-11.884606-15.204848-31.185455-5.399273-45.056a34.040242 34.040242 0 0 1 51.975758-4.902788l108.264727 106.185697a34.071273 34.071273 0 0 0 48.221091-0.496485l101.810424-103.858424c11.915636-12.132848 31.247515-15.297939 45.180122-5.523394a34.133333 34.133333 0 0 1 4.902787 51.975757l-65.442909 66.746182a17.159758 17.159758 0 0 0 12.25697 29.168485h61.191758c17.004606 0 32.768 11.636364 35.498666 28.392727a34.226424 34.226424 0 0 1-33.667879 39.87394h-120.366545a33.667879 33.667879 0 0 0 0 67.304727h120.304485v0.03103z" fill="#F7912E"/></svg></span><span class="mtt-row-val">${escHtml(priceStr)}</span></div>` : ''}
+      ${kwStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 1024 1024" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M691.419429 98.011429l14.482285-36.205715 0.877715-2.304a34.596571 34.596571 0 0 0 5.814857-14.701714 36.096 36.096 0 0 0-14.555429-35.913143 36.388571 36.388571 0 0 0-50.578286 8.630857l-0.073142 0.109715-0.950858 1.024-45.494857 50.249142A450.596571 450.596571 0 0 0 512 60.013714c-245.357714 0-444.233143 198.875429-444.233143 444.233143 0 176.713143 103.424 328.850286 252.818286 400.384l-24.283429 52.333714h-0.036571a33.718857 33.718857 0 0 0-4.534857 7.241143c-1.536 3.254857-2.779429 6.582857-3.510857 10.020572-2.962286 13.641143 0.950857 28.379429 12.251428 38.070857a39.204571 39.204571 0 0 0 55.04-3.986286l0.036572 0.036572 69.010285-68.534858c28.269714 5.595429 57.417143 8.667429 87.369143 8.667429 245.357714 0 444.233143-198.875429 444.233143-444.233143 0.073143-181.504-108.8-337.261714-264.740571-406.235428z m-322.304 824.32l135.314285-291.401143-308.589714-37.705143L629.686857 113.956571l-128.402286 322.523429 308.406858 48.237714L369.115429 922.331429z" fill="#F3AE17"/></svg></span><span class="mtt-row-val">${escHtml(kwStr)}</span></div>` : ''}
+    </div>`;
+  positionMapTooltip(x, y);
+  tt.style.display = 'block';
+}
+
+function hideMapTooltip() {
+  document.getElementById('map-tooltip').style.display = 'none';
+}
+
+function positionMapTooltip(x, y) {
+  const tt = document.getElementById('map-tooltip');
+  let left = x + 14, top = y - 10;
+  tt.style.left = left + 'px'; tt.style.top = top + 'px';
+  requestAnimationFrame(() => {
+    const W = window.innerWidth, H = window.innerHeight;
+    if (left + tt.offsetWidth > W - 8) tt.style.left = (x - tt.offsetWidth - 8) + 'px';
+    if (top + tt.offsetHeight > H - 8) tt.style.top = (y - tt.offsetHeight - 8) + 'px';
+  });
+}
+
+function setMarkerContent(marker, s, active) {
+  const el = createMarkerEl(s.brand, active);
+  el.addEventListener('mouseenter', () => showMapTooltip(s, _mouseX, _mouseY));
+  el.addEventListener('mousemove', e => positionMapTooltip(e.clientX, e.clientY));
+  el.addEventListener('mouseleave', hideMapTooltip);
+  marker.content = el;
 }
 
 // 同步所有 tab 和弹层 item 的 active 状态
@@ -971,12 +1082,12 @@ function openDetailByIdx(origIdx, fromNearby) {
   const s = allStations[origIdx]; if (!s) return;
   _prevDetailStation = fromNearby ? _detailStation : null;
   if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
-    allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
+    setMarkerContent(allMarkers[activeOrigIdx], allStations[activeOrigIdx], false);
     allMarkers[activeOrigIdx].zIndex = 0;
   }
   activeOrigIdx = origIdx;
   if (allMarkers[origIdx]) {
-    allMarkers[origIdx].content = createMarkerEl(s.brand, true);
+    setMarkerContent(allMarkers[origIdx], s, true);
     allMarkers[origIdx].zIndex = 999;
     if (gmap) gmap.panTo({ lat: s.lat, lng: s.lon });
   }
@@ -987,14 +1098,14 @@ function openDetailByIdx(origIdx, fromNearby) {
 function selectStation(rank, flyTo) {
   const s = currentStations[rank]; if (!s) return;
   if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
-    allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
+    setMarkerContent(allMarkers[activeOrigIdx], allStations[activeOrigIdx], false);
     allMarkers[activeOrigIdx].zIndex = 0;
   }
   activeOrigIdx = s._origIdx;
   _prevDetailStation = null;
   const m = allMarkers[s._origIdx];
   if (m) {
-    m.content = createMarkerEl(s.brand, true); m.zIndex = 999;
+    setMarkerContent(m, s, true); m.zIndex = 999;
     if (flyTo) { gmap.panTo({ lat: s.lat, lng: s.lon }); if (gmap.getZoom() < 14) gmap.setZoom(14); }
   }
   openDetail(s, false);
@@ -1030,19 +1141,20 @@ window.initMap = function () {
 
   allStations.forEach((s, i) => {
     const marker = new google.maps.marker.AdvancedMarkerElement({
-      position: { lat: s.lat, lng: s.lon }, content: createMarkerEl(s.brand, false), title: s.name,
+      position: { lat: s.lat, lng: s.lon }, content: createMarkerEl(s.brand, false),
     });
+    setMarkerContent(marker, s, false);
     marker._brand = s.brand;
     marker.addListener('click', () => {
       const rank = currentStations.findIndex(cs => cs._origIdx === i);
       if (rank >= 0) { selectStation(rank, false); }
       else {
         if (activeOrigIdx >= 0 && allMarkers[activeOrigIdx]) {
-          allMarkers[activeOrigIdx].content = createMarkerEl(allStations[activeOrigIdx].brand, false);
+          setMarkerContent(allMarkers[activeOrigIdx], allStations[activeOrigIdx], false);
           allMarkers[activeOrigIdx].zIndex = 0;
         }
         activeOrigIdx = i; _prevDetailStation = null;
-        marker.content = createMarkerEl(s.brand, true); marker.zIndex = 999;
+        setMarkerContent(marker, s, true); marker.zIndex = 999;
         openDetail(s, false);
       }
     });
@@ -1052,21 +1164,73 @@ window.initMap = function () {
   document.getElementById('btnMap').onclick = () => { gmap.setMapTypeId('roadmap'); document.getElementById('btnMap').classList.add('active'); document.getElementById('btnSat').classList.remove('active'); };
   document.getElementById('btnSat').onclick = () => { gmap.setMapTypeId('hybrid'); document.getElementById('btnSat').classList.add('active'); document.getElementById('btnMap').classList.remove('active'); };
 
-  const searchInput = document.getElementById('searchInput');
-  const autocomplete = new google.maps.places.Autocomplete(searchInput, { componentRestrictions: { country: 'th' }, fields: ['geometry', 'name'] });
-  autocomplete.bindTo('bounds', gmap);
-  autocomplete.addListener('place_changed', () => {
-    const place = autocomplete.getPlace(); if (!place.geometry) return;
-    infoWindow.close();
-    if (place.geometry.viewport) gmap.fitBounds(place.geometry.viewport);
-    else { gmap.setCenter(place.geometry.location); gmap.setZoom(14); }
-    setTimeout(() => { searchInput.value = ''; activeSearch = ''; const c = gmap.getCenter(); mapCenter = [c.lat(), c.lng()]; fullRender(); }, 50);
+
+  // ── Sidebar search ────────────────────────────────────────────────────────────
+  let sidebarTimer;
+  const sidebarSearch = document.getElementById('sidebarSearch');
+  const sidebarSearchClear = document.getElementById('sidebarSearchClear');
+  sidebarSearch.addEventListener('input', e => {
+    clearTimeout(sidebarTimer);
+    const val = e.target.value;
+    sidebarSearchClear.style.display = val ? 'flex' : 'none';
+    sidebarTimer = setTimeout(() => { activeSearch = val; activeOrigIdx = -1; fullRender(); }, 300);
+  });
+  sidebarSearchClear.addEventListener('click', () => {
+    sidebarSearch.value = ''; activeSearch = '';
+    sidebarSearchClear.style.display = 'none';
+    activeOrigIdx = -1; fullRender();
   });
 
-  let filterTimer;
-  searchInput.addEventListener('input', e => {
-    clearTimeout(filterTimer);
-    filterTimer = setTimeout(() => { activeSearch = e.target.value; activeOrigIdx = -1; fullRender(); }, 300);
+  // ── Power filter ──────────────────────────────────────────────────────────────
+  let pfTimer;
+  const pfMinInput = document.getElementById('pfMinInput');
+  const pfMaxInput = document.getElementById('pfMaxInput');
+  const spMinDropdown = document.getElementById('spMinDropdown');
+  const spMaxDropdown = document.getElementById('spMaxDropdown');
+
+  function syncDdSelected(dropdown, val) {
+    dropdown.querySelectorAll('.sp-dd-item').forEach(item => {
+      item.classList.toggle('selected', +item.dataset.val === val);
+    });
+  }
+  function closePowerDropdowns() {
+    spMinDropdown.classList.remove('open');
+    spMaxDropdown.classList.remove('open');
+  }
+
+  pfMinInput.addEventListener('focus', () => { spMinDropdown.classList.add('open'); syncDdSelected(spMinDropdown, activePowerMin); });
+  pfMinInput.addEventListener('blur',  () => { setTimeout(() => spMinDropdown.classList.remove('open'), 150); });
+  pfMaxInput.addEventListener('focus', () => { spMaxDropdown.classList.add('open'); syncDdSelected(spMaxDropdown, activePowerMax); });
+  pfMaxInput.addEventListener('blur',  () => { setTimeout(() => spMaxDropdown.classList.remove('open'), 150); });
+
+  spMinDropdown.querySelectorAll('.sp-dd-item').forEach(item => {
+    item.addEventListener('mousedown', e => e.preventDefault());
+    item.addEventListener('click', () => {
+      const val = +item.dataset.val;
+      activePowerMin = val; pfMinInput.value = val;
+      syncDdSelected(spMinDropdown, val);
+      spMinDropdown.classList.remove('open');
+      activeOrigIdx = -1; fullRender();
+    });
+  });
+  spMaxDropdown.querySelectorAll('.sp-dd-item').forEach(item => {
+    item.addEventListener('mousedown', e => e.preventDefault());
+    item.addEventListener('click', () => {
+      const val = +item.dataset.val;
+      activePowerMax = val; pfMaxInput.value = val;
+      syncDdSelected(spMaxDropdown, val);
+      spMaxDropdown.classList.remove('open');
+      activeOrigIdx = -1; fullRender();
+    });
+  });
+
+  pfMinInput.addEventListener('input', e => {
+    clearTimeout(pfTimer);
+    pfTimer = setTimeout(() => { activePowerMin = parseFloat(e.target.value) || 0; activeOrigIdx = -1; fullRender(); }, 400);
+  });
+  pfMaxInput.addEventListener('input', e => {
+    clearTimeout(pfTimer);
+    pfTimer = setTimeout(() => { activePowerMax = parseFloat(e.target.value) || 0; activeOrigIdx = -1; fullRender(); }, 400);
   });
 
   let idleTimer, lastSoftCenter = null;
@@ -1079,7 +1243,6 @@ window.initMap = function () {
     }, 400);
   });
 
-  areaSelect.onchange = e => { activeProvince = e.target.value; activeOrigIdx = -1; fullRender(); };
 
   document.getElementById('brandTabs').addEventListener('click', e => {
     const btn = e.target.closest('.tab');
@@ -1102,5 +1265,6 @@ window.initMap = function () {
 </script>
 
 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUNkBBVjIJ8rq_klcc2dkDttE-7vVutT0&libraries=places,marker&callback=initMap&v=weekly&loading=async"></script>
+<div id="map-tooltip"></div>
 </body>
 </html>
