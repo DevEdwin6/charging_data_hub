@@ -20,7 +20,7 @@ if (!PASSWORD) {
 
 const SRC_DIR = path.join(__dirname, 'data');
 const OUT_DIR = path.join(__dirname, 'web', 'data');
-const FILES   = ['ptt.js', 'pea.js', 'spark.js', 'igreen.js'];
+const FILES   = ['ptt.js', 'pea.js', 'spark.js', 'igreen.js', 'onecharge.js'];
 const ITER    = 100_000;
 
 fs.mkdirSync(OUT_DIR, { recursive: true });

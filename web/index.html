@@ -31,8 +31,12 @@
     .sidebar-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0 0 4px; }
     .sidebar-subtitle { font-size: 12px; color: #9ca3af; margin: 0; line-height: 1.5; }
 
-    .brand-tabs { display: flex; gap: 6px; padding-bottom: 12px; }
-    .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 10px; border: 1.5px solid #e5e7eb; border-radius: 14px; background: #fff; cursor: pointer; transition: border-color .15s, background .15s; position: relative; min-width: 0; }
+    .brand-tabs { display: flex; gap: 6px; padding-bottom: 10px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+    .brand-tabs::-webkit-scrollbar { height: 4px; }
+    .brand-tabs::-webkit-scrollbar-track { background: transparent; }
+    .brand-tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+    .brand-tabs::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .tab { flex: 0 0 72px; display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px 10px; border: 1.5px solid #e5e7eb; border-radius: 14px; background: #fff; cursor: pointer; transition: border-color .15s, background .15s; position: relative; }
     .tab:hover { border-color: #93c5fd; background: #f8faff; }
     .tab.active { border-color: var(--clr-primary); background: var(--clr-primary-bg); }
     .tab.active .tab-name { color: var(--clr-primary); }
@@ -406,6 +410,12 @@
           <span class="tab-name">Spark</span>
           <span class="provider-count" id="tabCount-spark"></span>
         </button>
+        <button class="tab" data-brand="onecharge">
+          <div class="tab-check"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.5 6 8 1" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <img class="tab-logo" src="img/onecharge.png" alt="OneCharge">
+          <span class="tab-name">OneCharge</span>
+          <span class="provider-count" id="tabCount-onecharge"></span>
+        </button>
       </div>
       <div class="brand-filter-bar" id="brandFilterBar"></div>
 
@@ -485,10 +495,11 @@
 <script>
 // ── Brand config ──────────────────────────────────────────────────────────────
 const BRANDS = {
-  pea:    { label: 'PEA VOLTA', short: 'PEA',    color: '#7C3AED', bg: '#f3e8ff', text: '#7C3AED', logo: 'img/pea.png' },
-  ptt:    { label: 'PTT EV',    short: 'PTT EV', color: '#1d4ed8', bg: '#dbeafe', text: '#1d4ed8', logo: 'img/ptt.png' },
-  spark:  { label: 'Spark',     short: 'Spark',  color: '#ea580c', bg: '#fff7ed', text: '#ea580c', logo: 'img/spark.png' },
-  igreen: { label: 'iGreen',   short: 'iGreen', color: '#16a34a', bg: '#dcfce7', text: '#16a34a', logo: 'img/igreen.png' },
+  pea:       { label: 'PEA VOLTA',  short: 'PEA',       color: '#7C3AED', bg: '#f3e8ff', text: '#7C3AED', logo: 'img/pea.png' },
+  ptt:       { label: 'PTT EV',     short: 'PTT EV',    color: '#1d4ed8', bg: '#dbeafe', text: '#1d4ed8', logo: 'img/ptt.png' },
+  spark:     { label: 'Spark',      short: 'Spark',     color: '#ea580c', bg: '#fff7ed', text: '#ea580c', logo: 'img/spark.png' },
+  igreen:    { label: 'iGreen',     short: 'iGreen',    color: '#16a34a', bg: '#dcfce7', text: '#16a34a', logo: 'img/igreen.png' },
+  onecharge: { label: 'OneCharge',  short: 'OneCharge', color: '#0369a1', bg: '#e0f2fe', text: '#0369a1', logo: 'img/onecharge.png' },
 };
 
 // ── Normalize ─────────────────────────────────────────────────────────────────
@@ -537,7 +548,7 @@ let allStations = [];
 
 // Called after decryption succeeds
 function initData(datasets) {
-  [['pea', datasets.pea||[]], ['ptt', datasets.ptt||[]], ['spark', datasets.spark||[]], ['igreen', datasets.igreen||[]]].forEach(([brand, data]) => {
+  [['pea', datasets.pea||[]], ['ptt', datasets.ptt||[]], ['spark', datasets.spark||[]], ['igreen', datasets.igreen||[]], ['onecharge', datasets.onecharge||[]]].forEach(([brand, data]) => {
     data.forEach(raw => { if (raw.lat && raw.lon) allStations.push(normalizeStation(raw, brand)); });
   });
   document.getElementById('tabCount-all').textContent = `${allStations.length}`;
@@ -558,7 +569,7 @@ function loadGoogleMaps() {
 }
 
 // 更多按钮：弹层品牌列表
-const EXTRA_BRANDS = ['igreen'];
+const EXTRA_BRANDS = [];
 
 
 // ── State ─────────────────────────────────────────────────────────────────────
@@ -811,6 +822,40 @@ function setMarkerContent(marker, s, active) {
   el.addEventListener('mouseleave', hideMapTooltip);
   marker.content = el;
 }
+
+// ── Brand tabs 拖拽滚动 + 滚轮横滑 ───────────────────────────────────────────
+(function () {
+  const el = document.getElementById('brandTabs');
+  let dragging = false, startX = 0, scrollLeft = 0, moved = false;
+
+  el.addEventListener('mousedown', e => {
+    dragging = true; moved = false;
+    startX = e.pageX - el.offsetLeft;
+    scrollLeft = el.scrollLeft;
+    el.style.cursor = 'grabbing';
+    el.style.scrollBehavior = 'auto';
+  });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const dx = e.pageX - el.offsetLeft - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    el.scrollLeft = scrollLeft - dx;
+  });
+  window.addEventListener('mouseup', () => {
+    dragging = false;
+    el.style.cursor = '';
+    el.style.scrollBehavior = 'smooth';
+  });
+  // 阻止拖动后触发 tab 点击
+  el.addEventListener('click', e => { if (moved) { e.stopImmediatePropagation(); moved = false; } }, true);
+
+  // 鼠标滚轮横划
+  el.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // 已是横向滚动则放行
+    e.preventDefault();
+    el.scrollLeft += e.deltaY;
+  }, { passive: false });
+})();
 
 // 同步所有 tab 和弹层 item 的 active 状态
 function syncBrandTabStates() {
@@ -1414,7 +1459,7 @@ window.initMap = function () {
   }
 
   async function decryptAll(pwd) {
-    const keys = ['ptt', 'pea', 'spark', 'igreen'];
+    const keys = ['ptt', 'pea', 'spark', 'igreen', 'onecharge'];
     const results = await Promise.all(keys.map(k => decryptFile(`data/${k}.enc`, pwd)));
     return Object.fromEntries(keys.map((k, i) => [k, results[i]]));
   }
