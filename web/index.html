@@ -116,6 +116,8 @@
     .ctag { display: inline-flex; align-items: center; padding: 2px 7px; border-radius: 5px; font-size: 11px; font-weight: 500; }
     .ctag.dc { background: var(--clr-dc-bg); color: var(--clr-dc); }
     .ctag.ac { background: var(--clr-ac-bg); color: var(--clr-ac); }
+    .ctag.roaming { background: #fef3c7; color: #b45309; }
+    .ctag.volta { background: #e0f2fe; color: #0369a1; }
     .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
     .card-summary { font-size: 11px; color: #6b7280; }
     .card-nav { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 7px; background: var(--clr-primary-bg); color: var(--clr-primary); border: none; cursor: pointer; text-decoration: none; transition: background .12s; flex-shrink: 0; }
@@ -231,7 +233,7 @@
     .conn-table .th-time { font-size: 10px; font-weight: 400; color: #9ca3af; display: block; }
     .conn-table td { padding: 10px 8px; vertical-align: middle; border-bottom: 1px solid #f9fafb; }
     .conn-table tr:last-child td { border-bottom: none; }
-    .td-pos  { font-size: 13px; font-weight: 600; color: #111827; }
+    .td-pos  { font-size: 13px; font-weight: 600; color: #111827; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .td-type { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
     .td-kw   { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
     .td-day  { font-size: 13px; font-weight: 600; color: #dc2626; text-align: center; white-space: nowrap; }
@@ -541,7 +543,8 @@ function normalizeStation(raw, brandKey) {
   minKw = minKw === Infinity ? 0 : minKw;
   minPrice = minPrice === Infinity ? null : minPrice;
   maxPrice = maxPrice === -Infinity ? null : maxPrice;
-  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPrice, maxPrice, connTypes: [...connTypes], _raw: raw };
+  const sourceLabels = Array.isArray(raw.source_labels) ? raw.source_labels : [];
+  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPrice, maxPrice, connTypes: [...connTypes], sourceLabels, _raw: raw };
 }
 
 let allStations = [];
@@ -718,6 +721,10 @@ function buildCard(s, rank) {
   const isActive = s._origIdx === activeOrigIdx;
   const dcTag = s.dc ? `<span class="ctag dc">DC × ${s.dc}</span>` : '';
   const acTag = s.ac ? `<span class="ctag ac">AC × ${s.ac}</span>` : '';
+  const sourceTags = (s.sourceLabels || []).map(lb =>
+    lb === 'EV Roaming' ? `<span class="ctag roaming">EV Roaming</span>`
+    : lb === 'PEA VOLTA' ? `<span class="ctag volta">PEA VOLTA</span>` : ''
+  ).join('');
   const chargerCount = (s._raw.chargers || []).length || s.total;
   const kwPart = s.maxKw ? ` · 最大 ${s.maxKw} kW` : '';
   const addrHtml = s.address ? `<div class="card-addr">${escHtml(s.address)}</div>` : '';
@@ -728,7 +735,7 @@ function buildCard(s, rank) {
       <div class="card-header"><span class="card-brand">${b.short}</span><span class="card-dist">${fmtDist(s.distance)}</span></div>
       <div class="card-name">${escHtml(s.name)}</div>
       ${addrHtml}
-      <div class="card-tags">${dcTag}${acTag}</div>
+      <div class="card-tags">${dcTag}${acTag}${sourceTags}</div>
       <div class="card-footer">
         <span class="card-summary">${chargerCount} 个充电桩${kwPart}</span>
         <a class="card-nav" href="${navUrl}" target="_blank" onclick="event.stopPropagation()" title="导航">
@@ -987,11 +994,16 @@ function openDetail(s, fromNearby) {
     }
   }
 
+  const detailSourceTags = (s.sourceLabels || []).map(lb =>
+    lb === 'EV Roaming' ? `<span class="ctag roaming" style="font-size:10px;padding:2px 6px;">EV Roaming</span>`
+    : lb === 'PEA VOLTA' ? `<span class="ctag volta" style="font-size:10px;padding:2px 6px;">PEA VOLTA</span>` : ''
+  ).join('');
   const topHtml = `<div class="d-top">
     <img class="d-logo" src="${b.logo}" alt="${b.short}">
     <div class="d-title">
       <div class="d-brand-label" style="color:${b.color}">${b.label}</div>
       <h3 class="d-name">${escHtml(s.name)}</h3>
+      ${detailSourceTags ? `<div style="margin-top:4px;display:flex;gap:4px;flex-wrap:wrap;">${detailSourceTags}</div>` : ''}
     </div>
   </div>`;
 
@@ -1109,7 +1121,7 @@ function buildConnectorTable(c, typeLabel, kw) {
         const cType = conn.type || typeLabel, cKw = conn.kw ? `${conn.kw} kW` : kw;
         const dayCell   = hasPriceDay   ? (conn.price_day   != null ? `<td class="td-day">฿ ${conn.price_day.toFixed(2)}</td>`   : `<td class="td-dash">—</td>`) : '';
         const nightCell = hasPriceNight ? (conn.price_night != null ? `<td class="td-night">฿ ${conn.price_night.toFixed(2)}</td>` : `<td class="td-dash">—</td>`) : '';
-        return `<tr><td class="td-pos">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
+        return `<tr><td class="td-pos" title="${escHtml(posLabel)}">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
       }).join('')
     : Array.from({ length: c.heads || 1 }, (_, hi) =>
         `<tr><td class="td-pos">枪口 ${String.fromCharCode(65+hi)}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td></tr>`
