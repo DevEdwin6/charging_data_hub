@@ -227,13 +227,13 @@
     .cu-flat-header { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: #f9fafb; border-bottom: 1px solid #f3f4f6; }
 
     /* connector table */
-    .conn-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .conn-table { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
     .conn-table th { padding: 7px 8px; background: #f9fafb; font-weight: 600; color: #6b7280; text-align: center; border-bottom: 1px solid #f3f4f6; }
     .conn-table th.th-left { text-align: left; }
     .conn-table .th-time { font-size: 10px; font-weight: 400; color: #9ca3af; display: block; }
     .conn-table td { padding: 10px 8px; vertical-align: middle; border-bottom: 1px solid #f9fafb; }
     .conn-table tr:last-child td { border-bottom: none; }
-    .td-pos  { font-size: 13px; font-weight: 600; color: #111827; max-width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .td-pos  { font-size: 13px; font-weight: 600; color: #111827; width: 90px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .td-type { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
     .td-kw   { font-size: 12px; color: #374151; text-align: center; white-space: nowrap; }
     .td-day  { font-size: 13px; font-weight: 600; color: #dc2626; text-align: center; white-space: nowrap; }
@@ -334,6 +334,9 @@
     .login-btn:hover:not(:disabled) { opacity: .9; }
     .login-btn:active:not(:disabled) { transform: scale(.98); }
     .login-btn:disabled { opacity: .65; cursor: not-allowed; }
+    @media (max-width: 600px) {
+      .login-card { left: 0; width: calc(100% - 32px); padding: 36px 24px 32px; }
+    }
   </style>
 </head>
 <body>
@@ -559,8 +562,6 @@ function initData(datasets) {
     const el = document.getElementById(`tabCount-${bk}`);
     if (el) el.textContent = `${allStations.filter(s => s.brand === bk).length}`;
   });
-  const moreCountEl = document.getElementById('moreBrandsCount');
-  if (moreCountEl) moreCountEl.textContent = EXTRA_BRANDS.length;
   loadGoogleMaps();
 }
 
@@ -570,10 +571,6 @@ function loadGoogleMaps() {
   s.async = true;
   document.head.appendChild(s);
 }
-
-// 更多按钮：弹层品牌列表
-const EXTRA_BRANDS = [];
-
 
 // ── State ─────────────────────────────────────────────────────────────────────
 const activeBrands = new Set();
@@ -655,7 +652,7 @@ function applyFilter() {
       (activeBrands.size === 0 || activeBrands.has(s.brand)) &&
       (!activeProvince || s.province === activeProvince) &&
       (!q || s.name.toLowerCase().includes(q) || (s.address||'').toLowerCase().includes(q)) &&
-      (!activePowerMin || s.maxKw >= activePowerMin) &&
+      (!activePowerMin || s.maxKw === 0 || s.maxKw >= activePowerMin) &&
       (!activePowerMax || s.minKw <= activePowerMax)
     )
     .sort((a, b) => a.distance - b.distance);
@@ -677,7 +674,17 @@ function softRender() {
 
 function updateClusterer() {
   clusterer.clearMarkers();
-  clusterer.addMarkers(currentStations.map(s => allMarkers[s._origIdx]));
+  const markers = allStations
+    .map((s, i) => ({ s, i }))
+    .filter(({ s }) =>
+      (activeBrands.size === 0 || activeBrands.has(s.brand)) &&
+      (!activeProvince || s.province === activeProvince) &&
+      (!activePowerMin || s.maxKw === 0 || s.maxKw >= activePowerMin) &&
+      (!activePowerMax || s.minKw <= activePowerMax)
+    )
+    .map(({ i }) => allMarkers[i])
+    .filter(Boolean);
+  clusterer.addMarkers(markers);
 }
 
 // ── List rendering ────────────────────────────────────────────────────────────
@@ -768,7 +775,9 @@ function removeBrand(bk) {
   activeBrands.delete(bk);
   syncBrandTabStates();
   updateBrandFilterBar();
-  renderList();
+  activeOrigIdx = -1;
+  fullRender();
+  if (_detailStation) renderNearby(_nearbyRadius);
 }
 
 function clearBrandFilter() {
@@ -800,8 +809,8 @@ function showMapTooltip(s, x, y) {
     <div class="mtt-name">${escHtml(s.name)}</div>
     <div class="mtt-tags">${dcTag}${acTag}</div>
     <div class="mtt-rows">
-      ${priceStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 1024 1024" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M512 0C229.251879 0 0 229.251879 0 512S229.251879 1024 512 1024C794.779152 1024 1024 794.748121 1024 512S794.779152 0 512 0z m182.768485 581.259636a34.195394 34.195394 0 0 1 33.667879 39.87394c-2.730667 16.756364-18.494061 28.392727-35.498667 28.392727h-118.194424c-18.773333 0-33.978182 15.235879-33.978182 33.978182v65.877333c0 17.004606-11.605333 32.768-28.392727 35.498667a34.133333 34.133333 0 0 1-39.87394-33.667879v-67.739151c0-18.773333-15.204848-33.978182-33.978182-33.978182h-118.194424c-16.973576 0-32.73697-11.605333-35.467636-28.392728a34.133333 34.133333 0 0 1 33.667879-39.873939h120.335515a33.636848 33.636848 0 1 0 0-67.304727h-118.535758c-16.973576 0-32.73697-11.605333-35.467636-28.392727a34.133333 34.133333 0 0 1 33.667879-39.87394h65.629091a17.159758 17.159758 0 0 0 12.008727-29.416727l-66.125576-64.822303c-12.132848-11.884606-15.204848-31.185455-5.399273-45.056a34.040242 34.040242 0 0 1 51.975758-4.902788l108.264727 106.185697a34.071273 34.071273 0 0 0 48.221091-0.496485l101.810424-103.858424c11.915636-12.132848 31.247515-15.297939 45.180122-5.523394a34.133333 34.133333 0 0 1 4.902787 51.975757l-65.442909 66.746182a17.159758 17.159758 0 0 0 12.25697 29.168485h61.191758c17.004606 0 32.768 11.636364 35.498666 28.392727a34.226424 34.226424 0 0 1-33.667879 39.87394h-120.366545a33.667879 33.667879 0 0 0 0 67.304727h120.304485v0.03103z" fill="#F7912E"/></svg></span><span class="mtt-row-val">${escHtml(priceStr)}</span></div>` : ''}
-      ${kwStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 1024 1024" width="14" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M691.419429 98.011429l14.482285-36.205715 0.877715-2.304a34.596571 34.596571 0 0 0 5.814857-14.701714 36.096 36.096 0 0 0-14.555429-35.913143 36.388571 36.388571 0 0 0-50.578286 8.630857l-0.073142 0.109715-0.950858 1.024-45.494857 50.249142A450.596571 450.596571 0 0 0 512 60.013714c-245.357714 0-444.233143 198.875429-444.233143 444.233143 0 176.713143 103.424 328.850286 252.818286 400.384l-24.283429 52.333714h-0.036571a33.718857 33.718857 0 0 0-4.534857 7.241143c-1.536 3.254857-2.779429 6.582857-3.510857 10.020572-2.962286 13.641143 0.950857 28.379429 12.251428 38.070857a39.204571 39.204571 0 0 0 55.04-3.986286l0.036572 0.036572 69.010285-68.534858c28.269714 5.595429 57.417143 8.667429 87.369143 8.667429 245.357714 0 444.233143-198.875429 444.233143-444.233143 0.073143-181.504-108.8-337.261714-264.740571-406.235428z m-322.304 824.32l135.314285-291.401143-308.589714-37.705143L629.686857 113.956571l-128.402286 322.523429 308.406858 48.237714L369.115429 922.331429z" fill="#F3AE17"/></svg></span><span class="mtt-row-val">${escHtml(kwStr)}</span></div>` : ''}
+      ${priceStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 14 14" width="14" height="14"><circle cx="7" cy="7" r="6.5" fill="#F7912E"/><text x="7" y="11" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="700" font-family="Arial,sans-serif">฿</text></svg></span><span class="mtt-row-val">${escHtml(priceStr)}</span></div>` : ''}
+      ${kwStr ? `<div class="mtt-row"><span class="mtt-row-label"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M9 2L4 9h5l-1 5 6-8H9l1-4z" fill="#F3AE17"/></svg></span><span class="mtt-row-val">${escHtml(kwStr)}</span></div>` : ''}
     </div>`;
   positionMapTooltip(x, y);
   tt.style.display = 'block';
@@ -864,52 +873,15 @@ function setMarkerContent(marker, s, active) {
   }, { passive: false });
 })();
 
-// 同步所有 tab 和弹层 item 的 active 状态
+// 同步所有 tab 的 active 状态
 function syncBrandTabStates() {
   document.querySelectorAll('#brandTabs .tab').forEach(t => {
     const b = t.dataset.brand;
-    if (!b) return; // 更多按钮本身无 data-brand
+    if (!b) return;
     t.classList.toggle('active', b === 'all' ? activeBrands.size === 0 : activeBrands.has(b));
   });
-  document.querySelectorAll('.tab-more-item').forEach(t => {
-    t.classList.toggle('active', activeBrands.has(t.dataset.brand));
-  });
-  // 更多按钮：有弹层品牌被选中时高亮
-  const moreBtn = document.getElementById('moreBrandsBtn');
-  if (moreBtn) moreBtn.classList.toggle('has-active', EXTRA_BRANDS.some(b => activeBrands.has(b)));
 }
 
-// 更多弹层开关
-function toggleMoreBrands(e) {
-  e.stopPropagation();
-  const btn = document.getElementById('moreBrandsBtn');
-  const popup = document.getElementById('moreBrandsPopup');
-  const opening = !popup.classList.contains('open');
-  popup.classList.toggle('open', opening);
-  btn.classList.toggle('open', opening);
-}
-
-// 弹层品牌点击
-document.addEventListener('click', e => {
-  const item = e.target.closest('.tab-more-item');
-  if (item) {
-    e.stopPropagation();
-    const brand = item.dataset.brand;
-    activeBrands.has(brand) ? activeBrands.delete(brand) : activeBrands.add(brand);
-    syncBrandTabStates();
-    updateBrandFilterBar();
-    activeOrigIdx = -1; fullRender();
-    if (_detailStation) renderNearby(_nearbyRadius);
-    return;
-  }
-  // 点击弹层外部关闭
-  const popup = document.getElementById('moreBrandsPopup');
-  const btn = document.getElementById('moreBrandsBtn');
-  if (popup && !btn.contains(e.target)) {
-    popup.classList.remove('open');
-    btn.classList.remove('open');
-  }
-});
 
 // ── Locate me ─────────────────────────────────────────────────────────────────
 function locateMe() {
@@ -1123,9 +1095,10 @@ function buildConnectorTable(c, typeLabel, kw) {
         const nightCell = hasPriceNight ? (conn.price_night != null ? `<td class="td-night">฿ ${conn.price_night.toFixed(2)}</td>` : `<td class="td-dash">—</td>`) : '';
         return `<tr><td class="td-pos" title="${escHtml(posLabel)}">${escHtml(posLabel)}</td><td class="td-type">${escHtml(cType)}</td><td class="td-kw">${cKw}</td>${dayCell}${nightCell}</tr>`;
       }).join('')
-    : Array.from({ length: c.heads || 1 }, (_, hi) =>
-        `<tr><td class="td-pos">枪口 ${String.fromCharCode(65+hi)}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td></tr>`
-      ).join('');
+    : Array.from({ length: c.heads || 1 }, (_, hi) => {
+        const lbl = `枪口 ${String.fromCharCode(65+hi)}`;
+        return `<tr><td class="td-pos" title="${lbl}">${lbl}</td><td class="td-type">${typeLabel}</td><td class="td-kw">${kw}</td></tr>`;
+      }).join('');
   return `<table class="conn-table">
     <thead><tr><th class="th-left">枪口名称</th><th style="white-space:nowrap">接口类型</th><th style="white-space:nowrap">最大功率</th>${dayTh}${nightTh}</tr></thead>
     <tbody>${rows}</tbody>
@@ -1185,19 +1158,17 @@ function renderNearby(radiusKm) {
   document.querySelectorAll('.r-tab[data-km]').forEach(t => t.classList.toggle('active', +t.dataset.km === radiusKm));
   const titleEl = document.getElementById('nearbyTitle');
   if (titleEl) titleEl.textContent = `附近 ${radiusKm} 公里充电桩`;
-  const q = activeSearch.trim().toLowerCase();
   const nearby = _nearbyCache.filter(x => {
     if (x.d > radiusKm) return false;
     if (activeBrands.size > 0 && !activeBrands.has(x.n.brand)) return false;
-    if (q && !x.n.name.toLowerCase().includes(q)) return false;
-    if (activePowerMin && x.n.maxKw < activePowerMin) return false;
+    if (activePowerMin && x.n.maxKw > 0 && x.n.maxKw < activePowerMin) return false;
     if (activePowerMax && x.n.minKw > activePowerMax) return false;
     if (activeProvince && x.n.province !== activeProvince) return false;
     return true;
   });
   const el = document.getElementById('nearbyList');
   if (!el) return;
-  const hasFilter = q || activePowerMin || activePowerMax || activeBrands.size > 0 || activeProvince;
+  const hasFilter = activePowerMin || activePowerMax || activeBrands.size > 0 || activeProvince;
   const hint = hasFilter ? `<div class="nearby-filter-hint">已应用搜索筛选条件</div>` : '';
   if (nearby.length === 0) {
     const nextKm = radiusKm < 3 ? 3 : radiusKm < 5 ? 5 : radiusKm < 10 ? 10 : null;
@@ -1205,20 +1176,23 @@ function renderNearby(radiusKm) {
     el.innerHTML = hint + `<div class="nearby-empty">${radiusKm}km 内暂无符合条件的充电站${suggest}</div>`;
     return;
   }
-  el.innerHTML = nearby.map(({ n, i, d }) => {
+  el.innerHTML = hint + nearby.map(({ n, i, d }) => {
     const b = BRANDS[n.brand];
     const dcTag = n.dc ? `<span class="ctag dc" style="font-size:10px;padding:1px 6px;">DC</span>` : '';
     const acTag = n.ac ? `<span class="ctag ac" style="font-size:10px;padding:1px 6px;">AC</span>` : '';
+    const srcTags = (n.sourceLabels || []).map(lb =>
+      lb === 'EV Roaming' ? `<span class="ctag roaming" style="font-size:10px;padding:1px 6px;">EV Roaming</span>`
+      : lb === 'PEA VOLTA' ? `<span class="ctag volta" style="font-size:10px;padding:1px 6px;">PEA VOLTA</span>` : ''
+    ).join('');
     return `<div class="nearby-card" onclick="openDetailByIdx(${i},true)" onmouseenter="hoverNearby(${i})" onmouseleave="unhoverNearby(${i})">
       <img class="nearby-logo" src="${b.logo}" alt="${b.short}">
       <div class="nearby-body">
         <div class="nearby-name">${escHtml(n.name)}</div>
-        <div class="nearby-meta">${dcTag}${acTag}${n.total?`<span>${n.total} 枪</span>`:''}${n.maxKw?`<span>${n.maxKw} kW</span>`:''}</div>
+        <div class="nearby-meta">${dcTag}${acTag}${srcTags}${n.total?`<span>${n.total} 枪</span>`:''}${n.maxKw?`<span>${n.maxKw} kW</span>`:''}</div>
       </div>
       <div class="nearby-dist">${fmtDist(d)}</div>
     </div>`;
   }).join('');
-  el.innerHTML = hint + el.innerHTML;
 }
 
 function changeRadius(km) {
@@ -1302,7 +1276,7 @@ window.initMap = function () {
 
   allStations.forEach((s, i) => {
     const marker = new google.maps.marker.AdvancedMarkerElement({
-      position: { lat: s.lat, lng: s.lon }, content: createMarkerEl(s.brand, false),
+      position: { lat: s.lat, lng: s.lon },
     });
     setMarkerContent(marker, s, false);
     marker._brand = s.brand;
@@ -1359,11 +1333,6 @@ window.initMap = function () {
       item.classList.toggle('selected', +item.dataset.val === val);
     });
   }
-  function closePowerDropdowns() {
-    spMinDropdown.classList.remove('open');
-    spMaxDropdown.classList.remove('open');
-  }
-
   pfMinInput.addEventListener('focus', () => { spMinDropdown.classList.add('open'); syncDdSelected(spMinDropdown, activePowerMin); });
   pfMinInput.addEventListener('blur',  () => { setTimeout(() => spMinDropdown.classList.remove('open'), 150); });
   pfMaxInput.addEventListener('focus', () => { spMaxDropdown.classList.add('open'); syncDdSelected(spMaxDropdown, activePowerMax); });
@@ -1422,7 +1391,7 @@ window.initMap = function () {
 
   document.getElementById('brandTabs').addEventListener('click', e => {
     const btn = e.target.closest('.tab');
-    if (!btn || btn.classList.contains('tab-more')) return; // 更多按钮由 toggleMoreBrands 处理
+    if (!btn) return;
     const brand = btn.dataset.brand;
     if (!brand) return;
     if (brand === 'all') activeBrands.clear();
