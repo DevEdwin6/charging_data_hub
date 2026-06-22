@@ -256,7 +256,8 @@
     .custom-radius-confirm { padding: 5px 10px; border-radius: 8px; background: var(--clr-primary); color: #fff; border: none; font-size: 12px; font-weight: 600; cursor: pointer; }
     .custom-radius-confirm:hover { background: #2563eb; }
 
-    .nearby-card { display: flex; align-items: center; gap: 10px; padding: 10px 16px; cursor: pointer; transition: background .15s; }
+    .nearby-card { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; transition: background .15s; border-bottom: 1px solid #f3f4f6; }
+    .nearby-card:last-child { border-bottom: none; }
     .nearby-card:hover { background: #f9fafb; }
     .nearby-logo { width: 38px; height: 38px; border-radius: 50%; object-fit: contain; border: 1px solid #f3f4f6; padding: 4px; background: #fff; flex-shrink: 0; }
     .nearby-body { flex: 1; min-width: 0; }
@@ -265,6 +266,13 @@
     .nearby-dist { font-size: 13px; font-weight: 600; color: var(--clr-primary); white-space: nowrap; flex-shrink: 0; }
     .nearby-empty { padding: 16px; font-size: 13px; color: #9ca3af; text-align: center; line-height: 1.7; }
     .nearby-filter-hint { margin: 8px 16px 4px; padding: 5px 10px; background: #eff6ff; border-radius: 6px; font-size: 11px; color: var(--clr-primary); }
+    .nearby-price { margin-top: 3px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; line-height: 1.4; }
+    .np-none { font-size: 11px; color: #9ca3af; }
+    .np-unified { font-size: 11px; color: #374151; }
+    .np-unified b { color: #16a34a; font-weight: 600; font-style: normal; }
+    .np-day { font-size: 11px; color: #F97316; font-weight: 600; }
+    .np-night { font-size: 11px; color: #2563EB; font-weight: 600; }
+    .np-sep { font-size: 11px; color: #d1d5db; }
     .nearby-suggest-btn { display: inline-block; margin-top: 6px; padding: 5px 14px; border-radius: 16px; border: 1.5px solid var(--clr-primary); background: transparent; color: var(--clr-primary); font-size: 12px; font-weight: 600; cursor: pointer; transition: background .12s; }
     .nearby-suggest-btn:hover { background: var(--clr-primary-bg); }
 
@@ -521,7 +529,8 @@ function chargerTypeLabel(c) {
 
 function normalizeStation(raw, brandKey) {
   let dc = 0, ac = 0, maxKw = 0, minKw = Infinity;
-  let minPrice = Infinity, maxPrice = -Infinity;
+  let minPriceDay = Infinity, maxPriceDay = -Infinity;
+  let minPriceNight = Infinity, maxPriceNight = -Infinity;
   const connTypes = new Set();
   if (typeof raw.dc_total_heads === 'number') {
     dc = raw.dc_total_heads; ac = raw.ac_total_heads || 0;
@@ -532,7 +541,8 @@ function normalizeStation(raw, brandKey) {
     }
     if (c.kw) { maxKw = Math.max(maxKw, c.kw); minKw = Math.min(minKw, c.kw); }
     (c.connectors || []).forEach(conn => {
-      if (conn.price_day != null) { minPrice = Math.min(minPrice, conn.price_day); maxPrice = Math.max(maxPrice, conn.price_day); }
+      if (conn.price_day   != null) { minPriceDay   = Math.min(minPriceDay,   conn.price_day);   maxPriceDay   = Math.max(maxPriceDay,   conn.price_day);   }
+      if (conn.price_night != null) { minPriceNight = Math.min(minPriceNight, conn.price_night); maxPriceNight = Math.max(maxPriceNight, conn.price_night); }
     });
     const tl = chargerTypeLabel(c);
     if (tl.includes('CCS')) connTypes.add('CCS2');
@@ -544,10 +554,12 @@ function normalizeStation(raw, brandKey) {
   if (!address && raw.district && raw.province) address = `${raw.district}, ${raw.province}`;
   else if (!address && raw.province) address = raw.province;
   minKw = minKw === Infinity ? 0 : minKw;
-  minPrice = minPrice === Infinity ? null : minPrice;
-  maxPrice = maxPrice === -Infinity ? null : maxPrice;
+  minPriceDay   = minPriceDay   === Infinity  ? null : minPriceDay;
+  maxPriceDay   = maxPriceDay   === -Infinity ? null : maxPriceDay;
+  minPriceNight = minPriceNight === Infinity  ? null : minPriceNight;
+  maxPriceNight = maxPriceNight === -Infinity ? null : maxPriceNight;
   const sourceLabels = Array.isArray(raw.source_labels) ? raw.source_labels : [];
-  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPrice, maxPrice, connTypes: [...connTypes], sourceLabels, _raw: raw };
+  return { brand: brandKey, name: raw.name, lat: raw.lat, lon: raw.lon, address, province: raw.province || null, dc, ac, total: dc + ac, maxKw, minKw, minPriceDay, maxPriceDay, minPriceNight, maxPriceNight, connTypes: [...connTypes], sourceLabels, _raw: raw };
 }
 
 let allStations = [];
@@ -797,8 +809,8 @@ function showMapTooltip(s, x, y) {
   const b = BRANDS[s.brand];
   const dcTag = s.dc ? `<span class="ctag dc" style="font-size:10px;padding:2px 6px;">DC × ${s.dc}</span>` : '';
   const acTag = s.ac ? `<span class="ctag ac" style="font-size:10px;padding:2px 6px;">AC × ${s.ac}</span>` : '';
-  const priceStr = s.minPrice != null
-    ? (s.minPrice === s.maxPrice ? `฿${s.minPrice.toFixed(2)}/kWh` : `฿${s.minPrice.toFixed(2)} – ${s.maxPrice.toFixed(2)}/kWh`)
+  const priceStr = s.minPriceDay != null
+    ? (s.minPriceDay === s.maxPriceDay ? `฿${s.minPriceDay.toFixed(2)}/kWh` : `฿${s.minPriceDay.toFixed(2)} – ${s.maxPriceDay.toFixed(2)}/kWh`)
     : '';
   const kwStr = s.maxKw
     ? (s.minKw && s.minKw !== s.maxKw ? `${s.minKw} – ${s.maxKw} kW` : `最大 ${s.maxKw} kW`)
@@ -1153,6 +1165,28 @@ function fitToRadius(station, radiusKm) {
   gmap.fitBounds(bounds, { top: 60, right: rightPad, bottom: 30, left: 20 });
 }
 
+function buildNearbyPriceLine(n) {
+  const hasDay   = n.minPriceDay   != null;
+  const hasNight = n.minPriceNight != null;
+  if (!hasDay && !hasNight) return `<span class="np-none">价格暂无</span>`;
+  if (hasDay && !hasNight && n.minPriceDay === n.maxPriceDay)
+    return `<span class="np-unified">统一电价 <b>฿${n.minPriceDay.toFixed(2)}</b> / kWh</span>`;
+  const parts = [];
+  if (hasDay) {
+    const v = n.minPriceDay === n.maxPriceDay
+      ? `฿${n.minPriceDay.toFixed(2)}`
+      : `฿${n.minPriceDay.toFixed(2)}–฿${n.maxPriceDay.toFixed(2)}`;
+    parts.push(`<span class="np-day">白天 ${v}</span>`);
+  }
+  if (hasNight) {
+    const v = n.minPriceNight === n.maxPriceNight
+      ? `฿${n.minPriceNight.toFixed(2)}`
+      : `฿${n.minPriceNight.toFixed(2)}–฿${n.maxPriceNight.toFixed(2)}`;
+    parts.push(`<span class="np-night">夜间 ${v}</span>`);
+  }
+  return parts.join('<span class="np-sep"> | </span>');
+}
+
 function renderNearby(radiusKm) {
   _nearbyRadius = radiusKm;
   document.querySelectorAll('.r-tab[data-km]').forEach(t => t.classList.toggle('active', +t.dataset.km === radiusKm));
@@ -1189,6 +1223,7 @@ function renderNearby(radiusKm) {
       <div class="nearby-body">
         <div class="nearby-name">${escHtml(n.name)}</div>
         <div class="nearby-meta">${dcTag}${acTag}${srcTags}${n.total?`<span>${n.total} 枪</span>`:''}${n.maxKw?`<span>${n.maxKw} kW</span>`:''}</div>
+        <div class="nearby-price">${buildNearbyPriceLine(n)}</div>
       </div>
       <div class="nearby-dist">${fmtDist(d)}</div>
     </div>`;
